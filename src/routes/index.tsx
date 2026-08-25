@@ -8,9 +8,13 @@ const TITULO = "Cuéntanos qué te pasó. Nosotros encontramos el abogado.";
 const DESC =
   "Leemos tu caso, identificamos qué especialista necesitas y te conectamos con un abogado con tarjeta verificada en tu ciudad. Sin costo para ti.";
 
-const WA =
-  "https://wa.me/573001234567?text=" +
-  encodeURIComponent("Hola, necesito asesoría jurídica.");
+function scrollAFormulario() {
+  const form = document.getElementById("caratula-expediente");
+  if (!form) return;
+  form.scrollIntoView({ behavior: "smooth", block: "center" });
+  const primerCampo = form.querySelector<HTMLElement>("select, input");
+  setTimeout(() => primerCampo?.focus(), 400);
+}
 
 const CAPA =
   "linear-gradient(100deg, rgba(18,33,43,.94) 0%, rgba(18,33,43,.88) 46%, rgba(18,33,43,.72) 100%), repeating-linear-gradient(to bottom, rgba(224,219,209,.05) 0 1px, transparent 1px 32px)";
