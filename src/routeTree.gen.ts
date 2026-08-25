@@ -24,6 +24,8 @@ import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-p
 import { Route as PoliticaDeTratamientoDeDatosRouteImport } from './routes/politica-de-tratamiento-de-datos'
 import { Route as TerminosYCondicionesRouteImport } from './routes/terminos-y-condiciones'
 import { Route as UneteRouteImport } from './routes/unete'
+import { Route as AreasIndexRouteImport } from './routes/areas.index'
+import { Route as AreasSiloRouteImport } from './routes/areas.$silo'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -101,11 +103,21 @@ const UneteRoute = UneteRouteImport.update({
   path: '/unete',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AreasIndexRoute = AreasIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AreasRoute,
+} as any)
+const AreasSiloRoute = AreasSiloRouteImport.update({
+  id: '/$silo',
+  path: '/$silo',
+  getParentRoute: () => AreasRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/abogados': typeof AbogadosRoute
-  '/areas': typeof AreasRoute
+  '/areas': typeof AreasRouteWithChildren
   '/cobertura': typeof CoberturaRoute
   '/como-funciona': typeof ComoFuncionaRoute
   '/contacto': typeof ContactoRoute
@@ -118,11 +130,12 @@ export interface FileRoutesByFullPath {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/areas/$silo': typeof AreasSiloRoute
+  '/areas/': typeof AreasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/abogados': typeof AbogadosRoute
-  '/areas': typeof AreasRoute
   '/cobertura': typeof CoberturaRoute
   '/como-funciona': typeof ComoFuncionaRoute
   '/contacto': typeof ContactoRoute
@@ -135,12 +148,14 @@ export interface FileRoutesByTo {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/areas/$silo': typeof AreasSiloRoute
+  '/areas': typeof AreasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/abogados': typeof AbogadosRoute
-  '/areas': typeof AreasRoute
+  '/areas': typeof AreasRouteWithChildren
   '/cobertura': typeof CoberturaRoute
   '/como-funciona': typeof ComoFuncionaRoute
   '/contacto': typeof ContactoRoute
@@ -153,6 +168,8 @@ export interface FileRoutesById {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/areas/$silo': typeof AreasSiloRoute
+  '/areas/': typeof AreasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -172,11 +189,12 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/areas/$silo'
+    | '/areas/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/abogados'
-    | '/areas'
     | '/cobertura'
     | '/como-funciona'
     | '/contacto'
@@ -189,6 +207,8 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/areas/$silo'
+    | '/areas'
   id:
     | '__root__'
     | '/'
@@ -206,12 +226,14 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/areas/$silo'
+    | '/areas/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AbogadosRoute: typeof AbogadosRoute
-  AreasRoute: typeof AreasRoute
+  AreasRoute: typeof AreasRouteWithChildren
   CoberturaRoute: typeof CoberturaRoute
   ComoFuncionaRoute: typeof ComoFuncionaRoute
   ContactoRoute: typeof ContactoRoute
@@ -333,13 +355,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UneteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/areas/': {
+      id: '/areas/'
+      path: '/'
+      fullPath: '/areas/'
+      preLoaderRoute: typeof AreasIndexRouteImport
+      parentRoute: typeof AreasRoute
+    }
+    '/areas/$silo': {
+      id: '/areas/$silo'
+      path: '/$silo'
+      fullPath: '/areas/$silo'
+      preLoaderRoute: typeof AreasSiloRouteImport
+      parentRoute: typeof AreasRoute
+    }
   }
 }
+
+interface AreasRouteChildren {
+  AreasSiloRoute: typeof AreasSiloRoute
+  AreasIndexRoute: typeof AreasIndexRoute
+}
+
+const AreasRouteChildren: AreasRouteChildren = {
+  AreasSiloRoute: AreasSiloRoute,
+  AreasIndexRoute: AreasIndexRoute,
+}
+
+const AreasRouteWithChildren = AreasRoute._addFileChildren(AreasRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AbogadosRoute: AbogadosRoute,
-  AreasRoute: AreasRoute,
+  AreasRoute: AreasRouteWithChildren,
   CoberturaRoute: CoberturaRoute,
   ComoFuncionaRoute: ComoFuncionaRoute,
   ContactoRoute: ContactoRoute,
