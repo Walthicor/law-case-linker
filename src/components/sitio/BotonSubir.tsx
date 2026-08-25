@@ -34,29 +34,41 @@ export function BotonSubir() {
     >
       <svg
         aria-hidden="true"
-        viewBox="0 0 40 40"
+        viewBox="0 0 32 32"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2.2"
+        strokeWidth="2.1"
         strokeLinecap="round"
         strokeLinejoin="round"
         className="h-7 w-7"
       >
-        {/* Base de madera del mazo */}
-        <path d="M10 32 h20 a2 2 0 0 1 2 2 v2 a2 2 0 0 1 -2 2 h-20 a2 2 0 0 1 -2 -2 v-2 a2 2 0 0 1 2 -2 z" stroke="#8B6F4E" fill="rgba(139,111,78,0.12)" />
-        <path d="M12 34 h16" stroke="#8B6F4E" strokeWidth="1" opacity="0.6" />
+        {/* Bloque/base de madera del mazo */}
+        <path
+          d="M8 26.5h16a1.5 1.5 0 0 1 1.5 1.5v1.2a1.5 1.5 0 0 1-1.5 1.5H8a1.5 1.5 0 0 1-1.5-1.5V28a1.5 1.5 0 0 1 1.5-1.5z"
+          stroke="#8B6F4E"
+          fill="rgba(139,111,78,0.12)"
+        />
+        <path d="M9 28h14" stroke="#8B6F4E" strokeWidth="1" opacity="0.6" />
 
-        {/* Mango del mazo */}
-        <path d="M18 24 v-9" stroke="currentColor" strokeWidth="2.6" />
+        {/* Mango */}
+        <path d="M16 21.5v-7" stroke="currentColor" strokeWidth="2.5" />
 
-        {/* Cabeza del mazo (forma clásica con bandas) */}
-        <rect x="9" y="7" width="22" height="10" rx="3" fill="currentColor" fillOpacity="0.12" />
-        <path d="M9 10 h22" stroke="currentColor" strokeWidth="1" opacity="0.5" />
-        <path d="M9 14 h22" stroke="currentColor" strokeWidth="1" opacity="0.5" />
+        {/* Cabeza del mazo con bandas decorativas */}
+        <rect
+          x="7"
+          y="5"
+          width="18"
+          height="8"
+          rx="2"
+          fill="currentColor"
+          fillOpacity="0.12"
+        />
+        <path d="M7 8h18" stroke="currentColor" strokeWidth="1" opacity="0.5" />
+        <path d="M7 11h18" stroke="currentColor" strokeWidth="1" opacity="0.5" />
 
-        {/* Flecha hacia arriba integrada */}
-        <path d="M20 17 v-5" stroke="currentColor" strokeWidth="2.6" />
-        <path d="M16.5 14 L20 10.5 L23.5 14" stroke="currentColor" strokeWidth="2.6" />
+        {/* Flecha hacia arriba integrada, centrada */}
+        <path d="M16 16.5V11" stroke="currentColor" strokeWidth="2.5" />
+        <path d="M12.8 13.5L16 10.3l3.2 3.2" stroke="currentColor" strokeWidth="2.5" />
       </svg>
     </button>
   );
