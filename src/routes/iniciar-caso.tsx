@@ -1,6 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+export type BusquedaCaso = {
+  area?: string | undefined;
+  ciudad?: string | undefined;
+  estado?: string | undefined;
+};
+
+const texto = (v: unknown) => (typeof v === "string" && v ? v : undefined);
+
 export const Route = createFileRoute("/iniciar-caso")({
+  validateSearch: (search: Record<string, unknown>): BusquedaCaso => ({
+    area: texto(search["area"]),
+    ciudad: texto(search["ciudad"]),
+    estado: texto(search["estado"]),
+  }),
   head: () => ({
     meta: [
       { title: "Contar mi caso | Asesorías Jurídicas" },
