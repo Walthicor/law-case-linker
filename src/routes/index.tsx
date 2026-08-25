@@ -116,5 +116,14 @@ function Index() {
         </div>
       </div>
     </section>
+
+    <QueHacemos />
+    <AreasPractica />
+    <ComoFunciona />
+    <Cobertura />
+    <Herramientas />
+    <ComoVerificamos />
+    <ParaAbogados />
+    </>
   );
 }
