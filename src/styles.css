@@ -297,6 +297,10 @@
   }
 }
 
+@utility campo-error {
+  border-color: var(--sello);
+}
+
 @utility aviso-plazo {
   border-left: 3px solid var(--sello);
   background: var(--sello-claro);
