@@ -9,6 +9,7 @@ export const Route = createFileRoute("/gracias")({
       { property: "og:description", content: "Recibimos tu caso. Te contactamos en 24 horas hábiles." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "robots", content: "noindex, follow" },
     ],
   }),
   component: Pagina,

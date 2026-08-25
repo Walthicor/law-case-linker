@@ -9,6 +9,7 @@ export const Route = createFileRoute("/politica-de-cookies")({
       { property: "og:description", content: "Uso de cookies en Asesorías Jurídicas Colombia." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "robots", content: "noindex, follow" },
     ],
   }),
   component: Pagina,

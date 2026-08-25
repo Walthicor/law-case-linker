@@ -10,33 +10,220 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AbogadosRouteImport } from './routes/abogados'
+import { Route as AreasRouteImport } from './routes/areas'
+import { Route as CoberturaRouteImport } from './routes/cobertura'
+import { Route as ComoFuncionaRouteImport } from './routes/como-funciona'
+import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as GraciasRouteImport } from './routes/gracias'
+import { Route as GuiasRouteImport } from './routes/guias'
+import { Route as HerramientasRouteImport } from './routes/herramientas'
+import { Route as IniciarCasoRouteImport } from './routes/iniciar-caso'
+import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
+import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-privacidad'
+import { Route as PoliticaDeTratamientoDeDatosRouteImport } from './routes/politica-de-tratamiento-de-datos'
+import { Route as TerminosYCondicionesRouteImport } from './routes/terminos-y-condiciones'
+import { Route as UneteRouteImport } from './routes/unete'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AbogadosRoute = AbogadosRouteImport.update({
+  id: '/abogados',
+  path: '/abogados',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasRoute = AreasRouteImport.update({
+  id: '/areas',
+  path: '/areas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoberturaRoute = CoberturaRouteImport.update({
+  id: '/cobertura',
+  path: '/cobertura',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComoFuncionaRoute = ComoFuncionaRouteImport.update({
+  id: '/como-funciona',
+  path: '/como-funciona',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GraciasRoute = GraciasRouteImport.update({
+  id: '/gracias',
+  path: '/gracias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuiasRoute = GuiasRouteImport.update({
+  id: '/guias',
+  path: '/guias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HerramientasRoute = HerramientasRouteImport.update({
+  id: '/herramientas',
+  path: '/herramientas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IniciarCasoRoute = IniciarCasoRouteImport.update({
+  id: '/iniciar-caso',
+  path: '/iniciar-caso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDeCookiesRoute = PoliticaDeCookiesRouteImport.update({
+  id: '/politica-de-cookies',
+  path: '/politica-de-cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadRoute = PoliticaDePrivacidadRouteImport.update({
+  id: '/politica-de-privacidad',
+  path: '/politica-de-privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDeTratamientoDeDatosRoute =
+  PoliticaDeTratamientoDeDatosRouteImport.update({
+    id: '/politica-de-tratamiento-de-datos',
+    path: '/politica-de-tratamiento-de-datos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TerminosYCondicionesRoute = TerminosYCondicionesRouteImport.update({
+  id: '/terminos-y-condiciones',
+  path: '/terminos-y-condiciones',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UneteRoute = UneteRouteImport.update({
+  id: '/unete',
+  path: '/unete',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/abogados': typeof AbogadosRoute
+  '/areas': typeof AreasRoute
+  '/cobertura': typeof CoberturaRoute
+  '/como-funciona': typeof ComoFuncionaRoute
+  '/contacto': typeof ContactoRoute
+  '/gracias': typeof GraciasRoute
+  '/guias': typeof GuiasRoute
+  '/herramientas': typeof HerramientasRoute
+  '/iniciar-caso': typeof IniciarCasoRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
+  '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
+  '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
+  '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
+  '/unete': typeof UneteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/abogados': typeof AbogadosRoute
+  '/areas': typeof AreasRoute
+  '/cobertura': typeof CoberturaRoute
+  '/como-funciona': typeof ComoFuncionaRoute
+  '/contacto': typeof ContactoRoute
+  '/gracias': typeof GraciasRoute
+  '/guias': typeof GuiasRoute
+  '/herramientas': typeof HerramientasRoute
+  '/iniciar-caso': typeof IniciarCasoRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
+  '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
+  '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
+  '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
+  '/unete': typeof UneteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/abogados': typeof AbogadosRoute
+  '/areas': typeof AreasRoute
+  '/cobertura': typeof CoberturaRoute
+  '/como-funciona': typeof ComoFuncionaRoute
+  '/contacto': typeof ContactoRoute
+  '/gracias': typeof GraciasRoute
+  '/guias': typeof GuiasRoute
+  '/herramientas': typeof HerramientasRoute
+  '/iniciar-caso': typeof IniciarCasoRoute
+  '/politica-de-cookies': typeof PoliticaDeCookiesRoute
+  '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
+  '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
+  '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
+  '/unete': typeof UneteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/abogados'
+    | '/areas'
+    | '/cobertura'
+    | '/como-funciona'
+    | '/contacto'
+    | '/gracias'
+    | '/guias'
+    | '/herramientas'
+    | '/iniciar-caso'
+    | '/politica-de-cookies'
+    | '/politica-de-privacidad'
+    | '/politica-de-tratamiento-de-datos'
+    | '/terminos-y-condiciones'
+    | '/unete'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/abogados'
+    | '/areas'
+    | '/cobertura'
+    | '/como-funciona'
+    | '/contacto'
+    | '/gracias'
+    | '/guias'
+    | '/herramientas'
+    | '/iniciar-caso'
+    | '/politica-de-cookies'
+    | '/politica-de-privacidad'
+    | '/politica-de-tratamiento-de-datos'
+    | '/terminos-y-condiciones'
+    | '/unete'
+  id:
+    | '__root__'
+    | '/'
+    | '/abogados'
+    | '/areas'
+    | '/cobertura'
+    | '/como-funciona'
+    | '/contacto'
+    | '/gracias'
+    | '/guias'
+    | '/herramientas'
+    | '/iniciar-caso'
+    | '/politica-de-cookies'
+    | '/politica-de-privacidad'
+    | '/politica-de-tratamiento-de-datos'
+    | '/terminos-y-condiciones'
+    | '/unete'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AbogadosRoute: typeof AbogadosRoute
+  AreasRoute: typeof AreasRoute
+  CoberturaRoute: typeof CoberturaRoute
+  ComoFuncionaRoute: typeof ComoFuncionaRoute
+  ContactoRoute: typeof ContactoRoute
+  GraciasRoute: typeof GraciasRoute
+  GuiasRoute: typeof GuiasRoute
+  HerramientasRoute: typeof HerramientasRoute
+  IniciarCasoRoute: typeof IniciarCasoRoute
+  PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
+  PoliticaDePrivacidadRoute: typeof PoliticaDePrivacidadRoute
+  PoliticaDeTratamientoDeDatosRoute: typeof PoliticaDeTratamientoDeDatosRoute
+  TerminosYCondicionesRoute: typeof TerminosYCondicionesRoute
+  UneteRoute: typeof UneteRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +235,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/abogados': {
+      id: '/abogados'
+      path: '/abogados'
+      fullPath: '/abogados'
+      preLoaderRoute: typeof AbogadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas': {
+      id: '/areas'
+      path: '/areas'
+      fullPath: '/areas'
+      preLoaderRoute: typeof AreasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cobertura': {
+      id: '/cobertura'
+      path: '/cobertura'
+      fullPath: '/cobertura'
+      preLoaderRoute: typeof CoberturaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/como-funciona': {
+      id: '/como-funciona'
+      path: '/como-funciona'
+      fullPath: '/como-funciona'
+      preLoaderRoute: typeof ComoFuncionaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gracias': {
+      id: '/gracias'
+      path: '/gracias'
+      fullPath: '/gracias'
+      preLoaderRoute: typeof GraciasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guias': {
+      id: '/guias'
+      path: '/guias'
+      fullPath: '/guias'
+      preLoaderRoute: typeof GuiasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/herramientas': {
+      id: '/herramientas'
+      path: '/herramientas'
+      fullPath: '/herramientas'
+      preLoaderRoute: typeof HerramientasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/iniciar-caso': {
+      id: '/iniciar-caso'
+      path: '/iniciar-caso'
+      fullPath: '/iniciar-caso'
+      preLoaderRoute: typeof IniciarCasoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-cookies': {
+      id: '/politica-de-cookies'
+      path: '/politica-de-cookies'
+      fullPath: '/politica-de-cookies'
+      preLoaderRoute: typeof PoliticaDeCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidad': {
+      id: '/politica-de-privacidad'
+      path: '/politica-de-privacidad'
+      fullPath: '/politica-de-privacidad'
+      preLoaderRoute: typeof PoliticaDePrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-tratamiento-de-datos': {
+      id: '/politica-de-tratamiento-de-datos'
+      path: '/politica-de-tratamiento-de-datos'
+      fullPath: '/politica-de-tratamiento-de-datos'
+      preLoaderRoute: typeof PoliticaDeTratamientoDeDatosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terminos-y-condiciones': {
+      id: '/terminos-y-condiciones'
+      path: '/terminos-y-condiciones'
+      fullPath: '/terminos-y-condiciones'
+      preLoaderRoute: typeof TerminosYCondicionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/unete': {
+      id: '/unete'
+      path: '/unete'
+      fullPath: '/unete'
+      preLoaderRoute: typeof UneteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AbogadosRoute: AbogadosRoute,
+  AreasRoute: AreasRoute,
+  CoberturaRoute: CoberturaRoute,
+  ComoFuncionaRoute: ComoFuncionaRoute,
+  ContactoRoute: ContactoRoute,
+  GraciasRoute: GraciasRoute,
+  GuiasRoute: GuiasRoute,
+  HerramientasRoute: HerramientasRoute,
+  IniciarCasoRoute: IniciarCasoRoute,
+  PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
+  PoliticaDePrivacidadRoute: PoliticaDePrivacidadRoute,
+  PoliticaDeTratamientoDeDatosRoute: PoliticaDeTratamientoDeDatosRoute,
+  TerminosYCondicionesRoute: TerminosYCondicionesRoute,
+  UneteRoute: UneteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -9,6 +9,7 @@ export const Route = createFileRoute("/terminos-y-condiciones")({
       { property: "og:description", content: "Condiciones de uso de la plataforma Asesorías Jurídicas Colombia." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "robots", content: "noindex, follow" },
     ],
   }),
   component: Pagina,

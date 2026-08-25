@@ -9,6 +9,7 @@ export const Route = createFileRoute("/politica-de-privacidad")({
       { property: "og:description", content: "Cómo protegemos tu información personal." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "robots", content: "noindex, follow" },
     ],
   }),
   component: Pagina,
