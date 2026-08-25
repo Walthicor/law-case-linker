@@ -297,6 +297,10 @@
   }
 }
 
+@utility campo-error {
+  border-color: var(--sello);
+}
+
 @utility aviso-plazo {
   border-left: 3px solid var(--sello);
   background: var(--sello-claro);
@@ -474,5 +478,99 @@
     opacity: 1 !important;
     transform: none !important;
     transition-delay: 0ms !important;
+  }
+}
+
+/* ── Pasos del formulario: slide horizontal ────────────────────── */
+.paso-caso {
+  transition:
+    opacity 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.paso-entra-der {
+  animation: paso-entra-der 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.paso-entra-izq {
+  animation: paso-entra-izq 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes paso-entra-der {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes paso-entra-izq {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Sello de radicado ─────────────────────────────────────────── */
+.caratula-sellada {
+  opacity: 0.4;
+  transition: opacity 300ms ease;
+}
+.sello-radicado {
+  border: 2px solid var(--sello);
+  border-radius: 4px;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--sello);
+  text-align: center;
+  animation: sello-golpe 600ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.sello-radicado .sello-titulo {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 0.15em;
+  line-height: 1.1;
+}
+.sello-radicado .sello-numero {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  margin-top: 6px;
+}
+@keyframes sello-golpe {
+  0% {
+    opacity: 0;
+    transform: scale(1.6) rotate(-8deg);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(0.96) rotate(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paso-entra-der,
+  .paso-entra-izq {
+    animation: none !important;
+  }
+  .sello-radicado {
+    animation: sello-fundido 200ms ease both !important;
+    transform: none !important;
+  }
+  @keyframes sello-fundido {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }
