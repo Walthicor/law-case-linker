@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Balanza } from "@/components/sitio/Balanza";
+import { IconoFormulario } from "@/components/sitio/IconoFormulario";
 import { HeroVideo } from "@/components/sitio/HeroVideo";
 import { SellosConfianza } from "@/components/sitio/SellosConfianza";
 import { CaratulaExpediente } from "@/components/sitio/CaratulaExpediente";
@@ -104,6 +105,7 @@ function Index() {
               }
               derecha={
                 <Link to="/iniciar-caso" className="btn-primario btn-pulso">
+                  <IconoFormulario />
                   Contar mi caso →
                 </Link>
               }

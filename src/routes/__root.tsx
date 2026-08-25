@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/sitio/Header";
 import { Footer } from "@/components/sitio/Footer";
 import { BarraCaptacion } from "@/components/sitio/BarraCaptacion";
+import { BotonSubir } from "@/components/sitio/BotonSubir";
 
 function NotFoundComponent() {
   return (
@@ -131,6 +132,7 @@ function RootComponent() {
       </main>
       <Footer />
       <BarraCaptacion />
+      <BotonSubir />
     </QueryClientProvider>
   );
 }
