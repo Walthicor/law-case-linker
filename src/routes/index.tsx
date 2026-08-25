@@ -42,6 +42,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
+    <>
     <section className="relative min-h-[calc(100svh-72px)] bg-tinta">
       <HeroVideo />
       <div aria-hidden="true" className="absolute inset-0 z-[1]" style={{ background: CAPA }} />
