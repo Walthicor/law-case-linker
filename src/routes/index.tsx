@@ -3,6 +3,13 @@ import { Balanza } from "@/components/sitio/Balanza";
 import { HeroVideo } from "@/components/sitio/HeroVideo";
 import { SellosConfianza } from "@/components/sitio/SellosConfianza";
 import { CaratulaExpediente } from "@/components/sitio/CaratulaExpediente";
+import { QueHacemos } from "@/components/sitio/home/QueHacemos";
+import { AreasPractica } from "@/components/sitio/home/AreasPractica";
+import { ComoFunciona } from "@/components/sitio/home/ComoFunciona";
+import { Cobertura } from "@/components/sitio/home/Cobertura";
+import { Herramientas } from "@/components/sitio/home/Herramientas";
+import { ComoVerificamos } from "@/components/sitio/home/ComoVerificamos";
+import { ParaAbogados } from "@/components/sitio/home/ParaAbogados";
 
 const TITULO = "Cuéntanos qué te pasó. Nosotros encontramos el abogado.";
 const DESC =
