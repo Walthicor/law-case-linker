@@ -1,4 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
+import { IconoFormulario } from "./IconoFormulario";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Logo } from "./Logo";
@@ -109,6 +110,7 @@ export function Header() {
             Soy abogado
           </Link>
           <Link to="/iniciar-caso" className="btn-primario text-sm">
+            <IconoFormulario />
             Contar mi caso
           </Link>
         </div>
@@ -158,6 +160,7 @@ export function Header() {
               </li>
             </ul>
             <Link to="/iniciar-caso" className="btn-primario mt-8 w-full">
+              <IconoFormulario />
               Contar mi caso
             </Link>
           </nav>

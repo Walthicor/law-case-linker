@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { BotonWhatsApp } from "./BotonWhatsApp";
+import { BotonFormulario } from "./BotonFormulario";
 
 const RUTAS_EXCLUIDAS = ["/iniciar-caso", "/gracias"];
 
@@ -25,7 +25,7 @@ export function BarraCaptacion() {
         style={{ transform: visible ? "translateY(0)" : "translateY(100%)" }}
         aria-hidden={!visible}
       >
-        <BotonWhatsApp />
+        <BotonFormulario />
         <Link to="/iniciar-caso" className="btn-primario btn-pulso flex-1 py-3.5">
           Contar mi caso
         </Link>
@@ -41,8 +41,8 @@ export function BarraCaptacion() {
         }}
         aria-hidden={!visible}
       >
-        <span className="text-sm font-medium text-tinta">¿Dudas? Escríbenos</span>
-        <BotonWhatsApp />
+        <span className="text-sm font-medium text-tinta">¿Listo? Cuéntanos tu caso</span>
+        <BotonFormulario />
       </div>
     </>
   );
