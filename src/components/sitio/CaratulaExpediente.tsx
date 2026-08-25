@@ -73,6 +73,7 @@ export function CaratulaExpediente() {
 
   return (
     <div
+      id="caratula-expediente"
       className="overflow-hidden rounded-[6px] border border-linea bg-papel"
       style={{ boxShadow: "0 1px 2px rgba(18,33,43,.06), 0 12px 40px rgba(18,33,43,.16)" }}
     >
