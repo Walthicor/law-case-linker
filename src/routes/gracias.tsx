@@ -1,6 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/gracias")({
+  validateSearch: (search: Record<string, unknown>): { radicado?: string | undefined } => ({
+    radicado:
+      typeof search["radicado"] === "string" && search["radicado"] ? search["radicado"] : undefined,
+  }),
   head: () => ({
     meta: [
       { title: "Gracias | Asesorías Jurídicas" },
