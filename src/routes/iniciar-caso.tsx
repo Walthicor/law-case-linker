@@ -1,12 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-export type BusquedaCaso = { area?: string; ciudad?: string; estado?: string };
+export type BusquedaCaso = { area: string; ciudad: string; estado: string };
+
+const texto = (v: unknown) => (typeof v === "string" ? v : "");
 
 export const Route = createFileRoute("/iniciar-caso")({
   validateSearch: (search: Record<string, unknown>): BusquedaCaso => ({
-    area: typeof search.area === "string" ? search.area : undefined,
-    ciudad: typeof search.ciudad === "string" ? search.ciudad : undefined,
-    estado: typeof search.estado === "string" ? search.estado : undefined,
+    area: texto(search["area"]),
+    ciudad: texto(search["ciudad"]),
+    estado: texto(search["estado"]),
   }),
   head: () => ({
     meta: [
