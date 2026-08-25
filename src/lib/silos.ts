@@ -44,7 +44,7 @@ const NOMBRES: Record<string, string> = {
 export function siloDesdeArea(area: string): Silo {
   const slug = SLUGS[area] ?? "general";
   return {
-    area: NOMBRES[slug] ?? area || "tu caso",
+    area: (NOMBRES[slug] ?? area) || "tu caso",
     slug,
     guia: `/guias/${slug}`,
     herramienta: `/herramientas/${slug}`,
