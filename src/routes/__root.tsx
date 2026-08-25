@@ -124,8 +124,8 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  // El formulario de caso no tiene salidas: sin navegación, sin barra ni botones flotantes.
-  const sinCromo = pathname.startsWith("/iniciar-caso");
+  // El formulario de caso y la confirmación no tienen salidas: sin navegación, sin barra ni botones flotantes.
+  const sinCromo = pathname === "/iniciar-caso" || pathname === "/gracias";
 
   return (
     <QueryClientProvider client={queryClient}>

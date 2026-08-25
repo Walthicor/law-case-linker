@@ -183,7 +183,11 @@ export function FormularioCaso({
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.setTimeout(
-      () => navigate({ to: "/gracias", search: { radicado } }),
+      () =>
+        navigate({
+          to: "/gracias",
+          search: { radicado, area: caso.area, ciudad: caso.ciudad },
+        }),
       reducido ? 320 : 900,
     );
   };
