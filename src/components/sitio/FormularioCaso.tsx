@@ -73,7 +73,12 @@ const TODOS = CAMPOS_PASO.flat();
 export function FormularioCaso({
   inicial,
 }: {
-  inicial?: { area?: string | undefined; ciudad?: string | undefined; estado?: string | undefined };
+  inicial?: {
+    area?: string | undefined;
+    ciudad?: string | undefined;
+    estado?: string | undefined;
+    valor?: string | undefined;
+  };
 }) {
   const navigate = useNavigate();
   const [caso, setCaso] = useState<Caso>(CASO_VACIO);
