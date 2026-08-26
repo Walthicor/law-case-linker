@@ -100,6 +100,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Asesorías Jurídicas Colombia",
+          url: "https://asesoriasjuridicas.co/",
+          description:
+            "Conectamos personas y empresas con abogados verificados en 19 ciudades de Colombia, en las 13 áreas del derecho.",
+          areaServed: areaServedSchema(),
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
