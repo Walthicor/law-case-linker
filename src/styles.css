@@ -151,6 +151,38 @@
   letter-spacing: -0.02em;
 }
 
+/* Halo dorado sobre la palabra clave del hero. Mismo lenguaje que la tarjeta social. */
+@utility brillo-abogado {
+  position: relative;
+  color: #f3d594;
+  text-shadow:
+    0 0 18px rgba(226, 182, 96, 0.55),
+    0 0 46px rgba(226, 182, 96, 0.3);
+  animation: brillo-latir 4.5s ease-in-out infinite;
+}
+
+@keyframes brillo-latir {
+  0%,
+  100% {
+    text-shadow:
+      0 0 16px rgba(226, 182, 96, 0.45),
+      0 0 40px rgba(226, 182, 96, 0.24);
+  }
+  50% {
+    text-shadow:
+      0 0 26px rgba(226, 182, 96, 0.75),
+      0 0 60px rgba(226, 182, 96, 0.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brillo-abogado {
+    animation: none;
+  }
+}
+
+
+
 @utility display-lg {
   font-family: var(--font-display);
   font-weight: 600;
