@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-import logoClaro from "@/assets/logo-ajc-v2-claro.png.asset.json";
+import logoClaro from "@/assets/logo-texto-claro.png.asset.json";
 
 const AREAS = [
   "Derecho laboral",
@@ -35,10 +35,11 @@ export function Footer() {
             <img
               src={logoClaro.url}
               alt="Asesorías Jurídicas Colombia"
-              width={150}
-              height={92}
-              className="h-[92px] w-auto"
+              width={240}
+              height={36}
+              className="h-auto w-[240px]"
             />
+
           </Link>
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-papel/70">
             Cuéntanos tu problema jurídico y lo perfilamos para conectarte con un abogado
