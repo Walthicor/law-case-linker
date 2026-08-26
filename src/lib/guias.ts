@@ -215,7 +215,9 @@ export const HERRAMIENTA_POR_SILO: Record<
 };
 
 /** Contenido redactado por slug de guía. Se llena en los prompts de contenido. */
-export const CONTENIDO_GUIAS: Record<string, ContenidoGuia> = {};
+export const CONTENIDO_GUIAS: Record<string, ContenidoGuia> = Object.fromEntries(
+  GUIAS_PUBLICADAS.map((g) => [g.slug, g]),
+);
 
 export type ResumenGuia = {
   slug: string;
