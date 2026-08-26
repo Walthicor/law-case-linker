@@ -118,7 +118,7 @@ export const PAGINAS = {
     grupo: "paginas",
     prioridad: 0.9,
     lastmod: ULTIMA_REVISION,
-    schema: false,
+    schema: true,
   },
   unete: {
     titulo: "Únete a la red de abogados | Asesorías Jurídicas",
@@ -138,7 +138,7 @@ export const PAGINAS = {
     grupo: "paginas",
     prioridad: 0.5,
     lastmod: ULTIMA_REVISION,
-    schema: false,
+    schema: true,
   },
   tratamiento: {
     titulo: "Política de tratamiento de datos personales",
@@ -148,7 +148,7 @@ export const PAGINAS = {
     grupo: "paginas",
     prioridad: 0.4,
     lastmod: ULTIMA_REVISION,
-    schema: false,
+    schema: true,
   },
   privacidad: {
     titulo: tituloSeo("Política de privacidad"),

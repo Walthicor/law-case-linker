@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { metaSeo } from "@/lib/seo";
-import { PAGINAS } from "@/lib/seo-inventario";
+import { absoluta, metaSeo } from "@/lib/seo";
+import { PAGINAS, ULTIMA_REVISION } from "@/lib/seo-inventario";
 import { PaginaLegal } from "@/components/sitio/legal/PaginaLegal";
 import { ACTUALIZACION, TRATAMIENTO } from "@/lib/legal";
 
@@ -11,6 +11,20 @@ const DESC =
 export const Route = createFileRoute("/politica-de-tratamiento-de-datos")({
   head: () => ({
     ...metaSeo(PAGINAS.tratamiento),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: PAGINAS.tratamiento.titulo,
+          description: PAGINAS.tratamiento.descripcion,
+          url: absoluta(PAGINAS.tratamiento.ruta),
+          inLanguage: "es-CO",
+          dateModified: ULTIMA_REVISION,
+        }),
+      },
+    ],
   }),
   component: Pagina,
 });

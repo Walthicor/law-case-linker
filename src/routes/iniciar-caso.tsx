@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { metaSeo } from "@/lib/seo";
+import { absoluta, metaSeo, SITIO } from "@/lib/seo";
 import { PAGINAS } from "@/lib/seo-inventario";
 import { ShieldCheck } from "lucide-react";
 import { Logo } from "@/components/sitio/Logo";
@@ -23,6 +23,20 @@ export const Route = createFileRoute("/iniciar-caso")({
   }),
   head: () => ({
     ...metaSeo(PAGINAS.iniciarCaso),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: PAGINAS.iniciarCaso.titulo,
+          description: PAGINAS.iniciarCaso.descripcion,
+          url: absoluta(PAGINAS.iniciarCaso.ruta),
+          inLanguage: "es-CO",
+          isPartOf: { "@type": "WebSite", url: `${SITIO}/` },
+        }),
+      },
+    ],
   }),
   component: Pagina,
 });

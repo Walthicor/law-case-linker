@@ -40,7 +40,9 @@ for (const [, rutas] of porDesc)
   if (rutas.length > 1) avisos.push(`description duplicada en ${rutas.join(", ")}`);
 
 /* 3. Páginas sin schema */
-for (const e of entradas) if (!e.schema) avisos.push(`${e.ruta} no emite JSON-LD`);
+for (const e of entradas)
+  if (!e.schema && !(e.robots ?? "").includes("noindex"))
+    avisos.push(`${e.ruta} no emite JSON-LD`);
 
 /* 4. Huérfanas: rutas estáticas del router que no están en el inventario */
 const rutasDelRouter = readdirSync("src/routes")

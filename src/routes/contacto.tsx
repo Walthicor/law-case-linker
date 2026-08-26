@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { metaSeo } from "@/lib/seo";
+import { absoluta, metaSeo } from "@/lib/seo";
 import { PAGINAS } from "@/lib/seo-inventario";
 import { useState } from "react";
 import { Clock, Mail, MessageCircle, Scale, Send } from "lucide-react";
@@ -13,6 +13,25 @@ const DESC =
 export const Route = createFileRoute("/contacto")({
   head: () => ({
     ...metaSeo(PAGINAS.contacto),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: PAGINAS.contacto.titulo,
+          description: PAGINAS.contacto.descripcion,
+          url: absoluta(PAGINAS.contacto.ruta),
+          inLanguage: "es-CO",
+          mainEntity: {
+            "@type": "Organization",
+            name: "Asesorías Jurídicas Colombia",
+            email: RESPONSABLE.correo,
+            areaServed: "CO",
+          },
+        }),
+      },
+    ],
   }),
   component: Pagina,
 });
