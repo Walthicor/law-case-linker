@@ -856,6 +856,22 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
           "Para sujetos de especial protección —niños, adultos mayores, personas con discapacidad, mujeres gestantes— el análisis es más favorable y los términos se aplican con mayor rigor. Documentar esa condición desde el escrito de tutela es determinante.",
         ],
       },
+      {
+        titulo: "Cómo se arma una tutela en salud que sí prospere",
+        parrafos: [
+          "Una tutela en salud se sostiene sobre tres documentos: la orden o concepto del médico tratante, la prueba de la solicitud a la EPS y la constancia de la negativa o de la demora. Sin la orden del profesional tratante el juez no tiene cómo valorar la necesidad del servicio, y sin la solicitud previa la EPS alegará que nunca se le pidió nada.",
+          "El escrito debe narrar los hechos en orden cronológico con fechas exactas, identificar el servicio negado con precisión —nombre del medicamento, código del procedimiento, especialidad requerida—, explicar la afectación concreta en la salud y la vida diaria, y pedir de forma expresa el tratamiento integral y la exoneración de copagos cuando la capacidad económica lo justifica.",
+          "También conviene solicitar medida provisional cuando hay riesgo actual: el juez puede ordenar la atención inmediata en las primeras horas, antes de fallar. En patologías oncológicas, en pacientes hospitalizados o en tratamientos suspendidos a mitad de camino, esa medida es lo que evita un daño irreversible.",
+        ],
+      },
+      {
+        titulo: "Quién responde cuando la falla causa un daño",
+        parrafos: [
+          "Cuando la demora o la negación produce un daño —una pérdida funcional, un agravamiento, una muerte evitable— además de la tutela hay una reclamación de responsabilidad. Frente a EPS e IPS privadas se demanda por vía civil; frente a hospitales públicos y entidades del Estado, ante la jurisdicción contencioso-administrativa mediante el medio de control de reparación directa, que caduca a los dos años del hecho.",
+          "Ese tipo de proceso se construye con la historia clínica completa, dictámenes de medicina legal o peritajes médicos y la prueba del perjuicio patrimonial y moral. Solicitar copia íntegra de la historia clínica es el primer paso y es un derecho del paciente y de sus familiares en los casos que la ley permite.",
+          "Paralelamente existe la vía de vigilancia: la queja ante la Superintendencia Nacional de Salud puede derivar en sanciones a la EPS y, aunque no indemniza al paciente, presiona la corrección de la conducta y deja registro útil para el proceso.",
+        ],
+      },
     ],
   },
 
@@ -887,6 +903,22 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
         parrafos: [
           "Frente a un producto defectuoso el consumidor puede exigir reparación gratuita, cambio por otro idéntico o devolución del precio pagado, en ese orden según el caso y las veces que la falla se repita. Frente a un servicio mal prestado, la prestación correcta o la devolución de lo pagado, con indemnización de los perjuicios acreditados.",
           "La prueba es simple pero hay que conservarla: factura o comprobante de pago, publicidad o pantallazos de la oferta, el contrato con sus anexos, la reclamación radicada, las respuestas del proveedor y el registro fotográfico o el diagnóstico técnico del defecto. Con eso, la mayoría de los casos se resuelve antes de llegar a audiencia.",
+        ],
+      },
+      {
+        titulo: "Compras por internet, domicilios y plataformas",
+        parrafos: [
+          "En el comercio electrónico el proveedor debe informar con claridad su identidad, la dirección de contacto, las características del producto, el precio total con impuestos y costos de envío, los medios de pago y el procedimiento de devolución. Cuando esa información no aparece o es contradictoria, la responsabilidad recae sobre quien ofreció el producto.",
+          "El derecho de retracto permite deshacer la compra dentro de los cinco días hábiles siguientes a la entrega en ventas a distancia, devolviendo el producto en buen estado y recibiendo el dinero completo. La reversión del pago aplica cuando hubo fraude, cuando el producto entregado no corresponde a lo pedido, cuando llega defectuoso o cuando nunca llegó, y obliga a la entidad financiera y al comercio a devolver el valor en los términos de la ley.",
+          "Las plataformas de intermediación también tienen deberes: informar quién es el vendedor real y responder cuando indujeron a error sobre la oferta. Guardar la conversación en la aplicación, el número de pedido y el comprobante de pago es lo que permite reclamar después.",
+        ],
+      },
+      {
+        titulo: "Servicios financieros, aerolíneas y servicios públicos",
+        parrafos: [
+          "En banca y seguros, la ruta empieza por el defensor del consumidor financiero de la entidad y sigue ante la Superintendencia Financiera, que vigila cobros no autorizados, seguros vendidos sin consentimiento, productos abiertos sin solicitud y reportes indebidos. Cuando hay daño patrimonial, la reclamación económica se lleva a la SIC o al juez según la naturaleza del contrato.",
+          "En transporte aéreo aplican el Estatuto del Consumidor y los reglamentos aeronáuticos: compensaciones por sobreventa, retrasos y cancelaciones, y reglas sobre equipaje demorado o perdido. La queja se radica ante la aerolínea y, si no resuelve, ante la Aeronáutica Civil o la SIC.",
+          "En servicios públicos domiciliarios —energía, acueducto, gas, internet— el reclamo se presenta ante la empresa, que debe responder en 15 días hábiles, y contra su decisión procede el recurso de reposición y en subsidio la apelación ante la Superintendencia de Servicios Públicos. Mientras el reclamo esté en trámite no se puede suspender el servicio por el valor discutido.",
         ],
       },
     ],
