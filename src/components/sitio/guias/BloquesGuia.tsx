@@ -26,7 +26,14 @@ export function PasoAPaso({ titulo, pasos }: { titulo: string; pasos: Paso[] }) 
   );
 }
 
-export function EnResumen({ titulo = "En resumen", puntos }: { titulo?: string; puntos: string[] }) {
+export function EnResumen({
+  titulo = "En resumen",
+  puntos,
+}: {
+  titulo?: string | undefined;
+  puntos: string[];
+}) {
+
   return (
     <div className="rounded-[6px] border border-linea bg-papel-hueso px-5 py-5">
       <p className="font-mono text-[0.78rem] font-semibold uppercase tracking-[0.08em] text-tinta-suave">
