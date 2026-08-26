@@ -7,6 +7,7 @@ import { AvisoPlazo } from "@/components/sitio/AvisoPlazo";
 import { BloqueNorma } from "@/components/sitio/BloqueNorma";
 import { Migas } from "@/components/sitio/Migas";
 import { Revelar } from "@/components/sitio/Revelar";
+import { areaServedSchema } from "@/lib/cobertura";
 import { PILARES, pilarPorSlug, tituloSeo, type Pilar } from "@/lib/pilares";
 
 export const Route = createFileRoute("/areas/$silo/")({
