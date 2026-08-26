@@ -350,10 +350,10 @@ const SEMILLAS: Semilla[] = [
       "Te pagan un valor menor al que corresponde",
     ],
     subareas: [
-      { titulo: "Pensión de vejez", slug: "pension-de-vejez" },
-      { titulo: "Pensión de invalidez", slug: "pension-de-invalidez" },
-      { titulo: "Pensión de sobrevivientes", slug: "pension-de-sobrevivientes" },
-      { titulo: "Reliquidación pensional", slug: "reliquidacion-pensional" },
+      { titulo: "Pensión de vejez", slug: "vejez" },
+      { titulo: "Pensión de invalidez", slug: "invalidez" },
+      { titulo: "Pensión de sobrevivientes", slug: "sobrevivientes" },
+      { titulo: "Reliquidación pensional", slug: "reliquidacion" },
       { titulo: "Traslado de régimen", slug: "traslado-de-regimen" },
     ],
     normas: [
@@ -667,10 +667,10 @@ const SEMILLAS: Semilla[] = [
       "Te llaman casas de cobranza todos los días",
     ],
     subareas: [
-      { titulo: "Insolvencia de persona natural", slug: "insolvencia-persona-natural" },
+      { titulo: "Insolvencia de persona natural", slug: "persona-natural" },
       { titulo: "Levantamiento de embargos", slug: "levantamiento-de-embargos" },
       { titulo: "Reportes en centrales de riesgo", slug: "reportes-centrales-riesgo" },
-      { titulo: "Acuerdos de pago", slug: "acuerdos-de-pago" },
+      { titulo: "Negociación de deudas", slug: "negociacion-de-deudas" },
       { titulo: "Cobro jurídico", slug: "cobro-juridico" },
     ],
     normas: [
@@ -782,9 +782,9 @@ const SEMILLAS: Semilla[] = [
       "Necesitas cobrar el SOAT",
     ],
     subareas: [
-      { titulo: "Indemnización por accidente", slug: "indemnizacion-por-accidente" },
+      { titulo: "Accidentes de tránsito", slug: "accidentes" },
       { titulo: "Comparendos", slug: "comparendos" },
-      { titulo: "Reclamación SOAT", slug: "reclamacion-soat" },
+      { titulo: "Indemnizaciones y SOAT", slug: "indemnizaciones" },
       { titulo: "Lesiones personales en accidente", slug: "lesiones-personales" },
       { titulo: "Daños al vehículo", slug: "danos-al-vehiculo" },
     ],
@@ -833,12 +833,12 @@ const SEMILLAS: Semilla[] = [
       "Vas a licenciar o vender tu marca o tu obra",
     ],
     subareas: [
-      { titulo: "Registro de marca", slug: "registro-de-marca", destacada: true },
+      { titulo: "Registro de marca", slug: "marcas", destacada: true },
       { titulo: "Oposiciones y negativas", slug: "oposiciones-y-negativas" },
       { titulo: "Derechos de autor y software", slug: "derechos-de-autor" },
       { titulo: "Competencia desleal y uso indebido", slug: "competencia-desleal" },
       { titulo: "Contratos de licencia y cesión", slug: "licencias-y-cesion" },
-      { titulo: "Patentes y diseños industriales", slug: "patentes-y-disenos" },
+      { titulo: "Patentes y diseños industriales", slug: "patentes" },
     ],
     normas: [
       {

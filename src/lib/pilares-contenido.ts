@@ -545,13 +545,13 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
   /* ─────────────────────────── PENSIONES ─────────────────────────── */
   pensiones: {
     subareas: {
-      "pension-de-vejez":
+      "vejez":
         "En el régimen de prima media administrado por Colpensiones se exige cumplir la edad (57 años las mujeres, 62 los hombres) y acreditar las semanas mínimas de cotización. En el régimen de ahorro individual se pensiona quien reúne el capital suficiente para financiar una mesada, sin requisito de edad. Elegir mal el régimen puede costar millones al momento del reconocimiento.",
-      "pension-de-invalidez":
+      "invalidez":
         "Se reconoce a quien pierde el 50% o más de su capacidad laboral por causa de origen común y cumple las semanas exigidas en los tres años anteriores a la estructuración. La calificación la hacen la junta regional y, en apelación, la junta nacional. Cuando el origen es un accidente o una enfermedad del trabajo, la prestación la asume la ARL y el análisis se hace en el pilar de riesgos laborales.",
-      "pension-de-sobrevivientes":
+      "sobrevivientes":
         "Al fallecer un pensionado o un afiliado que cotizó 50 semanas en los últimos 3 años, tienen derecho el cónyuge o compañero permanente con convivencia acreditada, los hijos menores o estudiantes hasta los 25 años, los hijos inválidos y, en subsidio, los padres que dependían económicamente. Los conflictos entre cónyuge y compañera permanente son la controversia más frecuente y se resuelven probando convivencia.",
-      "reliquidacion-pensional":
+      "reliquidacion":
         "Procede cuando la entidad calculó el ingreso base de liquidación con un periodo o unos factores equivocados: dejó por fuera primas, bonificaciones o horas extras que sí eran cotizables, aplicó un régimen que no correspondía o desconoció el régimen de transición. La diferencia mensual se proyecta de por vida, por eso una reliquidación bien planteada suele ser la reclamación más rentable.",
       "traslado-de-regimen":
         "Muchas personas fueron trasladadas a un fondo privado sin información suficiente sobre las consecuencias. La jurisprudencia de la Corte Suprema admite la nulidad del traslado por falta de información clara y completa, con el retorno a Colpensiones y el traslado del saldo. El análisis exige comparar la mesada esperada en cada régimen antes de demandar.",
@@ -602,11 +602,11 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
   /* ─────────────────────────── TRÁNSITO ─────────────────────────── */
   transito: {
     subareas: {
-      "indemnizacion-por-accidente":
+      "accidentes":
         "Quien causa un accidente responde por el daño emergente (reparaciones, gastos médicos, transporte), el lucro cesante (lo que se dejó de ganar durante la incapacidad y hacia el futuro si quedaron secuelas) y los perjuicios extrapatrimoniales como el daño moral y el daño a la vida de relación. La reclamación se dirige al conductor, al propietario del vehículo y a la aseguradora de responsabilidad civil.",
       comparendos:
         "El comparendo se puede impugnar en la audiencia pública ante la autoridad de tránsito dentro de los términos del Código Nacional de Tránsito. Los argumentos que funcionan son técnicos: falta de notificación en debida forma, señalización ausente o contradictoria, foto sin identificación clara de la placa, caducidad de la facultad sancionatoria o error en el agente que impuso la orden.",
-      "reclamacion-soat":
+      "indemnizaciones":
         "El SOAT ampara a todas las víctimas de un accidente de tránsito con independencia de quién tuvo la culpa: cubre gastos médicos hasta un tope en salarios mínimos, indemnización por muerte, incapacidad permanente y gastos funerarios y de transporte. Se reclama a la aseguradora del vehículo o, si el vehículo es fantasma o no está asegurado, ante la ADRES.",
       "lesiones-personales":
         "Si hay lesionados, además de la reclamación civil corre un proceso penal por lesiones personales culposas, agravado cuando el conductor iba embriagado, huyó del lugar o carecía de licencia. La víctima puede constituirse como parte y reclamar la reparación integral dentro del proceso penal, y el conductor necesita defensa desde la primera audiencia.",
@@ -659,13 +659,13 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
   /* ─────────────────────────── INSOLVENCIA ─────────────────────────── */
   insolvencia: {
     subareas: {
-      "insolvencia-persona-natural":
+      "persona-natural":
         "Es el procedimiento del Código General del Proceso para la persona natural no comerciante que tiene dos o más obligaciones en mora por más de 90 días, o dos o más procesos ejecutivos en su contra, siempre que el valor de esas deudas represente al menos el 50% del total del pasivo. Se tramita ante un centro de conciliación o notaría y su efecto inmediato es la suspensión de los procesos de cobro.",
       "levantamiento-de-embargos":
         "Con la aceptación de la solicitud de insolvencia se suspenden los procesos ejecutivos y se levantan las medidas cautelares, salvo las que garantizan obligaciones de alimentos. También hay límites permanentes: el salario es inembargable hasta el mínimo legal y por encima de eso solo en la quinta parte del excedente, con excepciones para cooperativas y alimentos.",
       "reportes-centrales-riesgo":
         "El dato negativo en Datacrédito, TransUnion o Cifin no se borra pagando: permanece el doble del tiempo de la mora, con un máximo de cuatro años contados desde el pago. Lo que sí se puede exigir es la actualización del reporte, la corrección de información inexacta y la eliminación del dato cuando la deuda prescribió o nunca existió, por vía de reclamo y luego tutela de habeas data.",
-      "acuerdos-de-pago":
+      "negociacion-de-deudas":
         "El acuerdo de pago dentro de la insolvencia se negocia con todos los acreedores en una misma audiencia, con plazos, tasas y garantías reales, y una vez aprobado obliga incluso a quienes votaron en contra. Fuera del procedimiento también se pueden negociar reestructuraciones directas, pero sin la protección legal que suspende los embargos.",
       "cobro-juridico":
         "Cuando el banco entrega la cartera a un abogado externo empiezan las llamadas, los reportes y la demanda ejecutiva. En esa etapa todavía hay margen: revisar la liquidación del crédito, discutir intereses por encima de la tasa máxima legal, alegar la prescripción de la acción cambiaria y exigir que los cobros respeten los límites de la Ley 1266 sobre acoso al deudor.",
@@ -716,7 +716,7 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
   /* ────────────────── PROPIEDAD INTELECTUAL ────────────────── */
   "propiedad-intelectual": {
     subareas: {
-      "registro-de-marca":
+      "marcas":
         "El registro se solicita ante la Superintendencia de Industria y Comercio indicando el signo, el titular y las clases de la Clasificación Internacional de Niza que cubren los productos o servicios. Publicada la solicitud en la Gaceta de la Propiedad Industrial corren 30 días hábiles para oposiciones; sin oposición, el trámite suele resolverse en pocos meses y concede un derecho exclusivo por 10 años renovables.",
       "oposiciones-y-negativas":
         "La SIC niega registros por semejanza con marcas anteriores, por ser signos descriptivos o genéricos, por engañosos o por afectar derechos de terceros. Frente a una oposición hay 30 días hábiles para contestar con argumentos de coexistencia, distintividad adquirida, limitación de clases o acuerdos con el opositor; frente a la negativa proceden los recursos y, en última instancia, la demanda ante el Consejo de Estado.",
@@ -726,7 +726,7 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
         "Usar el nombre, el logo, el empaque o la publicidad de otro para aprovechar su reputación configura infracción marcaria y actos de competencia desleal de la Ley 256 de 1996: desviación de clientela, confusión, imitación y explotación de la reputación ajena. La SIC, con funciones jurisdiccionales, puede ordenar el cese de la conducta, medidas cautelares e indemnización.",
       "licencias-y-cesion":
         "Licenciar es autorizar el uso conservando la titularidad; ceder es transferirla. Ambos contratos deben precisar territorio, plazo, clases y productos cubiertos, exclusividad, control de calidad, regalías y causales de terminación, e inscribirse ante la SIC para ser oponibles a terceros. En franquicias, la licencia de marca es el corazón del negocio.",
-      "patentes-y-disenos":
+      "patentes":
         "La patente de invención exige novedad, nivel inventivo y aplicación industrial, y otorga 20 años de exclusividad; el modelo de utilidad, 10 años. El diseño industrial protege la apariencia por 10 años. Divulgar la invención antes de radicar la solicitud destruye la novedad, por eso la asesoría debe llegar antes del lanzamiento, no después.",
     },
     secciones: [

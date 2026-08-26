@@ -18,6 +18,11 @@ import { SUBAREAS_ADMINISTRATIVO } from "./subareas-administrativo";
 import { SUBAREAS_PENAL } from "./subareas-penal";
 import { SUBAREAS_COMERCIAL } from "./subareas-comercial";
 import { SUBAREAS_INMOBILIARIO } from "./subareas-inmobiliario";
+import { SUBAREAS_PENSIONES } from "./subareas-pensiones";
+import { SUBAREAS_TRANSITO } from "./subareas-transito";
+import { SUBAREAS_INSOLVENCIA } from "./subareas-insolvencia";
+import { SUBAREAS_MIGRATORIO } from "./subareas-migratorio";
+import { SUBAREAS_PROPIEDAD_INTELECTUAL } from "./subareas-propiedad-intelectual";
 import { pilarPorSlug, type Guia, type Norma, type Faq, type Pilar, type Subarea } from "./pilares";
 
 export type Paso = { titulo: string; texto: string };
@@ -44,6 +49,11 @@ export type ContenidoSubarea = {
   faqs: Faq[];
   /** Slugs de 2 guías DEL MISMO silo. Si se omite, se toman las del pilar. */
   guias?: string[];
+  /**
+   * ÚNICO cruce de silos autorizado del sitio (pensiones/invalidez →
+   * riesgos-laborales/junta-de-calificacion). No usar en otras páginas.
+   */
+  cruce?: { texto: string; enlace: string; silo: string; subarea: string };
 };
 
 /** Contenido real por `"{silo}/{subarea}"`. Se llena en 09a–09e. */
@@ -56,6 +66,11 @@ export const CONTENIDO_SUBAREAS: Record<string, ContenidoSubarea> = {
   ...SUBAREAS_PENAL,
   ...SUBAREAS_COMERCIAL,
   ...SUBAREAS_INMOBILIARIO,
+  ...SUBAREAS_PENSIONES,
+  ...SUBAREAS_TRANSITO,
+  ...SUBAREAS_INSOLVENCIA,
+  ...SUBAREAS_MIGRATORIO,
+  ...SUBAREAS_PROPIEDAD_INTELECTUAL,
 };
 
 export type SubareaResuelta = ContenidoSubarea & {
