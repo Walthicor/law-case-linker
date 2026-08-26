@@ -26,6 +26,7 @@ import { Route as TerminosYCondicionesRouteImport } from './routes/terminos-y-co
 import { Route as UneteRouteImport } from './routes/unete'
 import { Route as AreasIndexRouteImport } from './routes/areas.index'
 import { Route as HerramientasIndexRouteImport } from './routes/herramientas.index'
+import { Route as HerramientasCalculadoraLiquidacionLaboralRouteImport } from './routes/herramientas.calculadora-liquidacion-laboral'
 import { Route as AreasSiloIndexRouteImport } from './routes/areas.$silo.index'
 import { Route as AreasSiloSubareaRouteImport } from './routes/areas.$silo.$subarea'
 
@@ -115,6 +116,12 @@ const HerramientasIndexRoute = HerramientasIndexRouteImport.update({
   path: '/',
   getParentRoute: () => HerramientasRoute,
 } as any)
+const HerramientasCalculadoraLiquidacionLaboralRoute =
+  HerramientasCalculadoraLiquidacionLaboralRouteImport.update({
+    id: '/calculadora-liquidacion-laboral',
+    path: '/calculadora-liquidacion-laboral',
+    getParentRoute: () => HerramientasRoute,
+  } as any)
 const AreasSiloIndexRoute = AreasSiloIndexRouteImport.update({
   id: '/$silo/',
   path: '/$silo/',
@@ -142,6 +149,7 @@ export interface FileRoutesByFullPath {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
   '/areas/': typeof AreasIndexRoute
   '/herramientas/': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
@@ -161,6 +169,7 @@ export interface FileRoutesByTo {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
   '/areas': typeof AreasIndexRoute
   '/herramientas': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
@@ -183,6 +192,7 @@ export interface FileRoutesById {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
   '/areas/': typeof AreasIndexRoute
   '/herramientas/': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
@@ -206,6 +216,7 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/herramientas/calculadora-liquidacion-laboral'
     | '/areas/'
     | '/herramientas/'
     | '/areas/$silo/$subarea'
@@ -225,6 +236,7 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/herramientas/calculadora-liquidacion-laboral'
     | '/areas'
     | '/herramientas'
     | '/areas/$silo/$subarea'
@@ -246,6 +258,7 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/herramientas/calculadora-liquidacion-laboral'
     | '/areas/'
     | '/herramientas/'
     | '/areas/$silo/$subarea'
@@ -391,6 +404,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HerramientasIndexRouteImport
       parentRoute: typeof HerramientasRoute
     }
+    '/herramientas/calculadora-liquidacion-laboral': {
+      id: '/herramientas/calculadora-liquidacion-laboral'
+      path: '/calculadora-liquidacion-laboral'
+      fullPath: '/herramientas/calculadora-liquidacion-laboral'
+      preLoaderRoute: typeof HerramientasCalculadoraLiquidacionLaboralRouteImport
+      parentRoute: typeof HerramientasRoute
+    }
     '/areas/$silo/': {
       id: '/areas/$silo/'
       path: '/$silo'
@@ -423,10 +443,13 @@ const AreasRouteChildren: AreasRouteChildren = {
 const AreasRouteWithChildren = AreasRoute._addFileChildren(AreasRouteChildren)
 
 interface HerramientasRouteChildren {
+  HerramientasCalculadoraLiquidacionLaboralRoute: typeof HerramientasCalculadoraLiquidacionLaboralRoute
   HerramientasIndexRoute: typeof HerramientasIndexRoute
 }
 
 const HerramientasRouteChildren: HerramientasRouteChildren = {
+  HerramientasCalculadoraLiquidacionLaboralRoute:
+    HerramientasCalculadoraLiquidacionLaboralRoute,
   HerramientasIndexRoute: HerramientasIndexRoute,
 }
 
