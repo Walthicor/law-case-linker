@@ -153,7 +153,7 @@ function Pagina() {
               <Revelar
                 key={s.slug}
                 retardo={(i % 3) * 60}
-                className={s.destacada ? "sm:col-span-2 lg:col-span-3" : undefined}
+                className={s.destacada ? "sm:col-span-2 lg:col-span-3" : ""}
               >
                 <article
                   id={s.slug}
