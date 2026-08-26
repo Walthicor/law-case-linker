@@ -1,5 +1,9 @@
 import { useNavigate } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { evento } from "@/lib/analitica";
+import { enviarCaso } from "@/lib/envio.functions";
+import { WHATSAPP_SOPORTE, enlaceWhatsapp } from "@/lib/contacto";
 import { Check, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MUNICIPIOS } from "@/lib/municipios";
