@@ -33,7 +33,9 @@ export function HeroVideo() {
         (window as Window & { requestIdleCallback?: (cb: () => void) => number })
           .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 400));
       idle(() => {
-        if (!cancelado && puedeMontarVideo()) setMontarVideo(true);
+        if (cancelado || !puedeMontarVideo()) return;
+        setMontarVideo(true);
+        evento("video_hero_cargado", { dispositivo: "escritorio" });
       });
     };
 
