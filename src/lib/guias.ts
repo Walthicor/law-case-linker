@@ -10,6 +10,7 @@
  * guías de otro silo.
  */
 
+import { GUIAS_PUBLICADAS } from "./guias-contenido";
 import { PILARES, pilarPorSlug, type Faq, type Norma, type Pilar } from "./pilares";
 
 export type Paso = { titulo: string; texto: string };
@@ -202,6 +203,11 @@ export const HERRAMIENTA_POR_SILO: Record<
     descripcion: "Rango estimado según ingresos, hijos y gastos acreditados.",
     to: "/herramientas/calculadora-cuota-alimentaria",
   },
+  salud: {
+    titulo: "Generador de acción de tutela",
+    descripcion: "Arma el borrador de tu tutela en salud con tus datos y tus hechos.",
+    to: "/herramientas/accion-de-tutela",
+  },
   administrativo: {
     titulo: "Generador de derecho de petición",
     descripcion: "Con los requisitos de la Ley 1755 y los plazos de respuesta.",
@@ -215,7 +221,9 @@ export const HERRAMIENTA_POR_SILO: Record<
 };
 
 /** Contenido redactado por slug de guía. Se llena en los prompts de contenido. */
-export const CONTENIDO_GUIAS: Record<string, ContenidoGuia> = {};
+export const CONTENIDO_GUIAS: Record<string, ContenidoGuia> = Object.fromEntries(
+  GUIAS_PUBLICADAS.map((g) => [g.slug, g]),
+);
 
 export type ResumenGuia = {
   slug: string;
