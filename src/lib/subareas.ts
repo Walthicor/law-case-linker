@@ -44,6 +44,11 @@ export type ContenidoSubarea = {
   faqs: Faq[];
   /** Slugs de 2 guías DEL MISMO silo. Si se omite, se toman las del pilar. */
   guias?: string[];
+  /**
+   * ÚNICO cruce de silos autorizado del sitio (pensiones/invalidez →
+   * riesgos-laborales/junta-de-calificacion). No usar en otras páginas.
+   */
+  cruce?: { texto: string; enlace: string; silo: string; subarea: string };
 };
 
 /** Contenido real por `"{silo}/{subarea}"`. Se llena en 09a–09e. */
