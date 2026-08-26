@@ -242,8 +242,9 @@ const SEMILLAS: Semilla[] = [
     ],
     subareas: [
       { titulo: "Divorcio", slug: "divorcio" },
-      { titulo: "Cuota alimentaria", slug: "cuota-alimentaria" },
-      { titulo: "Custodia y visitas", slug: "custodia-y-visitas" },
+      { titulo: "Demanda de alimentos", slug: "alimentos" },
+      { titulo: "Custodia de hijos", slug: "custodia" },
+      { titulo: "Violencia intrafamiliar", slug: "violencia-intrafamiliar" },
       { titulo: "Sucesiones y herencias", slug: "sucesiones" },
       { titulo: "Unión marital de hecho", slug: "union-marital-de-hecho" },
       { titulo: "Paternidad", slug: "paternidad" },
