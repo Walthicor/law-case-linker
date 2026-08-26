@@ -115,7 +115,7 @@ function Pagina() {
 
   return (
     <div className="bg-papel">
-      <div className="contenedor py-10 lg:py-14">
+      <div className="contenedor pb-10 pt-28 lg:pb-14 lg:pt-32">
         <Migas
           items={[
             { titulo: "Inicio", to: "/" },
