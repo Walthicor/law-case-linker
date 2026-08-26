@@ -10,6 +10,7 @@
  * guías de otro silo.
  */
 
+import { GUIAS_PUBLICADAS } from "./guias-contenido";
 import { PILARES, pilarPorSlug, type Faq, type Norma, type Pilar } from "./pilares";
 
 export type Paso = { titulo: string; texto: string };
