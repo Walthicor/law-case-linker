@@ -163,10 +163,12 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
     subareas: {
       divorcio:
         "En Colombia el divorcio puede ser de mutuo acuerdo, que se tramita ante notario en semanas y con una sola escritura, o contencioso ante juez de familia cuando no hay consenso o se invoca una causal del artículo 154 del Código Civil. En matrimonios católicos lo que se disuelven son los efectos civiles; la nulidad eclesiástica es un trámite separado.",
-      "cuota-alimentaria":
+      alimentos:
         "Se fija según la capacidad económica de quien debe darla y las necesidades de quien la recibe. Puede acordarse por conciliación ante comisario de familia, defensor de familia o centro de conciliación, y ese acuerdo presta mérito ejecutivo. Si no se paga, procede el proceso ejecutivo de alimentos y, en casos graves, el delito de inasistencia alimentaria.",
-      "custodia-y-visitas":
+      custodia:
         "La custodia se define por el interés superior del niño, no por el género del progenitor ni por quién tiene mejores ingresos. Lo habitual es una custodia en cabeza de uno de los padres con un régimen de visitas amplio para el otro, aunque la custodia compartida es cada vez más frecuente cuando ambos viven cerca y hay comunicación funcional.",
+      "violencia-intrafamiliar":
+        "La medida de protección se pide ante el comisario de familia del lugar de los hechos y puede decretarse el mismo día: desalojo del agresor, prohibición de acercamiento y protección policial. La denuncia penal por violencia intrafamiliar es un trámite paralelo y no reemplaza la medida de protección.",
       sucesiones:
         "Cuando todos los herederos son capaces y están de acuerdo, la sucesión se tramita ante notario en pocos meses. Si hay menores, desacuerdos, testamento cuestionado o bienes en litigio, va al juez de familia. Sin liquidar la sucesión los herederos no pueden vender ni hipotecar el inmueble, aunque lleven años viviendo en él.",
       "union-marital-de-hecho":
@@ -234,11 +236,11 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
       "proceso-ejecutivo":
         "Es la vía rápida para cobrar cuando existe un documento que contiene una obligación clara, expresa y exigible: pagaré, letra, cheque, factura, contrato con firma o acta de conciliación. El juez libra mandamiento de pago sin discutir primero el fondo y permite decretar embargos desde el inicio del proceso.",
       obligaciones:
-        "Cubre el nacimiento, la modificación y la extinción de las obligaciones: pago, novación, compensación, remisión, confusión, prescripción, cesión de créditos, solidaridad, cláusula penal e intereses. Es la base técnica sobre la que se resuelven casi todos los conflictos civiles y comerciales, y donde suele decidirse si una deuda todavía se puede cobrar.",
+        "Antes de demandar conviene revisar qué documento tienes, si la deuda está prescrita y si el deudor tiene bienes que respalden el cobro. Con pagaré, letra o cheque la ruta es ejecutiva; sin documento hay que reconstruir la obligación con transferencias, mensajes y testigos en un proceso ordinario.",
       "responsabilidad-civil":
         "Obliga a reparar el daño causado a otro, sea por incumplir un contrato o por un hecho ilícito ajeno a toda relación previa. Requiere probar el daño, la conducta y el nexo causal, y permite reclamar daño emergente, lucro cesante, daño moral y daño a la vida de relación.",
-      "cobro-de-deudas":
-        "Antes de demandar conviene revisar si la deuda está prescrita, si el documento reúne los requisitos de título ejecutivo y si el deudor tiene bienes que respalden el cobro. Ganar un proceso contra alguien insolvente produce una sentencia impagable; por eso el estudio patrimonial previo suele valer más que la demanda misma.",
+      arrendamientos:
+        "La restitución del inmueble arrendado se pide ante el juez civil cuando el arrendatario no paga o vencido el plazo no entrega. Si la causal es mora, el arrendatario solo puede ser oído en el proceso si consigna lo debido a órdenes del juzgado (Ley 820 de 2003 y art. 384 C.G.P.).",
       "prescripcion-adquisitiva":
         "Permite adquirir la propiedad de un bien por poseerlo de manera pública, pacífica e ininterrumpida durante el tiempo que fija la ley: cinco años en la prescripción ordinaria y diez en la extraordinaria para inmuebles. Es la salida habitual para quien ha vivido décadas en un predio sin escritura a su nombre.",
     },

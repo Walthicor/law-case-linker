@@ -242,8 +242,9 @@ const SEMILLAS: Semilla[] = [
     ],
     subareas: [
       { titulo: "Divorcio", slug: "divorcio" },
-      { titulo: "Cuota alimentaria", slug: "cuota-alimentaria" },
-      { titulo: "Custodia y visitas", slug: "custodia-y-visitas" },
+      { titulo: "Demanda de alimentos", slug: "alimentos" },
+      { titulo: "Custodia de hijos", slug: "custodia" },
+      { titulo: "Violencia intrafamiliar", slug: "violencia-intrafamiliar" },
       { titulo: "Sucesiones y herencias", slug: "sucesiones" },
       { titulo: "Unión marital de hecho", slug: "union-marital-de-hecho" },
       { titulo: "Paternidad", slug: "paternidad" },
@@ -465,9 +466,9 @@ const SEMILLAS: Semilla[] = [
     subareas: [
       { titulo: "Incumplimiento de contrato", slug: "incumplimiento-de-contrato" },
       { titulo: "Proceso ejecutivo", slug: "proceso-ejecutivo" },
-      { titulo: "Obligaciones", slug: "obligaciones" },
+      { titulo: "Cobro de deudas", slug: "obligaciones" },
       { titulo: "Responsabilidad civil", slug: "responsabilidad-civil" },
-      { titulo: "Cobro de deudas", slug: "cobro-de-deudas" },
+      { titulo: "Restitución de inmueble arrendado", slug: "arrendamientos" },
       { titulo: "Prescripción adquisitiva", slug: "prescripcion-adquisitiva" },
     ],
     normas: [
