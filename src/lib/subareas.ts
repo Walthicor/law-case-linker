@@ -44,6 +44,8 @@ export type ContenidoSubarea = {
 export const CONTENIDO_SUBAREAS: Record<string, ContenidoSubarea> = {
   ...SUBAREAS_LABORAL,
   ...SUBAREAS_RIESGOS,
+  ...SUBAREAS_FAMILIA,
+  ...SUBAREAS_CIVIL,
 };
 
 export type SubareaResuelta = ContenidoSubarea & {
