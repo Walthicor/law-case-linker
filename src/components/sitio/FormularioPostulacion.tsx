@@ -1,15 +1,16 @@
 import { useMemo, useRef, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CIUDADES_COBERTURA } from "@/lib/cobertura";
+import { evento } from "@/lib/analitica";
+import { enviarPostulacion } from "@/lib/envio.functions";
+import { WHATSAPP_SOPORTE, enlaceWhatsapp } from "@/lib/contacto";
 import {
   AREAS_POSTULACION,
   CAPACIDAD_MENSUAL,
   COMPETENCIAS_POSTULACION,
   POSTULACION_VACIA,
-  asuntoPostulacion,
-  correoPostulacion,
-  radicadoPostulacion,
   validarPostulacion,
   type CampoPostulacion,
   type ErroresPostulacion,
