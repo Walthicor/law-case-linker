@@ -511,7 +511,7 @@ const SEMILLAS: Semilla[] = [
       "El constructor incumplió la entrega",
     ],
     subareas: [
-      { titulo: "Restitución de inmueble", slug: "restitucion-de-inmueble" },
+      { titulo: "Restitución de inmueble", slug: "restitucion-de-inmueble", destacada: true },
       { titulo: "Contrato de arrendamiento", slug: "contrato-de-arrendamiento" },
       { titulo: "Compraventa y escrituración", slug: "compraventa-y-escrituracion" },
       { titulo: "Estudio de títulos", slug: "estudio-de-titulos" },
