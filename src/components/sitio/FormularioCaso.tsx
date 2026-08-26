@@ -1,5 +1,9 @@
 import { useNavigate } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { evento } from "@/lib/analitica";
+import { enviarCaso } from "@/lib/envio.functions";
+import { WHATSAPP_SOPORTE, enlaceWhatsapp } from "@/lib/contacto";
 import { Check, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MUNICIPIOS } from "@/lib/municipios";
@@ -88,7 +92,11 @@ export function FormularioCaso({
   const [borradorPrevio, setBorradorPrevio] = useState<{ caso: Caso; paso: number } | null>(null);
   const [enviando, setEnviando] = useState(false);
   const [sellando, setSellando] = useState(false);
+  // Radicado provisional: solo alimenta la animación de los dígitos.
   const [radicado] = useState(() => generarRadicado());
+  const [radicadoFinal, setRadicadoFinal] = useState<string | null>(null);
+  const [fallo, setFallo] = useState<string | null>(null);
+  const enviarAlServidor = useServerFn(enviarCaso);
   const contenedor = useRef<HTMLDivElement | null>(null);
   const hidratado = useRef(false);
 
@@ -167,6 +175,8 @@ export function FormularioCaso({
 
   const avanzar = () => {
     if (!validarPaso()) return;
+    if (paso === 0) evento("form_paso_1_completado", { area: caso.area, ciudad: caso.ciudad });
+    if (paso === 1) evento("form_paso_2_completado", { urgencia: caso.urgencia });
     setDireccion("der");
     setPaso((p) => Math.min(2, p + 1));
     contenedor.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -180,24 +190,40 @@ export function FormularioCaso({
   const enviar = async () => {
     if (!validarPaso() || enviando) return;
     setEnviando(true);
+    setFallo(null);
     const atribucion = capturarAtribucion();
     atribucion.ip = await resolverIp();
-    const { puntaje, tier } = puntuarCaso(caso);
-    // TODO: enviar por correo (Resend) desde una server function.
-    console.info("[AJC] caso listo", { radicado, puntaje, tier, atribucion });
-    borrarBorrador();
-    setSellando(true);
-    const reducido =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.setTimeout(
-      () =>
-        navigate({
-          to: "/gracias",
-          search: { radicado, area: caso.area, ciudad: caso.ciudad },
-        }),
-      reducido ? 320 : 900,
-    );
+
+    try {
+      // El radicado y el puntaje definitivos los calcula el servidor.
+      const r = await enviarAlServidor({ data: { caso, atribucion } });
+      setRadicadoFinal(r.radicado);
+      evento("caso_enviado", {
+        area: caso.area,
+        ciudad: caso.ciudad,
+        tier: r.tier,
+        score: r.puntaje,
+      });
+      borrarBorrador();
+      setSellando(true);
+      const reducido =
+        typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.setTimeout(
+        () =>
+          navigate({
+            to: "/gracias",
+            search: { radicado: r.radicado, area: caso.area, ciudad: caso.ciudad },
+          }),
+        reducido ? 320 : 900,
+      );
+    } catch (error) {
+      console.error("[AJC] envío fallido", error);
+      setFallo(
+        "No pudimos enviar tu caso en este momento. Escríbenos por WhatsApp y lo registramos contigo.",
+      );
+      setEnviando(false);
+    }
   };
 
   const caracteres = caso.descripcion.length;
@@ -627,6 +653,28 @@ export function FormularioCaso({
               </button>
             )}
           </div>
+
+          <div aria-live="assertive" role="status">
+            {fallo && (
+              <div className="mt-4 rounded-[6px] border border-[color:var(--rojo,#8B2E2E)] bg-papel-hueso px-4 py-3">
+                <p className="text-[0.9rem] font-semibold text-tinta">{fallo}</p>
+                {enlaceWhatsapp(`Hola, tuve un error enviando mi caso de ${caso.area}.`) ? (
+                  <a
+                    href={enlaceWhatsapp(`Hola, tuve un error enviando mi caso de ${caso.area}.`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secundario mt-3 inline-flex"
+                  >
+                    Escribir por WhatsApp
+                  </a>
+                ) : (
+                  <p className="mt-2 text-[0.85rem] text-tinta-suave">
+                    Escríbenos a {WHATSAPP_SOPORTE} o inténtalo de nuevo en unos minutos.
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
         </form>
 
         <div className="flex items-start gap-2 border-t border-linea bg-papel-hueso px-5 py-3.5 sm:px-8">
@@ -641,7 +689,7 @@ export function FormularioCaso({
         <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
           <div className="sello-radicado">
             <p className="sello-titulo">RADICADO</p>
-            <p className="sello-numero">{radicado}</p>
+            <p className="sello-numero">{radicadoFinal ?? radicado}</p>
           </div>
         </div>
       )}

@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { PaginaLegal } from "@/components/sitio/legal/PaginaLegal";
 import { ACTUALIZACION, COOKIES } from "@/lib/legal";
 import { BotonConfigurarCookies } from "@/components/sitio/BannerCookies";
@@ -8,16 +10,7 @@ const DESC = "Qué cookies usamos, para qué sirven y cuánto duran.";
 
 export const Route = createFileRoute("/politica-de-cookies")({
   head: () => ({
-    meta: [
-      { title: "Política de cookies | Asesorías Jurídicas" },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "robots", content: "noindex, follow" },
-    ],
-    links: [{ rel: "canonical", href: "/politica-de-cookies" }],
+    ...metaSeo(PAGINAS.cookies),
   }),
   component: Pagina,
 });

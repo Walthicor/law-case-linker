@@ -1,4 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
+import { evento } from "@/lib/analitica";
 import { useEffect, useState } from "react";
 import { BotonFormulario } from "./BotonFormulario";
 
@@ -26,7 +27,11 @@ export function BarraCaptacion() {
         aria-hidden={!visible}
       >
         <BotonFormulario />
-        <Link to="/iniciar-caso" className="btn-primario btn-pulso flex-1 py-3.5">
+        <Link
+          to="/iniciar-caso"
+          onClick={() => evento("cta_click", { ubicacion: "barra-captacion" })}
+          className="btn-primario btn-pulso flex-1 py-3.5"
+        >
           Contar mi caso
         </Link>
       </div>

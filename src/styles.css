@@ -697,3 +697,25 @@
     display: none !important;
   }
 }
+
+/* ── Accesibilidad: enlace de salto al contenido ──────────────────── */
+.saltar-al-contenido {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: 100;
+  transform: translate(-50%, -120%);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: var(--esmeralda);
+  color: var(--papel);
+  padding: 0.65rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: transform 140ms ease;
+}
+.saltar-al-contenido:focus {
+  transform: translate(-50%, 0);
+  outline: 2px solid var(--papel);
+  outline-offset: -4px;
+}

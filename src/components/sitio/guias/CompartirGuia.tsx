@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { SITIO } from "@/lib/seo";
 import { Link2, Mail, MessageCircle } from "lucide-react";
 
-const BASE = "https://asesoriasjuridicas.co";
+const BASE = SITIO;
 
 /**
  * Compartir. WhatsApp primero: es el canal dominante en Colombia.

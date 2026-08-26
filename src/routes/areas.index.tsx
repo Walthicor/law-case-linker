@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import * as Iconos from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Migas } from "@/components/sitio/Migas";
@@ -11,14 +13,7 @@ const DESC =
 
 export const Route = createFileRoute("/areas/")({
   head: () => ({
-    meta: [
-      { title: TITULO },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITULO },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+    ...metaSeo(PAGINAS.areas),
   }),
   component: Pagina,
 });

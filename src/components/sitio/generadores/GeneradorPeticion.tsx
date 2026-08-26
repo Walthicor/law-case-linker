@@ -292,5 +292,5 @@ export function GeneradorPeticion() {
     </HojaCarta>
   );
 
-  return <MarcoGenerador pasos={pasos} vistaPrevia={vista} />;
+  return <MarcoGenerador pasos={pasos} vistaPrevia={vista} nombre="derecho-de-peticion" />;
 }

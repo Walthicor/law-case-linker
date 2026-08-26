@@ -1,4 +1,5 @@
 import { useId, useRef, useState } from "react";
+import { evento as registrarEvento } from "@/lib/analitica";
 import { Link } from "@tanstack/react-router";
 import { AlarmClock, Download, HelpCircle } from "lucide-react";
 import {
@@ -93,13 +94,17 @@ export function CalculadoraLiquidacion() {
     };
     setEntrada(datos);
     setResultado(calcularLiquidacion(datos));
+    registrarEvento("herramienta_usada", { nombre: "calculadora-liquidacion-laboral" });
     setEnviado(false);
     requestAnimationFrame(() =>
       resultadoRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
     );
   }
 
-  const descargar = () => window.print();
+  const descargar = () => {
+    registrarEvento("pdf_descargado", { nombre: "calculadora-liquidacion-laboral" });
+    window.print();
+  };
 
   const filas = resultado
     ? [

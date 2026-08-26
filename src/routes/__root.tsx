@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { SITIO } from "@/lib/seo";
 import {
   Outlet,
   Link,
@@ -17,7 +18,11 @@ import { Footer } from "@/components/sitio/Footer";
 import { BarraCaptacion } from "@/components/sitio/BarraCaptacion";
 import { BotonSubir } from "@/components/sitio/BotonSubir";
 import { BannerCookies } from "@/components/sitio/BannerCookies";
+import { Analitica } from "@/components/sitio/Analitica";
 import { areaServedSchema } from "@/lib/cobertura";
+
+/** Verificación de Google Search Console por meta tag. */
+const VERIFICACION_GSC = (import.meta.env["VITE_GSC_VERIFICACION"] as string | undefined) ?? "";
 
 function NotFoundComponent() {
   return (
@@ -86,12 +91,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "MARDIGITAL SAS" },
       { name: "theme-color", content: "#FBFAF7" },
+      ...(VERIFICACION_GSC
+        ? [{ name: "google-site-verification", content: VERIFICACION_GSC }]
+        : []),
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      // Fraunces 600 es la fuente del H1 (el LCP): se precarga el archivo.
+      {
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        href: "https://fonts.gstatic.com/s/fraunces/v31/6NUh8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChJdt3Fa9U.woff2",
+        crossOrigin: "anonymous",
+      },
       {
         rel: "preload",
         as: "style",
@@ -105,15 +121,50 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "Asesorías Jurídicas Colombia",
-          url: "https://asesoriasjuridicas.co/",
-          description:
-            "Conectamos personas y empresas con abogados verificados en 19 ciudades de Colombia, en las 13 áreas del derecho.",
-          areaServed: areaServedSchema(),
-        }),
+        children: JSON.stringify([
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": `${SITIO}/#organizacion`,
+            name: "Asesorías Jurídicas Colombia",
+            legalName: "MARDIGITAL SAS",
+            url: `${SITIO}/`,
+            logo: `${SITIO}/favicon.png`,
+            description:
+              "Conectamos personas y empresas con abogados verificados en 19 ciudades de Colombia, en las 13 áreas del derecho.",
+            sameAs: [
+              "https://www.linkedin.com/company/asesorias-juridicas-colombia",
+              "https://www.facebook.com/asesoriasjuridicascolombia",
+            ],
+            contactPoint: [
+              {
+                "@type": "ContactPoint",
+                contactType: "customer support",
+                email: "datos@asesoriasjuridicas.com",
+                availableLanguage: ["es"],
+                areaServed: "CO",
+              },
+            ],
+            areaServed: areaServedSchema(),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": `${SITIO}/#sitio`,
+            url: `${SITIO}/`,
+            name: "Asesorías Jurídicas Colombia",
+            inLanguage: "es-CO",
+            publisher: { "@id": `${SITIO}/#organizacion` },
+            potentialAction: {
+              "@type": "SearchAction",
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate: `${SITIO}/guias?q={search_term_string}`,
+              },
+              "query-input": "required name=search_term_string",
+            },
+          },
+        ]),
       },
     ],
   }),
@@ -145,8 +196,11 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <a href="#contenido" className="saltar-al-contenido">
+        Saltar al contenido
+      </a>
       {!sinCromo && <Header />}
-      <main className={sinCromo ? "min-h-screen" : "min-h-screen pb-16 md:pb-0"}>
+      <main id="contenido" className={sinCromo ? "min-h-screen" : "min-h-screen pb-16 md:pb-0"}>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </main>
@@ -158,6 +212,7 @@ function RootComponent() {
         </>
       )}
       <BannerCookies />
+      <Analitica />
     </QueryClientProvider>
   );
 }

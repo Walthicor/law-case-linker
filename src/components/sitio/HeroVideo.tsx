@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import videoTribunal from "@/assets/hero-tribunal.mp4.asset.json";
+import { evento } from "@/lib/analitica";
 
 const POSTER = "/hero-poster.jpg";
 
@@ -32,7 +33,9 @@ export function HeroVideo() {
         (window as Window & { requestIdleCallback?: (cb: () => void) => number })
           .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 400));
       idle(() => {
-        if (!cancelado && puedeMontarVideo()) setMontarVideo(true);
+        if (cancelado || !puedeMontarVideo()) return;
+        setMontarVideo(true);
+        evento("video_hero_cargado", { dispositivo: "escritorio" });
       });
     };
 

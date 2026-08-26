@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { metaSeo, SITIO } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { MapPin, Scale, ShieldCheck, Users } from "lucide-react";
 import { Acordeon, type ItemAcordeon } from "@/components/sitio/Acordeon";
 import { CaratulaExpediente } from "@/components/sitio/CaratulaExpediente";
@@ -11,7 +13,7 @@ import {
   departamentoDe,
 } from "@/lib/cobertura";
 
-const BASE = "https://asesoriasjuridicas.co";
+const BASE = SITIO;
 const TITLE = "Cobertura: abogados en 19 ciudades de Colombia";
 const DESC =
   "Conectamos con abogados verificados en Bogotá, Medellín, Cali y 16 ciudades más del país.";
@@ -46,16 +48,7 @@ const FAQS: ItemAcordeon[] = [
 
 export const Route = createFileRoute("/cobertura")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/cobertura" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: "/cobertura" }],
+    ...metaSeo(PAGINAS.cobertura),
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd()) }],
   }),
   component: Pagina,

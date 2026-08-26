@@ -347,5 +347,5 @@ export function GeneradorTutela() {
     </HojaCarta>
   );
 
-  return <MarcoGenerador pasos={pasos} vistaPrevia={vista} />;
+  return <MarcoGenerador pasos={pasos} vistaPrevia={vista} nombre="accion-de-tutela" />;
 }

@@ -1,4 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { metaSeo, SITIO } from "@/lib/seo";
+import { seoPilar } from "@/lib/seo-inventario";
 import * as Iconos from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Check } from "lucide-react";
@@ -21,20 +23,8 @@ export const Route = createFileRoute("/areas/$silo/")({
       return { meta: [{ title: "Área no disponible" }, { name: "robots", content: "noindex" }] };
     }
     const p = loaderData.pilar;
-    const title = tituloSeo(`Abogados ${p.area} en Colombia`);
-    const description = `¿Buscas abogado ${p.area} en Colombia? Cuéntanos tu caso y te conectamos con un especialista.`;
     return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { property: "og:type", content: "website" },
-        { property: "og:url", content: `/areas/${p.slug}` },
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
-      links: [{ rel: "canonical", href: `/areas/${p.slug}` }],
-
+      ...metaSeo(seoPilar(p)),
       scripts: [
         {
           type: "application/ld+json",
@@ -47,7 +37,7 @@ export const Route = createFileRoute("/areas/$silo/")({
 });
 
 function jsonLd(p: Pilar) {
-  const url = `https://asesoriasjuridicas.co/areas/${p.slug}`;
+  const url = `${SITIO}/areas/${p.slug}`;
   return [
     {
       "@context": "https://schema.org",
@@ -62,12 +52,12 @@ function jsonLd(p: Pilar) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://asesoriasjuridicas.co/" },
+        { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITIO}/` },
         {
           "@type": "ListItem",
           position: 2,
           name: "Áreas",
-          item: "https://asesoriasjuridicas.co/areas",
+          item: `${SITIO}/areas`,
         },
         { "@type": "ListItem", position: 3, name: p.titulo, item: url },
       ],

@@ -1,4 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { metaSeo, SITIO } from "@/lib/seo";
+import { seoGuia } from "@/lib/seo-inventario";
 import { ArrowRight, Wrench } from "lucide-react";
 import { Acordeon } from "@/components/sitio/Acordeon";
 import { Migas } from "@/components/sitio/Migas";
@@ -7,7 +9,7 @@ import { CompartirGuia } from "@/components/sitio/guias/CompartirGuia";
 import { TablaContenido, type ItemToc } from "@/components/sitio/guias/TablaContenido";
 import { fechaLarga, guiaPorSlug, type GuiaResuelta } from "@/lib/guias";
 
-const BASE = "https://asesoriasjuridicas.co";
+const BASE = SITIO;
 
 export const Route = createFileRoute("/guias/$slug")({
   loader: ({ params }) => {
@@ -22,17 +24,8 @@ export const Route = createFileRoute("/guias/$slug")({
     const g = loaderData.guia;
     const url = `/guias/${params.slug}`;
     return {
-      meta: [
-        { title: g.title },
-        { name: "description", content: g.description },
-        { property: "og:title", content: g.title },
-        { property: "og:description", content: g.description },
-        { property: "og:type", content: "article" },
-        { property: "og:url", content: url },
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
       // Canonical autorreferencial, sin fecha en la URL.
-      links: [{ rel: "canonical", href: url }],
+      ...metaSeo(seoGuia({ title: g.title, description: g.description, slug: params.slug })),
       scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd(g, url)) }],
     };
   },

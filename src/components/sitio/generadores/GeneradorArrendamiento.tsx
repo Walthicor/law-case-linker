@@ -378,5 +378,5 @@ export function GeneradorArrendamiento() {
     </HojaCarta>
   );
 
-  return <MarcoGenerador pasos={pasos} vistaPrevia={vista} />;
+  return <MarcoGenerador pasos={pasos} vistaPrevia={vista} nombre="contrato-de-arrendamiento" />;
 }

@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { Balanza } from "@/components/sitio/Balanza";
 import { IconoFormulario } from "@/components/sitio/IconoFormulario";
 import { HeroVideo } from "@/components/sitio/HeroVideo";
@@ -30,14 +32,7 @@ const CAPA =
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: [
-      { title: "Asesorías jurídicas en Colombia | Abogados especialistas" },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITULO },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+    ...metaSeo(PAGINAS.home),
   }),
   component: Index,
 });

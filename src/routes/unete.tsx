@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { BadgeCheck, ClipboardList, Globe, Check, Unlock } from "lucide-react";
 import { Acordeon, type ItemAcordeon } from "@/components/sitio/Acordeon";
 import { Migas } from "@/components/sitio/Migas";
@@ -116,14 +118,7 @@ function jsonLd() {
 
 export const Route = createFileRoute("/unete")({
   head: () => ({
-    meta: [
-      { title: TITULO },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITULO },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+    ...metaSeo(PAGINAS.unete),
     scripts: [{ type: "application/ld+json", children: jsonLd() }],
   }),
   component: Pagina,

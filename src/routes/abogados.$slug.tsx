@@ -1,4 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { metaSeo, SITIO } from "@/lib/seo";
+import { seoAbogado } from "@/lib/seo-inventario";
 import { BadgeCheck, ArrowRight } from "lucide-react";
 import { AvatarAbogado } from "@/components/sitio/AvatarAbogado";
 import { Migas } from "@/components/sitio/Migas";
@@ -10,7 +12,7 @@ import {
 } from "@/lib/abogados";
 import { CONTENIDO_GUIAS } from "@/lib/guias";
 
-const BASE = "https://asesoriasjuridicas.co";
+const BASE = SITIO;
 
 export const Route = createFileRoute("/abogados/$slug")({
   loader: ({ params }) => {
@@ -23,21 +25,9 @@ export const Route = createFileRoute("/abogados/$slug")({
       return { meta: [{ title: "Perfil no disponible" }, { name: "robots", content: "noindex" }] };
     }
     const a = loaderData.abogado;
-    const area = (AREAS_ABOGADO[a.areas[0] ?? ""] ?? "derecho").toLowerCase();
-    const title = `${a.nombre}, abogado de ${area} en ${a.ciudad}`.slice(0, 60);
-    const description = `Perfil profesional de ${a.nombre}, T.P. ${a.tarjeta}, con ${a.aniosExperiencia} años de ejercicio en ${a.ciudad}.`;
     const url = `/abogados/${params.slug}`;
     return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { property: "og:type", content: "profile" },
-        { property: "og:url", content: url },
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
-      links: [{ rel: "canonical", href: url }],
+      ...metaSeo(seoAbogado(a)),
       scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd(a, url)) }],
     };
   },

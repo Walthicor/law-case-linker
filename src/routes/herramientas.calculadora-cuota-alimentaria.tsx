@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo, SITIO } from "@/lib/seo";
+import { seoHerramienta } from "@/lib/seo-inventario";
 import { ArrowRight } from "lucide-react";
 import { Acordeon } from "@/components/sitio/Acordeon";
 import { AvisoPlazo } from "@/components/sitio/AvisoPlazo";
@@ -6,7 +8,7 @@ import { CalculadoraCuotaAlimentaria } from "@/components/sitio/CalculadoraCuota
 import { Migas } from "@/components/sitio/Migas";
 import { Revelar } from "@/components/sitio/Revelar";
 
-const BASE = "https://asesoriasjuridicas.co";
+const BASE = SITIO;
 const RUTA = "/herramientas/calculadora-cuota-alimentaria";
 const TITLE = "Calculadora de cuota alimentaria 2026 | Gratis";
 const DESCRIPTION =
@@ -57,16 +59,7 @@ const FAQS = [
 
 export const Route = createFileRoute("/herramientas/calculadora-cuota-alimentaria")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: RUTA },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: RUTA }],
+    ...metaSeo(seoHerramienta("alimentos")),
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd()) }],
   }),
   component: Pagina,

@@ -1,11 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo, SITIO } from "@/lib/seo";
+import { seoHerramienta } from "@/lib/seo-inventario";
 import { AlarmClock, ArrowRight } from "lucide-react";
 import { Acordeon } from "@/components/sitio/Acordeon";
 import { Migas } from "@/components/sitio/Migas";
 import { Revelar } from "@/components/sitio/Revelar";
 import { GeneradorPeticion } from "@/components/sitio/generadores/GeneradorPeticion";
 
-const BASE = "https://asesoriasjuridicas.co";
+const BASE = SITIO;
 const RUTA = "/herramientas/derecho-de-peticion";
 const TITLE = "Generador de derecho de petición 2026 | Gratis";
 const DESCRIPTION =
@@ -56,16 +58,7 @@ const FAQS = [
 
 export const Route = createFileRoute("/herramientas/derecho-de-peticion")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: RUTA },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: RUTA }],
+    ...metaSeo(seoHerramienta("peticion")),
     scripts: [
       {
         type: "application/ld+json",

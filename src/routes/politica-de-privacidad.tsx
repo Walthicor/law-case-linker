@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { PaginaLegal } from "@/components/sitio/legal/PaginaLegal";
 import { ACTUALIZACION, PRIVACIDAD } from "@/lib/legal";
 
@@ -7,16 +9,7 @@ const DESC = "Versión resumida y legible de cómo tratamos tu información pers
 
 export const Route = createFileRoute("/politica-de-privacidad")({
   head: () => ({
-    meta: [
-      { title: "Política de privacidad | Asesorías Jurídicas" },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "robots", content: "noindex, follow" },
-    ],
-    links: [{ rel: "canonical", href: "/politica-de-privacidad" }],
+    ...metaSeo(PAGINAS.privacidad),
   }),
   component: Pagina,
 });

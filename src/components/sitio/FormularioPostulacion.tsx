@@ -1,15 +1,16 @@
 import { useMemo, useRef, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CIUDADES_COBERTURA } from "@/lib/cobertura";
+import { evento } from "@/lib/analitica";
+import { enviarPostulacion } from "@/lib/envio.functions";
+import { WHATSAPP_SOPORTE, enlaceWhatsapp } from "@/lib/contacto";
 import {
   AREAS_POSTULACION,
   CAPACIDAD_MENSUAL,
   COMPETENCIAS_POSTULACION,
   POSTULACION_VACIA,
-  asuntoPostulacion,
-  correoPostulacion,
-  radicadoPostulacion,
   validarPostulacion,
   type CampoPostulacion,
   type ErroresPostulacion,
@@ -56,7 +57,9 @@ export function FormularioPostulacion() {
   const [errores, setErrores] = useState<ErroresPostulacion>({});
   const [enviando, setEnviando] = useState(false);
   const [radicado, setRadicado] = useState<string | null>(null);
+  const [fallo, setFallo] = useState<string | null>(null);
   const contenedor = useRef<HTMLDivElement | null>(null);
+  const enviarAlServidor = useServerFn(enviarPostulacion);
 
   const set = <K extends CampoPostulacion>(campo: K, valor: Postulacion[K]) => {
     setP((prev) => ({ ...prev, [campo]: valor }));
@@ -76,7 +79,7 @@ export function FormularioPostulacion() {
 
   const ciudades = useMemo(() => CIUDADES_COBERTURA.map((c) => c.ciudad), []);
 
-  const enviar = (e: React.FormEvent) => {
+  const enviar = async (e: React.FormEvent) => {
     e.preventDefault();
     if (enviando) return;
     const nuevos = validarPostulacion(p);
@@ -89,15 +92,20 @@ export function FormularioPostulacion() {
       return;
     }
     setEnviando(true);
-    const rad = radicadoPostulacion();
-    // TODO: enviar por correo a MARDIGITAL (Resend) desde una server function.
-    console.info("[AJC] postulación lista", {
-      asunto: asuntoPostulacion(p, rad),
-      cuerpo: correoPostulacion(p, rad),
-    });
-    setRadicado(rad);
-    setEnviando(false);
-    contenedor.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    setFallo(null);
+    try {
+      const r = await enviarAlServidor({ data: { ...p, autoriza: true as const } });
+      evento("postulacion_abogado_enviada", { ciudad: p.ciudad, areas: p.areas.join(", ") });
+      setRadicado(r.radicado);
+      contenedor.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (error) {
+      console.error("[AJC] postulación fallida", error);
+      setFallo(
+        "No pudimos enviar tu postulación en este momento. Escríbenos por WhatsApp y la registramos contigo.",
+      );
+    } finally {
+      setEnviando(false);
+    }
   };
 
   if (radicado) {
@@ -345,6 +353,28 @@ export function FormularioPostulacion() {
             </span>
           </label>
           <Error msg={errores.autoriza} />
+        </div>
+
+        <div aria-live="assertive" role="status">
+          {fallo && (
+            <div className="rounded-[6px] border border-linea bg-papel-hueso px-4 py-3">
+              <p className="text-[0.9rem] font-semibold text-tinta">{fallo}</p>
+              {enlaceWhatsapp("Hola, quiero postularme a la red de abogados.") ? (
+                <a
+                  href={enlaceWhatsapp("Hola, quiero postularme a la red de abogados.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secundario mt-3 inline-flex"
+                >
+                  Escribir por WhatsApp
+                </a>
+              ) : (
+                <p className="mt-2 text-[0.85rem] text-tinta-suave">
+                  Escríbenos a {WHATSAPP_SOPORTE} o inténtalo de nuevo en unos minutos.
+                </p>
+              )}
+            </div>
+          )}
         </div>
 
         <button type="submit" disabled={enviando} className="btn-primario btn-pulso w-full">

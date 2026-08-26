@@ -1,11 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo, SITIO } from "@/lib/seo";
+import { seoHerramienta } from "@/lib/seo-inventario";
 import { ArrowRight, Info } from "lucide-react";
 import { Acordeon } from "@/components/sitio/Acordeon";
 import { Migas } from "@/components/sitio/Migas";
 import { Revelar } from "@/components/sitio/Revelar";
 import { GeneradorTutela } from "@/components/sitio/generadores/GeneradorTutela";
 
-const BASE = "https://asesoriasjuridicas.co";
+const BASE = SITIO;
 const RUTA = "/herramientas/accion-de-tutela";
 const TITLE = "Generador de acción de tutela 2026 | Gratis";
 const DESCRIPTION =
@@ -56,16 +58,7 @@ const FAQS = [
 
 export const Route = createFileRoute("/herramientas/accion-de-tutela")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: RUTA },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: RUTA }],
+    ...metaSeo(seoHerramienta("tutela")),
     scripts: [
       {
         type: "application/ld+json",

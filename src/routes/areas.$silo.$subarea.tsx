@@ -1,4 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { metaSeo, SITIO } from "@/lib/seo";
+import { seoSubarea } from "@/lib/seo-inventario";
 import { ArrowRight, Wrench } from "lucide-react";
 import { Acordeon } from "@/components/sitio/Acordeon";
 import { AvisoPlazo } from "@/components/sitio/AvisoPlazo";
@@ -20,23 +22,21 @@ export const Route = createFileRoute("/areas/$silo/$subarea")({
     const d = loaderData.datos;
     const url = `/areas/${params.silo}/${params.subarea}`;
     return {
-      meta: [
-        { title: d.title },
-        { name: "description", content: d.description },
-        { property: "og:title", content: d.title },
-        { property: "og:description", content: d.description },
-        { property: "og:type", content: "article" },
-        { property: "og:url", content: url },
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
-      links: [{ rel: "canonical", href: url }],
+      ...metaSeo(
+        seoSubarea({
+          title: d.title,
+          description: d.description,
+          silo: params.silo,
+          subarea: params.subarea,
+        }),
+      ),
       scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd(d, url)) }],
     };
   },
   component: Pagina,
 });
 
-const BASE = "https://asesoriasjuridicas.co";
+const BASE = SITIO;
 
 function jsonLd(d: SubareaResuelta, ruta: string) {
   const url = BASE + ruta;
