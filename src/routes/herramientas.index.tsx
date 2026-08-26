@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { ArrowRight, Calculator, FileText, HeartHandshake, Home, Scale } from "lucide-react";
 import { IconoFormulario } from "@/components/sitio/IconoFormulario";
 
@@ -8,15 +10,7 @@ const DESCRIPTION =
 
 export const Route = createFileRoute("/herramientas/")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: "/herramientas" }],
+    ...metaSeo(PAGINAS.herramientas),
   }),
   component: Pagina,
 });

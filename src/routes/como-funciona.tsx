@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { Check, ShieldCheck, X } from "lucide-react";
 import { Acordeon, type ItemAcordeon } from "@/components/sitio/Acordeon";
 import { Migas } from "@/components/sitio/Migas";
@@ -125,15 +127,7 @@ const FAQS: ItemAcordeon[] = [
 
 export const Route = createFileRoute("/como-funciona")({
   head: () => ({
-    meta: [
-      { title: "Cómo funciona | Asesorías Jurídicas" },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: "/como-funciona" }],
+    ...metaSeo(PAGINAS.comoFunciona),
     scripts: [
       {
         type: "application/ld+json",

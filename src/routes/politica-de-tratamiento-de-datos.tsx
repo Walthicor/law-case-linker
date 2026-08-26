@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { PaginaLegal } from "@/components/sitio/legal/PaginaLegal";
 import { ACTUALIZACION, TRATAMIENTO } from "@/lib/legal";
 
@@ -8,15 +10,7 @@ const DESC =
 
 export const Route = createFileRoute("/politica-de-tratamiento-de-datos")({
   head: () => ({
-    meta: [
-      { title: "Política de tratamiento de datos | Asesorías Jurídicas" },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: "/politica-de-tratamiento-de-datos" }],
+    ...metaSeo(PAGINAS.tratamiento),
   }),
   component: Pagina,
 });

@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { SITIO } from "@/lib/seo";
 import { ArrowRight, Wrench } from "lucide-react";
 import { Acordeon } from "@/components/sitio/Acordeon";
 import { AvisoPlazo } from "@/components/sitio/AvisoPlazo";
@@ -36,7 +37,7 @@ export const Route = createFileRoute("/areas/$silo/$subarea")({
   component: Pagina,
 });
 
-const BASE = "https://asesoriasjuridicas.co";
+const BASE = SITIO;
 
 function jsonLd(d: SubareaResuelta, ruta: string) {
   const url = BASE + ruta;

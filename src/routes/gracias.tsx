@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/sitio/Logo";
 import { siloDesdeArea } from "@/lib/silos";
@@ -18,15 +20,7 @@ export const Route = createFileRoute("/gracias")({
     ciudad: texto(search["ciudad"]),
   }),
   head: () => ({
-    meta: [
-      { title: "Recibimos tu caso | Asesorías Jurídicas Colombia" },
-      { name: "description", content: "Recibimos tu caso. Te contactamos en 24 horas hábiles." },
-      { property: "og:title", content: "Recibimos tu caso | Asesorías Jurídicas Colombia" },
-      { property: "og:description", content: "Recibimos tu caso. Te contactamos en 24 horas hábiles." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "robots", content: "noindex, nofollow" },
-    ],
+    ...metaSeo(PAGINAS.gracias),
   }),
   component: Pagina,
 });

@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { ShieldCheck } from "lucide-react";
 import { Logo } from "@/components/sitio/Logo";
 import { FormularioCaso } from "@/components/sitio/FormularioCaso";
@@ -20,21 +22,7 @@ export const Route = createFileRoute("/iniciar-caso")({
     valor: texto(search["valor"]),
   }),
   head: () => ({
-    meta: [
-      { title: "Contar mi caso | Asesorías Jurídicas Colombia" },
-      {
-        name: "description",
-        content:
-          "Cuéntanos tu caso en 3 pasos y te conectamos con un abogado especialista verificado en Colombia. Confidencial y sin costo.",
-      },
-      { property: "og:title", content: "Contar mi caso | Asesorías Jurídicas Colombia" },
-      {
-        property: "og:description",
-        content: "Cuéntanos tu caso en 3 pasos y te conectamos con un abogado especialista verificado.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+    ...metaSeo(PAGINAS.iniciarCaso),
   }),
   component: Pagina,
 });

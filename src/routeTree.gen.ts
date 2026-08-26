@@ -22,6 +22,13 @@ import { Route as IniciarCasoRouteImport } from './routes/iniciar-caso'
 import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
 import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-privacidad'
 import { Route as PoliticaDeTratamientoDeDatosRouteImport } from './routes/politica-de-tratamiento-de-datos'
+import { Route as SitemapAbogadosDotxmlRouteImport } from './routes/sitemap-abogados[.]xml'
+import { Route as SitemapAreasDotxmlRouteImport } from './routes/sitemap-areas[.]xml'
+import { Route as SitemapGuiasDotxmlRouteImport } from './routes/sitemap-guias[.]xml'
+import { Route as SitemapHerramientasDotxmlRouteImport } from './routes/sitemap-herramientas[.]xml'
+import { Route as SitemapPaginasDotxmlRouteImport } from './routes/sitemap-paginas[.]xml'
+import { Route as SitemapSubareasDotxmlRouteImport } from './routes/sitemap-subareas[.]xml'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TerminosYCondicionesRouteImport } from './routes/terminos-y-condiciones'
 import { Route as UneteRouteImport } from './routes/unete'
 import { Route as AbogadosIndexRouteImport } from './routes/abogados.index'
@@ -104,6 +111,42 @@ const PoliticaDeTratamientoDeDatosRoute =
     path: '/politica-de-tratamiento-de-datos',
     getParentRoute: () => rootRouteImport,
   } as any)
+const SitemapAbogadosDotxmlRoute = SitemapAbogadosDotxmlRouteImport.update({
+  id: '/sitemap-abogados.xml',
+  path: '/sitemap-abogados.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapAreasDotxmlRoute = SitemapAreasDotxmlRouteImport.update({
+  id: '/sitemap-areas.xml',
+  path: '/sitemap-areas.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapGuiasDotxmlRoute = SitemapGuiasDotxmlRouteImport.update({
+  id: '/sitemap-guias.xml',
+  path: '/sitemap-guias.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapHerramientasDotxmlRoute =
+  SitemapHerramientasDotxmlRouteImport.update({
+    id: '/sitemap-herramientas.xml',
+    path: '/sitemap-herramientas.xml',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SitemapPaginasDotxmlRoute = SitemapPaginasDotxmlRouteImport.update({
+  id: '/sitemap-paginas.xml',
+  path: '/sitemap-paginas.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapSubareasDotxmlRoute = SitemapSubareasDotxmlRouteImport.update({
+  id: '/sitemap-subareas.xml',
+  path: '/sitemap-subareas.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TerminosYCondicionesRoute = TerminosYCondicionesRouteImport.update({
   id: '/terminos-y-condiciones',
   path: '/terminos-y-condiciones',
@@ -199,6 +242,13 @@ export interface FileRoutesByFullPath {
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
+  '/sitemap-abogados.xml': typeof SitemapAbogadosDotxmlRoute
+  '/sitemap-areas.xml': typeof SitemapAreasDotxmlRoute
+  '/sitemap-guias.xml': typeof SitemapGuiasDotxmlRoute
+  '/sitemap-herramientas.xml': typeof SitemapHerramientasDotxmlRoute
+  '/sitemap-paginas.xml': typeof SitemapPaginasDotxmlRoute
+  '/sitemap-subareas.xml': typeof SitemapSubareasDotxmlRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
   '/abogados/$slug': typeof AbogadosSlugRoute
@@ -225,6 +275,13 @@ export interface FileRoutesByTo {
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
+  '/sitemap-abogados.xml': typeof SitemapAbogadosDotxmlRoute
+  '/sitemap-areas.xml': typeof SitemapAreasDotxmlRoute
+  '/sitemap-guias.xml': typeof SitemapGuiasDotxmlRoute
+  '/sitemap-herramientas.xml': typeof SitemapHerramientasDotxmlRoute
+  '/sitemap-paginas.xml': typeof SitemapPaginasDotxmlRoute
+  '/sitemap-subareas.xml': typeof SitemapSubareasDotxmlRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
   '/abogados/$slug': typeof AbogadosSlugRoute
@@ -256,6 +313,13 @@ export interface FileRoutesById {
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
+  '/sitemap-abogados.xml': typeof SitemapAbogadosDotxmlRoute
+  '/sitemap-areas.xml': typeof SitemapAreasDotxmlRoute
+  '/sitemap-guias.xml': typeof SitemapGuiasDotxmlRoute
+  '/sitemap-herramientas.xml': typeof SitemapHerramientasDotxmlRoute
+  '/sitemap-paginas.xml': typeof SitemapPaginasDotxmlRoute
+  '/sitemap-subareas.xml': typeof SitemapSubareasDotxmlRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
   '/abogados/$slug': typeof AbogadosSlugRoute
@@ -288,6 +352,13 @@ export interface FileRouteTypes {
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
     | '/politica-de-tratamiento-de-datos'
+    | '/sitemap-abogados.xml'
+    | '/sitemap-areas.xml'
+    | '/sitemap-guias.xml'
+    | '/sitemap-herramientas.xml'
+    | '/sitemap-paginas.xml'
+    | '/sitemap-subareas.xml'
+    | '/sitemap.xml'
     | '/terminos-y-condiciones'
     | '/unete'
     | '/abogados/$slug'
@@ -314,6 +385,13 @@ export interface FileRouteTypes {
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
     | '/politica-de-tratamiento-de-datos'
+    | '/sitemap-abogados.xml'
+    | '/sitemap-areas.xml'
+    | '/sitemap-guias.xml'
+    | '/sitemap-herramientas.xml'
+    | '/sitemap-paginas.xml'
+    | '/sitemap-subareas.xml'
+    | '/sitemap.xml'
     | '/terminos-y-condiciones'
     | '/unete'
     | '/abogados/$slug'
@@ -344,6 +422,13 @@ export interface FileRouteTypes {
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
     | '/politica-de-tratamiento-de-datos'
+    | '/sitemap-abogados.xml'
+    | '/sitemap-areas.xml'
+    | '/sitemap-guias.xml'
+    | '/sitemap-herramientas.xml'
+    | '/sitemap-paginas.xml'
+    | '/sitemap-subareas.xml'
+    | '/sitemap.xml'
     | '/terminos-y-condiciones'
     | '/unete'
     | '/abogados/$slug'
@@ -375,6 +460,13 @@ export interface RootRouteChildren {
   PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
   PoliticaDePrivacidadRoute: typeof PoliticaDePrivacidadRoute
   PoliticaDeTratamientoDeDatosRoute: typeof PoliticaDeTratamientoDeDatosRoute
+  SitemapAbogadosDotxmlRoute: typeof SitemapAbogadosDotxmlRoute
+  SitemapAreasDotxmlRoute: typeof SitemapAreasDotxmlRoute
+  SitemapGuiasDotxmlRoute: typeof SitemapGuiasDotxmlRoute
+  SitemapHerramientasDotxmlRoute: typeof SitemapHerramientasDotxmlRoute
+  SitemapPaginasDotxmlRoute: typeof SitemapPaginasDotxmlRoute
+  SitemapSubareasDotxmlRoute: typeof SitemapSubareasDotxmlRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TerminosYCondicionesRoute: typeof TerminosYCondicionesRoute
   UneteRoute: typeof UneteRoute
 }
@@ -470,6 +562,55 @@ declare module '@tanstack/react-router' {
       path: '/politica-de-tratamiento-de-datos'
       fullPath: '/politica-de-tratamiento-de-datos'
       preLoaderRoute: typeof PoliticaDeTratamientoDeDatosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-abogados.xml': {
+      id: '/sitemap-abogados.xml'
+      path: '/sitemap-abogados.xml'
+      fullPath: '/sitemap-abogados.xml'
+      preLoaderRoute: typeof SitemapAbogadosDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-areas.xml': {
+      id: '/sitemap-areas.xml'
+      path: '/sitemap-areas.xml'
+      fullPath: '/sitemap-areas.xml'
+      preLoaderRoute: typeof SitemapAreasDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-guias.xml': {
+      id: '/sitemap-guias.xml'
+      path: '/sitemap-guias.xml'
+      fullPath: '/sitemap-guias.xml'
+      preLoaderRoute: typeof SitemapGuiasDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-herramientas.xml': {
+      id: '/sitemap-herramientas.xml'
+      path: '/sitemap-herramientas.xml'
+      fullPath: '/sitemap-herramientas.xml'
+      preLoaderRoute: typeof SitemapHerramientasDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-paginas.xml': {
+      id: '/sitemap-paginas.xml'
+      path: '/sitemap-paginas.xml'
+      fullPath: '/sitemap-paginas.xml'
+      preLoaderRoute: typeof SitemapPaginasDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-subareas.xml': {
+      id: '/sitemap-subareas.xml'
+      path: '/sitemap-subareas.xml'
+      fullPath: '/sitemap-subareas.xml'
+      preLoaderRoute: typeof SitemapSubareasDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terminos-y-condiciones': {
@@ -659,6 +800,13 @@ const rootRouteChildren: RootRouteChildren = {
   PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
   PoliticaDePrivacidadRoute: PoliticaDePrivacidadRoute,
   PoliticaDeTratamientoDeDatosRoute: PoliticaDeTratamientoDeDatosRoute,
+  SitemapAbogadosDotxmlRoute: SitemapAbogadosDotxmlRoute,
+  SitemapAreasDotxmlRoute: SitemapAreasDotxmlRoute,
+  SitemapGuiasDotxmlRoute: SitemapGuiasDotxmlRoute,
+  SitemapHerramientasDotxmlRoute: SitemapHerramientasDotxmlRoute,
+  SitemapPaginasDotxmlRoute: SitemapPaginasDotxmlRoute,
+  SitemapSubareasDotxmlRoute: SitemapSubareasDotxmlRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TerminosYCondicionesRoute: TerminosYCondicionesRoute,
   UneteRoute: UneteRoute,
 }

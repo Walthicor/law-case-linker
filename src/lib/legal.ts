@@ -22,7 +22,7 @@ export const RESPONSABLE = {
   razonSocial: "MARDIGITAL SAS",
   nit: "{NIT PENDIENTE}",
   domicilio: "{DIRECCIÓN PENDIENTE}, Bogotá D.C., Colombia",
-  correo: "datos@asesoriasjuridicas.co",
+  correo: "datos@asesoriasjuridicas.com",
   telefono: "{TELÉFONO PENDIENTE}",
   whatsapp: "{WHATSAPP PENDIENTE}",
   horario: "Lunes a viernes, 8:00 a.m. a 6:00 p.m. (hora de Colombia)",

@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { SITIO } from "@/lib/seo";
 import { ArrowRight, Wrench } from "lucide-react";
 import { Acordeon } from "@/components/sitio/Acordeon";
 import { Migas } from "@/components/sitio/Migas";
@@ -7,7 +8,7 @@ import { CompartirGuia } from "@/components/sitio/guias/CompartirGuia";
 import { TablaContenido, type ItemToc } from "@/components/sitio/guias/TablaContenido";
 import { fechaLarga, guiaPorSlug, type GuiaResuelta } from "@/lib/guias";
 
-const BASE = "https://asesoriasjuridicas.co";
+const BASE = SITIO;
 
 export const Route = createFileRoute("/guias/$slug")({
   loader: ({ params }) => {

@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { useMemo, useState } from "react";
 import { ArrowRight, Search } from "lucide-react";
 import { Migas } from "@/components/sitio/Migas";
@@ -12,15 +14,7 @@ const POR_PAGINA = 9;
 
 export const Route = createFileRoute("/guias/")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: "/guias" }],
+    ...metaSeo(PAGINAS.guias),
   }),
   component: Pagina,
 });

@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { useState } from "react";
 import { Clock, Mail, MessageCircle, Scale, Send } from "lucide-react";
 import { Migas } from "@/components/sitio/Migas";
@@ -10,15 +12,7 @@ const DESC =
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
-    meta: [
-      { title: "Contacto | Asesorías Jurídicas" },
-      { name: "description", content: DESC },
-      { property: "og:title", content: "Contacto | Asesorías Jurídicas Colombia" },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: "/contacto" }],
+    ...metaSeo(PAGINAS.contacto),
   }),
   component: Pagina,
 });

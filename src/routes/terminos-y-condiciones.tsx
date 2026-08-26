@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { PaginaLegal } from "@/components/sitio/legal/PaginaLegal";
 import { ACTUALIZACION, TERMINOS } from "@/lib/legal";
 
@@ -7,16 +9,7 @@ const DESC = "Condiciones de uso de la plataforma Asesorías Jurídicas Colombia
 
 export const Route = createFileRoute("/terminos-y-condiciones")({
   head: () => ({
-    meta: [
-      { title: "Términos y condiciones | Asesorías Jurídicas" },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "robots", content: "noindex, follow" },
-    ],
-    links: [{ rel: "canonical", href: "/terminos-y-condiciones" }],
+    ...metaSeo(PAGINAS.terminos),
   }),
   component: Pagina,
 });

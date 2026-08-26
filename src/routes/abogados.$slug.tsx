@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { SITIO } from "@/lib/seo";
 import { BadgeCheck, ArrowRight } from "lucide-react";
 import { AvatarAbogado } from "@/components/sitio/AvatarAbogado";
 import { Migas } from "@/components/sitio/Migas";
@@ -10,7 +11,7 @@ import {
 } from "@/lib/abogados";
 import { CONTENIDO_GUIAS } from "@/lib/guias";
 
-const BASE = "https://asesoriasjuridicas.co";
+const BASE = SITIO;
 
 export const Route = createFileRoute("/abogados/$slug")({
   loader: ({ params }) => {
