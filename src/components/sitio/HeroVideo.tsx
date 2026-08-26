@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import videoTribunal from "@/assets/hero-tribunal.mp4.asset.json";
 
-// Reemplazar por hero.mp4/hero.webm comprimidos bajo 1MB
-const POSTER = "/hero-poster.webp";
+const POSTER = "/hero-poster.jpg";
+
 
 type Conexion = { saveData?: boolean; effectiveType?: string };
 
