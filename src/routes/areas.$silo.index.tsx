@@ -55,7 +55,7 @@ function jsonLd(p: Pilar) {
       description: p.entrada,
       url,
       serviceType: p.titulo,
-      areaServed: CIUDADES.map((c) => ({ "@type": "City", name: c })),
+      areaServed: areaServedSchema(),
     },
     {
       "@context": "https://schema.org",
