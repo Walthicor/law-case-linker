@@ -57,7 +57,9 @@ export function FormularioPostulacion() {
   const [errores, setErrores] = useState<ErroresPostulacion>({});
   const [enviando, setEnviando] = useState(false);
   const [radicado, setRadicado] = useState<string | null>(null);
+  const [fallo, setFallo] = useState<string | null>(null);
   const contenedor = useRef<HTMLDivElement | null>(null);
+  const enviarAlServidor = useServerFn(enviarPostulacion);
 
   const set = <K extends CampoPostulacion>(campo: K, valor: Postulacion[K]) => {
     setP((prev) => ({ ...prev, [campo]: valor }));
