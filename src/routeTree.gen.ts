@@ -27,6 +27,7 @@ import { Route as UneteRouteImport } from './routes/unete'
 import { Route as AreasIndexRouteImport } from './routes/areas.index'
 import { Route as HerramientasIndexRouteImport } from './routes/herramientas.index'
 import { Route as HerramientasAccionDeTutelaRouteImport } from './routes/herramientas.accion-de-tutela'
+import { Route as HerramientasCalculadoraCuotaAlimentariaRouteImport } from './routes/herramientas.calculadora-cuota-alimentaria'
 import { Route as HerramientasCalculadoraLiquidacionLaboralRouteImport } from './routes/herramientas.calculadora-liquidacion-laboral'
 import { Route as HerramientasContratoDeArrendamientoRouteImport } from './routes/herramientas.contrato-de-arrendamiento'
 import { Route as HerramientasDerechoDePeticionRouteImport } from './routes/herramientas.derecho-de-peticion'
@@ -125,6 +126,12 @@ const HerramientasAccionDeTutelaRoute =
     path: '/accion-de-tutela',
     getParentRoute: () => HerramientasRoute,
   } as any)
+const HerramientasCalculadoraCuotaAlimentariaRoute =
+  HerramientasCalculadoraCuotaAlimentariaRouteImport.update({
+    id: '/calculadora-cuota-alimentaria',
+    path: '/calculadora-cuota-alimentaria',
+    getParentRoute: () => HerramientasRoute,
+  } as any)
 const HerramientasCalculadoraLiquidacionLaboralRoute =
   HerramientasCalculadoraLiquidacionLaboralRouteImport.update({
     id: '/calculadora-liquidacion-laboral',
@@ -171,6 +178,7 @@ export interface FileRoutesByFullPath {
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
   '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
+  '/herramientas/calculadora-cuota-alimentaria': typeof HerramientasCalculadoraCuotaAlimentariaRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
   '/herramientas/contrato-de-arrendamiento': typeof HerramientasContratoDeArrendamientoRoute
   '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
@@ -194,6 +202,7 @@ export interface FileRoutesByTo {
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
   '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
+  '/herramientas/calculadora-cuota-alimentaria': typeof HerramientasCalculadoraCuotaAlimentariaRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
   '/herramientas/contrato-de-arrendamiento': typeof HerramientasContratoDeArrendamientoRoute
   '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
@@ -220,6 +229,7 @@ export interface FileRoutesById {
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
   '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
+  '/herramientas/calculadora-cuota-alimentaria': typeof HerramientasCalculadoraCuotaAlimentariaRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
   '/herramientas/contrato-de-arrendamiento': typeof HerramientasContratoDeArrendamientoRoute
   '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
@@ -247,6 +257,7 @@ export interface FileRouteTypes {
     | '/terminos-y-condiciones'
     | '/unete'
     | '/herramientas/accion-de-tutela'
+    | '/herramientas/calculadora-cuota-alimentaria'
     | '/herramientas/calculadora-liquidacion-laboral'
     | '/herramientas/contrato-de-arrendamiento'
     | '/herramientas/derecho-de-peticion'
@@ -270,6 +281,7 @@ export interface FileRouteTypes {
     | '/terminos-y-condiciones'
     | '/unete'
     | '/herramientas/accion-de-tutela'
+    | '/herramientas/calculadora-cuota-alimentaria'
     | '/herramientas/calculadora-liquidacion-laboral'
     | '/herramientas/contrato-de-arrendamiento'
     | '/herramientas/derecho-de-peticion'
@@ -295,6 +307,7 @@ export interface FileRouteTypes {
     | '/terminos-y-condiciones'
     | '/unete'
     | '/herramientas/accion-de-tutela'
+    | '/herramientas/calculadora-cuota-alimentaria'
     | '/herramientas/calculadora-liquidacion-laboral'
     | '/herramientas/contrato-de-arrendamiento'
     | '/herramientas/derecho-de-peticion'
@@ -450,6 +463,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HerramientasAccionDeTutelaRouteImport
       parentRoute: typeof HerramientasRoute
     }
+    '/herramientas/calculadora-cuota-alimentaria': {
+      id: '/herramientas/calculadora-cuota-alimentaria'
+      path: '/calculadora-cuota-alimentaria'
+      fullPath: '/herramientas/calculadora-cuota-alimentaria'
+      preLoaderRoute: typeof HerramientasCalculadoraCuotaAlimentariaRouteImport
+      parentRoute: typeof HerramientasRoute
+    }
     '/herramientas/calculadora-liquidacion-laboral': {
       id: '/herramientas/calculadora-liquidacion-laboral'
       path: '/calculadora-liquidacion-laboral'
@@ -504,6 +524,7 @@ const AreasRouteWithChildren = AreasRoute._addFileChildren(AreasRouteChildren)
 
 interface HerramientasRouteChildren {
   HerramientasAccionDeTutelaRoute: typeof HerramientasAccionDeTutelaRoute
+  HerramientasCalculadoraCuotaAlimentariaRoute: typeof HerramientasCalculadoraCuotaAlimentariaRoute
   HerramientasCalculadoraLiquidacionLaboralRoute: typeof HerramientasCalculadoraLiquidacionLaboralRoute
   HerramientasContratoDeArrendamientoRoute: typeof HerramientasContratoDeArrendamientoRoute
   HerramientasDerechoDePeticionRoute: typeof HerramientasDerechoDePeticionRoute
@@ -512,6 +533,8 @@ interface HerramientasRouteChildren {
 
 const HerramientasRouteChildren: HerramientasRouteChildren = {
   HerramientasAccionDeTutelaRoute: HerramientasAccionDeTutelaRoute,
+  HerramientasCalculadoraCuotaAlimentariaRoute:
+    HerramientasCalculadoraCuotaAlimentariaRoute,
   HerramientasCalculadoraLiquidacionLaboralRoute:
     HerramientasCalculadoraLiquidacionLaboralRoute,
   HerramientasContratoDeArrendamientoRoute:
