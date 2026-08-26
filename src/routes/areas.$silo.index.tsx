@@ -170,9 +170,8 @@ function Pagina() {
                     className={`mt-3 font-semibold ${s.destacada ? "text-[1.2rem]" : "text-[1rem]"}`}
                   >
                     <Link
-                      to="/areas/$silo"
-                      params={{ silo: p.slug }}
-                      hash={s.slug}
+                      to="/areas/$silo/$subarea"
+                      params={{ silo: p.slug, subarea: s.slug }}
                       className="hover:text-esmeralda"
                     >
                       {s.titulo}
