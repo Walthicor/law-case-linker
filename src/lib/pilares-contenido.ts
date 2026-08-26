@@ -236,7 +236,7 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
       "proceso-ejecutivo":
         "Es la vía rápida para cobrar cuando existe un documento que contiene una obligación clara, expresa y exigible: pagaré, letra, cheque, factura, contrato con firma o acta de conciliación. El juez libra mandamiento de pago sin discutir primero el fondo y permite decretar embargos desde el inicio del proceso.",
       obligaciones:
-        "Cubre el nacimiento, la modificación y la extinción de las obligaciones: pago, novación, compensación, remisión, confusión, prescripción, cesión de créditos, solidaridad, cláusula penal e intereses. Es la base técnica sobre la que se resuelven casi todos los conflictos civiles y comerciales, y donde suele decidirse si una deuda todavía se puede cobrar.",
+        "Antes de demandar conviene revisar qué documento tienes, si la deuda está prescrita y si el deudor tiene bienes que respalden el cobro. Con pagaré, letra o cheque la ruta es ejecutiva; sin documento hay que reconstruir la obligación con transferencias, mensajes y testigos en un proceso ordinario.",
       "responsabilidad-civil":
         "Obliga a reparar el daño causado a otro, sea por incumplir un contrato o por un hecho ilícito ajeno a toda relación previa. Requiere probar el daño, la conducta y el nexo causal, y permite reclamar daño emergente, lucro cesante, daño moral y daño a la vida de relación.",
       arrendamientos:
