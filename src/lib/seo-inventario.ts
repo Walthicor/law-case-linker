@@ -35,12 +35,12 @@ const NOINDEX = "noindex, follow";
 
 export const PAGINAS = {
   home: {
-    titulo: "Asesorías jurídicas en Colombia | Abogados especialistas",
+    titulo: "Cuéntanos qué te pasó. Encontramos tu abogado ideal",
     descripcion:
       "Leemos tu caso y te conectamos con un abogado con tarjeta verificada en tu ciudad. Sin costo para ti.",
     ruta: "/",
     tipo: "website",
-    imagen: OG.base,
+    imagen: OG.social,
     grupo: "paginas",
     prioridad: 1.0,
     lastmod: ULTIMA_REVISION,

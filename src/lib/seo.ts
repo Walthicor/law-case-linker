@@ -17,6 +17,8 @@ export const MAX_DESC = 120;
 
 /** Imágenes OG por tipo de página (fondo papel, logo, franja esmeralda). */
 export const OG = {
+  /** Tarjeta social principal: monograma AJ y la frase con "Abogado" luminoso. */
+  social: "/og/og-social.jpg",
   base: "/og/og-base.jpg",
   areas: "/og/og-areas.jpg",
   guias: "/og/og-guias.jpg",
