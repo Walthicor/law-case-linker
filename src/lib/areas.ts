@@ -5,7 +5,7 @@ export type Area = {
   to: string;
 };
 
-/** Los 13 pilares. `icono` es el nombre del icono lineal de lucide. */
+/** Los 15 pilares. `icono` es el nombre del icono lineal de lucide. */
 export const AREAS: Area[] = [
   {
     titulo: "Laboral",
@@ -72,6 +72,12 @@ export const AREAS: Area[] = [
     titulo: "Insolvencia",
     descripcion: "Negociación de deudas para personas naturales.",
     icono: "Scale",
+    to: "/areas",
+  },
+  {
+    titulo: "Propiedad intelectual",
+    descripcion: "Registro de marca, derechos de autor, software y competencia desleal.",
+    icono: "BadgeCheck",
     to: "/areas",
   },
   {

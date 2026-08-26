@@ -13,6 +13,7 @@ export const PILARES = [
   { titulo: "Consumidor y servicios", slug: "/areas" },
   { titulo: "Deudas y reportes en centrales", slug: "/areas" },
   { titulo: "Derecho administrativo", slug: "/areas" },
+  { titulo: "Propiedad intelectual", slug: "/areas" },
   { titulo: "Migratorio y extranjería", slug: "/areas" },
 ] as const;
 
