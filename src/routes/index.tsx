@@ -25,7 +25,8 @@ function scrollAFormulario() {
 }
 
 const CAPA =
-  "linear-gradient(100deg, rgba(18,33,43,.94) 0%, rgba(18,33,43,.88) 46%, rgba(18,33,43,.72) 100%), repeating-linear-gradient(to bottom, rgba(224,219,209,.05) 0 1px, transparent 1px 32px)";
+  "linear-gradient(100deg, rgba(18,33,43,.86) 0%, rgba(18,33,43,.62) 52%, rgba(18,33,43,.34) 100%), repeating-linear-gradient(to bottom, rgba(224,219,209,.04) 0 1px, transparent 1px 32px)";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -48,13 +49,9 @@ function Index() {
       <HeroVideo />
       <div aria-hidden="true" className="absolute inset-0 z-[1]" style={{ background: CAPA }} />
 
-      <div className="contenedor relative z-[2] grid items-center gap-12 pb-20 pt-28 lg:grid-cols-[56fr_44fr] lg:gap-16 lg:pb-24 lg:pt-32">
-        {/* En móvil el formulario va primero */}
-        <div className="order-1 lg:order-2">
-          <CaratulaExpediente />
-        </div>
+      <div className="contenedor relative z-[2] flex min-h-[calc(100svh-72px)] flex-col justify-center pb-20 pt-28 lg:pb-24 lg:pt-32">
+        <div>
 
-        <div className="order-2 lg:order-1">
           <p className="eyebrow text-esmeralda-lum">
             Plataforma de conexión jurídica · Colombia
           </p>
@@ -118,6 +115,16 @@ function Index() {
         </div>
       </div>
     </section>
+
+    <section className="border-b border-linea bg-papel-hueso py-16 lg:py-20">
+      <div className="contenedor">
+        <div className="mx-auto w-full max-w-[560px]">
+          <CaratulaExpediente />
+        </div>
+      </div>
+    </section>
+
+
 
     <QueHacemos />
     <AreasPractica />
