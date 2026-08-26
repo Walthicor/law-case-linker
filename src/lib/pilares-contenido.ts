@@ -376,12 +376,10 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
         "La defensa técnica cubre desde la primera captura hasta el juicio oral: control de legalidad de la captura, imputación, solicitud de libertad, negociación de preacuerdos y alegato final. Un abogado penal que entra en las primeras horas puede evitar una medida de aseguramiento en establecimiento carcelario que después toma meses levantar.",
       denuncias:
         "Denunciar bien es la mitad del caso. La denuncia se presenta ante la Fiscalía, la URI, la SIJIN o el portal ¡A Denunciar!, y debe narrar hechos concretos con fechas, lugares, personas y las pruebas disponibles. Una denuncia vaga se archiva por atipicidad; una denuncia bien construida orienta el programa metodológico del fiscal desde el primer día.",
-      "audiencias-preliminares":
-        "Legalización de captura, formulación de imputación e imposición de medida de aseguramiento suelen celebrarse en una sola jornada ante el juez de control de garantías. Lo que se diga o se calle ahí define si la persona espera el proceso en libertad, con detención domiciliaria o en un centro de reclusión.",
-      "violencia-intrafamiliar":
-        "El artículo 229 del Código Penal sanciona el maltrato físico o psicológico dentro del núcleo familiar y no admite conciliación ni desistimiento como salida automática. Junto al proceso penal corren las medidas de protección ante la comisaría de familia, que se dictan en horas y son la herramienta más rápida cuando hay riesgo actual.",
-      "delitos-economicos":
-        "Estafa, abuso de confianza, administración desleal, lavado de activos y captación masiva de dineros exigen una defensa distinta: se litiga con contabilidad, trazabilidad bancaria y peritajes financieros. La víctima que reclama a tiempo puede lograr el comiso de bienes y la reparación integral dentro del mismo proceso penal.",
+      libertades:
+        "Legalización de captura, formulación de imputación e imposición de medida de aseguramiento suelen celebrarse en una sola jornada ante el juez de control de garantías. Lo que se diga o se calle ahí define si la persona espera el proceso en libertad, con detención domiciliaria o en un centro de reclusión, y ahí mismo se piden la libertad por vencimiento de términos y la sustitución de la medida.",
+      "delitos-querellables":
+        "Lesiones personales leves, inasistencia alimentaria, injuria y calumnia, hurto simple de menor cuantía, estafa de menor cuantía y otros delitos del artículo 74 de la Ley 906 de 2004 requieren querella del ofendido, admiten conciliación como requisito de procedibilidad y caducan a los 6 meses de conocido el hecho. Dejar pasar ese término cierra la puerta penal por completo.",
     },
     secciones: [
       {
@@ -428,16 +426,14 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
   /* ─────────────────────────── COMERCIAL ─────────────────────────── */
   comercial: {
     subareas: {
-      "constitucion-de-sas":
-        "La SAS se constituye por documento privado inscrito en la cámara de comercio y admite un solo accionista. Lo que define su valor no es el trámite —que es rápido— sino los estatutos: objeto social, capital autorizado y suscrito, restricciones a la negociación de acciones, quórum y causales de exclusión. Unos estatutos copiados de plantilla son la causa más común de bloqueos societarios años después.",
+      sociedades:
+        "Constitución, reformas, transformación, fusión, escisión y liquidación voluntaria o judicial de sociedades. La SAS se constituye por documento privado inscrito en la cámara de comercio y admite un solo accionista. Lo que define su valor no es el trámite —que es rápido— sino los estatutos: objeto social, capital autorizado y suscrito, restricciones a la negociación de acciones, quórum y causales de exclusión. Unos estatutos copiados de plantilla son la causa más común de bloqueos societarios años después.",
       "contratos-comerciales":
         "Suministro, distribución, agencia comercial, franquicia, prestación de servicios, confidencialidad y licencias. En Colombia el contrato de agencia comercial genera la prestación del artículo 1324 del Código de Comercio a favor del agente, y muchas empresas la descubren cuando terminan la relación. Nombrar mal un contrato tiene consecuencias económicas concretas.",
       "conflictos-entre-socios":
         "Bloqueo en la toma de decisiones, abuso del derecho de voto de la mayoría o de la minoría, dividendos que nunca se decretan y administradores que contratan consigo mismos. Las herramientas van desde la impugnación de decisiones de la asamblea hasta la acción social de responsabilidad contra administradores ante la Superintendencia de Sociedades, que actúa con funciones jurisdiccionales.",
-      "reforma-de-estatutos":
-        "Aumentos de capital, cambio de objeto social, transformación, fusión, escisión y acuerdos de accionistas. Toda reforma debe aprobarse con el quórum estatutario, constar en acta con las formalidades del Código de Comercio e inscribirse en el registro mercantil; un acta mal levantada es inoponible frente a terceros y puede ser devuelta por la cámara.",
-      "titulos-valores":
-        "Letras, pagarés y cheques circulan con presunción de autenticidad y prestan mérito ejecutivo. Un pagaré con espacios en blanco necesita carta de instrucciones; un cheque impagado exige constancia del banco; una firma sin poder suficiente destruye el título. El cobro se hace por proceso ejecutivo y la acción cambiaria directa prescribe en 3 años desde el vencimiento.",
+      "cobro-de-cartera":
+        "Cobro jurídico de facturas, pagarés, letras, cheques y contratos incumplidos por proceso ejecutivo, con medidas cautelares desde el inicio. La factura electrónica aceptada expresa o tácitamente presta mérito ejecutivo, y la acción cambiaria directa de los títulos valores prescribe en 3 años desde el vencimiento.",
     },
     secciones: [
       {
@@ -485,16 +481,12 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
   /* ────────────────────── INMOBILIARIO (extenso) ────────────────────── */
   inmobiliario: {
     subareas: {
-      "restitucion-de-inmueble":
-        "Es el proceso para recuperar un inmueble arrendado cuando el arrendatario no paga o incumple el contrato. Se tramita como proceso verbal sumario del artículo 384 del Código General del Proceso y tiene una ventaja decisiva: si la causal es mora, el arrendatario solo puede ser oído en el proceso si acredita el pago de los cánones adeudados o consigna a órdenes del juzgado. Bien radicada, la entrega puede ordenarse en meses y no en años.",
-      "contrato-de-arrendamiento":
-        "El contrato de vivienda urbana se rige por la Ley 820 de 2003 y el comercial por el Código de Comercio, con reglas distintas de renovación, preaviso y reajuste. En vivienda el canon no puede superar el 1% del valor comercial del inmueble, el incremento anual está atado al IPC del año anterior y el depósito en dinero como garantía está prohibido; en local comercial rige el derecho a la renovación del artículo 518.",
-      "compraventa-y-escrituracion":
-        "La compraventa de inmuebles solo se perfecciona con escritura pública y solo produce efectos frente a terceros con el registro en la Oficina de Instrumentos Públicos. Entre la promesa y la escritura hay un espacio de riesgo que se administra con cláusula penal, arras, plazo cierto, notaría determinada y condiciones de desembolso del crédito hipotecario bien redactadas.",
-      "estudio-de-titulos":
-        "Es la revisión de los últimos diez a veinte años de tradición del inmueble: certificado de tradición y libertad, escrituras antecedentes, paz y salvo de predial y valorización, estado de la propiedad horizontal, licencias, embargos, hipotecas, patrimonio de familia, afectación a vivienda familiar, servidumbres, procesos de pertenencia y sucesiones mal cerradas. Es la inversión más rentable de toda la operación.",
-      "propiedad-horizontal":
-        "La Ley 675 de 2001 gobierna la vida en conjuntos y edificios: cuotas de administración con mérito ejecutivo, sanciones por incumplir el reglamento, uso de zonas comunes, obras que afectan la estructura, impugnación de decisiones de la asamblea dentro de los dos meses siguientes y responsabilidad del administrador. Las cuotas atrasadas se cobran por proceso ejecutivo con el certificado del administrador.",
+      compraventa:
+        "La promesa de compraventa debe constar por escrito, con plazo o condición cierta, notaría determinada e identificación completa del inmueble; sin esos requisitos no produce la obligación de escriturar. Arras, cláusula penal y condiciones de desembolso del crédito hipotecario son las cláusulas que deciden quién queda protegido si la operación se cae, y el estudio de títulos previo es lo que evita comprar un pleito.",
+      escrituracion:
+        "La compraventa de inmuebles solo se perfecciona con escritura pública y solo produce efectos frente a terceros con el registro en la Oficina de Instrumentos Públicos. Estudio de títulos, paz y salvos, levantamiento de gravámenes, retención en la fuente, boleta fiscal y turno de registro son los pasos que definen si la escritura sale o se devuelve.",
+      linderos:
+        "Cuando los límites de un predio son inciertos o el vecino ocupó parte del terreno, procede el deslinde y amojonamiento para fijar la línea divisoria y colocar los mojones, con apoyo de topógrafo y de los títulos registrados. Si lo que se discute es la propiedad y no el lindero, la vía es reivindicatoria.",
     },
     secciones: [
       {

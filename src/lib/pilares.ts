@@ -302,9 +302,8 @@ const SEMILLAS: Semilla[] = [
     subareas: [
       { titulo: "Defensa penal", slug: "defensa-penal" },
       { titulo: "Denuncias", slug: "denuncias" },
-      { titulo: "Audiencias preliminares", slug: "audiencias-preliminares" },
-      { titulo: "Violencia intrafamiliar", slug: "violencia-intrafamiliar" },
-      { titulo: "Delitos económicos", slug: "delitos-economicos" },
+      { titulo: "Libertades y control de garantías", slug: "libertades" },
+      { titulo: "Delitos querellables", slug: "delitos-querellables" },
     ],
     normas: [
       {
@@ -517,11 +516,10 @@ const SEMILLAS: Semilla[] = [
       "El constructor incumplió la entrega",
     ],
     subareas: [
-      { titulo: "Restitución de inmueble", slug: "restitucion-de-inmueble", destacada: true },
-      { titulo: "Contrato de arrendamiento", slug: "contrato-de-arrendamiento" },
-      { titulo: "Compraventa y escrituración", slug: "compraventa-y-escrituracion" },
-      { titulo: "Estudio de títulos", slug: "estudio-de-titulos" },
+      { titulo: "Promesa de compraventa", slug: "compraventa", destacada: true },
+      { titulo: "Escrituración", slug: "escrituracion" },
       { titulo: "Propiedad horizontal", slug: "propiedad-horizontal" },
+      { titulo: "Deslinde y amojonamiento", slug: "linderos" },
     ],
     normas: [
       {
@@ -568,11 +566,10 @@ const SEMILLAS: Semilla[] = [
       "Quieres proteger tu negocio antes de crecer",
     ],
     subareas: [
-      { titulo: "Constitución de SAS", slug: "constitucion-de-sas" },
-      { titulo: "Contratos comerciales", slug: "contratos-comerciales" },
+      { titulo: "Sociedades y liquidación", slug: "sociedades" },
       { titulo: "Conflictos entre socios", slug: "conflictos-entre-socios" },
-      { titulo: "Reforma de estatutos", slug: "reforma-de-estatutos" },
-      { titulo: "Títulos valores", slug: "titulos-valores" },
+      { titulo: "Contratos comerciales", slug: "contratos-comerciales" },
+      { titulo: "Cobro jurídico de cartera", slug: "cobro-de-cartera" },
     ],
     normas: [
       {
