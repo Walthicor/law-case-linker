@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link2, Mail, MessageCircle } from "lucide-react";
 
 /** Compartir. WhatsApp primero: es el canal dominante en Colombia. */
 export function CompartirGuia({ titulo }: { titulo: string }) {
   const [copiado, setCopiado] = useState(false);
+  const [url, setUrl] = useState("");
 
-  const url = typeof window === "undefined" ? "" : window.location.href;
+  // Se lee después de hidratar para no romper el HTML del servidor.
+  useEffect(() => setUrl(window.location.href), []);
+
 
   const copiar = async () => {
     try {
