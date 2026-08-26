@@ -355,6 +355,28 @@ export function FormularioPostulacion() {
           <Error msg={errores.autoriza} />
         </div>
 
+        <div aria-live="assertive" role="status">
+          {fallo && (
+            <div className="rounded-[6px] border border-linea bg-papel-hueso px-4 py-3">
+              <p className="text-[0.9rem] font-semibold text-tinta">{fallo}</p>
+              {enlaceWhatsapp("Hola, quiero postularme a la red de abogados.") ? (
+                <a
+                  href={enlaceWhatsapp("Hola, quiero postularme a la red de abogados.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secundario mt-3 inline-flex"
+                >
+                  Escribir por WhatsApp
+                </a>
+              ) : (
+                <p className="mt-2 text-[0.85rem] text-tinta-suave">
+                  Escríbenos a {WHATSAPP_SOPORTE} o inténtalo de nuevo en unos minutos.
+                </p>
+              )}
+            </div>
+          )}
+        </div>
+
         <button type="submit" disabled={enviando} className="btn-primario btn-pulso w-full">
           {enviando ? "Enviando…" : "Enviar postulación →"}
         </button>
