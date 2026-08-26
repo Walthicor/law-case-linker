@@ -34,6 +34,8 @@ export type ContenidoSubarea = {
   /** "Qué puedes reclamar" o "Cómo se resuelve". */
   reclamar: { titulo: string; parrafos: string[]; lista?: string[] };
   pasos: Paso[];
+  /** Bloques H2 adicionales para términos que merecen su propia sección. */
+  bloques?: { titulo: string; parrafos: string[]; lista?: string[] }[];
   /** 5 preguntas para el acordeón y el schema FAQPage. */
   faqs: Faq[];
   /** Slugs de 2 guías DEL MISMO silo. Si se omite, se toman las del pilar. */
