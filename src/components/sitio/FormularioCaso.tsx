@@ -98,8 +98,11 @@ export function FormularioCaso({
       area: inicial?.area ?? "",
       ciudad: inicial?.ciudad ?? "",
       estado: inicial?.estado ?? "",
+      valor: inicial?.valor ?? "",
     };
-    const tieneHome = Boolean(desdeHome.area || desdeHome.ciudad || desdeHome.estado);
+    const tieneHome = Boolean(
+      desdeHome.area || desdeHome.ciudad || desdeHome.estado || desdeHome.valor,
+    );
     if (tieneHome) {
       setCaso((c) => ({ ...c, ...desdeHome }));
       const completo = desdeHome.area && desdeHome.ciudad && desdeHome.estado;
