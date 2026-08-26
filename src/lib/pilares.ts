@@ -42,9 +42,9 @@ export type Pilar = {
   faqs: Faq[];
   guias: Guia[];
   /** Contenido largo desarrollado (pilares con contenido real). */
-  secciones?: Seccion[];
+  secciones?: Seccion[] | undefined;
 
-  herramienta?: { titulo: string; descripcion: string; slug: string };
+  herramienta?: { titulo: string; descripcion: string; slug: string } | undefined;
   relacionados: string[];
   /** Área correspondiente en el formulario de /iniciar-caso */
   areaFormulario: string;
