@@ -239,8 +239,8 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
         "Cubre el nacimiento, la modificación y la extinción de las obligaciones: pago, novación, compensación, remisión, confusión, prescripción, cesión de créditos, solidaridad, cláusula penal e intereses. Es la base técnica sobre la que se resuelven casi todos los conflictos civiles y comerciales, y donde suele decidirse si una deuda todavía se puede cobrar.",
       "responsabilidad-civil":
         "Obliga a reparar el daño causado a otro, sea por incumplir un contrato o por un hecho ilícito ajeno a toda relación previa. Requiere probar el daño, la conducta y el nexo causal, y permite reclamar daño emergente, lucro cesante, daño moral y daño a la vida de relación.",
-      "cobro-de-deudas":
-        "Antes de demandar conviene revisar si la deuda está prescrita, si el documento reúne los requisitos de título ejecutivo y si el deudor tiene bienes que respalden el cobro. Ganar un proceso contra alguien insolvente produce una sentencia impagable; por eso el estudio patrimonial previo suele valer más que la demanda misma.",
+      arrendamientos:
+        "La restitución del inmueble arrendado se pide ante el juez civil cuando el arrendatario no paga o vencido el plazo no entrega. Si la causal es mora, el arrendatario solo puede ser oído en el proceso si consigna lo debido a órdenes del juzgado (Ley 820 de 2003 y art. 384 C.G.P.).",
       "prescripcion-adquisitiva":
         "Permite adquirir la propiedad de un bien por poseerlo de manera pública, pacífica e ininterrumpida durante el tiempo que fija la ley: cinco años en la prescripción ordinaria y diez en la extraordinaria para inmuebles. Es la salida habitual para quien ha vivido décadas en un predio sin escritura a su nombre.",
     },
