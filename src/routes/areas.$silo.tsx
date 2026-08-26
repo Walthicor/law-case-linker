@@ -150,10 +150,22 @@ function Pagina() {
           </Revelar>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {p.subareas.map((s, i) => (
-              <Revelar key={s.slug} retardo={(i % 3) * 60}>
-                <article id={s.slug} className="tarjeta h-full scroll-mt-28">
-                  <Icono nombre={p.icono} clase="h-5 w-5 text-esmeralda" />
-                  <h3 className="mt-3 text-[1rem] font-semibold">
+              <Revelar
+                key={s.slug}
+                retardo={(i % 3) * 60}
+                className={s.destacada ? "sm:col-span-2 lg:col-span-3" : undefined}
+              >
+                <article
+                  id={s.slug}
+                  className={`tarjeta h-full scroll-mt-28 ${
+                    s.destacada ? "border-l-2 border-l-esmeralda bg-papel-hueso" : ""
+                  }`}
+                >
+                  {s.destacada ? <p className="eyebrow">SUBÁREA DESTACADA</p> : null}
+                  <Icono nombre={p.icono} clase="mt-2 h-5 w-5 text-esmeralda" />
+                  <h3
+                    className={`mt-3 font-semibold ${s.destacada ? "text-[1.2rem]" : "text-[1rem]"}`}
+                  >
                     <Link
                       to="/areas/$silo"
                       params={{ silo: p.slug }}
@@ -163,8 +175,12 @@ function Pagina() {
                       {s.titulo}
                     </Link>
                   </h3>
-                  <p className="mt-2 text-[0.88rem] text-tinta-suave">
-                    Contenido en preparación para {s.titulo.toLowerCase()}.
+                  <p
+                    className={`mt-2 text-[0.9rem] leading-relaxed text-tinta-suave ${
+                      s.destacada ? "max-w-[820px]" : ""
+                    }`}
+                  >
+                    {s.texto ?? `Contenido en preparación para ${s.titulo.toLowerCase()}.`}
                   </p>
                 </article>
               </Revelar>
@@ -172,6 +188,43 @@ function Pagina() {
           </div>
         </div>
       </section>
+
+      {/* CONTENIDO DESARROLLADO */}
+      {p.secciones && p.secciones.length > 0 ? (
+        <section className="bg-papel py-4 lg:py-8">
+          <div className="contenedor">
+            <div className="lectura space-y-12">
+              {p.secciones.map((sec) => (
+                <Revelar key={sec.titulo}>
+                  <article>
+                    <h2 className="display-md">{sec.titulo}</h2>
+                    {sec.parrafos.map((t) => (
+                      <p key={t.slice(0, 40)} className="mt-4 leading-relaxed text-tinta-suave">
+                        {t}
+                      </p>
+                    ))}
+                    {sec.lista ? (
+                      <ul className="mt-5 space-y-3">
+                        {sec.lista.map((li) => (
+                          <li key={li} className="flex gap-3 text-[0.95rem] text-tinta-suave">
+                            <Check
+                              aria-hidden="true"
+                              strokeWidth={2}
+                              className="mt-1 h-4 w-4 shrink-0 text-esmeralda"
+                            />
+                            <span>{li}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </article>
+                </Revelar>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
 
       {/* QUÉ DICE LA LEY */}
       <section className="bg-papel-hueso py-16 lg:py-20">
