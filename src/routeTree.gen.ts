@@ -25,6 +25,7 @@ import { Route as PoliticaDeTratamientoDeDatosRouteImport } from './routes/polit
 import { Route as TerminosYCondicionesRouteImport } from './routes/terminos-y-condiciones'
 import { Route as UneteRouteImport } from './routes/unete'
 import { Route as AbogadosIndexRouteImport } from './routes/abogados.index'
+import { Route as AbogadosSlugRouteImport } from './routes/abogados.$slug'
 import { Route as AreasIndexRouteImport } from './routes/areas.index'
 import { Route as GuiasIndexRouteImport } from './routes/guias.index'
 import { Route as GuiasSlugRouteImport } from './routes/guias.$slug'
@@ -118,6 +119,11 @@ const AbogadosIndexRoute = AbogadosIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AbogadosRoute,
 } as any)
+const AbogadosSlugRoute = AbogadosSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => AbogadosRoute,
+} as any)
 const AreasIndexRoute = AreasIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -195,6 +201,7 @@ export interface FileRoutesByFullPath {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/abogados/$slug': typeof AbogadosSlugRoute
   '/guias/$slug': typeof GuiasSlugRoute
   '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
   '/herramientas/calculadora-cuota-alimentaria': typeof HerramientasCalculadoraCuotaAlimentariaRoute
@@ -220,6 +227,7 @@ export interface FileRoutesByTo {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/abogados/$slug': typeof AbogadosSlugRoute
   '/guias/$slug': typeof GuiasSlugRoute
   '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
   '/herramientas/calculadora-cuota-alimentaria': typeof HerramientasCalculadoraCuotaAlimentariaRoute
@@ -250,6 +258,7 @@ export interface FileRoutesById {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/abogados/$slug': typeof AbogadosSlugRoute
   '/guias/$slug': typeof GuiasSlugRoute
   '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
   '/herramientas/calculadora-cuota-alimentaria': typeof HerramientasCalculadoraCuotaAlimentariaRoute
@@ -281,6 +290,7 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/abogados/$slug'
     | '/guias/$slug'
     | '/herramientas/accion-de-tutela'
     | '/herramientas/calculadora-cuota-alimentaria'
@@ -306,6 +316,7 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/abogados/$slug'
     | '/guias/$slug'
     | '/herramientas/accion-de-tutela'
     | '/herramientas/calculadora-cuota-alimentaria'
@@ -335,6 +346,7 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/abogados/$slug'
     | '/guias/$slug'
     | '/herramientas/accion-de-tutela'
     | '/herramientas/calculadora-cuota-alimentaria'
@@ -481,6 +493,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AbogadosIndexRouteImport
       parentRoute: typeof AbogadosRoute
     }
+    '/abogados/$slug': {
+      id: '/abogados/$slug'
+      path: '/$slug'
+      fullPath: '/abogados/$slug'
+      preLoaderRoute: typeof AbogadosSlugRouteImport
+      parentRoute: typeof AbogadosRoute
+    }
     '/areas/': {
       id: '/areas/'
       path: '/'
@@ -562,10 +581,12 @@ declare module '@tanstack/react-router' {
 }
 
 interface AbogadosRouteChildren {
+  AbogadosSlugRoute: typeof AbogadosSlugRoute
   AbogadosIndexRoute: typeof AbogadosIndexRoute
 }
 
 const AbogadosRouteChildren: AbogadosRouteChildren = {
+  AbogadosSlugRoute: AbogadosSlugRoute,
   AbogadosIndexRoute: AbogadosIndexRoute,
 }
 
