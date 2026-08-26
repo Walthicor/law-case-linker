@@ -92,7 +92,11 @@ export function FormularioCaso({
   const [borradorPrevio, setBorradorPrevio] = useState<{ caso: Caso; paso: number } | null>(null);
   const [enviando, setEnviando] = useState(false);
   const [sellando, setSellando] = useState(false);
+  // Radicado provisional: solo alimenta la animación de los dígitos.
   const [radicado] = useState(() => generarRadicado());
+  const [radicadoFinal, setRadicadoFinal] = useState<string | null>(null);
+  const [fallo, setFallo] = useState<string | null>(null);
+  const enviarAlServidor = useServerFn(enviarCaso);
   const contenedor = useRef<HTMLDivElement | null>(null);
   const hidratado = useRef(false);
 
