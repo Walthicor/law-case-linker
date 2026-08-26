@@ -21,16 +21,14 @@ export const Route = createFileRoute("/areas/$silo/$subarea")({
     const d = loaderData.datos;
     const url = `/areas/${params.silo}/${params.subarea}`;
     return {
-      meta: [
-        { title: d.title },
-        { name: "description", content: d.description },
-        { property: "og:title", content: d.title },
-        { property: "og:description", content: d.description },
-        { property: "og:type", content: "article" },
-        { property: "og:url", content: url },
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
-      links: [{ rel: "canonical", href: url }],
+      ...metaSeo(
+        seoSubarea({
+          title: d.title,
+          description: d.description,
+          silo: params.silo,
+          subarea: params.subarea,
+        }),
+      ),
       scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd(d, url)) }],
     };
   },
