@@ -3,7 +3,7 @@ import { Balanza } from "@/components/sitio/Balanza";
 import { IconoFormulario } from "@/components/sitio/IconoFormulario";
 import { HeroVideo } from "@/components/sitio/HeroVideo";
 import { SellosConfianza } from "@/components/sitio/SellosConfianza";
-import { CaratulaExpediente } from "@/components/sitio/CaratulaExpediente";
+
 import { QueHacemos } from "@/components/sitio/home/QueHacemos";
 import { AreasPractica } from "@/components/sitio/home/AreasPractica";
 import { ComoFunciona } from "@/components/sitio/home/ComoFunciona";
