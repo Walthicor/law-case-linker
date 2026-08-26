@@ -1,5 +1,7 @@
 export const PILARES = [
   { titulo: "Derecho laboral", slug: "/areas" },
+  { titulo: "Riesgos laborales y ARL", slug: "/areas" },
+
   { titulo: "Derecho de familia", slug: "/areas" },
   { titulo: "Accidentes y responsabilidad", slug: "/areas" },
   { titulo: "Derecho penal", slug: "/areas" },

@@ -4,10 +4,22 @@
  * SUS guías y como máximo 2 pilares relacionados.
  */
 
-export type Subarea = { titulo: string; slug: string };
+import { CONTENIDO, type Seccion } from "./pilares-contenido";
+
+export type Subarea = {
+  titulo: string;
+  slug: string;
+  /** Texto real de la subárea (contenido desarrollado). */
+  texto?: string | undefined;
+  /** Ocupa el espacio destacado del grid. */
+  destacada?: boolean | undefined;
+};
+
 export type Norma = { articulo: string; norma: string; texto: string };
 export type Faq = { pregunta: string; respuesta: string };
 export type Guia = { titulo: string; slug: string };
+export type { Seccion };
+
 
 export type Pilar = {
   slug: string;
@@ -29,7 +41,10 @@ export type Pilar = {
   abogado: string[];
   faqs: Faq[];
   guias: Guia[];
-  herramienta?: { titulo: string; descripcion: string; slug: string };
+  /** Contenido largo desarrollado (pilares con contenido real). */
+  secciones?: Seccion[] | undefined;
+
+  herramienta?: { titulo: string; descripcion: string; slug: string } | undefined;
   relacionados: string[];
   /** Área correspondiente en el formulario de /iniciar-caso */
   areaFormulario: string;
@@ -110,6 +125,7 @@ const SEMILLAS: Semilla[] = [
       { titulo: "Contrato de trabajo", slug: "contrato-de-trabajo" },
       { titulo: "Horas extras y recargos", slug: "horas-extras" },
       { titulo: "Estabilidad laboral reforzada", slug: "estabilidad-laboral-reforzada" },
+      { titulo: "Derecho colectivo del trabajo", slug: "derecho-colectivo" },
     ],
     normas: [
       {
@@ -125,6 +141,7 @@ const SEMILLAS: Semilla[] = [
           "Si el empleador no paga los salarios y prestaciones al terminar el contrato, debe pagar un día de salario por cada día de retardo.",
       },
     ],
+    // VERIFICAR CON ABOGADO
     plazo: {
       titulo: "Prescripción: 3 años",
       texto:
@@ -143,6 +160,64 @@ const SEMILLAS: Semilla[] = [
     },
     relacionados: ["pensiones", "salud"],
     areaFormulario: "Laboral",
+  },
+  {
+    slug: "riesgos-laborales",
+    area: "de riesgos laborales",
+    titulo: "Riesgos laborales y ARL",
+    keyword: "accidente de trabajo",
+    h1: "Accidente de trabajo: qué te debe pagar la ARL en Colombia",
+    entrada:
+      "Si tuviste un accidente de trabajo o te diagnosticaron una enfermedad laboral, la ARL debe cubrir el tratamiento, pagarte la incapacidad al 100% y calificar tu pérdida de capacidad laboral.",
+    icono: "HardHat",
+    situaciones: [
+      "Tuviste un accidente y la empresa no lo reportó a la ARL",
+      "La ARL dice que tu accidente es de origen común",
+      "Te calificaron un porcentaje de pérdida de capacidad muy bajo",
+      "No te pagan la incapacidad o te la pagan al 66% y no al 100%",
+      "Tienes una enfermedad causada por tu trabajo y nadie la reconoce",
+      "Te quieren despedir con restricciones o secuelas médicas",
+    ],
+    subareas: [
+      { titulo: "Accidente de trabajo", slug: "accidente-de-trabajo" },
+      { titulo: "Enfermedad laboral", slug: "enfermedad-laboral" },
+      { titulo: "Calificación de pérdida de capacidad", slug: "calificacion-perdida-capacidad" },
+      { titulo: "Indemnización y pensión de la ARL", slug: "indemnizacion-arl" },
+      { titulo: "Reintegro y reubicación laboral", slug: "reintegro-y-reubicacion" },
+    ],
+    normas: [
+      {
+        articulo: "Art. 3 Ley 1562 de 2012",
+        norma: "Sistema General de Riesgos Laborales",
+        texto:
+          "Es accidente de trabajo todo suceso repentino que sobrevenga por causa o con ocasión del trabajo y que produzca en el trabajador una lesión orgánica, una perturbación funcional o psiquiátrica, una invalidez o la muerte.",
+      },
+      {
+        articulo: "Art. 216 CST",
+        norma: "Código Sustantivo del Trabajo",
+        texto:
+          "Cuando exista culpa suficientemente comprobada del empleador en la ocurrencia del accidente de trabajo o de la enfermedad laboral, está obligado a la indemnización total y ordinaria de perjuicios.",
+      },
+    ],
+    // VERIFICAR CON ABOGADO
+    plazo: {
+      titulo: "Reporte: 2 días hábiles",
+      texto:
+        "El empleador debe reportar el accidente a la ARL y a la EPS dentro de los 2 días hábiles siguientes (FURAT). Para controvertir el dictamen de pérdida de capacidad tienes 10 días hábiles desde su notificación; las prestaciones económicas causadas prescriben en 3 años.",
+    },
+    guias: [
+      { titulo: "Qué hacer en las primeras 48 horas tras un accidente laboral", slug: "primeras-48-horas-accidente" },
+      { titulo: "Cómo controvertir el dictamen de la ARL", slug: "controvertir-dictamen-arl" },
+      { titulo: "Culpa patronal: cuándo se puede demandar al empleador", slug: "culpa-patronal" },
+    ],
+    herramienta: {
+      titulo: "Calculadora de indemnización por pérdida de capacidad",
+      descripcion:
+        "Estima la indemnización o la pensión de la ARL según tu porcentaje de pérdida de capacidad y tu ingreso base.",
+      slug: "calculadora-arl",
+    },
+    relacionados: ["laboral", "pensiones"],
+    areaFormulario: "Riesgos laborales y ARL",
   },
   {
     slug: "familia",
@@ -182,6 +257,7 @@ const SEMILLAS: Semilla[] = [
           "El juez fijará la cuota alimentaria teniendo en cuenta la capacidad económica del obligado y las necesidades del menor.",
       },
     ],
+    // VERIFICAR CON ABOGADO
     plazo: {
       titulo: "Alimentos: 2 años",
       texto:
@@ -382,6 +458,7 @@ const SEMILLAS: Semilla[] = [
     subareas: [
       { titulo: "Incumplimiento de contrato", slug: "incumplimiento-de-contrato" },
       { titulo: "Proceso ejecutivo", slug: "proceso-ejecutivo" },
+      { titulo: "Obligaciones", slug: "obligaciones" },
       { titulo: "Responsabilidad civil", slug: "responsabilidad-civil" },
       { titulo: "Cobro de deudas", slug: "cobro-de-deudas" },
       { titulo: "Prescripción adquisitiva", slug: "prescripcion-adquisitiva" },
@@ -400,6 +477,7 @@ const SEMILLAS: Semilla[] = [
           "Pueden demandarse ejecutivamente las obligaciones expresas, claras y exigibles que consten en documentos del deudor.",
       },
     ],
+    // VERIFICAR CON ABOGADO
     plazo: {
       titulo: "Prescripción: 5 y 10 años",
       texto:
@@ -622,13 +700,13 @@ const SEMILLAS: Semilla[] = [
     slug: "administrativo",
     area: "administrativo",
     titulo: "Derecho administrativo",
-    keyword: "abogado administrativo",
-    h1: "Abogado administrativo en Colombia",
+    keyword: "derecho administrativo",
+    h1: "Derecho administrativo en Colombia: abogados para pleitos con el Estado",
     entrada:
-      "Un abogado administrativo demanda actos del Estado, reclama indemnizaciones por daños de entidades públicas y defiende a servidores en procesos disciplinarios.",
+      "El derecho administrativo es el que usas frente al Estado: demandar un acto que te perjudica, reclamar por un daño de una entidad pública, defenderte en un proceso disciplinario o reclamar en un contrato estatal.",
     icono: "Landmark",
     situaciones: [
-      "Una entidad pública te negó un derecho",
+      "Una entidad pública te negó un derecho o te sancionó",
       "Necesitas demandar un acto administrativo",
       "Te sancionaron disciplinariamente",
       "El Estado te causó un daño",
@@ -636,11 +714,14 @@ const SEMILLAS: Semilla[] = [
       "No te responden un derecho de petición",
     ],
     subareas: [
-      { titulo: "Nulidad y restablecimiento", slug: "nulidad-y-restablecimiento" },
+      { titulo: "Contratación estatal", slug: "contratacion-estatal", destacada: true },
+      { titulo: "Nulidad y restablecimiento del derecho", slug: "nulidad-y-restablecimiento" },
       { titulo: "Reparación directa", slug: "reparacion-directa" },
-      { titulo: "Contratación estatal", slug: "contratacion-estatal" },
       { titulo: "Derecho disciplinario", slug: "derecho-disciplinario" },
+      { titulo: "Función pública y carrera administrativa", slug: "funcion-publica" },
       { titulo: "Derecho de petición", slug: "derecho-de-peticion" },
+      { titulo: "Acciones populares", slug: "acciones-populares" },
+      { titulo: "Cobro coactivo", slug: "cobro-coactivo" },
     ],
     normas: [
       {
@@ -655,6 +736,7 @@ const SEMILLAS: Semilla[] = [
         texto: "El Estado responde patrimonialmente por los daños antijurídicos que le sean imputables.",
       },
     ],
+    // VERIFICAR CON ABOGADO
     plazo: {
       titulo: "Caducidad: 4 meses",
       texto:
@@ -774,12 +856,21 @@ const SEMILLAS: Semilla[] = [
   },
 ];
 
-export const PILARES: Pilar[] = SEMILLAS.map((s) => ({
-  ...s,
-  solo: s.solo ?? soloBase(s.area),
-  abogado: s.abogado ?? abogadoBase(s.area),
-  faqs: s.faqs ?? faqsBase(s.titulo, s.area),
-}));
+export const PILARES: Pilar[] = SEMILLAS.map((s) => {
+  const extra = CONTENIDO[s.slug];
+  return {
+    ...s,
+    subareas: s.subareas.map((sub) => ({
+      ...sub,
+      texto: sub.texto ?? extra?.subareas?.[sub.slug],
+    })),
+    secciones: s.secciones ?? extra?.secciones,
+    solo: s.solo ?? soloBase(s.area),
+    abogado: s.abogado ?? abogadoBase(s.area),
+    faqs: s.faqs ?? faqsBase(s.titulo, s.area),
+  };
+});
+
 
 export const PILARES_POR_SLUG: Record<string, Pilar> = Object.fromEntries(
   PILARES.map((p) => [p.slug, p]),
