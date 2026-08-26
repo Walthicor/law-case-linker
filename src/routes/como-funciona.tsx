@@ -178,7 +178,7 @@ function Pagina() {
         <h2 className="display-md">Los cuatro pasos, en detalle</h2>
         <div className="mt-10 grid gap-8 md:grid-cols-2">
           {PASOS.map((p, i) => (
-            <Revelar key={p.titulo} delay={i * 60}>
+            <Revelar key={p.titulo} retardo={i * 60}>
               <article className="h-full rounded-[6px] border border-linea bg-papel-hueso p-6">
                 <p className="font-mono text-[0.8rem] font-semibold tracking-[0.06em] text-esmeralda">
                   {String(i + 1).padStart(2, "0")}
