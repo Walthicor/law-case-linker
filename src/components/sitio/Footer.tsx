@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
+import logoClaro from "@/assets/logo-ajc-claro.png.asset.json";
 
 const AREAS = [
   "Derecho laboral",
@@ -30,20 +31,15 @@ export function Footer() {
     <footer className="bg-tinta text-papel">
       <div className="contenedor grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-3">
-            <span
-              aria-hidden="true"
-              className="flex h-9 w-9 items-center justify-center rounded-[6px] bg-esmeralda font-display text-lg leading-none text-papel"
-            >
-              §
-            </span>
-            <span className="flex flex-col leading-none">
-              <span className="text-[0.8rem] font-semibold tracking-[0.08em] text-papel/70">
-                ASESORÍAS JURÍDICAS
-              </span>
-              <span className="font-display text-base font-semibold text-papel">COLOMBIA</span>
-            </span>
-          </div>
+          <Link to="/" className="inline-flex" aria-label="Asesorías Jurídicas Colombia">
+            <img
+              src={logoClaro.url}
+              alt="Asesorías Jurídicas Colombia"
+              width={151}
+              height={100}
+              className="h-[100px] w-auto"
+            />
+          </Link>
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-papel/70">
             Cuéntanos tu problema jurídico y lo perfilamos para conectarte con un abogado
             especialista verificado. Sin costo y confidencial.
