@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-/** Botón flotante para subir rápido: mazo de juez con flecha hacia arriba. */
+/** Botón flotante para subir rápido al inicio de la página. */
 export function BotonSubir() {
   const [visible, setVisible] = useState(false);
 
@@ -34,41 +34,16 @@ export function BotonSubir() {
     >
       <svg
         aria-hidden="true"
-        viewBox="0 0 32 32"
+        viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2.1"
+        strokeWidth="2.2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-7 w-7"
+        className="h-6 w-6"
       >
-        {/* Bloque/base de madera del mazo */}
-        <path
-          d="M8 26.5h16a1.5 1.5 0 0 1 1.5 1.5v1.2a1.5 1.5 0 0 1-1.5 1.5H8a1.5 1.5 0 0 1-1.5-1.5V28a1.5 1.5 0 0 1 1.5-1.5z"
-          stroke="#8B6F4E"
-          fill="rgba(139,111,78,0.12)"
-        />
-        <path d="M9 28h14" stroke="#8B6F4E" strokeWidth="1" opacity="0.6" />
-
-        {/* Mango */}
-        <path d="M16 21.5v-7" stroke="currentColor" strokeWidth="2.5" />
-
-        {/* Cabeza del mazo con bandas decorativas */}
-        <rect
-          x="7"
-          y="5"
-          width="18"
-          height="8"
-          rx="2"
-          fill="currentColor"
-          fillOpacity="0.12"
-        />
-        <path d="M7 8h18" stroke="currentColor" strokeWidth="1" opacity="0.5" />
-        <path d="M7 11h18" stroke="currentColor" strokeWidth="1" opacity="0.5" />
-
-        {/* Flecha hacia arriba integrada, centrada */}
-        <path d="M16 16.5V11" stroke="currentColor" strokeWidth="2.5" />
-        <path d="M12.8 13.5L16 10.3l3.2 3.2" stroke="currentColor" strokeWidth="2.5" />
+        <path d="M12 19V5" />
+        <path d="M5 12l7-7 7 7" />
       </svg>
     </button>
   );

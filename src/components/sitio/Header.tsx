@@ -109,7 +109,7 @@ export function Header() {
           >
             Soy abogado
           </Link>
-          <Link to="/iniciar-caso" className="btn-primario text-sm">
+          <Link to="/iniciar-caso" className="btn-primario btn-pulso text-sm">
             <IconoFormulario />
             Contar mi caso
           </Link>
@@ -159,7 +159,7 @@ export function Header() {
                 </Link>
               </li>
             </ul>
-            <Link to="/iniciar-caso" className="btn-primario mt-8 w-full">
+            <Link to="/iniciar-caso" className="btn-primario btn-pulso mt-8 w-full">
               <IconoFormulario />
               Contar mi caso
             </Link>
