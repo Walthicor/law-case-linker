@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-import logoClaro from "@/assets/logo-ajc-claro.png.asset.json";
+import logoClaro from "@/assets/logo-ajc-v2-claro.png.asset.json";
 
 const AREAS = [
   "Derecho laboral",
@@ -35,7 +35,7 @@ export function Footer() {
             <img
               src={logoClaro.url}
               alt="Asesorías Jurídicas Colombia"
-              width={151}
+              width={163}
               height={100}
               className="h-[100px] w-auto"
             />

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import logoOscuro from "@/assets/logo-ajc.png.asset.json";
-import logoClaro from "@/assets/logo-ajc-claro.png.asset.json";
+import logoOscuro from "@/assets/logo-ajc-v2.png.asset.json";
+import logoClaro from "@/assets/logo-ajc-v2-claro.png.asset.json";
 
 export function Logo({ claro = false }: { claro?: boolean }) {
   return (
@@ -8,7 +8,7 @@ export function Logo({ claro = false }: { claro?: boolean }) {
       <img
         src={claro ? logoClaro.url : logoOscuro.url}
         alt="Asesorías Jurídicas Colombia"
-        width={151}
+        width={163}
         height={100}
         className="h-[100px] w-auto translate-y-[10px]"
       />
