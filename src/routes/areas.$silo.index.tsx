@@ -9,7 +9,7 @@ import { Migas } from "@/components/sitio/Migas";
 import { Revelar } from "@/components/sitio/Revelar";
 import { PILARES, pilarPorSlug, tituloSeo, type Pilar } from "@/lib/pilares";
 
-export const Route = createFileRoute("/areas/$silo")({
+export const Route = createFileRoute("/areas/$silo/")({
   loader: ({ params }) => {
     const pilar = pilarPorSlug(params.silo);
     if (!pilar) throw notFound();
