@@ -35,7 +35,7 @@ export function Footer() {
             <img
               src={logoClaro.url}
               alt="Asesorías Jurídicas Colombia"
-              width={151}
+              width={163}
               height={100}
               className="h-[100px] w-auto"
             />
