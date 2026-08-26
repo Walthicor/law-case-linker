@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { SITIO } from "@/lib/seo";
+import { metaSeo, SITIO } from "@/lib/seo";
+import { seoGuia } from "@/lib/seo-inventario";
 import { ArrowRight, Wrench } from "lucide-react";
 import { Acordeon } from "@/components/sitio/Acordeon";
 import { Migas } from "@/components/sitio/Migas";
