@@ -48,13 +48,9 @@ function Index() {
       <HeroVideo />
       <div aria-hidden="true" className="absolute inset-0 z-[1]" style={{ background: CAPA }} />
 
-      <div className="contenedor relative z-[2] grid items-center gap-12 pb-20 pt-28 lg:grid-cols-[56fr_44fr] lg:gap-16 lg:pb-24 lg:pt-32">
-        {/* En móvil el formulario va primero */}
-        <div className="order-1 lg:order-2">
-          <CaratulaExpediente />
-        </div>
+      <div className="contenedor relative z-[2] flex min-h-[calc(100svh-72px)] flex-col justify-center pb-20 pt-28 lg:pb-24 lg:pt-32">
+        <div>
 
-        <div className="order-2 lg:order-1">
           <p className="eyebrow text-esmeralda-lum">
             Plataforma de conexión jurídica · Colombia
           </p>
