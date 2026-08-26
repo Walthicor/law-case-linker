@@ -41,16 +41,23 @@ export const Route = createFileRoute("/abogados/")({
     // Las combinaciones de filtros generan URL con parámetros: noindex.
     const filtrada = loaderData?.filtrada === true;
     return {
-      meta: [
-        { title: TITLE },
-        { name: "description", content: DESC },
-        { property: "og:title", content: TITLE },
-        { property: "og:description", content: DESC },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-        ...(filtrada ? [{ name: "robots", content: "noindex, follow" }] : []),
+      ...metaSeo({
+        ...PAGINAS.abogados,
+        ...(filtrada ? { robots: "noindex, follow" } : {}),
+      }),
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: PAGINAS.abogados.titulo,
+            description: PAGINAS.abogados.descripcion,
+            url: absoluta(PAGINAS.abogados.ruta),
+            inLanguage: "es-CO",
+          }),
+        },
       ],
-      links: [{ rel: "canonical", href: "/abogados" }],
     };
   },
   component: Pagina,
