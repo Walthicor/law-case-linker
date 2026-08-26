@@ -119,13 +119,15 @@ const SEMILLAS: Semilla[] = [
       "Te despidieron estando en incapacidad o embarazo",
     ],
     subareas: [
-      { titulo: "Despido sin justa causa", slug: "despido-sin-justa-causa" },
-      { titulo: "Liquidación laboral", slug: "liquidacion-laboral" },
+      { titulo: "Despido sin justa causa", slug: "despido-sin-justa-causa", destacada: true },
+      { titulo: "Pago de la liquidación", slug: "liquidacion" },
       { titulo: "Acoso laboral", slug: "acoso-laboral" },
+      { titulo: "Reintegro laboral", slug: "reintegro" },
+      { titulo: "Incapacidades laborales", slug: "incapacidades" },
+      { titulo: "Negociación colectiva y fuero sindical", slug: "derecho-colectivo" },
       { titulo: "Contrato de trabajo", slug: "contrato-de-trabajo" },
       { titulo: "Horas extras y recargos", slug: "horas-extras" },
       { titulo: "Estabilidad laboral reforzada", slug: "estabilidad-laboral-reforzada" },
-      { titulo: "Derecho colectivo del trabajo", slug: "derecho-colectivo" },
     ],
     normas: [
       {
@@ -179,9 +181,11 @@ const SEMILLAS: Semilla[] = [
       "Te quieren despedir con restricciones o secuelas médicas",
     ],
     subareas: [
-      { titulo: "Accidente de trabajo", slug: "accidente-de-trabajo" },
+      { titulo: "Accidente de trabajo", slug: "accidente-de-trabajo", destacada: true },
       { titulo: "Enfermedad laboral", slug: "enfermedad-laboral" },
-      { titulo: "Calificación de pérdida de capacidad", slug: "calificacion-perdida-capacidad" },
+      { titulo: "Pérdida de capacidad laboral", slug: "perdida-de-capacidad-laboral" },
+      { titulo: "Calificación de origen laboral", slug: "calificacion-de-origen" },
+      { titulo: "Junta de calificación de invalidez", slug: "junta-de-calificacion" },
       { titulo: "Indemnización y pensión de la ARL", slug: "indemnizacion-arl" },
       { titulo: "Reintegro y reubicación laboral", slug: "reintegro-y-reubicacion" },
     ],
