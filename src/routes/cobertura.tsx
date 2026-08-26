@@ -152,7 +152,7 @@ function Pagina() {
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {REGIONES_COBERTURA.map((r, i) => (
-              <Revelar key={r.region} delay={i * 60}>
+              <Revelar key={r.region} retardo={i * 60}>
                 <div className="h-full rounded-[6px] border border-linea bg-papel-hueso p-5 sm:p-6">
                   <p className="font-mono text-[0.75rem] font-semibold uppercase tracking-[0.08em] text-esmeralda">
                     {r.region}
@@ -235,7 +235,7 @@ function Pagina() {
           </h2>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {CRITERIOS.map((c, i) => (
-              <Revelar key={c.titulo} delay={i * 60}>
+              <Revelar key={c.titulo} retardo={i * 60}>
                 <div className="h-full rounded-[6px] border border-linea p-5 sm:p-6">
                   <c.icono
                     aria-hidden="true"
