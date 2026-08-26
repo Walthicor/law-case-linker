@@ -10,6 +10,8 @@
  * mismo silo y a la herramienta de su silo. Nunca fuera del silo.
  */
 
+import { SUBAREAS_LABORAL } from "./subareas-laboral";
+import { SUBAREAS_RIESGOS } from "./subareas-riesgos";
 import { pilarPorSlug, type Guia, type Norma, type Faq, type Pilar, type Subarea } from "./pilares";
 
 export type Paso = { titulo: string; texto: string };
@@ -37,7 +39,10 @@ export type ContenidoSubarea = {
 };
 
 /** Contenido real por `"{silo}/{subarea}"`. Se llena en 09a–09e. */
-export const CONTENIDO_SUBAREAS: Record<string, ContenidoSubarea> = {};
+export const CONTENIDO_SUBAREAS: Record<string, ContenidoSubarea> = {
+  ...SUBAREAS_LABORAL,
+  ...SUBAREAS_RIESGOS,
+};
 
 export type SubareaResuelta = ContenidoSubarea & {
   pilar: Pilar;
@@ -98,5 +103,8 @@ export function contenidoSubarea(siloSlug: string, subareaSlug: string): Subarea
 
 /** Todas las rutas /areas/[silo]/[subarea] existentes. */
 export function rutasSubareas(): { silo: string; subarea: string }[] {
-  return [];
+  return Object.keys(CONTENIDO_SUBAREAS).map((k) => {
+    const [silo, subarea] = k.split("/");
+    return { silo: silo as string, subarea: subarea as string };
+  });
 }
