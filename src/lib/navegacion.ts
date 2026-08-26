@@ -18,7 +18,6 @@ export const PILARES = [
 ] as const;
 
 export const MENU = [
-  { titulo: "Inicio", to: "/" },
   { titulo: "Áreas", to: "/areas", dropdown: true },
   { titulo: "Herramientas", to: "/herramientas" },
   { titulo: "Guías", to: "/guias" },
