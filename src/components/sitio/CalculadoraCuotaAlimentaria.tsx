@@ -1,5 +1,5 @@
 import { useId, useRef, useState } from "react";
-import { evento } from "@/lib/analitica";
+import { evento as registrarEvento } from "@/lib/analitica";
 import { Link } from "@tanstack/react-router";
 import { AlertTriangle, Download } from "lucide-react";
 import { miles, pesos, rangoValor } from "@/lib/liquidacion";
@@ -119,7 +119,7 @@ export function CalculadoraCuotaAlimentaria() {
       otrasObligaciones: num(f.otrasObligaciones),
     };
     setResultado(calcularAlimentos(datos));
-    evento("herramienta_usada", { nombre: "calculadora-cuota-alimentaria" });
+    registrarEvento("herramienta_usada", { nombre: "calculadora-cuota-alimentaria" });
     setEnviado(false);
     requestAnimationFrame(() =>
       resultadoRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
@@ -127,7 +127,7 @@ export function CalculadoraCuotaAlimentaria() {
   }
 
   const descargar = () => {
-    evento("pdf_descargado", { nombre: "calculadora-cuota-alimentaria" });
+    registrarEvento("pdf_descargado", { nombre: "calculadora-cuota-alimentaria" });
     window.print();
   };
 
