@@ -358,4 +358,299 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
       },
     ],
   },
+
+  /* ─────────────────────────── PENAL ─────────────────────────── */
+  penal: {
+    subareas: {
+      "defensa-penal":
+        "La defensa técnica cubre desde la primera captura hasta el juicio oral: control de legalidad de la captura, imputación, solicitud de libertad, negociación de preacuerdos y alegato final. Un abogado penal que entra en las primeras horas puede evitar una medida de aseguramiento en establecimiento carcelario que después toma meses levantar.",
+      denuncias:
+        "Denunciar bien es la mitad del caso. La denuncia se presenta ante la Fiscalía, la URI, la SIJIN o el portal ¡A Denunciar!, y debe narrar hechos concretos con fechas, lugares, personas y las pruebas disponibles. Una denuncia vaga se archiva por atipicidad; una denuncia bien construida orienta el programa metodológico del fiscal desde el primer día.",
+      "audiencias-preliminares":
+        "Legalización de captura, formulación de imputación e imposición de medida de aseguramiento suelen celebrarse en una sola jornada ante el juez de control de garantías. Lo que se diga o se calle ahí define si la persona espera el proceso en libertad, con detención domiciliaria o en un centro de reclusión.",
+      "violencia-intrafamiliar":
+        "El artículo 229 del Código Penal sanciona el maltrato físico o psicológico dentro del núcleo familiar y no admite conciliación ni desistimiento como salida automática. Junto al proceso penal corren las medidas de protección ante la comisaría de familia, que se dictan en horas y son la herramienta más rápida cuando hay riesgo actual.",
+      "delitos-economicos":
+        "Estafa, abuso de confianza, administración desleal, lavado de activos y captación masiva de dineros exigen una defensa distinta: se litiga con contabilidad, trazabilidad bancaria y peritajes financieros. La víctima que reclama a tiempo puede lograr el comiso de bienes y la reparación integral dentro del mismo proceso penal.",
+    },
+    secciones: [
+      {
+        titulo: "Cuándo necesitas un abogado penal y por qué la hora importa",
+        parrafos: [
+          "Buscar un abogado penal casi nunca ocurre con calma: sucede después de una captura, de una citación de la Fiscalía o de una notificación que llegó sin aviso. El derecho penal colombiano es adversarial desde la Ley 906 de 2004, lo que significa que hay dos partes enfrentadas ante un juez imparcial y que la persona sin defensa técnica queda en desventaja estructural frente a un fiscal con policía judicial, peritos y tiempo.",
+          "El primer plazo es el más corto de todo el ordenamiento: capturada una persona, debe ser puesta a disposición de un juez de control de garantías dentro de las 36 horas siguientes. En esa audiencia se revisa la legalidad de la captura, se formula imputación y se decide la medida de aseguramiento. Quien llega sin abogado de confianza recibe un defensor público que conoce el expediente minutos antes, y esa diferencia de preparación pesa.",
+          "El segundo momento crítico es la citación a interrogatorio o a entrevista. Muchas personas asisten solas creyendo que aclarar el malentendido las dejará fuera del proceso, y terminan entregando la prueba que faltaba. Nadie está obligado a declarar contra sí mismo ni contra su cónyuge o parientes cercanos; ejercer ese derecho no es señal de culpa, es defensa elemental.",
+        ],
+      },
+      {
+        titulo: "Las etapas del proceso penal en Colombia",
+        parrafos: [
+          "El proceso arranca con la indagación: la Fiscalía recibe la noticia criminal, abre el caso y ordena actos de investigación. Esta etapa puede durar meses y la persona investigada muchas veces ni se entera, salvo que la citen. Si el fiscal considera que hay inferencia razonable de autoría, convoca a la audiencia de formulación de imputación y desde ahí la persona es imputada y el caso pasa a investigación formal.",
+          "Después viene el escrito de acusación, la audiencia de acusación, la audiencia preparatoria donde se decide qué pruebas entran al juicio y, finalmente, el juicio oral con interrogatorio y contrainterrogatorio de testigos. La sentencia se anuncia al terminar y, si es condenatoria, se abre el incidente de reparación integral para las víctimas. Cada etapa tiene términos que, si se vencen, generan libertad por vencimiento de términos.",
+          "Existen salidas anticipadas que muchas veces convienen más que llegar al juicio: allanamiento a cargos con rebaja de hasta la mitad de la pena si ocurre en la imputación, preacuerdos con la Fiscalía, principio de oportunidad y, en delitos querellables, conciliación como requisito de procedibilidad. Elegir entre litigar o negociar es una decisión estratégica que depende de la fuerza probatoria del caso, no del optimismo.",
+        ],
+      },
+      {
+        titulo: "Delitos querellables, conciliación y desistimiento",
+        parrafos: [
+          "No todos los delitos se persiguen de oficio. Los querellables —lesiones personales leves, injuria, calumnia, hurto simple de menor cuantía, inasistencia alimentaria, entre otros— exigen que la víctima presente querella dentro de los seis meses siguientes al conocimiento del hecho y requieren audiencia de conciliación antes de continuar. Si nadie querella dentro de ese término, la acción penal se extingue.",
+          "La conciliación no es una derrota para la víctima: bien negociada permite obtener reparación económica real y verificable en semanas, en lugar de esperar años una condena que quizá nunca se traduzca en pago. Para el investigado, conciliar extingue la acción penal y evita antecedentes. En ambos extremos conviene que el acuerdo quede documentado con cláusulas de cumplimiento y no como una promesa verbal en el pasillo del juzgado.",
+          "En cambio, en delitos como violencia intrafamiliar, delitos sexuales o violencia de género la conciliación está restringida o prohibida, precisamente porque el legislador reconoce que existe una asimetría de poder que vicia cualquier acuerdo. Confundir estos regímenes es un error frecuente y grave.",
+        ],
+      },
+      {
+        titulo: "Ser víctima dentro del proceso penal",
+        parrafos: [
+          "La víctima en Colombia no es un espectador: puede constituirse como parte, aportar elementos materiales probatorios, solicitar medidas de protección, oponerse a preacuerdos que desconozcan sus derechos y reclamar reparación integral en un incidente posterior a la condena. Ejercer esos derechos requiere abogado, porque la Fiscalía representa a la sociedad, no a la víctima en particular.",
+          "La reparación integral cubre daño emergente, lucro cesante, daño moral y daño a la vida de relación. Cuando el responsable no tiene bienes, la vía penal puede resultar simbólica; por eso conviene evaluar desde el inicio si conviene además una demanda de responsabilidad civil o un proceso ejecutivo paralelo, y si hay un tercero civilmente responsable —una empresa, un asegurador— con capacidad de pago.",
+        ],
+      },
+      {
+        titulo: "Antecedentes, libertad y consecuencias más allá de la condena",
+        parrafos: [
+          "Una condena penal no termina con la pena: deja anotaciones que afectan el empleo, la contratación estatal, la salida del país y la custodia de hijos en procesos de familia. Por eso incluso en casos aparentemente menores conviene evaluar la salida que menos huella deje, y no solo la que resuelva rápido la audiencia de mañana.",
+          "La detención domiciliaria, la prisión domiciliaria por ser padre o madre cabeza de familia, la suspensión condicional de la ejecución de la pena y la libertad condicional son figuras con requisitos objetivos: monto de la pena, antecedentes, arraigo y reparación. Un buen abogado las plantea con documentos —certificados de residencia, contratos laborales, historias clínicas— y no con argumentos genéricos.",
+        ],
+      },
+    ],
+  },
+
+  /* ─────────────────────────── COMERCIAL ─────────────────────────── */
+  comercial: {
+    subareas: {
+      "constitucion-de-sas":
+        "La SAS se constituye por documento privado inscrito en la cámara de comercio y admite un solo accionista. Lo que define su valor no es el trámite —que es rápido— sino los estatutos: objeto social, capital autorizado y suscrito, restricciones a la negociación de acciones, quórum y causales de exclusión. Unos estatutos copiados de plantilla son la causa más común de bloqueos societarios años después.",
+      "contratos-comerciales":
+        "Suministro, distribución, agencia comercial, franquicia, prestación de servicios, confidencialidad y licencias. En Colombia el contrato de agencia comercial genera la prestación del artículo 1324 del Código de Comercio a favor del agente, y muchas empresas la descubren cuando terminan la relación. Nombrar mal un contrato tiene consecuencias económicas concretas.",
+      "conflictos-entre-socios":
+        "Bloqueo en la toma de decisiones, abuso del derecho de voto de la mayoría o de la minoría, dividendos que nunca se decretan y administradores que contratan consigo mismos. Las herramientas van desde la impugnación de decisiones de la asamblea hasta la acción social de responsabilidad contra administradores ante la Superintendencia de Sociedades, que actúa con funciones jurisdiccionales.",
+      "reforma-de-estatutos":
+        "Aumentos de capital, cambio de objeto social, transformación, fusión, escisión y acuerdos de accionistas. Toda reforma debe aprobarse con el quórum estatutario, constar en acta con las formalidades del Código de Comercio e inscribirse en el registro mercantil; un acta mal levantada es inoponible frente a terceros y puede ser devuelta por la cámara.",
+      "titulos-valores":
+        "Letras, pagarés y cheques circulan con presunción de autenticidad y prestan mérito ejecutivo. Un pagaré con espacios en blanco necesita carta de instrucciones; un cheque impagado exige constancia del banco; una firma sin poder suficiente destruye el título. El cobro se hace por proceso ejecutivo y la acción cambiaria directa prescribe en 3 años desde el vencimiento.",
+    },
+    secciones: [
+      {
+        titulo: "Qué cubre el derecho comercial en Colombia",
+        parrafos: [
+          "El derecho comercial regula la actividad de los comerciantes y los actos de comercio: constituir sociedades, contratar con proveedores y clientes, emitir y cobrar títulos valores, competir en el mercado y resolver los conflictos que surgen de todo lo anterior. Se rige por el Código de Comercio de 1971, complementado por la Ley 1258 de 2008 sobre la SAS, la Ley 222 de 1995 y la doctrina de la Superintendencia de Sociedades.",
+          "En la práctica, el derecho comercial se contrata en dos momentos opuestos. El primero es preventivo: alguien va a montar una empresa, recibir inversión, firmar un contrato de distribución o incorporar un socio, y quiere que el documento sostenga la relación. El segundo es reactivo: el socio se fue con la base de clientes, el cliente no pagó una factura de doscientos millones o la asamblea aprobó una capitalización que diluyó a la minoría.",
+          "El costo de la asesoría preventiva es una fracción del costo del litigio posterior. Un acuerdo de accionistas bien redactado —con cláusulas de arrastre, de acompañamiento, de no competencia y de resolución de bloqueos— cuesta menos que un mes de un proceso ante la Superintendencia de Sociedades.",
+        ],
+      },
+      {
+        titulo: "Constituir la sociedad correcta: SAS, SRL o sucursal",
+        parrafos: [
+          "La SAS domina el panorama colombiano porque permite un accionista único, responsabilidad limitada al aporte, libertad casi total para diseñar los estatutos y constitución por documento privado. La sociedad de responsabilidad limitada y la anónima sobreviven en escenarios específicos: la anónima cuando se busca captar inversión abierta o cumplir requisitos regulatorios, y la sucursal de sociedad extranjera cuando la matriz no quiere crear una persona jurídica nueva en el país.",
+          "Constituir no es solo inscribir. Hay que definir el objeto —hoy puede ser indeterminado en la SAS, pero conviene precisarlo cuando se contratará con el Estado o con entidades vigiladas—, el capital autorizado, suscrito y pagado, la estructura de administración, el representante legal y sus suplentes, y el régimen de solución de conflictos. Después vienen RUT, registro mercantil, libros, facturación electrónica y las obligaciones ante la DIAN.",
+          "La responsabilidad limitada tiene límites reales. El artículo 42 de la Ley 1258 permite levantar el velo corporativo cuando la sociedad se usa en fraude a la ley o en perjuicio de terceros, y los administradores responden personalmente por dolo o culpa en el ejercicio de sus funciones. Usar la sociedad como caja personal es la forma más rápida de perder la protección que la ley otorga.",
+        ],
+      },
+      {
+        titulo: "Cobrar lo que la empresa le deben: la vía ejecutiva",
+        parrafos: [
+          "Cuando un cliente no paga, la pregunta técnica es si el documento que se tiene presta mérito ejecutivo. Una factura electrónica aceptada expresa o tácitamente, un pagaré, un contrato con obligación clara, expresa y exigible o un título valor permiten demandar directamente el pago y pedir medidas cautelares sobre cuentas bancarias e inmuebles desde el auto que libra mandamiento de pago.",
+          "Si no hay título ejecutivo, el camino es un proceso declarativo verbal para que un juez declare el incumplimiento y condene al pago, lo que agrega tiempo. Por eso el diseño contractual importa: cláusula penal, intereses moratorios a la tasa máxima legal, pagaré en blanco con carta de instrucciones y garantías reales o personales convierten un cobro incierto en uno con respaldo.",
+          "También existe la insolvencia: si el deudor entra en reorganización empresarial bajo la Ley 1116 de 2006, los procesos ejecutivos se suspenden y el crédito debe presentarse dentro del proceso concursal con su calificación y graduación. Detectar a tiempo que el deudor va hacia allá cambia la estrategia por completo.",
+        ],
+      },
+      {
+        titulo: "Conflictos societarios y responsabilidad de los administradores",
+        parrafos: [
+          "La Superintendencia de Sociedades ejerce funciones jurisdiccionales y resuelve, con procedimientos más rápidos que la justicia ordinaria, la impugnación de decisiones sociales, la acción social de responsabilidad contra administradores, los conflictos derivados de acuerdos de accionistas y la declaratoria de abuso del derecho de voto en sus tres modalidades: mayoritario, minoritario y de paridad.",
+          "Los administradores —representante legal, junta directiva, liquidador— deben obrar de buena fe, con lealtad y con la diligencia de un buen hombre de negocios (artículo 23 de la Ley 222 de 1995). Contratar con la sociedad sin autorización de la asamblea, competirle, desviar oportunidades de negocio o repartir utilidades inexistentes genera responsabilidad solidaria e ilimitada por los perjuicios causados.",
+          "Los plazos importan: la impugnación de decisiones de la asamblea debe presentarse dentro de los dos meses siguientes a la reunión o a su inscripción cuando la decisión sea registrable. Dejar pasar ese término convierte una decisión viciada en una decisión firme.",
+        ],
+      },
+      {
+        titulo: "Qué documentos tener listos antes de la primera reunión",
+        parrafos: [
+          "Para un caso comercial, el abogado necesita ver el certificado de existencia y representación legal actualizado, los estatutos vigentes con todas sus reformas, las actas de asamblea o junta relevantes, el contrato en discusión con sus otrosíes y anexos, las facturas o títulos valores pendientes y la correspondencia donde conste el incumplimiento o el requerimiento.",
+          "Con ese material se puede estimar en la primera conversación si hay título ejecutivo, qué cuantía se persigue, ante qué autoridad se litiga y cuánto puede costar. Sin él, cualquier estimación es especulación.",
+        ],
+      },
+    ],
+  },
+
+  /* ────────────────────── INMOBILIARIO (extenso) ────────────────────── */
+  inmobiliario: {
+    subareas: {
+      "restitucion-de-inmueble":
+        "Es el proceso para recuperar un inmueble arrendado cuando el arrendatario no paga o incumple el contrato. Se tramita como proceso verbal sumario del artículo 384 del Código General del Proceso y tiene una ventaja decisiva: si la causal es mora, el arrendatario solo puede ser oído en el proceso si acredita el pago de los cánones adeudados o consigna a órdenes del juzgado. Bien radicada, la entrega puede ordenarse en meses y no en años.",
+      "contrato-de-arrendamiento":
+        "El contrato de vivienda urbana se rige por la Ley 820 de 2003 y el comercial por el Código de Comercio, con reglas distintas de renovación, preaviso y reajuste. En vivienda el canon no puede superar el 1% del valor comercial del inmueble, el incremento anual está atado al IPC del año anterior y el depósito en dinero como garantía está prohibido; en local comercial rige el derecho a la renovación del artículo 518.",
+      "compraventa-y-escrituracion":
+        "La compraventa de inmuebles solo se perfecciona con escritura pública y solo produce efectos frente a terceros con el registro en la Oficina de Instrumentos Públicos. Entre la promesa y la escritura hay un espacio de riesgo que se administra con cláusula penal, arras, plazo cierto, notaría determinada y condiciones de desembolso del crédito hipotecario bien redactadas.",
+      "estudio-de-titulos":
+        "Es la revisión de los últimos diez a veinte años de tradición del inmueble: certificado de tradición y libertad, escrituras antecedentes, paz y salvo de predial y valorización, estado de la propiedad horizontal, licencias, embargos, hipotecas, patrimonio de familia, afectación a vivienda familiar, servidumbres, procesos de pertenencia y sucesiones mal cerradas. Es la inversión más rentable de toda la operación.",
+      "propiedad-horizontal":
+        "La Ley 675 de 2001 gobierna la vida en conjuntos y edificios: cuotas de administración con mérito ejecutivo, sanciones por incumplir el reglamento, uso de zonas comunes, obras que afectan la estructura, impugnación de decisiones de la asamblea dentro de los dos meses siguientes y responsabilidad del administrador. Las cuotas atrasadas se cobran por proceso ejecutivo con el certificado del administrador.",
+    },
+    secciones: [
+      {
+        titulo: "Qué hace un abogado inmobiliario y cuándo vale la pena contratarlo",
+        parrafos: [
+          "Un abogado inmobiliario interviene en la operación más grande que la mayoría de los colombianos hace en su vida: comprar, vender, arrendar o heredar un inmueble. Su trabajo no es llenar formatos, sino verificar que quien vende puede vender, que el bien está libre de gravámenes que sobrevivan a la venta, que el precio se pague contra la entrega de un título que efectivamente transfiera la propiedad y que el contrato prevea qué pasa si algo sale mal.",
+          "La mayoría de los conflictos inmobiliarios no nacen de una estafa evidente, sino de detalles que nadie revisó: una sucesión que quedó a medias y dejó herederos sin firmar, un patrimonio de familia inembargable constituido sobre el predio, una hipoteca cancelada en la práctica pero no en el folio, un área construida que no coincide con la licencia, una servidumbre de tránsito a favor del vecino o un impuesto predial de tres años que la ley traslada al nuevo propietario.",
+          "El costo de esa revisión es marginal frente al valor del negocio, y es la razón por la que un estudio de títulos serio se paga solo. En operaciones con crédito hipotecario el banco hace su propio estudio, pero lo hace para proteger su garantía, no para proteger al comprador: no le va a advertir que el apartamento tiene una obra sin licencia ni que el conjunto tiene un proceso de reparaciones locativas que le van a cobrar en cuotas extraordinarias.",
+        ],
+      },
+      {
+        titulo: "Comprar vivienda sin sorpresas: la secuencia correcta",
+        parrafos: [
+          "El orden importa. Primero se pide el certificado de tradición y libertad reciente y se lee completo, anotación por anotación, no solo la última. Ahí aparecen hipotecas, embargos, demandas registradas, afectaciones a vivienda familiar, patrimonio de familia, condiciones resolutorias, limitaciones de dominio y la cadena de propietarios anteriores. Un folio con muchas transferencias en poco tiempo o con una sucesión sin liquidar merece un análisis más profundo.",
+          "Después viene la promesa de compraventa. Debe constar por escrito, identificar el inmueble por matrícula y linderos, fijar precio y forma de pago, señalar fecha, hora y notaría exactas para la escritura, precisar la fecha de entrega material y establecer arras o cláusula penal. Una promesa sin fecha determinada de notaría es, según reiterada jurisprudencia, un documento débil para exigir el cumplimiento.",
+          "Luego la escritura pública ante notario, con el pago de los derechos notariales, la retención en la fuente y el impuesto de registro. Y finalmente el registro en la Oficina de Registro de Instrumentos Públicos: mientras la escritura no esté registrada, el comprador no es dueño frente a terceros y el vendedor todavía figura como titular. La entrega de las llaves no transfiere nada; lo que transfiere es el folio.",
+          "Cuando se compra sobre planos o en proyecto, el análisis cambia: hay que revisar la licencia de construcción, la existencia del patrimonio autónomo o fiducia, el punto de equilibrio, la póliza de estabilidad de la obra y las condiciones de desistimiento. La entrega tardía y los cambios de especificaciones son las dos quejas más frecuentes frente a constructoras, y ambas se reclaman mejor cuando el contrato de vinculación lo previó.",
+        ],
+      },
+      {
+        titulo: "Arrendamiento de vivienda: reglas que casi nadie aplica bien",
+        parrafos: [
+          "La Ley 820 de 2003 fija un marco protector para el arrendatario de vivienda urbana que muchos contratos ignoran. El canon no puede exceder el 1% del valor comercial del inmueble; el reajuste anual no puede superar el IPC del año anterior y solo procede cumplido un año de ejecución; está prohibido exigir depósitos en dinero o cualquier caución real para garantizar el pago, aunque sí se admiten coarrendatarios, fiadores y pólizas de arrendamiento.",
+          "El contrato de vivienda se entiende prorrogado automáticamente por periodos iguales si ninguna de las partes avisa. Para que el arrendador termine por vencimiento del término debe dar preaviso de tres meses con constancia de recibo e indemnizar en los casos que la ley exige; el arrendatario puede terminar dando preaviso de tres meses y pagando una indemnización equivalente a tres meses de canon, o sin indemnización cuando invoca las causales legales del artículo 24.",
+          "Las causales del arrendador para terminar unilateralmente están tasadas: la no consignación del canon, el subarriendo o cesión no autorizada, el daño al inmueble, el uso distinto al pactado, la violación de las normas de propiedad horizontal y, con preaviso e indemnización, la necesidad de ocupar el inmueble o de demolerlo o repararlo. Inventar una causal distinta hace que la terminación no prospere.",
+          "El arrendador que quiere recuperar el inmueble por mora tiene un camino corto, pero solo si el contrato y los pagos están documentados: canon, fecha de pago, forma de pago y recibos. Cuando el pago se hizo en efectivo sin recibos durante años, probar la mora se vuelve un problema del arrendador, no del arrendatario.",
+        ],
+      },
+      {
+        titulo: "Restitución de inmueble arrendado: cómo funciona el proceso",
+        parrafos: [
+          "La restitución es un proceso verbal sumario ante el juez civil municipal del lugar del inmueble. La demanda se presenta con el contrato, la prueba del incumplimiento y el certificado de tradición o la prueba de la calidad de arrendador. Si la causal es mora en el pago, opera una regla que cambia el equilibrio del proceso: el arrendatario no será oído hasta que demuestre haber pagado los cánones adeudados o los consigne a órdenes del juzgado.",
+          "Además, el juez puede ordenar la práctica de la diligencia de entrega antes de la sentencia cuando el arrendatario no se opone válidamente. En la práctica, un proceso de restitución bien documentado se resuelve en cuestión de meses; uno con contrato verbal, pagos sin registro y causales mal invocadas puede extenderse un par de años.",
+          "Cuando el inmueble es un local comercial, el análisis es distinto: el arrendatario que ocupó el local con el mismo establecimiento por dos años o más tiene derecho a la renovación del contrato salvo las excepciones del artículo 518 del Código de Comercio, y el desahucio debe darse con seis meses de anticipación. Confundir el régimen de vivienda con el comercial es un error que hace perder el caso antes de empezar.",
+        ],
+      },
+      {
+        titulo: "Propiedad horizontal: cuotas, asambleas y conflictos con la administración",
+        parrafos: [
+          "El certificado de deuda expedido por el administrador presta mérito ejecutivo, de modo que las cuotas de administración atrasadas se cobran directamente por proceso ejecutivo con medidas cautelares sobre el mismo inmueble. También se pueden imponer sanciones —publicación en cartelera, restricción del uso de zonas comunes no esenciales— siempre que el reglamento las contemple y se respete el debido proceso interno.",
+          "Las decisiones de la asamblea se pueden impugnar ante el juez dentro de los dos meses siguientes a la reunión cuando se adoptaron sin el quórum requerido, con violación del reglamento o de la ley, o excediendo la competencia de la asamblea. Las obras que afectan bienes comunes esenciales o la estructura del edificio exigen mayorías calificadas del 70% de los coeficientes.",
+          "Un frente frecuente y mal manejado son las filtraciones y humedades entre apartamentos: la responsabilidad depende de si el origen está en un bien privado o en uno común, y la prueba se construye con un peritaje técnico, no con fotos y mensajes en el grupo del conjunto.",
+        ],
+      },
+      {
+        titulo: "Errores caros que un abogado inmobiliario evita",
+        parrafos: [
+          "Pagar la totalidad del precio antes de la firma de la escritura y del registro. Firmar una promesa sin notaría, sin fecha y sin cláusula penal. Comprar a un solo heredero cuando la sucesión no está liquidada. Aceptar un inmueble con obras sin licencia y creer que después se legaliza fácil. No verificar el paz y salvo de administración, que en propiedad horizontal se traslada al adquirente. Arrendar sin contrato escrito por confianza y descubrirlo cuando hay que demandar.",
+          "También es común subestimar los impuestos y costos de cierre: derechos notariales, impuesto de registro y beneficencia, retención en la fuente, comisión de intermediación, y el impuesto de ganancia ocasional del vendedor. Incluirlos desde la negociación evita que el negocio se caiga en la notaría por una diferencia que nadie presupuestó.",
+          "Si el conflicto ya existe, todavía hay margen: la resolución del contrato por incumplimiento, la acción de cumplimiento con indemnización, el proceso de pertenencia cuando hay posesión prolongada, la nulidad de la escritura por vicios del consentimiento y la reivindicación del propietario despojado son remedios con requisitos y plazos propios que conviene evaluar rápido.",
+        ],
+      },
+    ],
+  },
+
+  /* ─────────────────────────── PENSIONES ─────────────────────────── */
+  pensiones: {
+    subareas: {
+      "pension-de-vejez":
+        "En el régimen de prima media administrado por Colpensiones se exige cumplir la edad (57 años las mujeres, 62 los hombres) y acreditar las semanas mínimas de cotización. En el régimen de ahorro individual se pensiona quien reúne el capital suficiente para financiar una mesada, sin requisito de edad. Elegir mal el régimen puede costar millones al momento del reconocimiento.",
+      "pension-de-invalidez":
+        "Se reconoce a quien pierde el 50% o más de su capacidad laboral por causa de origen común y cumple las semanas exigidas en los tres años anteriores a la estructuración. La calificación la hacen la junta regional y, en apelación, la junta nacional. Cuando el origen es un accidente o una enfermedad del trabajo, la prestación la asume la ARL y el análisis se hace en el pilar de riesgos laborales.",
+      "pension-de-sobrevivientes":
+        "Al fallecer un pensionado o un afiliado que cotizó 50 semanas en los últimos 3 años, tienen derecho el cónyuge o compañero permanente con convivencia acreditada, los hijos menores o estudiantes hasta los 25 años, los hijos inválidos y, en subsidio, los padres que dependían económicamente. Los conflictos entre cónyuge y compañera permanente son la controversia más frecuente y se resuelven probando convivencia.",
+      "reliquidacion-pensional":
+        "Procede cuando la entidad calculó el ingreso base de liquidación con un periodo o unos factores equivocados: dejó por fuera primas, bonificaciones o horas extras que sí eran cotizables, aplicó un régimen que no correspondía o desconoció el régimen de transición. La diferencia mensual se proyecta de por vida, por eso una reliquidación bien planteada suele ser la reclamación más rentable.",
+      "traslado-de-regimen":
+        "Muchas personas fueron trasladadas a un fondo privado sin información suficiente sobre las consecuencias. La jurisprudencia de la Corte Suprema admite la nulidad del traslado por falta de información clara y completa, con el retorno a Colpensiones y el traslado del saldo. El análisis exige comparar la mesada esperada en cada régimen antes de demandar.",
+    },
+    secciones: [
+      {
+        titulo: "Cuándo se necesita un abogado de pensiones",
+        parrafos: [
+          "Un abogado de pensiones se vuelve necesario cuando el sistema dice que no: negaron la pensión de vejez por semanas faltantes que sí están cotizadas, la historia laboral tiene periodos en mora del empleador que la entidad descuenta, la junta de calificación fijó un porcentaje de pérdida de capacidad por debajo del 50% o la mesada se liquidó con un ingreso base que no refleja lo que se cotizó.",
+          "También hace falta antes de decidir. Trasladarse de régimen, seguir cotizando dos años más, aceptar una indemnización sustitutiva o pedir la devolución de saldos son decisiones irreversibles en la práctica. Comparar escenarios con la historia laboral en la mano —semanas efectivas, ingreso base, régimen de transición, bono pensional— evita perder un derecho que ya estaba casi consolidado.",
+          "El sistema pensional colombiano combina la Ley 100 de 1993, el Acto Legislativo 01 de 2005, el régimen de transición y una jurisprudencia extensa de la Corte Constitucional y la Corte Suprema. Es un terreno donde el resultado depende menos de la elocuencia y más de reconstruir bien la historia laboral con documentos.",
+        ],
+      },
+      {
+        titulo: "La historia laboral: el documento que define el caso",
+        parrafos: [
+          "Casi todos los casos pensionales se ganan o se pierden en la historia laboral. Los errores típicos son periodos no reportados por empleadores antiguos, semanas cotizadas a cajas o entidades hoy liquidadas, aportes en mora, novedades mal cargadas, ingresos base distintos a los realmente devengados y tiempos públicos sin certificar en el formato CETIL.",
+          "La corrección se pide por derecho de petición ante la administradora con la prueba documental: certificados laborales, contratos, desprendibles de pago, planillas y certificaciones de las entidades públicas donde se trabajó. Cuando el empleador no pagó los aportes, la mora no puede oponerse al trabajador: la entidad debía cobrarlos y su omisión no puede trasladarse a quien cumplió con su parte, criterio reiterado por las altas cortes.",
+          "Reunir esa prueba toma tiempo, y por eso conviene empezar años antes de llegar a la edad de pensión, no el mes anterior. Un caso que se pudo resolver con una petición bien sustentada termina en un proceso ordinario laboral de varios años cuando se aborda tarde.",
+        ],
+      },
+      {
+        titulo: "Cómo se reclama: petición, recursos y demanda",
+        parrafos: [
+          "La ruta empieza con la solicitud de reconocimiento ante Colpensiones o el fondo privado. La entidad tiene términos legales para responder y, ante una negativa, proceden los recursos de reposición y apelación dentro de los diez días siguientes a la notificación. Agotada la vía administrativa, el camino es la demanda ordinaria laboral ante el juez del circuito, o el proceso ante la jurisdicción contencioso-administrativa cuando se trata de regímenes especiales públicos.",
+          "La tutela procede de manera excepcional, cuando la falta de reconocimiento amenaza el mínimo vital de una persona de la tercera edad o en situación de discapacidad y el medio ordinario resulta ineficaz por la demora. No es la vía general, pero en casos de sujetos de especial protección constitucional resuelve en días lo que un proceso ordinario tarda años.",
+          "Cuando la controversia es sobre el porcentaje de pérdida de capacidad laboral de origen común, la discusión pasa por la junta regional de calificación de invalidez y, en apelación, por la junta nacional, con términos cortos para recurrir. Si el origen es laboral, la prestación y el dictamen corresponden al sistema de riesgos laborales y se tramitan con la ARL.",
+        ],
+      },
+      {
+        titulo: "Régimen de transición, traslados y decisiones estratégicas",
+        parrafos: [
+          "El régimen de transición del artículo 36 de la Ley 100 permitió a quienes tenían determinada edad o tiempo de servicios al 1° de abril de 1994 pensionarse con las reglas anteriores, más favorables en edad, semanas y tasa de reemplazo. El Acto Legislativo 01 de 2005 lo limitó en el tiempo, pero todavía hoy hay casos vivos donde la aplicación correcta del régimen anterior significa una diferencia sustancial en la mesada.",
+          "El traslado de un fondo privado a Colpensiones o viceversa está restringido cuando faltan menos de diez años para cumplir la edad de pensión. Fuera de esa restricción, la vía es la nulidad del traslado por falta de información: la jurisprudencia exige que la administradora demuestre que informó de manera clara, cierta, comprensible y oportuna las consecuencias del cambio, y esa carga probatoria pesa sobre el fondo, no sobre el afiliado.",
+          "Antes de iniciar cualquier acción conviene proyectar la mesada en ambos escenarios con el ingreso base de liquidación real. Sin ese cálculo, la demanda puede ganarse en derecho y perder en dinero.",
+        ],
+      },
+      {
+        titulo: "Qué se puede recuperar hacia atrás",
+        parrafos: [
+          "El derecho a la pensión es imprescriptible: se puede reclamar en cualquier momento una vez cumplidos los requisitos. Lo que sí prescribe son las mesadas ya causadas, que solo pueden cobrarse por los tres años anteriores a la reclamación. Por eso una petición escrita bien radicada tiene además el efecto de interrumpir ese plazo y proteger los retroactivos.",
+          "Junto al retroactivo pueden reclamarse los intereses moratorios del artículo 141 de la Ley 100 cuando la entidad se demoró injustificadamente, y la indexación de las sumas adeudadas. En reliquidaciones, la diferencia mensual se paga hacia adelante y hacia atrás dentro del límite de prescripción.",
+        ],
+      },
+    ],
+  },
+
+  /* ─────────────────────────── TRÁNSITO ─────────────────────────── */
+  transito: {
+    subareas: {
+      "indemnizacion-por-accidente":
+        "Quien causa un accidente responde por el daño emergente (reparaciones, gastos médicos, transporte), el lucro cesante (lo que se dejó de ganar durante la incapacidad y hacia el futuro si quedaron secuelas) y los perjuicios extrapatrimoniales como el daño moral y el daño a la vida de relación. La reclamación se dirige al conductor, al propietario del vehículo y a la aseguradora de responsabilidad civil.",
+      comparendos:
+        "El comparendo se puede impugnar en la audiencia pública ante la autoridad de tránsito dentro de los términos del Código Nacional de Tránsito. Los argumentos que funcionan son técnicos: falta de notificación en debida forma, señalización ausente o contradictoria, foto sin identificación clara de la placa, caducidad de la facultad sancionatoria o error en el agente que impuso la orden.",
+      "reclamacion-soat":
+        "El SOAT ampara a todas las víctimas de un accidente de tránsito con independencia de quién tuvo la culpa: cubre gastos médicos hasta un tope en salarios mínimos, indemnización por muerte, incapacidad permanente y gastos funerarios y de transporte. Se reclama a la aseguradora del vehículo o, si el vehículo es fantasma o no está asegurado, ante la ADRES.",
+      "lesiones-personales":
+        "Si hay lesionados, además de la reclamación civil corre un proceso penal por lesiones personales culposas, agravado cuando el conductor iba embriagado, huyó del lugar o carecía de licencia. La víctima puede constituirse como parte y reclamar la reparación integral dentro del proceso penal, y el conductor necesita defensa desde la primera audiencia.",
+      "danos-al-vehiculo":
+        "Cuando solo hay daños materiales, la vía natural es el acuerdo con la aseguradora contra el informe policial de accidente de tránsito, las fotografías y el avalúo del daño. Si la aseguradora ofrece por debajo del valor real o niega la cobertura, procede la reclamación formal y luego la demanda, con el peritaje de reparación como prueba central.",
+    },
+    secciones: [
+      {
+        titulo: "Qué hacer en las primeras horas después de un accidente",
+        parrafos: [
+          "Lo que se hace en el sitio determina lo que se puede probar después. Si hay heridos, la prioridad es la atención médica y llamar a la autoridad de tránsito para que levante el informe policial de accidente, documento que después sirve como prueba central de la mecánica del choque. Mover los vehículos antes de que llegue la autoridad, salvo cuando obstruyen gravemente la vía, borra evidencia que luego nadie puede reconstruir.",
+          "Conviene tomar fotografías amplias y de detalle: posición final de los vehículos, huellas de frenada, señalización, estado de la vía, daños en cada carro y placas. También registrar nombre, cédula, teléfono, licencia y aseguradora del otro conductor, y datos de testigos presenciales. Un testigo identificado el mismo día vale mucho más que diez versiones recordadas meses después.",
+          "Si hubo lesiones, es indispensable la valoración médica inmediata aunque el golpe parezca menor. Muchas indemnizaciones se caen porque la víctima consultó una semana después y la aseguradora alega que la lesión no proviene del accidente. La historia clínica del mismo día es la prueba que cierra esa discusión.",
+        ],
+      },
+      {
+        titulo: "SOAT, póliza de responsabilidad civil y responsabilidad del causante",
+        parrafos: [
+          "El sistema colombiano funciona en capas. La primera es el SOAT, obligatorio para todo vehículo, que cubre a las víctimas sin discutir culpa: atención médica y quirúrgica hasta un tope en salarios mínimos, indemnización por incapacidad permanente, por muerte, gastos funerarios y de transporte al centro asistencial. Se reclama ante la aseguradora del vehículo involucrado y, cuando el vehículo huyó o no tenía póliza, ante la ADRES.",
+          "La segunda capa es la póliza voluntaria de responsabilidad civil extracontractual, que cubre lo que el SOAT no alcanza: daños al otro vehículo, lucro cesante y perjuicios morales, hasta los límites asegurados. La tercera es el patrimonio del responsable: el conductor y, solidariamente, el propietario del vehículo y la empresa afiliadora en el transporte público responden por lo que exceda las coberturas.",
+          "La responsabilidad civil por accidentes de tránsito en Colombia se analiza bajo el régimen de actividades peligrosas del artículo 2356 del Código Civil, donde la culpa se presume y quien causó el daño debe demostrar una causa extraña —fuerza mayor, hecho exclusivo de la víctima o de un tercero— para exonerarse. Esa presunción es la principal ventaja de la víctima.",
+        ],
+      },
+      {
+        titulo: "Cómo se calcula lo que te deben pagar",
+        parrafos: [
+          "La indemnización no es una cifra de negociación caprichosa: se compone de rubros que se prueban uno por uno. El daño emergente reúne facturas de reparación, gastos médicos no cubiertos, medicamentos, terapias, transporte y el valor del vehículo cuando la pérdida es total. El lucro cesante se calcula con el ingreso acreditado y el tiempo de incapacidad, y se proyecta hacia el futuro con las tablas de vida probable cuando quedan secuelas permanentes.",
+          "Los perjuicios extrapatrimoniales —daño moral y daño a la vida de relación— se reconocen en salarios mínimos según topes jurisprudenciales del Consejo de Estado y de la Corte Suprema, y aumentan con la gravedad de la lesión y el vínculo con la víctima en caso de muerte. Documentar el impacto real, con dictámenes y testimonios, es lo que separa una tasación mínima de una razonable.",
+          "Las aseguradoras suelen abrir con una oferta baja que cubre la reparación material y omite lucro cesante y perjuicios morales. Aceptarla implica firmar un finiquito que cierra cualquier reclamación posterior. Antes de firmar cualquier transacción conviene tener el cálculo completo sobre la mesa.",
+        ],
+      },
+      {
+        titulo: "Comparendos, licencia y consecuencias administrativas",
+        parrafos: [
+          "El comparendo es una orden de comparecer, no una sanción en firme. Se puede impugnar en audiencia pública ante el inspector de tránsito, con derecho a pruebas y a recursos. Pagar dentro de los primeros días otorga descuentos, pero también implica aceptar la responsabilidad y acumular puntos y antecedentes en el RUNT, algo relevante para conductores profesionales cuya licencia es su herramienta de trabajo.",
+          "Las sanciones más severas —conducir en estado de embriaguez, sin licencia o huir del lugar— acarrean suspensión o cancelación de la licencia, inmovilización del vehículo y multas altas, y agravan la responsabilidad penal cuando hubo lesionados o muertos. En esos casos la defensa administrativa y la penal deben coordinarse, porque lo que se admita en una repercute en la otra.",
+          "También existe la caducidad: la autoridad tiene términos para notificar y para resolver, y su incumplimiento puede llevar a la prescripción de la sanción. Revisar fechas de notificación es lo primero que hace un abogado de tránsito con un comparendo en la mano.",
+        ],
+      },
+      {
+        titulo: "Cuándo el accidente se vuelve un caso penal",
+        parrafos: [
+          "Si hay lesionados o fallecidos, además de la reclamación económica se abre una investigación por lesiones personales culposas u homicidio culposo. La víctima puede participar como parte y reclamar reparación integral; el conductor necesita defensa técnica desde la audiencia de imputación, porque una condena trae antecedentes, suspensión de la licencia y responsabilidad civil derivada.",
+          "En estos casos la conciliación tiene un papel importante: en lesiones culposas es un delito querellable y conciliable, y un acuerdo que repare de forma real a la víctima extingue la acción penal. Negociar sin asesoría suele terminar en acuerdos que se incumplen o en montos que no cubren el tratamiento posterior.",
+        ],
+      },
+    ],
+  },
 };
