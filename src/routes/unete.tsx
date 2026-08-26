@@ -181,11 +181,10 @@ function Pagina() {
       <section className="bg-tinta text-papel">
         <div className="contenedor grid items-center gap-12 pb-20 pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-28 lg:pt-32">
           <div>
-            <Migas
-              items={[{ titulo: "Inicio", to: "/" }, { titulo: "Únete" }]}
-              className="mb-6 text-papel/60"
-            />
-            <p className="eyebrow text-esmeralda-luminoso">Red de abogados</p>
+            <div className="mb-6 text-papel/60">
+              <Migas items={[{ titulo: "Inicio", to: "/" }, { titulo: "Únete" }]} />
+            </div>
+            <p className="eyebrow text-esmeralda-lum">Red de abogados</p>
             <h1 className="display-xl mt-4 text-papel">Casos que llegan ya explicados.</h1>
             <p className="mt-6 max-w-[54ch] text-[1.05rem] leading-relaxed text-papel/75">
               Nosotros hacemos la captación digital. Tú recibes personas que ya describieron su
