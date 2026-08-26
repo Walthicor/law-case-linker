@@ -269,7 +269,7 @@ function Pagina() {
             ) : null}
 
             <div className="mt-8">
-              <CompartirGuia titulo={g.h1} />
+              <CompartirGuia titulo={g.h1} ruta={`/guias/${g.slug}`} />
             </div>
           </aside>
         </div>
