@@ -25,6 +25,7 @@ import { Route as PoliticaDeTratamientoDeDatosRouteImport } from './routes/polit
 import { Route as TerminosYCondicionesRouteImport } from './routes/terminos-y-condiciones'
 import { Route as UneteRouteImport } from './routes/unete'
 import { Route as AreasIndexRouteImport } from './routes/areas.index'
+import { Route as GuiasIndexRouteImport } from './routes/guias.index'
 import { Route as HerramientasIndexRouteImport } from './routes/herramientas.index'
 import { Route as HerramientasAccionDeTutelaRouteImport } from './routes/herramientas.accion-de-tutela'
 import { Route as HerramientasCalculadoraCuotaAlimentariaRouteImport } from './routes/herramientas.calculadora-cuota-alimentaria'
@@ -115,6 +116,11 @@ const AreasIndexRoute = AreasIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AreasRoute,
 } as any)
+const GuiasIndexRoute = GuiasIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => GuiasRoute,
+} as any)
 const HerramientasIndexRoute = HerramientasIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -169,7 +175,7 @@ export interface FileRoutesByFullPath {
   '/como-funciona': typeof ComoFuncionaRoute
   '/contacto': typeof ContactoRoute
   '/gracias': typeof GraciasRoute
-  '/guias': typeof GuiasRoute
+  '/guias': typeof GuiasRouteWithChildren
   '/herramientas': typeof HerramientasRouteWithChildren
   '/iniciar-caso': typeof IniciarCasoRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
@@ -183,6 +189,7 @@ export interface FileRoutesByFullPath {
   '/herramientas/contrato-de-arrendamiento': typeof HerramientasContratoDeArrendamientoRoute
   '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
   '/areas/': typeof AreasIndexRoute
+  '/guias/': typeof GuiasIndexRoute
   '/herramientas/': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
   '/areas/$silo/': typeof AreasSiloIndexRoute
@@ -194,7 +201,6 @@ export interface FileRoutesByTo {
   '/como-funciona': typeof ComoFuncionaRoute
   '/contacto': typeof ContactoRoute
   '/gracias': typeof GraciasRoute
-  '/guias': typeof GuiasRoute
   '/iniciar-caso': typeof IniciarCasoRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
@@ -207,6 +213,7 @@ export interface FileRoutesByTo {
   '/herramientas/contrato-de-arrendamiento': typeof HerramientasContratoDeArrendamientoRoute
   '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
   '/areas': typeof AreasIndexRoute
+  '/guias': typeof GuiasIndexRoute
   '/herramientas': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
   '/areas/$silo': typeof AreasSiloIndexRoute
@@ -220,7 +227,7 @@ export interface FileRoutesById {
   '/como-funciona': typeof ComoFuncionaRoute
   '/contacto': typeof ContactoRoute
   '/gracias': typeof GraciasRoute
-  '/guias': typeof GuiasRoute
+  '/guias': typeof GuiasRouteWithChildren
   '/herramientas': typeof HerramientasRouteWithChildren
   '/iniciar-caso': typeof IniciarCasoRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
@@ -234,6 +241,7 @@ export interface FileRoutesById {
   '/herramientas/contrato-de-arrendamiento': typeof HerramientasContratoDeArrendamientoRoute
   '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
   '/areas/': typeof AreasIndexRoute
+  '/guias/': typeof GuiasIndexRoute
   '/herramientas/': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
   '/areas/$silo/': typeof AreasSiloIndexRoute
@@ -262,6 +270,7 @@ export interface FileRouteTypes {
     | '/herramientas/contrato-de-arrendamiento'
     | '/herramientas/derecho-de-peticion'
     | '/areas/'
+    | '/guias/'
     | '/herramientas/'
     | '/areas/$silo/$subarea'
     | '/areas/$silo/'
@@ -273,7 +282,6 @@ export interface FileRouteTypes {
     | '/como-funciona'
     | '/contacto'
     | '/gracias'
-    | '/guias'
     | '/iniciar-caso'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
@@ -286,6 +294,7 @@ export interface FileRouteTypes {
     | '/herramientas/contrato-de-arrendamiento'
     | '/herramientas/derecho-de-peticion'
     | '/areas'
+    | '/guias'
     | '/herramientas'
     | '/areas/$silo/$subarea'
     | '/areas/$silo'
@@ -312,6 +321,7 @@ export interface FileRouteTypes {
     | '/herramientas/contrato-de-arrendamiento'
     | '/herramientas/derecho-de-peticion'
     | '/areas/'
+    | '/guias/'
     | '/herramientas/'
     | '/areas/$silo/$subarea'
     | '/areas/$silo/'
@@ -325,7 +335,7 @@ export interface RootRouteChildren {
   ComoFuncionaRoute: typeof ComoFuncionaRoute
   ContactoRoute: typeof ContactoRoute
   GraciasRoute: typeof GraciasRoute
-  GuiasRoute: typeof GuiasRoute
+  GuiasRoute: typeof GuiasRouteWithChildren
   HerramientasRoute: typeof HerramientasRouteWithChildren
   IniciarCasoRoute: typeof IniciarCasoRoute
   PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
@@ -449,6 +459,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasIndexRouteImport
       parentRoute: typeof AreasRoute
     }
+    '/guias/': {
+      id: '/guias/'
+      path: '/'
+      fullPath: '/guias/'
+      preLoaderRoute: typeof GuiasIndexRouteImport
+      parentRoute: typeof GuiasRoute
+    }
     '/herramientas/': {
       id: '/herramientas/'
       path: '/'
@@ -522,6 +539,16 @@ const AreasRouteChildren: AreasRouteChildren = {
 
 const AreasRouteWithChildren = AreasRoute._addFileChildren(AreasRouteChildren)
 
+interface GuiasRouteChildren {
+  GuiasIndexRoute: typeof GuiasIndexRoute
+}
+
+const GuiasRouteChildren: GuiasRouteChildren = {
+  GuiasIndexRoute: GuiasIndexRoute,
+}
+
+const GuiasRouteWithChildren = GuiasRoute._addFileChildren(GuiasRouteChildren)
+
 interface HerramientasRouteChildren {
   HerramientasAccionDeTutelaRoute: typeof HerramientasAccionDeTutelaRoute
   HerramientasCalculadoraCuotaAlimentariaRoute: typeof HerramientasCalculadoraCuotaAlimentariaRoute
@@ -555,7 +582,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComoFuncionaRoute: ComoFuncionaRoute,
   ContactoRoute: ContactoRoute,
   GraciasRoute: GraciasRoute,
-  GuiasRoute: GuiasRoute,
+  GuiasRoute: GuiasRouteWithChildren,
   HerramientasRoute: HerramientasRouteWithChildren,
   IniciarCasoRoute: IniciarCasoRoute,
   PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
