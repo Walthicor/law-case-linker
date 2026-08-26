@@ -825,47 +825,6 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
       },
     ],
   },
-  /* ─────────────────── RIESGOS LABORALES ─────────────────── */
-  "riesgos-laborales": {
-    subareas: {
-      "accidente-de-trabajo":
-        "Es todo suceso repentino que ocurre por causa o con ocasión del trabajo y produce lesión, perturbación funcional o psiquiátrica, invalidez o muerte, incluidos los ocurridos en cumplimiento de órdenes fuera de la sede y en el transporte suministrado por el empleador. Calificado como laboral, la ARL cubre la atención integral y paga la incapacidad temporal al 100% del ingreso base de cotización.",
-      "enfermedad-laboral":
-        "Es la contraída como resultado de la exposición a factores de riesgo propios de la actividad. Están las del listado del Decreto 1477 de 2014, con presunción a favor del trabajador cuando se demuestra la exposición, y las no listadas, que exigen probar la relación de causalidad. Los cuadros osteomusculares, la hipoacusia y los trastornos mentales por carga laboral son los más frecuentes y los más negados.",
-      "calificacion-perdida-capacidad":
-        "El porcentaje de pérdida de capacidad laboral se determina con el Manual Único del Decreto 1507 de 2014, primero por la EPS, la ARL o el fondo, y en desacuerdo por la junta regional y luego la nacional. Ese número define todo: menos del 50% da indemnización proporcional, 50% o más abre la pensión de invalidez. Un punto de diferencia cambia la prestación por completo.",
-      "indemnizacion-arl":
-        "Con pérdida entre el 5% y el 49,99% la ARL paga una indemnización en salarios base de liquidación según tabla; con 50% o más, pensión de invalidez del 60% o 75% del IBL; en caso de muerte, pensión de sobrevivientes y auxilio funerario. Estas prestaciones son independientes de la indemnización plena de perjuicios que procede contra el empleador cuando hay culpa patronal probada.",
-      "reintegro-y-reubicacion":
-        "El trabajador con secuelas tiene derecho a reubicación en un puesto compatible con sus restricciones y conserva estabilidad laboral reforzada: despedirlo por su condición de salud sin autorización del inspector del trabajo hace el despido ineficaz y da lugar a reintegro con salarios y aportes, además de la indemnización de la Ley 361 de 1997.",
-    },
-    secciones: [
-      {
-        titulo: "Qué debe pagar la ARL después de un accidente de trabajo",
-        parrafos: [
-          "El sistema de riesgos laborales de la Ley 1562 de 2012 cubre al trabajador desde el primer día de afiliación y con aportes que paga íntegramente el empleador. Cuando el evento se califica como de origen laboral, la ARL asume la atención médica, quirúrgica, hospitalaria, farmacéutica y de rehabilitación sin copagos ni cuotas moderadoras, y paga la incapacidad temporal al 100% del ingreso base de cotización, no al 66% como ocurre con la EPS.",
-          "Ese detalle explica por qué tantas ARL califican los eventos como de origen común: el costo de la prestación cambia. Cuando ocurre, el trabajador puede controvertir el dictamen y llevar la discusión a la junta regional de calificación de invalidez, y mientras se define el origen la atención no puede suspenderse.",
-          "Si quedan secuelas permanentes, la ARL debe reconocer indemnización por pérdida de capacidad laboral o pensión de invalidez según el porcentaje, y en caso de muerte, pensión de sobrevivientes para los beneficiarios y auxilio funerario. Todo eso es independiente de lo que el empleador deba cuando el accidente ocurrió por su culpa.",
-        ],
-      },
-      {
-        titulo: "Reporte, términos y errores que cuestan el caso",
-        parrafos: [
-          "El empleador debe diligenciar el FURAT y reportar el accidente a la ARL y a la EPS dentro de los dos días hábiles siguientes. Cuando no lo hace —lo más común en accidentes que parecen menores— el trabajador puede reportar directamente y debe hacerlo por escrito, porque la ausencia de reporte es el argumento con el que después se niega la cobertura.",
-          "La atención médica del mismo día es la prueba central: la historia clínica que describe el mecanismo de la lesión y su relación con la tarea vale más que cualquier testimonio posterior. Junto a ella conviene conservar el reporte, los correos con el jefe, el certificado de afiliación, la descripción del cargo y las fotografías del lugar.",
-          "Para controvertir un dictamen de pérdida de capacidad hay diez días hábiles desde su notificación; vencido el término, el porcentaje queda en firme y solo puede revisarse por agravación. Las prestaciones económicas ya causadas prescriben en tres años.",
-        ],
-      },
-      {
-        titulo: "Culpa patronal: cuando además se puede demandar al empleador",
-        parrafos: [
-          "El artículo 216 del Código Sustantivo del Trabajo permite reclamar al empleador la indemnización total y ordinaria de perjuicios cuando su culpa en el accidente o en la enfermedad está suficientemente comprobada: falta de capacitación, ausencia de elementos de protección, maquinaria sin mantenimiento, incumplimiento del sistema de gestión de seguridad y salud en el trabajo u órdenes que expusieron al trabajador.",
-          "Esa indemnización cubre daño emergente, lucro cesante presente y futuro, daño moral y daño a la vida de relación, y se descuenta de ella lo que la ARL haya pagado por prestaciones económicas. Es la reclamación de mayor cuantía del sistema y también la que exige más prueba técnica: peritajes, actas del COPASST, matriz de riesgos y registros de entrega de dotación.",
-        ],
-      },
-    ],
-  },
-
   /* ─────────────────────────── SALUD ─────────────────────────── */
   salud: {
     subareas: {
