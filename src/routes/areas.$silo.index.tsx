@@ -45,8 +45,6 @@ export const Route = createFileRoute("/areas/$silo/")({
   component: Pagina,
 });
 
-const CIUDADES = ["Bogotá", "Medellín", "Cali", "Barranquilla", "Cartagena", "Bucaramanga"];
-
 function jsonLd(p: Pilar) {
   const url = `https://asesoriasjuridicas.co/areas/${p.slug}`;
   return [
