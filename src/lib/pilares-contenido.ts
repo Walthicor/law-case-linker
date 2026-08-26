@@ -303,18 +303,18 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
         "Es el área de mayor exposición económica frente al Estado: estructuración de propuestas, observaciones al pliego, recursos frente a la adjudicación, ejecución del contrato, actas de suspensión, reclamaciones por mayor permanencia y desequilibrio económico, liquidación bilateral y controversias contractuales ante la jurisdicción. Cubre tanto a proponentes y contratistas como a entidades que necesitan blindar sus procesos de selección, y exige dominio de la Ley 80 de 1993, la Ley 1150 de 2007, la Ley 2022 de 2020 y el Decreto 1082 de 2015, además de los tiempos estrictos de reclamación que se pierden por silencio o por firmar el acta de liquidación sin salvedades.",
       "nulidad-y-restablecimiento":
         "Es el medio de control para atacar un acto administrativo particular que afecta un derecho: una sanción, un retiro del servicio, una liquidación de impuestos, la negativa de un reconocimiento. Se pide que el acto se anule y, además, que se restablezca el derecho y se reparen los perjuicios causados.",
-      "reparacion-directa":
-        "Procede cuando el daño proviene de un hecho, una omisión, una operación administrativa o la ocupación de un inmueble, y no de un acto. Es la vía para casos de falla en el servicio médico estatal, daños causados por obras públicas, privación injusta de la libertad y actuaciones de la fuerza pública.",
+      "responsabilidad-del-estado":
+        "El Estado responde patrimonialmente por los daños antijurídicos que le sean imputables (art. 90 C.P.). La vía es la reparación directa cuando el daño proviene de un hecho, una omisión, una operación administrativa o la ocupación de un inmueble: falla del servicio médico estatal, daños por obras públicas, privación injusta de la libertad y actuaciones de la fuerza pública.",
       "derecho-disciplinario":
         "Defensa de servidores públicos y particulares que cumplen funciones públicas en procesos adelantados por oficinas de control interno disciplinario, personerías o la Procuraduría, bajo la Ley 1952 de 2019 reformada por la Ley 2094 de 2021. Una sanción de destitución e inhabilidad puede cerrar una carrera completa.",
       "derecho-de-peticion":
         "Es la herramienta más económica y más subutilizada frente al Estado. La entidad debe responder de fondo dentro de los quince días hábiles generales, diez para pedir información y treinta para consultas. El silencio no es respuesta y habilita tanto la tutela como el reproche disciplinario del funcionario.",
       "funcion-publica":
         "Concursos de mérito, encargos, provisionalidad, reintegros, nivelación salarial, prestaciones de empleados públicos y retiro del servicio. Muchos de estos conflictos se resuelven demostrando que la entidad se apartó del manual de funciones o de la lista de elegibles.",
-      "acciones-populares":
-        "Protegen derechos e intereses colectivos como el ambiente sano, el espacio público, la moralidad administrativa y la seguridad. No tienen término de caducidad mientras subsista la amenaza y pueden ser interpuestas por cualquier persona.",
-      "cobro-coactivo":
-        "Defensa frente al cobro que las entidades hacen directamente de sus acreencias, sin acudir a un juez: impuestos, multas, comparendos, sanciones y contribuciones. Se puede discutir la existencia del título, la prescripción y las medidas cautelares mediante excepciones dentro del término legal.",
+      tutela:
+        "Procede cuando una autoridad o un particular en los casos previstos vulnera o amenaza un derecho fundamental y no existe otro medio de defensa judicial idóneo, o cuando se usa como mecanismo transitorio para evitar un perjuicio irremediable. El juez debe resolver en 10 días y el fallo se cumple en 48 horas.",
+      "sanciones-administrativas":
+        "Defensa frente a multas y sanciones impuestas por entidades públicas: procedimiento sancionatorio del CPACA, formulación de cargos, descargos, pruebas y recursos de reposición y apelación dentro de los 10 días hábiles siguientes a la notificación. Dejar vencer el recurso deja el acto en firme.",
     },
     secciones: [
       {

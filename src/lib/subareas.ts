@@ -14,6 +14,7 @@ import { SUBAREAS_LABORAL } from "./subareas-laboral";
 import { SUBAREAS_RIESGOS } from "./subareas-riesgos";
 import { SUBAREAS_FAMILIA } from "./subareas-familia";
 import { SUBAREAS_CIVIL } from "./subareas-civil";
+import { SUBAREAS_ADMINISTRATIVO } from "./subareas-administrativo";
 import { pilarPorSlug, type Guia, type Norma, type Faq, type Pilar, type Subarea } from "./pilares";
 
 export type Paso = { titulo: string; texto: string };
@@ -34,6 +35,8 @@ export type ContenidoSubarea = {
   /** "Qué puedes reclamar" o "Cómo se resuelve". */
   reclamar: { titulo: string; parrafos: string[]; lista?: string[] };
   pasos: Paso[];
+  /** Bloques H2 adicionales para términos que merecen su propia sección. */
+  bloques?: { titulo: string; parrafos: string[]; lista?: string[] }[];
   /** 5 preguntas para el acordeón y el schema FAQPage. */
   faqs: Faq[];
   /** Slugs de 2 guías DEL MISMO silo. Si se omite, se toman las del pilar. */
@@ -46,6 +49,7 @@ export const CONTENIDO_SUBAREAS: Record<string, ContenidoSubarea> = {
   ...SUBAREAS_RIESGOS,
   ...SUBAREAS_FAMILIA,
   ...SUBAREAS_CIVIL,
+  ...SUBAREAS_ADMINISTRATIVO,
 };
 
 export type SubareaResuelta = ContenidoSubarea & {

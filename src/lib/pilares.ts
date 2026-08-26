@@ -728,12 +728,12 @@ const SEMILLAS: Semilla[] = [
     subareas: [
       { titulo: "Contratación estatal", slug: "contratacion-estatal", destacada: true },
       { titulo: "Nulidad y restablecimiento del derecho", slug: "nulidad-y-restablecimiento" },
-      { titulo: "Reparación directa", slug: "reparacion-directa" },
+      { titulo: "Responsabilidad del Estado", slug: "responsabilidad-del-estado" },
       { titulo: "Derecho disciplinario", slug: "derecho-disciplinario" },
       { titulo: "Función pública y carrera administrativa", slug: "funcion-publica" },
       { titulo: "Derecho de petición", slug: "derecho-de-peticion" },
-      { titulo: "Acciones populares", slug: "acciones-populares" },
-      { titulo: "Cobro coactivo", slug: "cobro-coactivo" },
+      { titulo: "Acción de tutela", slug: "tutela" },
+      { titulo: "Sanciones administrativas", slug: "sanciones-administrativas" },
     ],
     normas: [
       {
