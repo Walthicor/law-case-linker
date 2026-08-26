@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link2, Mail, MessageCircle } from "lucide-react";
 
-/** Compartir. WhatsApp primero: es el canal dominante en Colombia. */
-export function CompartirGuia({ titulo }: { titulo: string }) {
+const BASE = "https://asesoriasjuridicas.co";
+
+/**
+ * Compartir. WhatsApp primero: es el canal dominante en Colombia.
+ * La URL se arma con la ruta canónica (determinista en servidor y cliente).
+ */
+export function CompartirGuia({ titulo, ruta }: { titulo: string; ruta: string }) {
   const [copiado, setCopiado] = useState(false);
-  const [url, setUrl] = useState("");
-
-  // Se lee después de hidratar para no romper el HTML del servidor.
-  useEffect(() => setUrl(window.location.href), []);
-
+  const url = BASE + ruta;
 
   const copiar = async () => {
     try {
-      await navigator.clipboard.writeText(window.location.href);
+      await navigator.clipboard.writeText(url);
       setCopiado(true);
       setTimeout(() => setCopiado(false), 2000);
     } catch {
