@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { Download } from "lucide-react";
+import { evento } from "@/lib/analitica";
 
 export type PasoGenerador = { titulo: string; contenido: ReactNode };
 
@@ -10,15 +11,21 @@ export type PasoGenerador = { titulo: string; contenido: ReactNode };
 export function MarcoGenerador({
   pasos,
   vistaPrevia,
+  nombre,
 }: {
   pasos: PasoGenerador[];
   vistaPrevia: ReactNode;
+  /** Nombre de la herramienta para la analítica. */
+  nombre: string;
 }) {
   const [paso, setPaso] = useState(0);
   const [correo, setCorreo] = useState("");
   const [enviado, setEnviado] = useState(false);
   const actual = pasos[paso];
-  const descargar = () => window.print();
+  const descargar = () => {
+    evento("pdf_descargado", { nombre });
+    window.print();
+  };
 
   return (
     <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start">
