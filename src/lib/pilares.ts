@@ -10,10 +10,11 @@ export type Subarea = {
   titulo: string;
   slug: string;
   /** Texto real de la subárea (contenido desarrollado). */
-  texto?: string;
+  texto?: string | undefined;
   /** Ocupa el espacio destacado del grid. */
-  destacada?: boolean;
+  destacada?: boolean | undefined;
 };
+
 export type Norma = { articulo: string; norma: string; texto: string };
 export type Faq = { pregunta: string; respuesta: string };
 export type Guia = { titulo: string; slug: string };
