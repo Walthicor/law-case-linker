@@ -4,10 +4,21 @@
  * SUS guías y como máximo 2 pilares relacionados.
  */
 
-export type Subarea = { titulo: string; slug: string };
+import { CONTENIDO, type Seccion } from "./pilares-contenido";
+
+export type Subarea = {
+  titulo: string;
+  slug: string;
+  /** Texto real de la subárea (contenido desarrollado). */
+  texto?: string;
+  /** Ocupa el espacio destacado del grid. */
+  destacada?: boolean;
+};
 export type Norma = { articulo: string; norma: string; texto: string };
 export type Faq = { pregunta: string; respuesta: string };
 export type Guia = { titulo: string; slug: string };
+export type { Seccion };
+
 
 export type Pilar = {
   slug: string;
