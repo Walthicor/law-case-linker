@@ -29,8 +29,11 @@ export const Route = createFileRoute("/areas/$silo")({
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:type", content: "website" },
+        { property: "og:url", content: `/areas/${p.slug}` },
         { name: "twitter:card", content: "summary_large_image" },
       ],
+      links: [{ rel: "canonical", href: `/areas/${p.slug}` }],
+
       scripts: [
         {
           type: "application/ld+json",
