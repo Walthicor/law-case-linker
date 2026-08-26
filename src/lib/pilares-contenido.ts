@@ -653,4 +653,283 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
       },
     ],
   },
+
+  /* ─────────────────────────── INSOLVENCIA ─────────────────────────── */
+  insolvencia: {
+    subareas: {
+      "insolvencia-persona-natural":
+        "Es el procedimiento del Código General del Proceso para la persona natural no comerciante que tiene dos o más obligaciones en mora por más de 90 días, o dos o más procesos ejecutivos en su contra, siempre que el valor de esas deudas represente al menos el 50% del total del pasivo. Se tramita ante un centro de conciliación o notaría y su efecto inmediato es la suspensión de los procesos de cobro.",
+      "levantamiento-de-embargos":
+        "Con la aceptación de la solicitud de insolvencia se suspenden los procesos ejecutivos y se levantan las medidas cautelares, salvo las que garantizan obligaciones de alimentos. También hay límites permanentes: el salario es inembargable hasta el mínimo legal y por encima de eso solo en la quinta parte del excedente, con excepciones para cooperativas y alimentos.",
+      "reportes-centrales-riesgo":
+        "El dato negativo en Datacrédito, TransUnion o Cifin no se borra pagando: permanece el doble del tiempo de la mora, con un máximo de cuatro años contados desde el pago. Lo que sí se puede exigir es la actualización del reporte, la corrección de información inexacta y la eliminación del dato cuando la deuda prescribió o nunca existió, por vía de reclamo y luego tutela de habeas data.",
+      "acuerdos-de-pago":
+        "El acuerdo de pago dentro de la insolvencia se negocia con todos los acreedores en una misma audiencia, con plazos, tasas y garantías reales, y una vez aprobado obliga incluso a quienes votaron en contra. Fuera del procedimiento también se pueden negociar reestructuraciones directas, pero sin la protección legal que suspende los embargos.",
+      "cobro-juridico":
+        "Cuando el banco entrega la cartera a un abogado externo empiezan las llamadas, los reportes y la demanda ejecutiva. En esa etapa todavía hay margen: revisar la liquidación del crédito, discutir intereses por encima de la tasa máxima legal, alegar la prescripción de la acción cambiaria y exigir que los cobros respeten los límites de la Ley 1266 sobre acoso al deudor.",
+    },
+    secciones: [
+      {
+        titulo: "Qué es la insolvencia de persona natural y para qué sirve",
+        parrafos: [
+          "La insolvencia de persona natural no comerciante es un procedimiento legal, no un servicio de cobranza ni una negociación informal. Está regulada en los artículos 531 y siguientes del Código General del Proceso y permite a una persona sobreendeudada sentar a todos sus acreedores en una misma mesa, con un conciliador designado, para negociar un acuerdo único de pago que reemplaza todas las obligaciones anteriores.",
+          "Su efecto más valioso ocurre desde la aceptación de la solicitud: se suspenden los procesos ejecutivos en curso, se levantan los embargos y se detienen los intereses de mora en los términos del acuerdo. Para quien tiene el salario embargado o la cuenta bloqueada, eso significa recuperar el flujo de caja mientras se negocia, algo que ninguna renegociación directa con los bancos garantiza.",
+          "No es un borrón y cuenta nueva. La deuda no desaparece: se reorganiza en cuotas viables según la capacidad real de pago. Y si el acuerdo fracasa, el procedimiento deriva en liquidación patrimonial, donde se realizan los bienes para pagar a los acreedores según su orden de prelación.",
+        ],
+      },
+      {
+        titulo: "Requisitos: quién puede entrar y quién no",
+        parrafos: [
+          "Se exige ser persona natural no comerciante, estar en cesación de pagos —dos o más obligaciones en mora por más de noventa días, o dos o más procesos ejecutivos o de jurisdicción coactiva en curso— y que esas deudas representen al menos el 50% del pasivo total. También hay que presentar la relación completa y veraz de acreedores, bienes, procesos, ingresos y egresos.",
+          "La ocultación de bienes o de acreedores es la principal causa de fracaso: descubierta, el conciliador puede dar por terminado el trámite y el deudor pierde la protección obtenida. Lo mismo ocurre con el incumplimiento de las cuotas del acuerdo, que habilita a los acreedores a reactivar el cobro.",
+          "Quienes son comerciantes formales no van por esta vía sino por el régimen de insolvencia empresarial de la Ley 1116 de 2006, con reorganización o liquidación judicial ante la Superintendencia de Sociedades. Definir bien la calidad del deudor es el primer paso, porque escoger el procedimiento equivocado hace perder meses.",
+        ],
+      },
+      {
+        titulo: "Embargos: qué pueden y qué no pueden tocar",
+        parrafos: [
+          "El salario mínimo legal es inembargable y del excedente solo puede embargarse la quinta parte, salvo cuando el acreedor es una cooperativa o cuando se trata de obligaciones alimentarias, casos en los que el límite llega al 50%. La misma regla protege las mesadas pensionales y los depósitos que corresponden a salario dentro de la cuenta bancaria, aunque en la práctica el banco bloquea primero y hay que pedir el levantamiento con prueba del origen de los recursos.",
+          "También son inembargables el patrimonio de familia inembargable y la vivienda afectada a vivienda familiar frente a determinados acreedores, los bienes de uso personal indispensables y, en general, lo que la ley excluye expresamente. Alegar bien esas exclusiones puede resolver una situación urgente en días sin necesidad de entrar en insolvencia.",
+          "Cuando el embargo ya está decretado, el camino es el incidente o la solicitud de levantamiento en el mismo proceso ejecutivo, con prueba documental. Y si el proceso ejecutivo se apoya en un título prescrito o en una liquidación con intereses por encima de la tasa máxima legal certificada por la Superintendencia Financiera, esa defensa se plantea con las excepciones de mérito.",
+        ],
+      },
+      {
+        titulo: "Centrales de riesgo y habeas data: qué se puede exigir",
+        parrafos: [
+          "La Ley 1266 de 2008 no prohíbe el reporte negativo: lo regula. El dato permanece por el doble del tiempo de la mora con un techo de cuatro años desde el pago, y antes de reportar por primera vez la entidad debe comunicarlo al titular con veinte días de antelación para que pueda controvertirlo. Reportar sin ese aviso previo es una vulneración que se corrige por reclamo y, si no responden, por acción de tutela.",
+          "Lo que sí se puede exigir siempre es la veracidad: si la deuda ya se pagó, si nunca existió, si corresponde a una suplantación de identidad o si el monto está inflado, el titular puede presentar reclamo ante el operador y ante la fuente, quienes deben resolver en términos cortos y dejar el dato en discusión mientras se decide.",
+          "Promesas de 'borrar Datacrédito' pagando una tarifa suelen ser fraudes. Lo que existe es el trámite legal de actualización, corrección o eliminación cuando hay una causa jurídica, y la caducidad del dato negativo por el paso del tiempo.",
+        ],
+      },
+      {
+        titulo: "Cómo se prepara un caso de insolvencia",
+        parrafos: [
+          "El expediente se arma con la lista completa de acreedores con montos, fechas de mora y garantías; los certificados de tradición de los bienes; el extracto de las centrales de riesgo; los desprendibles de ingresos; el presupuesto mensual de gastos y las notificaciones de los procesos ejecutivos existentes. Con eso se construye una propuesta de pago realista, que es lo que decide la votación de los acreedores.",
+          "Una propuesta demasiado optimista se incumple y hace perder la protección; una demasiado baja no obtiene los votos necesarios. Ese equilibrio es el verdadero trabajo del abogado en insolvencia, más allá de la radicación del formulario ante el centro de conciliación.",
+        ],
+      },
+    ],
+  },
+
+  /* ────────────────── PROPIEDAD INTELECTUAL ────────────────── */
+  "propiedad-intelectual": {
+    subareas: {
+      "registro-de-marca":
+        "El registro se solicita ante la Superintendencia de Industria y Comercio indicando el signo, el titular y las clases de la Clasificación Internacional de Niza que cubren los productos o servicios. Publicada la solicitud en la Gaceta de la Propiedad Industrial corren 30 días hábiles para oposiciones; sin oposición, el trámite suele resolverse en pocos meses y concede un derecho exclusivo por 10 años renovables.",
+      "oposiciones-y-negativas":
+        "La SIC niega registros por semejanza con marcas anteriores, por ser signos descriptivos o genéricos, por engañosos o por afectar derechos de terceros. Frente a una oposición hay 30 días hábiles para contestar con argumentos de coexistencia, distintividad adquirida, limitación de clases o acuerdos con el opositor; frente a la negativa proceden los recursos y, en última instancia, la demanda ante el Consejo de Estado.",
+      "derechos-de-autor":
+        "El derecho de autor protege obras literarias, artísticas, audiovisuales, musicales y el software desde su creación, sin necesidad de registro; el registro ante la Dirección Nacional de Derecho de Autor solo sirve como prueba. Lo decisivo en la práctica es el contrato: sin cesión escrita de derechos patrimoniales, quien paga por un desarrollo o un diseño no necesariamente queda como titular.",
+      "competencia-desleal":
+        "Usar el nombre, el logo, el empaque o la publicidad de otro para aprovechar su reputación configura infracción marcaria y actos de competencia desleal de la Ley 256 de 1996: desviación de clientela, confusión, imitación y explotación de la reputación ajena. La SIC, con funciones jurisdiccionales, puede ordenar el cese de la conducta, medidas cautelares e indemnización.",
+      "licencias-y-cesion":
+        "Licenciar es autorizar el uso conservando la titularidad; ceder es transferirla. Ambos contratos deben precisar territorio, plazo, clases y productos cubiertos, exclusividad, control de calidad, regalías y causales de terminación, e inscribirse ante la SIC para ser oponibles a terceros. En franquicias, la licencia de marca es el corazón del negocio.",
+      "patentes-y-disenos":
+        "La patente de invención exige novedad, nivel inventivo y aplicación industrial, y otorga 20 años de exclusividad; el modelo de utilidad, 10 años. El diseño industrial protege la apariencia por 10 años. Divulgar la invención antes de radicar la solicitud destruye la novedad, por eso la asesoría debe llegar antes del lanzamiento, no después.",
+    },
+    secciones: [
+      {
+        titulo: "Por qué el registro de marca en Colombia decide quién es el dueño del nombre",
+        parrafos: [
+          "En Colombia el derecho exclusivo sobre una marca no nace del uso ni de la matrícula mercantil: nace del registro ante la Superintendencia de Industria y Comercio. Tener el nombre en la cámara de comercio, el dominio de internet y las redes sociales no impide que otro registre el signo y después exija que se deje de usar. Esa confusión es la causa más frecuente de pérdidas evitables en negocios que ya llevan años operando.",
+          "El régimen aplicable es la Decisión 486 de la Comunidad Andina, complementada por el Código de Comercio y por la doctrina de la SIC. El registro concede el uso exclusivo por diez años renovables indefinidamente, la facultad de oponerse a solicitudes de terceros, de perseguir la infracción y de licenciar o vender la marca como un activo con valor propio.",
+          "El costo del registro es una tasa oficial por clase más los honorarios de la solicitud. El costo de no registrar es cambiar de nombre después de haber invertido en marca, empaques, señalización y posicionamiento, o pagar por comprar el registro a quien se adelantó.",
+        ],
+      },
+      {
+        titulo: "El paso previo que casi nadie hace: la búsqueda de antecedentes",
+        parrafos: [
+          "Antes de radicar conviene buscar antecedentes en la base de datos de signos distintivos de la SIC y evaluar riesgos de confusión con marcas idénticas o semejantes en las mismas clases o en clases conexas. El examen no es solo literal: se compara el aspecto visual, la fonética, la ideología del signo y la relación entre los productos o servicios.",
+          "También hay causales absolutas que hunden una solicitud sin que nadie se oponga: signos genéricos o descriptivos del producto, expresiones de uso común, términos que engañan sobre el origen o la calidad, y signos contrarios a la ley o a la moral. Una marca demasiado descriptiva puede parecer buena para el marketing y ser irregistrable en derecho.",
+          "Definir bien las clases de Niza es la otra decisión estratégica. Registrar de menos deja el negocio expuesto en las actividades hacia las que va a crecer; registrar de más multiplica las tasas oficiales sin protección útil. La regla práctica es cubrir la actividad actual y las de expansión previsible en los próximos años.",
+        ],
+      },
+      {
+        titulo: "Cómo se defiende una marca cuando alguien la usa sin permiso",
+        parrafos: [
+          "El primer paso suele ser un requerimiento formal de cese de uso, con la prueba del registro y de la infracción. Muchos casos terminan ahí, porque el infractor no quiere litigar. Si no cesa, la vía es la acción por infracción de derechos de propiedad industrial ante la SIC en ejercicio de funciones jurisdiccionales o ante los jueces civiles, con posibilidad de medidas cautelares para retirar productos del mercado.",
+          "En paralelo se pueden usar los canales de denuncia de plataformas: retiro de publicaciones en marketplaces, reclamaciones en redes sociales y disputas de nombres de dominio. Son rápidos y baratos, y con el certificado de registro en mano suelen resolverse en días.",
+          "También existe el frente inverso: recibir una carta acusando infracción. Antes de cambiar el nombre conviene revisar si el registro invocado está vigente, si cubre realmente las clases del negocio y si es atacable por falta de uso —la marca no usada durante tres años consecutivos puede cancelarse— o por haberse registrado de mala fe.",
+        ],
+      },
+      {
+        titulo: "Software, contenidos y contratos: la parte que se olvida",
+        parrafos: [
+          "El derecho de autor protege el código fuente, los cursos, los textos, las fotografías, los videos y los diseños desde su creación. Pero la titularidad de los derechos patrimoniales se mueve por contrato: sin una cláusula de cesión expresa y por escrito, el desarrollador o el diseñador conserva derechos sobre lo que la empresa cree suyo. En obras por encargo y en contratos laborales las reglas son distintas y conviene dejarlas explícitas.",
+          "Para empresas de tecnología, los tres documentos mínimos son el contrato de desarrollo con cesión de derechos, el acuerdo de confidencialidad y los términos de uso y licencia frente al cliente final. Para creadores de contenido, el registro de la obra ante la Dirección Nacional de Derecho de Autor y contratos de licencia claros con marcas y plataformas.",
+          "Los secretos empresariales —fórmulas, listas de clientes, procesos— no se registran: se protegen manteniéndolos secretos con medidas verificables y cláusulas contractuales. Cuando se filtran, la acción es por competencia desleal y su éxito depende de poder demostrar que existían esas medidas.",
+        ],
+      },
+      {
+        titulo: "Mantener la marca viva: renovación, uso y vigilancia",
+        parrafos: [
+          "El registro no es eterno por inercia. Debe renovarse dentro de los seis meses anteriores al vencimiento del periodo de diez años, con un plazo de gracia de seis meses posteriores. Dejar vencer un registro con años de posicionamiento y tener que solicitarlo de nuevo expone la marca a que un tercero se adelante.",
+          "Además hay que usarla de forma real y efectiva en el mercado para los productos y servicios registrados, porque la falta de uso durante tres años habilita a cualquier interesado a pedir la cancelación. Y conviene vigilar la Gaceta de la Propiedad Industrial para oponerse a solicitudes de signos parecidos dentro de los 30 días hábiles, que es la defensa más económica que existe.",
+        ],
+      },
+    ],
+  },
+  /* ─────────────────────────── MIGRATORIO ─────────────────────────── */
+  migratorio: {
+    subareas: {
+      visas:
+        "Las visas colombianas se agrupan en tres tipos: visitante (V), migrante (M) y residente (R), cada una con subcategorías y requisitos propios de solvencia, afiliación a salud, apostilla y traducción oficial. La solicitud es en línea ante la Cancillería y el error más frecuente es escoger la categoría equivocada: pedir una V cuando el propósito era permanecer o una M sin acreditar el vínculo genera negativas que después pesan en el historial.",
+      "cedula-de-extranjeria":
+        "Aprobada una visa M o R, el extranjero debe registrarla ante Migración Colombia y tramitar la cédula de extranjería dentro de los 15 días hábiles siguientes al ingreso o a la expedición. Es el documento de identificación en el país: sin ella no se abre cuenta bancaria, no se firma contrato laboral formal ni se afilia a seguridad social. Incumplir el término genera sanción económica.",
+      nacionalizacion:
+        "La nacionalidad por adopción se solicita ante la Cancillería después de acreditar domicilio continuo con visa de residente —cinco años en general, dos si es cónyuge de colombiano o nacional de país latinoamericano o del Caribe—, y exige examen de historia, geografía, constitución y español, salvo exoneraciones. Al final hay acta de juramento y cédula colombiana.",
+      "sanciones-migratorias":
+        "Migración Colombia puede multar, deportar o expulsar por permanencia irregular, exceder el tiempo del permiso, trabajar sin autorización, entregar información falsa o incumplir la normativa migratoria. Toda actuación es un procedimiento administrativo sancionatorio: hay derecho a ser oído, a aportar pruebas y a interponer recursos, y una deportación deja una prohibición de ingreso que conviene evitar defendiéndose a tiempo.",
+      "permisos-de-permanencia":
+        "Junto a las visas existen los permisos que administra Migración Colombia: PIP y PTP para visitantes, salvoconductos, prórrogas de permanencia y el Estatuto Temporal de Protección para migrantes venezolanos con su PPT. Son herramientas de regularización distintas de la visa y con reglas de vigencia y renovación propias, que muchas veces resuelven el corto plazo mientras se estructura la visa correcta.",
+    },
+    secciones: [
+      {
+        titulo: "Qué hace un abogado migratorio en Colombia",
+        parrafos: [
+          "Un abogado migratorio en Colombia trabaja sobre dos autoridades distintas que suelen confundirse. La Cancillería, a través de su Grupo Interno de Trabajo de Visas e Inmigración, decide sobre las visas y la nacionalidad. Migración Colombia controla el ingreso, la permanencia y la salida, expide la cédula de extranjería y los permisos, y ejerce la función sancionatoria. Radicar ante la entidad equivocada es una de las causas más comunes de trámites perdidos.",
+          "El marco normativo principal es el Decreto 1067 de 2015 y la Resolución 5477 de 2022, que reorganizó las categorías de visas. A eso se suman las normas del Estatuto Temporal de Protección para migrantes venezolanos y una capa importante de jurisprudencia constitucional sobre unidad familiar, derecho al debido proceso en deportaciones y acceso a salud y educación de migrantes.",
+          "El acompañamiento profesional aporta sobre todo en tres puntos: elegir la categoría correcta según el propósito real de la estadía, armar el expediente documental con apostilla y traducción oficial donde se exige, y responder los requerimientos dentro de los términos, porque una respuesta tardía se entiende como desistimiento y obliga a empezar de cero pagando otra vez el estudio.",
+        ],
+      },
+      {
+        titulo: "Elegir bien la visa: visitante, migrante o residente",
+        parrafos: [
+          "La visa de visitante (V) es para quien viene por un propósito temporal y sin ánimo de establecerse: turismo, negocios, tratamiento médico, un evento, un contrato de corta duración o trabajo remoto para empresa extranjera. La visa de migrante (M) es para quien sí busca establecerse por un vínculo: cónyuge o compañero permanente de colombiano, padre o hijo de nacional, trabajador con contrato en Colombia, socio o inversionista, estudiante regular, pensionado o refugiado. La visa de residente (R) es el paso siguiente, para quien acumuló el tiempo de permanencia con visa M o hizo una inversión de monto alto.",
+          "Cada categoría define lo que la persona puede hacer. Una visa V de negocios no habilita a firmar contrato laboral en Colombia; una M de trabajo queda atada al empleador que la respaldó, de modo que un cambio de empresa exige nueva visa; una M por matrimonio depende de la subsistencia del vínculo. Ignorar esos límites es lo que después deriva en sanción por actividad no autorizada.",
+          "El tiempo con visa M cuenta para la R y el tiempo con R cuenta para la nacionalidad, siempre que la permanencia sea continua y no se pierda el domicilio por ausencias prolongadas. Por eso las decisiones migratorias conviene planearlas como una secuencia de varios años y no como trámites aislados.",
+        ],
+      },
+      {
+        titulo: "Documentos, apostilla y motivos frecuentes de negativa",
+        parrafos: [
+          "Los documentos públicos extranjeros deben venir apostillados —o legalizados si el país no es parte del Convenio de La Haya— y traducidos por traductor oficial cuando no están en español. Faltar a ese requisito es la causa de rechazo más simple y más común. A eso se suman la solvencia económica exigida en salarios mínimos según la categoría, la afiliación a un sistema de salud con cobertura en Colombia y los antecedentes.",
+          "Las negativas suelen apoyarse en tres motivos: inconsistencia entre el propósito declarado y los documentos, insuficiencia de solvencia y dudas sobre la autenticidad del vínculo o de la relación laboral. Frente a una negativa se puede pedir reconsideración y volver a solicitar corrigiendo el expediente, pero acumular negativas debilita solicitudes futuras, por lo que conviene preparar bien la primera.",
+          "En trámites de vínculo familiar la prueba se construye con más que un registro civil: fotografías, comunicaciones, comprobantes de convivencia, declaraciones extrajuicio y evidencia de vida en común. En trámites laborales, con el contrato, el certificado de existencia del empleador, la planilla de seguridad social y la justificación del cargo.",
+        ],
+      },
+      {
+        titulo: "Defensa frente a sanciones, deportación y expulsión",
+        parrafos: [
+          "La permanencia irregular, exceder el tiempo autorizado, trabajar sin permiso o suministrar información falsa pueden derivar en multa, deportación o expulsión. Cada una tiene consecuencias distintas: la deportación implica prohibición de ingreso por un periodo determinado y la expulsión, la más grave, puede llegar a diez años o más.",
+          "Estas decisiones son actos administrativos y están sometidas al debido proceso: la persona debe ser oída, puede aportar pruebas, tiene derecho a traductor y puede interponer los recursos que proceden. Cuando hay hijos colombianos, cónyuge nacional o arraigo demostrable, la jurisprudencia constitucional exige ponderar la unidad familiar y el interés superior del menor antes de ordenar la salida.",
+          "Actuar rápido cambia el resultado. Regularizar antes de que se abra la investigación, pagar la multa cuando corresponde y acreditar el arraigo suele evitar una anotación que después bloquea cualquier visa. Esperar la citación es la peor estrategia.",
+        ],
+      },
+      {
+        titulo: "Trabajar, contratar y montar empresa como extranjero",
+        parrafos: [
+          "Un extranjero puede ser socio o representante legal de una sociedad colombiana, pero para trabajar necesita la visa que lo autorice. El empleador tiene deberes propios: reportar la vinculación a Migración Colombia dentro de los términos legales, afiliar a seguridad social y cumplir la proporción de trabajadores nacionales cuando aplica. El incumplimiento genera multas para la empresa, no solo para la persona.",
+          "En el otro extremo está el colombiano que contrata extranjeros o la empresa que trae personal técnico por temporadas: allí conviene estructurar visas V de servicios o M de trabajo según la duración real, y no improvisar con permisos de visitante que no habilitan la actividad.",
+        ],
+      },
+    ],
+  },
+  /* ─────────────────── RIESGOS LABORALES ─────────────────── */
+  "riesgos-laborales": {
+    subareas: {
+      "accidente-de-trabajo":
+        "Es todo suceso repentino que ocurre por causa o con ocasión del trabajo y produce lesión, perturbación funcional o psiquiátrica, invalidez o muerte, incluidos los ocurridos en cumplimiento de órdenes fuera de la sede y en el transporte suministrado por el empleador. Calificado como laboral, la ARL cubre la atención integral y paga la incapacidad temporal al 100% del ingreso base de cotización.",
+      "enfermedad-laboral":
+        "Es la contraída como resultado de la exposición a factores de riesgo propios de la actividad. Están las del listado del Decreto 1477 de 2014, con presunción a favor del trabajador cuando se demuestra la exposición, y las no listadas, que exigen probar la relación de causalidad. Los cuadros osteomusculares, la hipoacusia y los trastornos mentales por carga laboral son los más frecuentes y los más negados.",
+      "calificacion-perdida-capacidad":
+        "El porcentaje de pérdida de capacidad laboral se determina con el Manual Único del Decreto 1507 de 2014, primero por la EPS, la ARL o el fondo, y en desacuerdo por la junta regional y luego la nacional. Ese número define todo: menos del 50% da indemnización proporcional, 50% o más abre la pensión de invalidez. Un punto de diferencia cambia la prestación por completo.",
+      "indemnizacion-arl":
+        "Con pérdida entre el 5% y el 49,99% la ARL paga una indemnización en salarios base de liquidación según tabla; con 50% o más, pensión de invalidez del 60% o 75% del IBL; en caso de muerte, pensión de sobrevivientes y auxilio funerario. Estas prestaciones son independientes de la indemnización plena de perjuicios que procede contra el empleador cuando hay culpa patronal probada.",
+      "reintegro-y-reubicacion":
+        "El trabajador con secuelas tiene derecho a reubicación en un puesto compatible con sus restricciones y conserva estabilidad laboral reforzada: despedirlo por su condición de salud sin autorización del inspector del trabajo hace el despido ineficaz y da lugar a reintegro con salarios y aportes, además de la indemnización de la Ley 361 de 1997.",
+    },
+    secciones: [
+      {
+        titulo: "Qué debe pagar la ARL después de un accidente de trabajo",
+        parrafos: [
+          "El sistema de riesgos laborales de la Ley 1562 de 2012 cubre al trabajador desde el primer día de afiliación y con aportes que paga íntegramente el empleador. Cuando el evento se califica como de origen laboral, la ARL asume la atención médica, quirúrgica, hospitalaria, farmacéutica y de rehabilitación sin copagos ni cuotas moderadoras, y paga la incapacidad temporal al 100% del ingreso base de cotización, no al 66% como ocurre con la EPS.",
+          "Ese detalle explica por qué tantas ARL califican los eventos como de origen común: el costo de la prestación cambia. Cuando ocurre, el trabajador puede controvertir el dictamen y llevar la discusión a la junta regional de calificación de invalidez, y mientras se define el origen la atención no puede suspenderse.",
+          "Si quedan secuelas permanentes, la ARL debe reconocer indemnización por pérdida de capacidad laboral o pensión de invalidez según el porcentaje, y en caso de muerte, pensión de sobrevivientes para los beneficiarios y auxilio funerario. Todo eso es independiente de lo que el empleador deba cuando el accidente ocurrió por su culpa.",
+        ],
+      },
+      {
+        titulo: "Reporte, términos y errores que cuestan el caso",
+        parrafos: [
+          "El empleador debe diligenciar el FURAT y reportar el accidente a la ARL y a la EPS dentro de los dos días hábiles siguientes. Cuando no lo hace —lo más común en accidentes que parecen menores— el trabajador puede reportar directamente y debe hacerlo por escrito, porque la ausencia de reporte es el argumento con el que después se niega la cobertura.",
+          "La atención médica del mismo día es la prueba central: la historia clínica que describe el mecanismo de la lesión y su relación con la tarea vale más que cualquier testimonio posterior. Junto a ella conviene conservar el reporte, los correos con el jefe, el certificado de afiliación, la descripción del cargo y las fotografías del lugar.",
+          "Para controvertir un dictamen de pérdida de capacidad hay diez días hábiles desde su notificación; vencido el término, el porcentaje queda en firme y solo puede revisarse por agravación. Las prestaciones económicas ya causadas prescriben en tres años.",
+        ],
+      },
+      {
+        titulo: "Culpa patronal: cuando además se puede demandar al empleador",
+        parrafos: [
+          "El artículo 216 del Código Sustantivo del Trabajo permite reclamar al empleador la indemnización total y ordinaria de perjuicios cuando su culpa en el accidente o en la enfermedad está suficientemente comprobada: falta de capacitación, ausencia de elementos de protección, maquinaria sin mantenimiento, incumplimiento del sistema de gestión de seguridad y salud en el trabajo u órdenes que expusieron al trabajador.",
+          "Esa indemnización cubre daño emergente, lucro cesante presente y futuro, daño moral y daño a la vida de relación, y se descuenta de ella lo que la ARL haya pagado por prestaciones económicas. Es la reclamación de mayor cuantía del sistema y también la que exige más prueba técnica: peritajes, actas del COPASST, matriz de riesgos y registros de entrega de dotación.",
+        ],
+      },
+    ],
+  },
+
+  /* ─────────────────────────── SALUD ─────────────────────────── */
+  salud: {
+    subareas: {
+      "tutela-en-salud":
+        "La tutela protege el derecho fundamental a la salud cuando la EPS niega, demora o fragmenta un servicio. Se presenta ante cualquier juez, sin abogado obligatorio, y debe resolverse en 10 días. Bien sustentada con la orden médica del profesional tratante y la negativa de la EPS, es el mecanismo más rápido y efectivo del sistema jurídico colombiano.",
+      "negacion-de-medicamentos":
+        "La EPS no puede negar un medicamento con el argumento de que está excluido si el médico tratante lo ordenó y no hay alternativa disponible en el plan. La Ley Estatutaria 1751 de 2015 invirtió la lógica: todo está cubierto salvo las exclusiones expresas, y la última palabra sobre la pertinencia clínica la tiene el médico tratante, no la auditoría.",
+      "autorizacion-de-cirugias":
+        "Las demoras en autorizar cirugías y en asignar citas con especialistas se atacan con petición y luego con tutela, pidiendo tratamiento integral para no tener que demandar cada paso posterior. Cuando la cirugía requiere insumos, rehabilitación o controles, todo eso debe quedar incluido en la orden judicial.",
+      "incapacidades-eps":
+        "Los primeros dos días los paga el empleador; desde el tercero y hasta el día 180 la EPS; entre 181 y 540, el fondo de pensiones; y después vuelve a la EPS. Cuando el origen es laboral paga la ARL al 100%. Las discusiones entre entidades no pueden trasladarse al paciente, y la tutela sirve para obligar al pago mientras se resuelve el conflicto entre ellas.",
+      desacato:
+        "Si la EPS incumple el fallo, procede el incidente de desacato ante el mismo juez, que puede imponer multa y arresto al representante legal. Es un trámite corto y en la práctica es lo que hace cumplir la tutela: sin desacato, muchos fallos quedan en el papel.",
+    },
+    secciones: [
+      {
+        titulo: "Qué puedes exigirle a tu EPS y con qué herramienta",
+        parrafos: [
+          "El derecho a la salud en Colombia es un derecho fundamental autónomo desde la Ley Estatutaria 1751 de 2015, lo que significa que se puede exigir directamente por tutela sin necesidad de conexidad con la vida. La misma ley prohíbe la fragmentación de la atención: la EPS no puede autorizar la cirugía y dejar por fuera los insumos, la rehabilitación o el transporte cuando son necesarios para completar el tratamiento.",
+          "La ruta empieza por la reclamación escrita a la EPS —petición o queja— con la orden médica y la constancia de la negativa o de la demora. Si no hay respuesta útil, la tutela se presenta ante cualquier juez y debe fallarse en diez días. También existe la vía de la Superintendencia Nacional de Salud, que resuelve algunos conflictos con funciones jurisdiccionales.",
+          "Un elemento que cambia el resultado es pedir tratamiento integral: sin él, cada nueva autorización negada obliga a otra tutela. Con él, el fallo cubre todo lo que la patología requiera hacia adelante y el incumplimiento se ataca por desacato.",
+        ],
+      },
+      {
+        titulo: "Casos donde la tutela es especialmente eficaz",
+        parrafos: [
+          "Medicamentos de alto costo y no incluidos en el plan de beneficios, cirugías con listas de espera prolongadas, citas con especialistas asignadas a meses, tratamientos oncológicos, servicios de rehabilitación, transporte para paciente y acompañante cuando el servicio no existe en el municipio, insumos para pacientes con discapacidad y atención domiciliaria.",
+          "También en incapacidades no pagadas, cuando la EPS y el fondo de pensiones se devuelven el caso entre sí. La jurisprudencia ha sido clara: el conflicto entre entidades no puede afectar el mínimo vital del paciente, y el juez ordena pagar primero y discutir después.",
+          "Para sujetos de especial protección —niños, adultos mayores, personas con discapacidad, mujeres gestantes— el análisis es más favorable y los términos se aplican con mayor rigor. Documentar esa condición desde el escrito de tutela es determinante.",
+        ],
+      },
+    ],
+  },
+
+  /* ─────────────────────────── CONSUMIDOR ─────────────────────────── */
+  consumidor: {
+    subareas: {
+      "garantia-de-productos":
+        "La garantía legal es mínimo de un año para bienes nuevos, seis meses para usados y la vigencia indicada para perecederos, y obliga solidariamente al productor y al vendedor a reparar, cambiar o devolver el dinero. El consumidor no tiene que probar el defecto de fabricación: la carga de demostrar que la falla se debió a mal uso recae en el proveedor.",
+      "clausulas-abusivas":
+        "Son ineficaces de pleno derecho las cláusulas que limitan la responsabilidad del proveedor, invierten la carga de la prueba, permiten modificar unilateralmente el contrato o imponen renuncias anticipadas de derechos. Aparecen con frecuencia en contratos de servicios, gimnasios, planes de telefonía, parqueaderos y créditos.",
+      "publicidad-enganosa":
+        "El proveedor responde por la información y las condiciones anunciadas: precio publicado, características, promociones y disponibilidad. Si el precio exhibido es menor al cobrado, el consumidor puede exigir el menor. La publicidad engañosa se denuncia ante la SIC y puede generar sanción administrativa además de la reparación al consumidor.",
+      "demanda-sic":
+        "La acción de protección al consumidor se presenta ante la Superintendencia de Industria y Comercio, que actúa como juez, sin necesidad de abogado en cuantías menores. Requiere reclamación directa previa y caduca al año de terminada la relación de consumo. La SIC puede ordenar cumplir la garantía, devolver el dinero e indemnizar.",
+      "servicios-financieros":
+        "Cobros no autorizados, seguros vendidos sin consentimiento, productos que nunca se solicitaron, reportes indebidos y créditos con intereses por encima de la tasa máxima legal. La ruta pasa por el defensor del consumidor financiero de la entidad, la Superintendencia Financiera y, cuando hay daño patrimonial, la demanda.",
+    },
+    secciones: [
+      {
+        titulo: "Cómo funciona la protección al consumidor en Colombia",
+        parrafos: [
+          "La Ley 1480 de 2011, el Estatuto del Consumidor, parte de una idea simple: quien compra está en desventaja informativa frente a quien vende, y la ley corrige esa asimetría. Impone garantía legal obligatoria, responsabilidad solidaria del productor y del proveedor, deber de información veraz y suficiente, y sanciona la publicidad engañosa y las cláusulas abusivas.",
+          "La reclamación directa ante el proveedor es requisito previo y conviene hacerla por escrito con constancia de radicación, porque el silencio o la respuesta insatisfactoria son lo que habilita la acción. A partir de ahí, la vía natural es la acción de protección al consumidor ante la SIC, un trámite ágil que puede adelantarse sin abogado en las cuantías menores y que caduca al año de terminada la relación de consumo.",
+          "En compras por internet hay un derecho adicional que casi nadie usa: el retracto dentro de los cinco días hábiles siguientes a la entrega, con devolución del dinero, y la reversión del pago cuando hubo fraude, entrega de producto distinto o producto defectuoso.",
+        ],
+      },
+      {
+        titulo: "Qué se puede pedir y con qué prueba",
+        parrafos: [
+          "Frente a un producto defectuoso el consumidor puede exigir reparación gratuita, cambio por otro idéntico o devolución del precio pagado, en ese orden según el caso y las veces que la falla se repita. Frente a un servicio mal prestado, la prestación correcta o la devolución de lo pagado, con indemnización de los perjuicios acreditados.",
+          "La prueba es simple pero hay que conservarla: factura o comprobante de pago, publicidad o pantallazos de la oferta, el contrato con sus anexos, la reclamación radicada, las respuestas del proveedor y el registro fotográfico o el diagnóstico técnico del defecto. Con eso, la mayoría de los casos se resuelve antes de llegar a audiencia.",
+        ],
+      },
+    ],
+  },
 };

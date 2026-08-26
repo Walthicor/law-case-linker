@@ -422,6 +422,7 @@ const SEMILLAS: Semilla[] = [
           "Los servicios de salud deben prestarse de manera completa; se prohíbe fragmentar la atención.",
       },
     ],
+    // VERIFICAR CON ABOGADO
     plazo: {
       titulo: "La tutela se falla en 10 días",
       texto:
@@ -632,6 +633,7 @@ const SEMILLAS: Semilla[] = [
         texto: "Regula la acción de protección al consumidor ante la Superintendencia.",
       },
     ],
+    // VERIFICAR CON ABOGADO
     plazo: {
       titulo: "Garantía: reclama a tiempo",
       texto:
@@ -649,8 +651,8 @@ const SEMILLAS: Semilla[] = [
     slug: "insolvencia",
     area: "de insolvencia",
     titulo: "Deudas y reportes en centrales",
-    keyword: "abogado de insolvencia de persona natural",
-    h1: "Abogado de insolvencia de persona natural en Colombia",
+    keyword: "insolvencia persona natural",
+    h1: "Insolvencia de persona natural en Colombia",
     entrada:
       "Un abogado de insolvencia de persona natural te permite negociar todas tus deudas en un solo trámite y frenar los procesos de cobro en tu contra.",
     icono: "Scale",
@@ -682,6 +684,7 @@ const SEMILLAS: Semilla[] = [
         texto: "Regula la permanencia de la información negativa en las centrales de riesgo.",
       },
     ],
+    // VERIFICAR CON ABOGADO
     plazo: {
       titulo: "Reporte negativo: hasta 4 años",
       texto:
@@ -811,11 +814,70 @@ const SEMILLAS: Semilla[] = [
     areaFormulario: "Tránsito",
   },
   {
+    slug: "propiedad-intelectual",
+    area: "de marcas",
+    titulo: "Propiedad intelectual",
+    keyword: "registro de marca Colombia",
+    h1: "Registro de marca en Colombia: cómo protegerla",
+    entrada:
+      "El registro de marca en Colombia se hace ante la Superintendencia de Industria y Comercio y es lo único que te da derecho exclusivo sobre tu nombre, tu logo y tu identidad comercial.",
+    icono: "BadgeCheck",
+    situaciones: [
+      "Quieres registrar el nombre o el logo de tu negocio",
+      "Alguien está usando tu marca sin permiso",
+      "Te llegó una oposición a tu solicitud de marca",
+      "La SIC te negó el registro por semejanza con otra marca",
+      "Necesitas proteger un software, un curso o un contenido",
+      "Vas a licenciar o vender tu marca o tu obra",
+    ],
+    subareas: [
+      { titulo: "Registro de marca", slug: "registro-de-marca", destacada: true },
+      { titulo: "Oposiciones y negativas", slug: "oposiciones-y-negativas" },
+      { titulo: "Derechos de autor y software", slug: "derechos-de-autor" },
+      { titulo: "Competencia desleal y uso indebido", slug: "competencia-desleal" },
+      { titulo: "Contratos de licencia y cesión", slug: "licencias-y-cesion" },
+      { titulo: "Patentes y diseños industriales", slug: "patentes-y-disenos" },
+    ],
+    normas: [
+      {
+        articulo: "Art. 154 Decisión 486",
+        norma: "Régimen Común de Propiedad Industrial (CAN)",
+        texto:
+          "El derecho al uso exclusivo de una marca se adquiere por el registro de la misma ante la respectiva oficina nacional competente.",
+      },
+      {
+        articulo: "Art. 152 Decisión 486",
+        norma: "Régimen Común de Propiedad Industrial (CAN)",
+        texto:
+          "El registro de una marca tendrá una duración de diez años contados desde la fecha de su concesión y podrá renovarse por períodos sucesivos de diez años.",
+      },
+    ],
+    // VERIFICAR CON ABOGADO
+    plazo: {
+      titulo: "Oposición: 30 días hábiles",
+      texto:
+        "Publicada la solicitud en la Gaceta de la Propiedad Industrial, cualquier tercero tiene 30 días hábiles para oponerse y el solicitante 30 días hábiles para contestar. El registro dura 10 años renovables y debe renovarse dentro de los 6 meses anteriores al vencimiento (con 6 meses de gracia).",
+    },
+    guias: [
+      { titulo: "Cómo registrar una marca en Colombia paso a paso", slug: "registrar-marca-paso-a-paso" },
+      { titulo: "Búsqueda de antecedentes marcarios", slug: "busqueda-antecedentes-marcarios" },
+      { titulo: "Qué hacer si copian tu marca", slug: "copian-tu-marca" },
+    ],
+    herramienta: {
+      titulo: "Verificador de viabilidad de marca",
+      descripcion:
+        "Revisa la clase de Niza que necesitas y los riesgos de confusión antes de pagar la tasa de la SIC.",
+      slug: "viabilidad-de-marca",
+    },
+    relacionados: ["comercial", "civil"],
+    areaFormulario: "Propiedad intelectual",
+  },
+  {
     slug: "migratorio",
     area: "migratorio",
     titulo: "Migratorio y extranjería",
-    keyword: "abogado migratorio",
-    h1: "Abogado migratorio en Colombia",
+    keyword: "abogado migratorio Colombia",
+    h1: "Abogado migratorio en Colombia: visas y extranjería",
     entrada:
       "Un abogado migratorio tramita visas, cédula de extranjería, nacionalización y defiende ante sanciones o deportación de Migración Colombia.",
     icono: "Plane",
@@ -846,6 +908,7 @@ const SEMILLAS: Semilla[] = [
         texto: "Regula el ingreso, permanencia y salida de extranjeros del territorio nacional.",
       },
     ],
+    // VERIFICAR CON ABOGADO
     plazo: {
       titulo: "Cédula: 15 días hábiles",
       texto:
