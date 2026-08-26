@@ -466,9 +466,9 @@ const SEMILLAS: Semilla[] = [
     subareas: [
       { titulo: "Incumplimiento de contrato", slug: "incumplimiento-de-contrato" },
       { titulo: "Proceso ejecutivo", slug: "proceso-ejecutivo" },
-      { titulo: "Obligaciones", slug: "obligaciones" },
+      { titulo: "Cobro de deudas", slug: "obligaciones" },
       { titulo: "Responsabilidad civil", slug: "responsabilidad-civil" },
-      { titulo: "Cobro de deudas", slug: "cobro-de-deudas" },
+      { titulo: "Restitución de inmueble arrendado", slug: "arrendamientos" },
       { titulo: "Prescripción adquisitiva", slug: "prescripcion-adquisitiva" },
     ],
     normas: [
