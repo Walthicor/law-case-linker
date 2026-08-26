@@ -7,6 +7,7 @@ export type BusquedaCaso = {
   area?: string | undefined;
   ciudad?: string | undefined;
   estado?: string | undefined;
+  valor?: string | undefined;
 };
 
 const texto = (v: unknown) => (typeof v === "string" && v ? v : undefined);
@@ -16,6 +17,7 @@ export const Route = createFileRoute("/iniciar-caso")({
     area: texto(search["area"]),
     ciudad: texto(search["ciudad"]),
     estado: texto(search["estado"]),
+    valor: texto(search["valor"]),
   }),
   head: () => ({
     meta: [
@@ -38,7 +40,7 @@ export const Route = createFileRoute("/iniciar-caso")({
 });
 
 function Pagina() {
-  const { area, ciudad, estado } = Route.useSearch();
+  const { area, ciudad, estado, valor } = Route.useSearch();
 
   return (
     <div className="min-h-screen bg-papel-hueso">
@@ -56,7 +58,7 @@ function Pagina() {
       </header>
 
       <div className="mx-auto max-w-[720px] px-5 py-10 sm:py-14">
-        <FormularioCaso inicial={{ area, ciudad, estado }} />
+        <FormularioCaso inicial={{ area, ciudad, estado, valor }} />
         <p className="mt-6 text-center text-[0.8rem] text-tinta-suave">
           Asesorías Jurídicas Colombia conecta personas con abogados independientes verificados. No
           somos una firma de abogados.

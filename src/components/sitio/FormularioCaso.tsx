@@ -73,7 +73,12 @@ const TODOS = CAMPOS_PASO.flat();
 export function FormularioCaso({
   inicial,
 }: {
-  inicial?: { area?: string | undefined; ciudad?: string | undefined; estado?: string | undefined };
+  inicial?: {
+    area?: string | undefined;
+    ciudad?: string | undefined;
+    estado?: string | undefined;
+    valor?: string | undefined;
+  };
 }) {
   const navigate = useNavigate();
   const [caso, setCaso] = useState<Caso>(CASO_VACIO);
@@ -93,8 +98,11 @@ export function FormularioCaso({
       area: inicial?.area ?? "",
       ciudad: inicial?.ciudad ?? "",
       estado: inicial?.estado ?? "",
+      valor: inicial?.valor ?? "",
     };
-    const tieneHome = Boolean(desdeHome.area || desdeHome.ciudad || desdeHome.estado);
+    const tieneHome = Boolean(
+      desdeHome.area || desdeHome.ciudad || desdeHome.estado || desdeHome.valor,
+    );
     if (tieneHome) {
       setCaso((c) => ({ ...c, ...desdeHome }));
       const completo = desdeHome.area && desdeHome.ciudad && desdeHome.estado;
