@@ -15,6 +15,9 @@ import { SUBAREAS_RIESGOS } from "./subareas-riesgos";
 import { SUBAREAS_FAMILIA } from "./subareas-familia";
 import { SUBAREAS_CIVIL } from "./subareas-civil";
 import { SUBAREAS_ADMINISTRATIVO } from "./subareas-administrativo";
+import { SUBAREAS_PENAL } from "./subareas-penal";
+import { SUBAREAS_COMERCIAL } from "./subareas-comercial";
+import { SUBAREAS_INMOBILIARIO } from "./subareas-inmobiliario";
 import { pilarPorSlug, type Guia, type Norma, type Faq, type Pilar, type Subarea } from "./pilares";
 
 export type Paso = { titulo: string; texto: string };
@@ -50,6 +53,9 @@ export const CONTENIDO_SUBAREAS: Record<string, ContenidoSubarea> = {
   ...SUBAREAS_FAMILIA,
   ...SUBAREAS_CIVIL,
   ...SUBAREAS_ADMINISTRATIVO,
+  ...SUBAREAS_PENAL,
+  ...SUBAREAS_COMERCIAL,
+  ...SUBAREAS_INMOBILIARIO,
 };
 
 export type SubareaResuelta = ContenidoSubarea & {
