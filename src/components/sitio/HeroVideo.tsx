@@ -65,10 +65,10 @@ export function HeroVideo() {
           poster={POSTER}
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="/hero.webm" type="video/webm" />
-          <source src="/hero.mp4" type="video/mp4" />
+          <source src={videoTribunal.url} type="video/mp4" />
         </video>
       )}
+
     </div>
   );
 }
