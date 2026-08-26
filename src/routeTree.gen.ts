@@ -25,7 +25,7 @@ import { Route as PoliticaDeTratamientoDeDatosRouteImport } from './routes/polit
 import { Route as TerminosYCondicionesRouteImport } from './routes/terminos-y-condiciones'
 import { Route as UneteRouteImport } from './routes/unete'
 import { Route as AreasIndexRouteImport } from './routes/areas.index'
-import { Route as AreasSiloRouteImport } from './routes/areas.$silo'
+import { Route as AreasSiloIndexRouteImport } from './routes/areas.$silo.index'
 import { Route as AreasSiloSubareaRouteImport } from './routes/areas.$silo.$subarea'
 
 const IndexRoute = IndexRouteImport.update({
@@ -109,15 +109,15 @@ const AreasIndexRoute = AreasIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AreasRoute,
 } as any)
-const AreasSiloRoute = AreasSiloRouteImport.update({
-  id: '/$silo',
-  path: '/$silo',
+const AreasSiloIndexRoute = AreasSiloIndexRouteImport.update({
+  id: '/$silo/',
+  path: '/$silo/',
   getParentRoute: () => AreasRoute,
 } as any)
 const AreasSiloSubareaRoute = AreasSiloSubareaRouteImport.update({
-  id: '/$subarea',
-  path: '/$subarea',
-  getParentRoute: () => AreasSiloRoute,
+  id: '/$silo/$subarea',
+  path: '/$silo/$subarea',
+  getParentRoute: () => AreasRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -136,9 +136,9 @@ export interface FileRoutesByFullPath {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
-  '/areas/$silo': typeof AreasSiloRouteWithChildren
   '/areas/': typeof AreasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
+  '/areas/$silo/': typeof AreasSiloIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -155,9 +155,9 @@ export interface FileRoutesByTo {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
-  '/areas/$silo': typeof AreasSiloRouteWithChildren
   '/areas': typeof AreasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
+  '/areas/$silo': typeof AreasSiloIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -176,9 +176,9 @@ export interface FileRoutesById {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
-  '/areas/$silo': typeof AreasSiloRouteWithChildren
   '/areas/': typeof AreasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
+  '/areas/$silo/': typeof AreasSiloIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -198,9 +198,9 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
-    | '/areas/$silo'
     | '/areas/'
     | '/areas/$silo/$subarea'
+    | '/areas/$silo/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -217,9 +217,9 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
-    | '/areas/$silo'
     | '/areas'
     | '/areas/$silo/$subarea'
+    | '/areas/$silo'
   id:
     | '__root__'
     | '/'
@@ -237,9 +237,9 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
-    | '/areas/$silo'
     | '/areas/'
     | '/areas/$silo/$subarea'
+    | '/areas/$silo/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -374,43 +374,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasIndexRouteImport
       parentRoute: typeof AreasRoute
     }
-    '/areas/$silo': {
-      id: '/areas/$silo'
+    '/areas/$silo/': {
+      id: '/areas/$silo/'
       path: '/$silo'
-      fullPath: '/areas/$silo'
-      preLoaderRoute: typeof AreasSiloRouteImport
+      fullPath: '/areas/$silo/'
+      preLoaderRoute: typeof AreasSiloIndexRouteImport
       parentRoute: typeof AreasRoute
     }
     '/areas/$silo/$subarea': {
       id: '/areas/$silo/$subarea'
-      path: '/$subarea'
+      path: '/$silo/$subarea'
       fullPath: '/areas/$silo/$subarea'
       preLoaderRoute: typeof AreasSiloSubareaRouteImport
-      parentRoute: typeof AreasSiloRoute
+      parentRoute: typeof AreasRoute
     }
   }
 }
 
-interface AreasSiloRouteChildren {
-  AreasSiloSubareaRoute: typeof AreasSiloSubareaRoute
-}
-
-const AreasSiloRouteChildren: AreasSiloRouteChildren = {
-  AreasSiloSubareaRoute: AreasSiloSubareaRoute,
-}
-
-const AreasSiloRouteWithChildren = AreasSiloRoute._addFileChildren(
-  AreasSiloRouteChildren,
-)
-
 interface AreasRouteChildren {
-  AreasSiloRoute: typeof AreasSiloRouteWithChildren
   AreasIndexRoute: typeof AreasIndexRoute
+  AreasSiloSubareaRoute: typeof AreasSiloSubareaRoute
+  AreasSiloIndexRoute: typeof AreasSiloIndexRoute
 }
 
 const AreasRouteChildren: AreasRouteChildren = {
-  AreasSiloRoute: AreasSiloRouteWithChildren,
   AreasIndexRoute: AreasIndexRoute,
+  AreasSiloSubareaRoute: AreasSiloSubareaRoute,
+  AreasSiloIndexRoute: AreasSiloIndexRoute,
 }
 
 const AreasRouteWithChildren = AreasRoute._addFileChildren(AreasRouteChildren)
