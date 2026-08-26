@@ -205,7 +205,26 @@ function Pagina() {
             </section>
           ))
         : null}
-
+      {/* CRUCE AUTORIZADO DE SILO (excepción única) */}
+      {d.cruce ? (
+        <section className="bg-papel py-10">
+          <div className="contenedor">
+            <Revelar>
+              <p className="lectura text-[0.95rem] leading-relaxed text-tinta-suave">
+                {d.cruce.texto}{" "}
+                <Link
+                  to="/areas/$silo/$subarea"
+                  params={{ silo: d.cruce.silo, subarea: d.cruce.subarea }}
+                  className="text-esmeralda underline decoration-esmeralda/30 underline-offset-4"
+                >
+                  {d.cruce.enlace}
+                </Link>
+                .
+              </p>
+            </Revelar>
+          </div>
+        </section>
+      ) : null}
 
 
       {/* PASO A PASO */}
