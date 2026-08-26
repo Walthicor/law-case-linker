@@ -653,6 +653,28 @@ export function FormularioCaso({
               </button>
             )}
           </div>
+
+          <div aria-live="assertive" role="status">
+            {fallo && (
+              <div className="mt-4 rounded-[6px] border border-[color:var(--rojo,#8B2E2E)] bg-papel-hueso px-4 py-3">
+                <p className="text-[0.9rem] font-semibold text-tinta">{fallo}</p>
+                {enlaceWhatsapp(`Hola, tuve un error enviando mi caso de ${caso.area}.`) ? (
+                  <a
+                    href={enlaceWhatsapp(`Hola, tuve un error enviando mi caso de ${caso.area}.`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secundario mt-3 inline-flex"
+                  >
+                    Escribir por WhatsApp
+                  </a>
+                ) : (
+                  <p className="mt-2 text-[0.85rem] text-tinta-suave">
+                    Escríbenos a {WHATSAPP_SOPORTE} o inténtalo de nuevo en unos minutos.
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
         </form>
 
         <div className="flex items-start gap-2 border-t border-linea bg-papel-hueso px-5 py-3.5 sm:px-8">
@@ -667,7 +689,7 @@ export function FormularioCaso({
         <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
           <div className="sello-radicado">
             <p className="sello-titulo">RADICADO</p>
-            <p className="sello-numero">{radicado}</p>
+            <p className="sello-numero">{radicadoFinal ?? radicado}</p>
           </div>
         </div>
       )}
