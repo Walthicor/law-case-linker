@@ -4,7 +4,7 @@
  * salgan siempre con la misma forma.
  */
 
-export const SITIO = "https://asesoriasjuridicas.com";
+export const SITIO = "https://asesoriasjuridicascolombia.com";
 
 /** 22 caracteres. Solo se añade si el title final cabe en 60. */
 export const SUFIJO = " | Asesorías Jurídicas";

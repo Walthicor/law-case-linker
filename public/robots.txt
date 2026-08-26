@@ -3,4 +3,4 @@ Allow: /
 Disallow: /gracias
 Disallow: /api
 
-Sitemap: https://asesoriasjuridicas.com/sitemap.xml
+Sitemap: https://asesoriasjuridicascolombia.com/sitemap.xml
