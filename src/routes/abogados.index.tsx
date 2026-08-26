@@ -18,10 +18,10 @@ const DESC =
   "Directorio de abogados con tarjeta profesional confirmada ante el Consejo Superior de la Judicatura.";
 
 type Busqueda = {
-  area?: string;
-  ciudad?: string;
-  experiencia?: string;
-  competencia?: string;
+  area?: string | undefined;
+  ciudad?: string | undefined;
+  experiencia?: string | undefined;
+  competencia?: string | undefined;
 };
 
 export const Route = createFileRoute("/abogados/")({
@@ -35,9 +35,11 @@ export const Route = createFileRoute("/abogados/")({
       ? { competencia: s['competencia'] }
       : {}),
   }),
-  head: ({ search }) => {
+  loaderDeps: ({ search }) => ({ filtrada: Object.values(search).filter(Boolean).length > 0 }),
+  loader: ({ deps }) => ({ filtrada: deps.filtrada }),
+  head: ({ loaderData }) => {
     // Las combinaciones de filtros generan URL con parámetros: noindex.
-    const filtrada = Object.keys(search ?? {}).length > 0;
+    const filtrada = loaderData?.filtrada === true;
     return {
       meta: [
         { title: TITLE },
