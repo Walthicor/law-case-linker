@@ -26,6 +26,7 @@ import { Route as TerminosYCondicionesRouteImport } from './routes/terminos-y-co
 import { Route as UneteRouteImport } from './routes/unete'
 import { Route as AreasIndexRouteImport } from './routes/areas.index'
 import { Route as GuiasIndexRouteImport } from './routes/guias.index'
+import { Route as GuiasSlugRouteImport } from './routes/guias.$slug'
 import { Route as HerramientasIndexRouteImport } from './routes/herramientas.index'
 import { Route as HerramientasAccionDeTutelaRouteImport } from './routes/herramientas.accion-de-tutela'
 import { Route as HerramientasCalculadoraCuotaAlimentariaRouteImport } from './routes/herramientas.calculadora-cuota-alimentaria'
@@ -121,6 +122,11 @@ const GuiasIndexRoute = GuiasIndexRouteImport.update({
   path: '/',
   getParentRoute: () => GuiasRoute,
 } as any)
+const GuiasSlugRoute = GuiasSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => GuiasRoute,
+} as any)
 const HerramientasIndexRoute = HerramientasIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -183,6 +189,7 @@ export interface FileRoutesByFullPath {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/guias/$slug': typeof GuiasSlugRoute
   '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
   '/herramientas/calculadora-cuota-alimentaria': typeof HerramientasCalculadoraCuotaAlimentariaRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
@@ -207,6 +214,7 @@ export interface FileRoutesByTo {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/guias/$slug': typeof GuiasSlugRoute
   '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
   '/herramientas/calculadora-cuota-alimentaria': typeof HerramientasCalculadoraCuotaAlimentariaRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
@@ -235,6 +243,7 @@ export interface FileRoutesById {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/guias/$slug': typeof GuiasSlugRoute
   '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
   '/herramientas/calculadora-cuota-alimentaria': typeof HerramientasCalculadoraCuotaAlimentariaRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
@@ -264,6 +273,7 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/guias/$slug'
     | '/herramientas/accion-de-tutela'
     | '/herramientas/calculadora-cuota-alimentaria'
     | '/herramientas/calculadora-liquidacion-laboral'
@@ -288,6 +298,7 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/guias/$slug'
     | '/herramientas/accion-de-tutela'
     | '/herramientas/calculadora-cuota-alimentaria'
     | '/herramientas/calculadora-liquidacion-laboral'
@@ -315,6 +326,7 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/guias/$slug'
     | '/herramientas/accion-de-tutela'
     | '/herramientas/calculadora-cuota-alimentaria'
     | '/herramientas/calculadora-liquidacion-laboral'
@@ -466,6 +478,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuiasIndexRouteImport
       parentRoute: typeof GuiasRoute
     }
+    '/guias/$slug': {
+      id: '/guias/$slug'
+      path: '/$slug'
+      fullPath: '/guias/$slug'
+      preLoaderRoute: typeof GuiasSlugRouteImport
+      parentRoute: typeof GuiasRoute
+    }
     '/herramientas/': {
       id: '/herramientas/'
       path: '/'
@@ -540,10 +559,12 @@ const AreasRouteChildren: AreasRouteChildren = {
 const AreasRouteWithChildren = AreasRoute._addFileChildren(AreasRouteChildren)
 
 interface GuiasRouteChildren {
+  GuiasSlugRoute: typeof GuiasSlugRoute
   GuiasIndexRoute: typeof GuiasIndexRoute
 }
 
 const GuiasRouteChildren: GuiasRouteChildren = {
+  GuiasSlugRoute: GuiasSlugRoute,
   GuiasIndexRoute: GuiasIndexRoute,
 }
 
