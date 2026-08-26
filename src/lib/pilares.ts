@@ -281,10 +281,10 @@ const SEMILLAS: Semilla[] = [
     slug: "penal",
     area: "penal",
     titulo: "Derecho penal",
-    keyword: "abogado penalista",
-    h1: "Abogado penalista en Colombia",
+    keyword: "abogado penal",
+    h1: "Abogado penal en Colombia",
     entrada:
-      "Necesitas un abogado penalista desde el primer momento: si te citaron a interrogatorio, te capturaron o quieres denunciar, cada hora cuenta.",
+      "Un abogado penal debe entrar desde el primer momento: si te citaron a interrogatorio, capturaron a un familiar o quieres denunciar, las primeras 36 horas definen el caso.",
     icono: "Gavel",
     situaciones: [
       "Te citaron a una audiencia o a interrogatorio",
@@ -314,6 +314,7 @@ const SEMILLAS: Semilla[] = [
         texto: "La acción penal prescribe en un tiempo igual al máximo de la pena fijada en la ley.",
       },
     ],
+    // VERIFICAR CON ABOGADO
     plazo: {
       titulo: "Actúa en las primeras 36 horas",
       texto:
@@ -334,7 +335,7 @@ const SEMILLAS: Semilla[] = [
     keyword: "abogado de pensiones",
     h1: "Abogado de pensiones en Colombia",
     entrada:
-      "Un abogado de pensiones te sirve cuando Colpensiones o el fondo privado te niega la pensión, te la liquida mal o no te reconoce semanas cotizadas.",
+      "Necesitas un abogado de pensiones cuando Colpensiones o el fondo privado te niega la pensión, te la liquida con un ingreso base equivocado o no te reconoce semanas que sí cotizaste.",
     icono: "PiggyBank",
     situaciones: [
       "Te negaron la pensión de vejez",
@@ -364,6 +365,7 @@ const SEMILLAS: Semilla[] = [
         texto: "Requisitos para que los beneficiarios accedan a la pensión de sobrevivientes.",
       },
     ],
+    // VERIFICAR CON ABOGADO
     plazo: {
       titulo: "El derecho pensional es imprescriptible",
       texto:
@@ -379,7 +381,7 @@ const SEMILLAS: Semilla[] = [
       descripcion: "Revisa cuántas semanas te faltan y en qué año podrías pensionarte.",
       slug: "simulador-pension",
     },
-    relacionados: ["laboral", "salud"],
+    relacionados: ["riesgos-laborales", "laboral"],
     areaFormulario: "Pensiones",
   },
   {
@@ -498,7 +500,7 @@ const SEMILLAS: Semilla[] = [
     keyword: "abogado inmobiliario",
     h1: "Abogado inmobiliario en Colombia",
     entrada:
-      "Un abogado inmobiliario te acompaña en compraventas, escrituración, restitución de inmueble arrendado y conflictos de propiedad horizontal.",
+      "Un abogado inmobiliario revisa títulos antes de que compres, redacta la promesa y la escritura, recupera tu inmueble arrendado y resuelve los conflictos de propiedad horizontal.",
     icono: "Building2",
     situaciones: [
       "Tu arrendatario no paga y quieres el inmueble de vuelta",
@@ -528,6 +530,7 @@ const SEMILLAS: Semilla[] = [
         texto: "Regula el proceso de restitución de inmueble arrendado.",
       },
     ],
+    // VERIFICAR CON ABOGADO
     plazo: {
       titulo: "Preaviso: 3 meses",
       texto:
@@ -545,10 +548,10 @@ const SEMILLAS: Semilla[] = [
     slug: "comercial",
     area: "comercial",
     titulo: "Derecho comercial y empresas",
-    keyword: "abogado comercial",
-    h1: "Abogado comercial para empresas en Colombia",
+    keyword: "derecho comercial",
+    h1: "Derecho comercial en Colombia: abogado para tu empresa",
     entrada:
-      "Un abogado comercial constituye tu sociedad, redacta contratos mercantiles y resuelve conflictos entre socios o con proveedores.",
+      "El derecho comercial en Colombia cubre la constitución de tu sociedad, los contratos mercantiles, el cobro de cartera y los conflictos entre socios o con proveedores.",
     icono: "Store",
     situaciones: [
       "Vas a constituir una SAS",
@@ -578,6 +581,7 @@ const SEMILLAS: Semilla[] = [
           "Por el contrato de sociedad dos o más personas se obligan a hacer un aporte para repartirse las utilidades.",
       },
     ],
+    // VERIFICAR CON ABOGADO
     plazo: {
       titulo: "Prescripción mercantil: 5 años",
       texto:
@@ -759,10 +763,10 @@ const SEMILLAS: Semilla[] = [
     slug: "transito",
     area: "de tránsito",
     titulo: "Accidentes y tránsito",
-    keyword: "abogado de accidentes de tránsito",
-    h1: "Abogado de accidentes de tránsito en Colombia",
+    keyword: "abogado de tránsito",
+    h1: "Abogado de tránsito en Colombia",
     entrada:
-      "Un abogado de accidentes de tránsito reclama la indemnización por lesiones o daños, responde comparendos y te representa en la audiencia.",
+      "Un abogado de tránsito reclama la indemnización por lesiones o daños tras un accidente, cobra el SOAT, impugna comparendos y te representa en la audiencia.",
     icono: "Car",
     situaciones: [
       "Te chocaron y no te quieren pagar",
@@ -792,6 +796,7 @@ const SEMILLAS: Semilla[] = [
         texto: "Regula el procedimiento y los descuentos para el pago de comparendos.",
       },
     ],
+    // VERIFICAR CON ABOGADO
     plazo: {
       titulo: "Prescripción: 2 años",
       texto:
