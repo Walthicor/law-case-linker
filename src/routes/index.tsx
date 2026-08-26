@@ -25,7 +25,8 @@ function scrollAFormulario() {
 }
 
 const CAPA =
-  "linear-gradient(100deg, rgba(18,33,43,.94) 0%, rgba(18,33,43,.88) 46%, rgba(18,33,43,.72) 100%), repeating-linear-gradient(to bottom, rgba(224,219,209,.05) 0 1px, transparent 1px 32px)";
+  "linear-gradient(100deg, rgba(18,33,43,.86) 0%, rgba(18,33,43,.62) 52%, rgba(18,33,43,.34) 100%), repeating-linear-gradient(to bottom, rgba(224,219,209,.04) 0 1px, transparent 1px 32px)";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
