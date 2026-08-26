@@ -30,7 +30,35 @@ function Pagina() {
             Cesantías, intereses, prima, vacaciones e indemnización. Gratis y sin registro.
           </p>
         </Link>
+        <Link to="/herramientas/derecho-de-peticion" className="tarjeta group block h-full">
+          <p className="eyebrow">GENERADOR</p>
+          <h2 className="mt-3 font-semibold group-hover:text-esmeralda">
+            Generador de derecho de petición 2026
+          </h2>
+          <p className="mt-2 text-[0.9rem] leading-relaxed text-tinta-suave">
+            Con la estructura de la Ley 1755 de 2015. Se escribe mientras llenas los campos.
+          </p>
+        </Link>
+        <Link to="/herramientas/accion-de-tutela" className="tarjeta group block h-full">
+          <p className="eyebrow">GENERADOR</p>
+          <h2 className="mt-3 font-semibold group-hover:text-esmeralda">
+            Generador de acción de tutela 2026
+          </h2>
+          <p className="mt-2 text-[0.9rem] leading-relaxed text-tinta-suave">
+            Requisitos del Decreto 2591 de 1991, con juramento y medida provisional.
+          </p>
+        </Link>
+        <Link to="/herramientas/contrato-de-arrendamiento" className="tarjeta group block h-full">
+          <p className="eyebrow">GENERADOR</p>
+          <h2 className="mt-3 font-semibold group-hover:text-esmeralda">
+            Contrato de arrendamiento de vivienda 2026
+          </h2>
+          <p className="mt-2 text-[0.9rem] leading-relaxed text-tinta-suave">
+            Ajustado a la Ley 820 de 2003: canon, incremento IPC, garantía e inventario.
+          </p>
+        </Link>
       </div>
+
     </div>
   );
 }

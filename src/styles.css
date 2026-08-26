@@ -629,3 +629,40 @@
     transform: none;
   }
 }
+
+/* ── Generadores de documentos: hoja carta e impresión ─────────── */
+.hoja-texto {
+  font-family: Georgia, "Times New Roman", ui-serif, serif;
+  font-size: clamp(0.62rem, 1.35vw, 0.92rem);
+  line-height: 1.65;
+  color: #1a1a1a;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .hoja-imprimible,
+  .hoja-imprimible * {
+    visibility: visible;
+  }
+  .hoja-imprimible {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    aspect-ratio: auto;
+    overflow: visible;
+    border: 0;
+    box-shadow: none;
+  }
+  .hoja-texto {
+    font-size: 11pt;
+  }
+  .no-imprimir {
+    display: none !important;
+  }
+}

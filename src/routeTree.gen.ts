@@ -26,7 +26,10 @@ import { Route as TerminosYCondicionesRouteImport } from './routes/terminos-y-co
 import { Route as UneteRouteImport } from './routes/unete'
 import { Route as AreasIndexRouteImport } from './routes/areas.index'
 import { Route as HerramientasIndexRouteImport } from './routes/herramientas.index'
+import { Route as HerramientasAccionDeTutelaRouteImport } from './routes/herramientas.accion-de-tutela'
 import { Route as HerramientasCalculadoraLiquidacionLaboralRouteImport } from './routes/herramientas.calculadora-liquidacion-laboral'
+import { Route as HerramientasContratoDeArrendamientoRouteImport } from './routes/herramientas.contrato-de-arrendamiento'
+import { Route as HerramientasDerechoDePeticionRouteImport } from './routes/herramientas.derecho-de-peticion'
 import { Route as AreasSiloIndexRouteImport } from './routes/areas.$silo.index'
 import { Route as AreasSiloSubareaRouteImport } from './routes/areas.$silo.$subarea'
 
@@ -116,10 +119,28 @@ const HerramientasIndexRoute = HerramientasIndexRouteImport.update({
   path: '/',
   getParentRoute: () => HerramientasRoute,
 } as any)
+const HerramientasAccionDeTutelaRoute =
+  HerramientasAccionDeTutelaRouteImport.update({
+    id: '/accion-de-tutela',
+    path: '/accion-de-tutela',
+    getParentRoute: () => HerramientasRoute,
+  } as any)
 const HerramientasCalculadoraLiquidacionLaboralRoute =
   HerramientasCalculadoraLiquidacionLaboralRouteImport.update({
     id: '/calculadora-liquidacion-laboral',
     path: '/calculadora-liquidacion-laboral',
+    getParentRoute: () => HerramientasRoute,
+  } as any)
+const HerramientasContratoDeArrendamientoRoute =
+  HerramientasContratoDeArrendamientoRouteImport.update({
+    id: '/contrato-de-arrendamiento',
+    path: '/contrato-de-arrendamiento',
+    getParentRoute: () => HerramientasRoute,
+  } as any)
+const HerramientasDerechoDePeticionRoute =
+  HerramientasDerechoDePeticionRouteImport.update({
+    id: '/derecho-de-peticion',
+    path: '/derecho-de-peticion',
     getParentRoute: () => HerramientasRoute,
   } as any)
 const AreasSiloIndexRoute = AreasSiloIndexRouteImport.update({
@@ -149,7 +170,10 @@ export interface FileRoutesByFullPath {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
+  '/herramientas/contrato-de-arrendamiento': typeof HerramientasContratoDeArrendamientoRoute
+  '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
   '/areas/': typeof AreasIndexRoute
   '/herramientas/': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
@@ -169,7 +193,10 @@ export interface FileRoutesByTo {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
+  '/herramientas/contrato-de-arrendamiento': typeof HerramientasContratoDeArrendamientoRoute
+  '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
   '/areas': typeof AreasIndexRoute
   '/herramientas': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
@@ -192,7 +219,10 @@ export interface FileRoutesById {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
+  '/herramientas/contrato-de-arrendamiento': typeof HerramientasContratoDeArrendamientoRoute
+  '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
   '/areas/': typeof AreasIndexRoute
   '/herramientas/': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
@@ -216,7 +246,10 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/herramientas/accion-de-tutela'
     | '/herramientas/calculadora-liquidacion-laboral'
+    | '/herramientas/contrato-de-arrendamiento'
+    | '/herramientas/derecho-de-peticion'
     | '/areas/'
     | '/herramientas/'
     | '/areas/$silo/$subarea'
@@ -236,7 +269,10 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/herramientas/accion-de-tutela'
     | '/herramientas/calculadora-liquidacion-laboral'
+    | '/herramientas/contrato-de-arrendamiento'
+    | '/herramientas/derecho-de-peticion'
     | '/areas'
     | '/herramientas'
     | '/areas/$silo/$subarea'
@@ -258,7 +294,10 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/herramientas/accion-de-tutela'
     | '/herramientas/calculadora-liquidacion-laboral'
+    | '/herramientas/contrato-de-arrendamiento'
+    | '/herramientas/derecho-de-peticion'
     | '/areas/'
     | '/herramientas/'
     | '/areas/$silo/$subarea'
@@ -404,11 +443,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HerramientasIndexRouteImport
       parentRoute: typeof HerramientasRoute
     }
+    '/herramientas/accion-de-tutela': {
+      id: '/herramientas/accion-de-tutela'
+      path: '/accion-de-tutela'
+      fullPath: '/herramientas/accion-de-tutela'
+      preLoaderRoute: typeof HerramientasAccionDeTutelaRouteImport
+      parentRoute: typeof HerramientasRoute
+    }
     '/herramientas/calculadora-liquidacion-laboral': {
       id: '/herramientas/calculadora-liquidacion-laboral'
       path: '/calculadora-liquidacion-laboral'
       fullPath: '/herramientas/calculadora-liquidacion-laboral'
       preLoaderRoute: typeof HerramientasCalculadoraLiquidacionLaboralRouteImport
+      parentRoute: typeof HerramientasRoute
+    }
+    '/herramientas/contrato-de-arrendamiento': {
+      id: '/herramientas/contrato-de-arrendamiento'
+      path: '/contrato-de-arrendamiento'
+      fullPath: '/herramientas/contrato-de-arrendamiento'
+      preLoaderRoute: typeof HerramientasContratoDeArrendamientoRouteImport
+      parentRoute: typeof HerramientasRoute
+    }
+    '/herramientas/derecho-de-peticion': {
+      id: '/herramientas/derecho-de-peticion'
+      path: '/derecho-de-peticion'
+      fullPath: '/herramientas/derecho-de-peticion'
+      preLoaderRoute: typeof HerramientasDerechoDePeticionRouteImport
       parentRoute: typeof HerramientasRoute
     }
     '/areas/$silo/': {
@@ -443,13 +503,20 @@ const AreasRouteChildren: AreasRouteChildren = {
 const AreasRouteWithChildren = AreasRoute._addFileChildren(AreasRouteChildren)
 
 interface HerramientasRouteChildren {
+  HerramientasAccionDeTutelaRoute: typeof HerramientasAccionDeTutelaRoute
   HerramientasCalculadoraLiquidacionLaboralRoute: typeof HerramientasCalculadoraLiquidacionLaboralRoute
+  HerramientasContratoDeArrendamientoRoute: typeof HerramientasContratoDeArrendamientoRoute
+  HerramientasDerechoDePeticionRoute: typeof HerramientasDerechoDePeticionRoute
   HerramientasIndexRoute: typeof HerramientasIndexRoute
 }
 
 const HerramientasRouteChildren: HerramientasRouteChildren = {
+  HerramientasAccionDeTutelaRoute: HerramientasAccionDeTutelaRoute,
   HerramientasCalculadoraLiquidacionLaboralRoute:
     HerramientasCalculadoraLiquidacionLaboralRoute,
+  HerramientasContratoDeArrendamientoRoute:
+    HerramientasContratoDeArrendamientoRoute,
+  HerramientasDerechoDePeticionRoute: HerramientasDerechoDePeticionRoute,
   HerramientasIndexRoute: HerramientasIndexRoute,
 }
 
