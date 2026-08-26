@@ -27,6 +27,7 @@ import { Route as UneteRouteImport } from './routes/unete'
 import { Route as AreasIndexRouteImport } from './routes/areas.index'
 import { Route as HerramientasIndexRouteImport } from './routes/herramientas.index'
 import { Route as HerramientasCalculadoraLiquidacionLaboralRouteImport } from './routes/herramientas.calculadora-liquidacion-laboral'
+import { Route as HerramientasDerechoDePeticionRouteImport } from './routes/herramientas.derecho-de-peticion'
 import { Route as AreasSiloIndexRouteImport } from './routes/areas.$silo.index'
 import { Route as AreasSiloSubareaRouteImport } from './routes/areas.$silo.$subarea'
 
@@ -122,6 +123,12 @@ const HerramientasCalculadoraLiquidacionLaboralRoute =
     path: '/calculadora-liquidacion-laboral',
     getParentRoute: () => HerramientasRoute,
   } as any)
+const HerramientasDerechoDePeticionRoute =
+  HerramientasDerechoDePeticionRouteImport.update({
+    id: '/derecho-de-peticion',
+    path: '/derecho-de-peticion',
+    getParentRoute: () => HerramientasRoute,
+  } as any)
 const AreasSiloIndexRoute = AreasSiloIndexRouteImport.update({
   id: '/$silo/',
   path: '/$silo/',
@@ -150,6 +157,7 @@ export interface FileRoutesByFullPath {
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
+  '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
   '/areas/': typeof AreasIndexRoute
   '/herramientas/': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
@@ -170,6 +178,7 @@ export interface FileRoutesByTo {
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
+  '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
   '/areas': typeof AreasIndexRoute
   '/herramientas': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
@@ -193,6 +202,7 @@ export interface FileRoutesById {
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
+  '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
   '/areas/': typeof AreasIndexRoute
   '/herramientas/': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
@@ -217,6 +227,7 @@ export interface FileRouteTypes {
     | '/terminos-y-condiciones'
     | '/unete'
     | '/herramientas/calculadora-liquidacion-laboral'
+    | '/herramientas/derecho-de-peticion'
     | '/areas/'
     | '/herramientas/'
     | '/areas/$silo/$subarea'
@@ -237,6 +248,7 @@ export interface FileRouteTypes {
     | '/terminos-y-condiciones'
     | '/unete'
     | '/herramientas/calculadora-liquidacion-laboral'
+    | '/herramientas/derecho-de-peticion'
     | '/areas'
     | '/herramientas'
     | '/areas/$silo/$subarea'
@@ -259,6 +271,7 @@ export interface FileRouteTypes {
     | '/terminos-y-condiciones'
     | '/unete'
     | '/herramientas/calculadora-liquidacion-laboral'
+    | '/herramientas/derecho-de-peticion'
     | '/areas/'
     | '/herramientas/'
     | '/areas/$silo/$subarea'
@@ -411,6 +424,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HerramientasCalculadoraLiquidacionLaboralRouteImport
       parentRoute: typeof HerramientasRoute
     }
+    '/herramientas/derecho-de-peticion': {
+      id: '/herramientas/derecho-de-peticion'
+      path: '/derecho-de-peticion'
+      fullPath: '/herramientas/derecho-de-peticion'
+      preLoaderRoute: typeof HerramientasDerechoDePeticionRouteImport
+      parentRoute: typeof HerramientasRoute
+    }
     '/areas/$silo/': {
       id: '/areas/$silo/'
       path: '/$silo'
@@ -444,12 +464,14 @@ const AreasRouteWithChildren = AreasRoute._addFileChildren(AreasRouteChildren)
 
 interface HerramientasRouteChildren {
   HerramientasCalculadoraLiquidacionLaboralRoute: typeof HerramientasCalculadoraLiquidacionLaboralRoute
+  HerramientasDerechoDePeticionRoute: typeof HerramientasDerechoDePeticionRoute
   HerramientasIndexRoute: typeof HerramientasIndexRoute
 }
 
 const HerramientasRouteChildren: HerramientasRouteChildren = {
   HerramientasCalculadoraLiquidacionLaboralRoute:
     HerramientasCalculadoraLiquidacionLaboralRoute,
+  HerramientasDerechoDePeticionRoute: HerramientasDerechoDePeticionRoute,
   HerramientasIndexRoute: HerramientasIndexRoute,
 }
 
