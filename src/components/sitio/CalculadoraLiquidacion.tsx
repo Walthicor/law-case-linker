@@ -126,7 +126,7 @@ export function CalculadoraLiquidacion() {
         <div className="p-5 sm:p-7">
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="sm:col-span-2">
-              <label htmlFor={`${idBase}-salario`} className="etiqueta">
+              <label htmlFor={`${idBase}-salario`} className="block text-sm font-medium text-tinta">
                 Salario mensual básico
               </label>
               <div className="relative mt-2">
@@ -152,7 +152,7 @@ export function CalculadoraLiquidacion() {
             </div>
 
             <div>
-              <span className="etiqueta">¿Recibes auxilio de transporte?</span>
+              <span className="block text-sm font-medium text-tinta">¿Recibes auxilio de transporte?</span>
               <button
                 type="button"
                 role="switch"
@@ -182,7 +182,7 @@ export function CalculadoraLiquidacion() {
             </div>
 
             <div>
-              <label htmlFor={`${idBase}-vac`} className="etiqueta">
+              <label htmlFor={`${idBase}-vac`} className="block text-sm font-medium text-tinta">
                 Días de vacaciones ya disfrutados
               </label>
               <input
@@ -195,7 +195,7 @@ export function CalculadoraLiquidacion() {
             </div>
 
             <div>
-              <label htmlFor={`${idBase}-inicio`} className="etiqueta">
+              <label htmlFor={`${idBase}-inicio`} className="block text-sm font-medium text-tinta">
                 Fecha de inicio del contrato
               </label>
               <input
@@ -208,7 +208,7 @@ export function CalculadoraLiquidacion() {
             </div>
 
             <div>
-              <label htmlFor={`${idBase}-fin`} className="etiqueta">
+              <label htmlFor={`${idBase}-fin`} className="block text-sm font-medium text-tinta">
                 Fecha de terminación del contrato
               </label>
               <input
@@ -221,7 +221,7 @@ export function CalculadoraLiquidacion() {
             </div>
 
             <div>
-              <label htmlFor={`${idBase}-term`} className="etiqueta">
+              <label htmlFor={`${idBase}-term`} className="block text-sm font-medium text-tinta">
                 Tipo de terminación
               </label>
               <select
@@ -239,7 +239,7 @@ export function CalculadoraLiquidacion() {
             </div>
 
             <div>
-              <label htmlFor={`${idBase}-contrato`} className="etiqueta">
+              <label htmlFor={`${idBase}-contrato`} className="block text-sm font-medium text-tinta">
                 Tipo de contrato
               </label>
               <select
@@ -258,7 +258,7 @@ export function CalculadoraLiquidacion() {
 
             {f.contrato !== "Término indefinido" && f.terminacion === "Despido SIN justa causa" ? (
               <div className="sm:col-span-2">
-                <label htmlFor={`${idBase}-venc`} className="etiqueta">
+                <label htmlFor={`${idBase}-venc`} className="block text-sm font-medium text-tinta">
                   Fecha en que vencía el contrato
                 </label>
                 <input
