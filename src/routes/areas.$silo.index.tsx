@@ -7,6 +7,7 @@ import { AvisoPlazo } from "@/components/sitio/AvisoPlazo";
 import { BloqueNorma } from "@/components/sitio/BloqueNorma";
 import { Migas } from "@/components/sitio/Migas";
 import { Revelar } from "@/components/sitio/Revelar";
+import { areaServedSchema } from "@/lib/cobertura";
 import { PILARES, pilarPorSlug, tituloSeo, type Pilar } from "@/lib/pilares";
 
 export const Route = createFileRoute("/areas/$silo/")({
@@ -45,8 +46,6 @@ export const Route = createFileRoute("/areas/$silo/")({
   component: Pagina,
 });
 
-const CIUDADES = ["Bogotá", "Medellín", "Cali", "Barranquilla", "Cartagena", "Bucaramanga"];
-
 function jsonLd(p: Pilar) {
   const url = `https://asesoriasjuridicas.co/areas/${p.slug}`;
   return [
@@ -57,7 +56,7 @@ function jsonLd(p: Pilar) {
       description: p.entrada,
       url,
       serviceType: p.titulo,
-      areaServed: CIUDADES.map((c) => ({ "@type": "City", name: c })),
+      areaServed: areaServedSchema(),
     },
     {
       "@context": "https://schema.org",
