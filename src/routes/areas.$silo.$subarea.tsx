@@ -176,6 +176,38 @@ function Pagina() {
         </div>
       </section>
 
+      {/* BLOQUES TEMÁTICOS ADICIONALES */}
+      {d.bloques && d.bloques.length > 0
+        ? d.bloques.map((b, i) => (
+            <section
+              key={b.titulo}
+              className={i % 2 === 0 ? "bg-papel py-14 lg:py-18" : "bg-papel-hueso py-14 lg:py-18"}
+            >
+              <div className="contenedor">
+                <Revelar>
+                  <h2 className="display-md">{b.titulo}</h2>
+                  <div className="lectura mt-6 space-y-4 text-tinta-suave">
+                    {b.parrafos.map((t) => (
+                      <p key={t.slice(0, 40)}>{t}</p>
+                    ))}
+                  </div>
+                  {b.lista && b.lista.length > 0 ? (
+                    <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+                      {b.lista.map((item) => (
+                        <li key={item} className="tarjeta text-[0.92rem] leading-relaxed">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </Revelar>
+              </div>
+            </section>
+          ))
+        : null}
+
+
+
       {/* PASO A PASO */}
       <section className="bg-papel py-14 lg:py-18">
         <div className="contenedor">
