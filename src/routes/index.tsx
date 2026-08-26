@@ -53,7 +53,7 @@ function Index() {
           <h1 className="display-xl mt-5 text-papel">
             Cuéntanos qué te pasó.
             <br />
-            Nosotros encontramos el <span className="text-esmeralda-lum">abogado</span>.
+            Nosotros encontramos tu <span className="brillo-abogado">Abogado</span> ideal.
           </h1>
           <p
             className="mt-6 text-[1.125rem] leading-relaxed"
