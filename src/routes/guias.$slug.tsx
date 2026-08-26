@@ -23,17 +23,8 @@ export const Route = createFileRoute("/guias/$slug")({
     const g = loaderData.guia;
     const url = `/guias/${params.slug}`;
     return {
-      meta: [
-        { title: g.title },
-        { name: "description", content: g.description },
-        { property: "og:title", content: g.title },
-        { property: "og:description", content: g.description },
-        { property: "og:type", content: "article" },
-        { property: "og:url", content: url },
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
       // Canonical autorreferencial, sin fecha en la URL.
-      links: [{ rel: "canonical", href: url }],
+      ...metaSeo(seoGuia({ title: g.title, description: g.description, slug: params.slug })),
       scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd(g, url)) }],
     };
   },
