@@ -12,6 +12,8 @@
 
 import { SUBAREAS_LABORAL } from "./subareas-laboral";
 import { SUBAREAS_RIESGOS } from "./subareas-riesgos";
+import { SUBAREAS_FAMILIA } from "./subareas-familia";
+import { SUBAREAS_CIVIL } from "./subareas-civil";
 import { pilarPorSlug, type Guia, type Norma, type Faq, type Pilar, type Subarea } from "./pilares";
 
 export type Paso = { titulo: string; texto: string };
