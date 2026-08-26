@@ -8,9 +8,9 @@ export function Logo({ claro = false }: { claro?: boolean }) {
       <img
         src={claro ? logoClaro.url : logoOscuro.url}
         alt="Asesorías Jurídicas Colombia"
-        width={163}
-        height={100}
-        className="h-[100px] w-auto translate-y-[10px]"
+        width={150}
+        height={92}
+        className="h-[92px] w-auto translate-y-[10px]"
       />
     </Link>
   );
