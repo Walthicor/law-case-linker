@@ -1,4 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { absoluta, metaSeo } from "@/lib/seo";
+import { PAGINAS } from "@/lib/seo-inventario";
 import { ChevronDown, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 import { AvatarAbogado } from "@/components/sitio/AvatarAbogado";
