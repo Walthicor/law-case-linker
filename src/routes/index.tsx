@@ -3,7 +3,7 @@ import { Balanza } from "@/components/sitio/Balanza";
 import { IconoFormulario } from "@/components/sitio/IconoFormulario";
 import { HeroVideo } from "@/components/sitio/HeroVideo";
 import { SellosConfianza } from "@/components/sitio/SellosConfianza";
-import { CaratulaExpediente } from "@/components/sitio/CaratulaExpediente";
+
 import { QueHacemos } from "@/components/sitio/home/QueHacemos";
 import { AreasPractica } from "@/components/sitio/home/AreasPractica";
 import { ComoFunciona } from "@/components/sitio/home/ComoFunciona";
@@ -116,13 +116,8 @@ function Index() {
       </div>
     </section>
 
-    <section className="border-b border-linea bg-papel-hueso py-16 lg:py-20">
-      <div className="contenedor">
-        <div className="mx-auto w-full max-w-[560px]">
-          <CaratulaExpediente />
-        </div>
-      </div>
-    </section>
+
+
 
 
 
