@@ -87,7 +87,7 @@ export const REVISORES: Record<string, Revisor> = {
     tarjeta: "T.P. 214.876 C.S.J.",
     area: "Derecho laboral y seguridad social",
     ciudad: "Medellín",
-    perfil: "/abogados",
+    perfil: "/abogados/camila-restrepo-aguirre",
     iniciales: "CR",
   },
   "riesgos-laborales": {
@@ -95,7 +95,7 @@ export const REVISORES: Record<string, Revisor> = {
     tarjeta: "T.P. 198.334 C.S.J.",
     area: "Riesgos laborales y ARL",
     ciudad: "Bogotá",
-    perfil: "/abogados",
+    perfil: "/abogados/andres-felipe-cortes",
     iniciales: "AC",
   },
   familia: {
@@ -103,7 +103,7 @@ export const REVISORES: Record<string, Revisor> = {
     tarjeta: "T.P. 176.902 C.S.J.",
     area: "Derecho de familia",
     ciudad: "Bogotá",
-    perfil: "/abogados",
+    perfil: "/abogados/diana-marcela-ospina",
     iniciales: "DO",
   },
   civil: {
@@ -111,7 +111,7 @@ export const REVISORES: Record<string, Revisor> = {
     tarjeta: "T.P. 231.115 C.S.J.",
     area: "Derecho civil y contratos",
     ciudad: "Cali",
-    perfil: "/abogados",
+    perfil: "/abogados/julian-esteban-mora",
     iniciales: "JM",
   },
   administrativo: {
@@ -119,7 +119,7 @@ export const REVISORES: Record<string, Revisor> = {
     tarjeta: "T.P. 189.447 C.S.J.",
     area: "Derecho administrativo",
     ciudad: "Bogotá",
-    perfil: "/abogados",
+    perfil: "/abogados/laura-catalina-bermudez",
     iniciales: "LB",
   },
   penal: {
@@ -127,7 +127,7 @@ export const REVISORES: Record<string, Revisor> = {
     tarjeta: "T.P. 165.720 C.S.J.",
     area: "Derecho penal",
     ciudad: "Barranquilla",
-    perfil: "/abogados",
+    perfil: "/abogados/ricardo-leon-vasquez",
     iniciales: "RV",
   },
   pensiones: {
@@ -135,7 +135,7 @@ export const REVISORES: Record<string, Revisor> = {
     tarjeta: "T.P. 152.089 C.S.J.",
     area: "Pensiones y seguridad social",
     ciudad: "Bogotá",
-    perfil: "/abogados",
+    perfil: "/abogados/marta-lucia-guerrero",
     iniciales: "MG",
   },
   comercial: {
@@ -143,7 +143,7 @@ export const REVISORES: Record<string, Revisor> = {
     tarjeta: "T.P. 220.641 C.S.J.",
     area: "Derecho comercial y societario",
     ciudad: "Medellín",
-    perfil: "/abogados",
+    perfil: "/abogados/santiago-pelaez-duque",
     iniciales: "SP",
   },
   inmobiliario: {
@@ -151,7 +151,7 @@ export const REVISORES: Record<string, Revisor> = {
     tarjeta: "T.P. 207.318 C.S.J.",
     area: "Inmobiliario y arrendamientos",
     ciudad: "Bucaramanga",
-    perfil: "/abogados",
+    perfil: "/abogados/paula-andrea-rincon",
     iniciales: "PR",
   },
   transito: {
@@ -159,7 +159,7 @@ export const REVISORES: Record<string, Revisor> = {
     tarjeta: "T.P. 193.502 C.S.J.",
     area: "Tránsito y responsabilidad civil",
     ciudad: "Cali",
-    perfil: "/abogados",
+    perfil: "/abogados/oscar-ivan-beltran",
     iniciales: "OB",
   },
   insolvencia: {
@@ -167,7 +167,7 @@ export const REVISORES: Record<string, Revisor> = {
     tarjeta: "T.P. 236.780 C.S.J.",
     area: "Insolvencia de persona natural",
     ciudad: "Medellín",
-    perfil: "/abogados",
+    perfil: "/abogados/natalia-gomez-arroyave",
     iniciales: "NG",
   },
   migratorio: {
@@ -175,7 +175,7 @@ export const REVISORES: Record<string, Revisor> = {
     tarjeta: "T.P. 244.019 C.S.J.",
     area: "Derecho migratorio",
     ciudad: "Bogotá",
-    perfil: "/abogados",
+    perfil: "/abogados/felipe-ramirez-cano",
     iniciales: "FR",
   },
   "propiedad-intelectual": {
@@ -183,7 +183,7 @@ export const REVISORES: Record<string, Revisor> = {
     tarjeta: "T.P. 228.553 C.S.J.",
     area: "Propiedad intelectual",
     ciudad: "Bogotá",
-    perfil: "/abogados",
+    perfil: "/abogados/valentina-cardenas-ruiz",
     iniciales: "VC",
   },
 };

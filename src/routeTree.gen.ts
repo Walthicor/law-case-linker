@@ -24,6 +24,8 @@ import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-p
 import { Route as PoliticaDeTratamientoDeDatosRouteImport } from './routes/politica-de-tratamiento-de-datos'
 import { Route as TerminosYCondicionesRouteImport } from './routes/terminos-y-condiciones'
 import { Route as UneteRouteImport } from './routes/unete'
+import { Route as AbogadosIndexRouteImport } from './routes/abogados.index'
+import { Route as AbogadosSlugRouteImport } from './routes/abogados.$slug'
 import { Route as AreasIndexRouteImport } from './routes/areas.index'
 import { Route as GuiasIndexRouteImport } from './routes/guias.index'
 import { Route as GuiasSlugRouteImport } from './routes/guias.$slug'
@@ -112,6 +114,16 @@ const UneteRoute = UneteRouteImport.update({
   path: '/unete',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AbogadosIndexRoute = AbogadosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AbogadosRoute,
+} as any)
+const AbogadosSlugRoute = AbogadosSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => AbogadosRoute,
+} as any)
 const AreasIndexRoute = AreasIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -175,7 +187,7 @@ const AreasSiloSubareaRoute = AreasSiloSubareaRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/abogados': typeof AbogadosRoute
+  '/abogados': typeof AbogadosRouteWithChildren
   '/areas': typeof AreasRouteWithChildren
   '/cobertura': typeof CoberturaRoute
   '/como-funciona': typeof ComoFuncionaRoute
@@ -189,12 +201,14 @@ export interface FileRoutesByFullPath {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/abogados/$slug': typeof AbogadosSlugRoute
   '/guias/$slug': typeof GuiasSlugRoute
   '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
   '/herramientas/calculadora-cuota-alimentaria': typeof HerramientasCalculadoraCuotaAlimentariaRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
   '/herramientas/contrato-de-arrendamiento': typeof HerramientasContratoDeArrendamientoRoute
   '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
+  '/abogados/': typeof AbogadosIndexRoute
   '/areas/': typeof AreasIndexRoute
   '/guias/': typeof GuiasIndexRoute
   '/herramientas/': typeof HerramientasIndexRoute
@@ -203,7 +217,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/abogados': typeof AbogadosRoute
   '/cobertura': typeof CoberturaRoute
   '/como-funciona': typeof ComoFuncionaRoute
   '/contacto': typeof ContactoRoute
@@ -214,12 +227,14 @@ export interface FileRoutesByTo {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/abogados/$slug': typeof AbogadosSlugRoute
   '/guias/$slug': typeof GuiasSlugRoute
   '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
   '/herramientas/calculadora-cuota-alimentaria': typeof HerramientasCalculadoraCuotaAlimentariaRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
   '/herramientas/contrato-de-arrendamiento': typeof HerramientasContratoDeArrendamientoRoute
   '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
+  '/abogados': typeof AbogadosIndexRoute
   '/areas': typeof AreasIndexRoute
   '/guias': typeof GuiasIndexRoute
   '/herramientas': typeof HerramientasIndexRoute
@@ -229,7 +244,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/abogados': typeof AbogadosRoute
+  '/abogados': typeof AbogadosRouteWithChildren
   '/areas': typeof AreasRouteWithChildren
   '/cobertura': typeof CoberturaRoute
   '/como-funciona': typeof ComoFuncionaRoute
@@ -243,12 +258,14 @@ export interface FileRoutesById {
   '/politica-de-tratamiento-de-datos': typeof PoliticaDeTratamientoDeDatosRoute
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
+  '/abogados/$slug': typeof AbogadosSlugRoute
   '/guias/$slug': typeof GuiasSlugRoute
   '/herramientas/accion-de-tutela': typeof HerramientasAccionDeTutelaRoute
   '/herramientas/calculadora-cuota-alimentaria': typeof HerramientasCalculadoraCuotaAlimentariaRoute
   '/herramientas/calculadora-liquidacion-laboral': typeof HerramientasCalculadoraLiquidacionLaboralRoute
   '/herramientas/contrato-de-arrendamiento': typeof HerramientasContratoDeArrendamientoRoute
   '/herramientas/derecho-de-peticion': typeof HerramientasDerechoDePeticionRoute
+  '/abogados/': typeof AbogadosIndexRoute
   '/areas/': typeof AreasIndexRoute
   '/guias/': typeof GuiasIndexRoute
   '/herramientas/': typeof HerramientasIndexRoute
@@ -273,12 +290,14 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/abogados/$slug'
     | '/guias/$slug'
     | '/herramientas/accion-de-tutela'
     | '/herramientas/calculadora-cuota-alimentaria'
     | '/herramientas/calculadora-liquidacion-laboral'
     | '/herramientas/contrato-de-arrendamiento'
     | '/herramientas/derecho-de-peticion'
+    | '/abogados/'
     | '/areas/'
     | '/guias/'
     | '/herramientas/'
@@ -287,7 +306,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/abogados'
     | '/cobertura'
     | '/como-funciona'
     | '/contacto'
@@ -298,12 +316,14 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/abogados/$slug'
     | '/guias/$slug'
     | '/herramientas/accion-de-tutela'
     | '/herramientas/calculadora-cuota-alimentaria'
     | '/herramientas/calculadora-liquidacion-laboral'
     | '/herramientas/contrato-de-arrendamiento'
     | '/herramientas/derecho-de-peticion'
+    | '/abogados'
     | '/areas'
     | '/guias'
     | '/herramientas'
@@ -326,12 +346,14 @@ export interface FileRouteTypes {
     | '/politica-de-tratamiento-de-datos'
     | '/terminos-y-condiciones'
     | '/unete'
+    | '/abogados/$slug'
     | '/guias/$slug'
     | '/herramientas/accion-de-tutela'
     | '/herramientas/calculadora-cuota-alimentaria'
     | '/herramientas/calculadora-liquidacion-laboral'
     | '/herramientas/contrato-de-arrendamiento'
     | '/herramientas/derecho-de-peticion'
+    | '/abogados/'
     | '/areas/'
     | '/guias/'
     | '/herramientas/'
@@ -341,7 +363,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AbogadosRoute: typeof AbogadosRoute
+  AbogadosRoute: typeof AbogadosRouteWithChildren
   AreasRoute: typeof AreasRouteWithChildren
   CoberturaRoute: typeof CoberturaRoute
   ComoFuncionaRoute: typeof ComoFuncionaRoute
@@ -464,6 +486,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UneteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/abogados/': {
+      id: '/abogados/'
+      path: '/'
+      fullPath: '/abogados/'
+      preLoaderRoute: typeof AbogadosIndexRouteImport
+      parentRoute: typeof AbogadosRoute
+    }
+    '/abogados/$slug': {
+      id: '/abogados/$slug'
+      path: '/$slug'
+      fullPath: '/abogados/$slug'
+      preLoaderRoute: typeof AbogadosSlugRouteImport
+      parentRoute: typeof AbogadosRoute
+    }
     '/areas/': {
       id: '/areas/'
       path: '/'
@@ -544,6 +580,20 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AbogadosRouteChildren {
+  AbogadosSlugRoute: typeof AbogadosSlugRoute
+  AbogadosIndexRoute: typeof AbogadosIndexRoute
+}
+
+const AbogadosRouteChildren: AbogadosRouteChildren = {
+  AbogadosSlugRoute: AbogadosSlugRoute,
+  AbogadosIndexRoute: AbogadosIndexRoute,
+}
+
+const AbogadosRouteWithChildren = AbogadosRoute._addFileChildren(
+  AbogadosRouteChildren,
+)
+
 interface AreasRouteChildren {
   AreasIndexRoute: typeof AreasIndexRoute
   AreasSiloSubareaRoute: typeof AreasSiloSubareaRoute
@@ -597,7 +647,7 @@ const HerramientasRouteWithChildren = HerramientasRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AbogadosRoute: AbogadosRoute,
+  AbogadosRoute: AbogadosRouteWithChildren,
   AreasRoute: AreasRouteWithChildren,
   CoberturaRoute: CoberturaRoute,
   ComoFuncionaRoute: ComoFuncionaRoute,
