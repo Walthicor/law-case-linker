@@ -40,6 +40,9 @@ export type Pilar = {
   abogado: string[];
   faqs: Faq[];
   guias: Guia[];
+  /** Contenido largo desarrollado (pilares con contenido real). */
+  secciones?: Seccion[];
+
   herramienta?: { titulo: string; descripcion: string; slug: string };
   relacionados: string[];
   /** Área correspondiente en el formulario de /iniciar-caso */
