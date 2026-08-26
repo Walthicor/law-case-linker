@@ -74,10 +74,10 @@ export function CaratulaExpediente() {
   return (
     <div
       id="caratula-expediente"
-      className="overflow-hidden rounded-[6px] border border-linea bg-papel"
-      style={{ boxShadow: "0 1px 2px rgba(18,33,43,.06), 0 12px 40px rgba(18,33,43,.16)" }}
+      className="carta-pulso overflow-hidden rounded-[6px] border border-papel/25 bg-papel/82 backdrop-blur-md backdrop-saturate-150"
     >
       <div className="h-[3px] w-full bg-esmeralda" />
+
 
       <div className="border-b border-linea px-6 py-5">
         <div className="flex items-center justify-between gap-4">
