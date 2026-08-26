@@ -788,12 +788,21 @@ const SEMILLAS: Semilla[] = [
   },
 ];
 
-export const PILARES: Pilar[] = SEMILLAS.map((s) => ({
-  ...s,
-  solo: s.solo ?? soloBase(s.area),
-  abogado: s.abogado ?? abogadoBase(s.area),
-  faqs: s.faqs ?? faqsBase(s.titulo, s.area),
-}));
+export const PILARES: Pilar[] = SEMILLAS.map((s) => {
+  const extra = CONTENIDO[s.slug];
+  return {
+    ...s,
+    subareas: s.subareas.map((sub) => ({
+      ...sub,
+      texto: sub.texto ?? extra?.subareas?.[sub.slug],
+    })),
+    secciones: s.secciones ?? extra?.secciones,
+    solo: s.solo ?? soloBase(s.area),
+    abogado: s.abogado ?? abogadoBase(s.area),
+    faqs: s.faqs ?? faqsBase(s.titulo, s.area),
+  };
+});
+
 
 export const PILARES_POR_SLUG: Record<string, Pilar> = Object.fromEntries(
   PILARES.map((p) => [p.slug, p]),
