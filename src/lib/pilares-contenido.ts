@@ -311,10 +311,10 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
         "Es la herramienta más económica y más subutilizada frente al Estado. La entidad debe responder de fondo dentro de los quince días hábiles generales, diez para pedir información y treinta para consultas. El silencio no es respuesta y habilita tanto la tutela como el reproche disciplinario del funcionario.",
       "funcion-publica":
         "Concursos de mérito, encargos, provisionalidad, reintegros, nivelación salarial, prestaciones de empleados públicos y retiro del servicio. Muchos de estos conflictos se resuelven demostrando que la entidad se apartó del manual de funciones o de la lista de elegibles.",
-      "acciones-populares":
-        "Protegen derechos e intereses colectivos como el ambiente sano, el espacio público, la moralidad administrativa y la seguridad. No tienen término de caducidad mientras subsista la amenaza y pueden ser interpuestas por cualquier persona.",
-      "cobro-coactivo":
-        "Defensa frente al cobro que las entidades hacen directamente de sus acreencias, sin acudir a un juez: impuestos, multas, comparendos, sanciones y contribuciones. Se puede discutir la existencia del título, la prescripción y las medidas cautelares mediante excepciones dentro del término legal.",
+      tutela:
+        "Procede cuando una autoridad o un particular en los casos previstos vulnera o amenaza un derecho fundamental y no existe otro medio de defensa judicial idóneo, o cuando se usa como mecanismo transitorio para evitar un perjuicio irremediable. El juez debe resolver en 10 días y el fallo se cumple en 48 horas.",
+      "sanciones-administrativas":
+        "Defensa frente a multas y sanciones impuestas por entidades públicas: procedimiento sancionatorio del CPACA, formulación de cargos, descargos, pruebas y recursos de reposición y apelación dentro de los 10 días hábiles siguientes a la notificación. Dejar vencer el recurso deja el acto en firme.",
     },
     secciones: [
       {
