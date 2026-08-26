@@ -77,7 +77,7 @@ export function FormularioPostulacion() {
 
   const ciudades = useMemo(() => CIUDADES_COBERTURA.map((c) => c.ciudad), []);
 
-  const enviar = (e: React.FormEvent) => {
+  const enviar = async (e: React.FormEvent) => {
     e.preventDefault();
     if (enviando) return;
     const nuevos = validarPostulacion(p);
@@ -90,15 +90,20 @@ export function FormularioPostulacion() {
       return;
     }
     setEnviando(true);
-    const rad = radicadoPostulacion();
-    // TODO: enviar por correo a MARDIGITAL (Resend) desde una server function.
-    console.info("[AJC] postulación lista", {
-      asunto: asuntoPostulacion(p, rad),
-      cuerpo: correoPostulacion(p, rad),
-    });
-    setRadicado(rad);
-    setEnviando(false);
-    contenedor.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    setFallo(null);
+    try {
+      const r = await enviarAlServidor({ data: { ...p, autoriza: true as const } });
+      evento("postulacion_abogado_enviada", { ciudad: p.ciudad, areas: p.areas.join(", ") });
+      setRadicado(r.radicado);
+      contenedor.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (error) {
+      console.error("[AJC] postulación fallida", error);
+      setFallo(
+        "No pudimos enviar tu postulación en este momento. Escríbenos por WhatsApp y la registramos contigo.",
+      );
+    } finally {
+      setEnviando(false);
+    }
   };
 
   if (radicado) {
