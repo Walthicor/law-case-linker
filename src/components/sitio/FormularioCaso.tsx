@@ -167,6 +167,8 @@ export function FormularioCaso({
 
   const avanzar = () => {
     if (!validarPaso()) return;
+    if (paso === 0) evento("form_paso_1_completado", { area: caso.area, ciudad: caso.ciudad });
+    if (paso === 1) evento("form_paso_2_completado", { urgencia: caso.urgencia });
     setDireccion("der");
     setPaso((p) => Math.min(2, p + 1));
     contenedor.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -180,24 +182,40 @@ export function FormularioCaso({
   const enviar = async () => {
     if (!validarPaso() || enviando) return;
     setEnviando(true);
+    setFallo(null);
     const atribucion = capturarAtribucion();
     atribucion.ip = await resolverIp();
-    const { puntaje, tier } = puntuarCaso(caso);
-    // TODO: enviar por correo (Resend) desde una server function.
-    console.info("[AJC] caso listo", { radicado, puntaje, tier, atribucion });
-    borrarBorrador();
-    setSellando(true);
-    const reducido =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.setTimeout(
-      () =>
-        navigate({
-          to: "/gracias",
-          search: { radicado, area: caso.area, ciudad: caso.ciudad },
-        }),
-      reducido ? 320 : 900,
-    );
+
+    try {
+      // El radicado y el puntaje definitivos los calcula el servidor.
+      const r = await enviarAlServidor({ data: { caso, atribucion } });
+      setRadicadoFinal(r.radicado);
+      evento("caso_enviado", {
+        area: caso.area,
+        ciudad: caso.ciudad,
+        tier: r.tier,
+        score: r.puntaje,
+      });
+      borrarBorrador();
+      setSellando(true);
+      const reducido =
+        typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.setTimeout(
+        () =>
+          navigate({
+            to: "/gracias",
+            search: { radicado: r.radicado, area: caso.area, ciudad: caso.ciudad },
+          }),
+        reducido ? 320 : 900,
+      );
+    } catch (error) {
+      console.error("[AJC] envío fallido", error);
+      setFallo(
+        "No pudimos enviar tu caso en este momento. Escríbenos por WhatsApp y lo registramos contigo.",
+      );
+      setEnviando(false);
+    }
   };
 
   const caracteres = caso.descripcion.length;
