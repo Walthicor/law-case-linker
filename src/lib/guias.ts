@@ -203,6 +203,11 @@ export const HERRAMIENTA_POR_SILO: Record<
     descripcion: "Rango estimado según ingresos, hijos y gastos acreditados.",
     to: "/herramientas/calculadora-cuota-alimentaria",
   },
+  salud: {
+    titulo: "Generador de acción de tutela",
+    descripcion: "Arma el borrador de tu tutela en salud con tus datos y tus hechos.",
+    to: "/herramientas/accion-de-tutela",
+  },
   administrativo: {
     titulo: "Generador de derecho de petición",
     descripcion: "Con los requisitos de la Ley 1755 y los plazos de respuesta.",
