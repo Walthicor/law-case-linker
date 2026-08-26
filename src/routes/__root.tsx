@@ -156,6 +156,7 @@ function RootComponent() {
           <BotonSubir />
         </>
       )}
+      <BannerCookies />
     </QueryClientProvider>
   );
 }
