@@ -16,6 +16,7 @@ import { Header } from "@/components/sitio/Header";
 import { Footer } from "@/components/sitio/Footer";
 import { BarraCaptacion } from "@/components/sitio/BarraCaptacion";
 import { BotonSubir } from "@/components/sitio/BotonSubir";
+import { BannerCookies } from "@/components/sitio/BannerCookies";
 import { areaServedSchema } from "@/lib/cobertura";
 
 function NotFoundComponent() {
@@ -156,6 +157,7 @@ function RootComponent() {
           <BotonSubir />
         </>
       )}
+      <BannerCookies />
     </QueryClientProvider>
   );
 }
