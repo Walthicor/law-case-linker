@@ -163,10 +163,12 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
     subareas: {
       divorcio:
         "En Colombia el divorcio puede ser de mutuo acuerdo, que se tramita ante notario en semanas y con una sola escritura, o contencioso ante juez de familia cuando no hay consenso o se invoca una causal del artículo 154 del Código Civil. En matrimonios católicos lo que se disuelven son los efectos civiles; la nulidad eclesiástica es un trámite separado.",
-      "cuota-alimentaria":
+      alimentos:
         "Se fija según la capacidad económica de quien debe darla y las necesidades de quien la recibe. Puede acordarse por conciliación ante comisario de familia, defensor de familia o centro de conciliación, y ese acuerdo presta mérito ejecutivo. Si no se paga, procede el proceso ejecutivo de alimentos y, en casos graves, el delito de inasistencia alimentaria.",
-      "custodia-y-visitas":
+      custodia:
         "La custodia se define por el interés superior del niño, no por el género del progenitor ni por quién tiene mejores ingresos. Lo habitual es una custodia en cabeza de uno de los padres con un régimen de visitas amplio para el otro, aunque la custodia compartida es cada vez más frecuente cuando ambos viven cerca y hay comunicación funcional.",
+      "violencia-intrafamiliar":
+        "La medida de protección se pide ante el comisario de familia del lugar de los hechos y puede decretarse el mismo día: desalojo del agresor, prohibición de acercamiento y protección policial. La denuncia penal por violencia intrafamiliar es un trámite paralelo y no reemplaza la medida de protección.",
       sucesiones:
         "Cuando todos los herederos son capaces y están de acuerdo, la sucesión se tramita ante notario en pocos meses. Si hay menores, desacuerdos, testamento cuestionado o bienes en litigio, va al juez de familia. Sin liquidar la sucesión los herederos no pueden vender ni hipotecar el inmueble, aunque lleven años viviendo en él.",
       "union-marital-de-hecho":
