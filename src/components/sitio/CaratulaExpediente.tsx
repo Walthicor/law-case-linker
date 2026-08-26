@@ -74,10 +74,10 @@ export function CaratulaExpediente() {
   return (
     <div
       id="caratula-expediente"
-      className="overflow-hidden rounded-[6px] border border-linea bg-papel"
-      style={{ boxShadow: "0 1px 2px rgba(18,33,43,.06), 0 12px 40px rgba(18,33,43,.16)" }}
+      className="carta-pulso overflow-hidden rounded-[6px] border border-papel/25 bg-papel/82 backdrop-blur-md backdrop-saturate-150"
     >
       <div className="h-[3px] w-full bg-esmeralda" />
+
 
       <div className="border-b border-linea px-6 py-5">
         <div className="flex items-center justify-between gap-4">
@@ -113,9 +113,9 @@ export function CaratulaExpediente() {
               aria-current={activo ? "step" : undefined}
               className={cn(
                 "flex flex-1 items-center justify-center gap-2 border-r border-linea px-2 py-3 text-[0.8125rem] last:border-r-0",
-                activo && "-mt-0.5 border-t-2 border-t-esmeralda bg-papel font-semibold text-tinta",
+                activo && "-mt-0.5 border-t-2 border-t-esmeralda bg-papel/70 font-semibold text-tinta",
                 completado && "bg-esmeralda-claro text-esmeralda",
-                !activo && !completado && "bg-papel-hueso text-tinta-suave",
+                !activo && !completado && "bg-papel-hueso/45 text-tinta-suave",
               )}
             >
               {completado ? (
@@ -207,7 +207,7 @@ export function CaratulaExpediente() {
         </p>
       </form>
 
-      <div className="flex items-start gap-2 border-t border-linea bg-papel-hueso px-6 py-3.5">
+      <div className="flex items-start gap-2 border-t border-linea bg-papel-hueso/50 px-6 py-3.5">
         <Lock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-tinta-suave" aria-hidden="true" />
         <p className="text-[0.8rem] leading-relaxed text-tinta-suave">
           Tu información es confidencial y solo se comparte con el abogado que te sea asignado.
