@@ -19,7 +19,7 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
     subareas: {
       "despido-sin-justa-causa":
         "Si te sacaron sin una causal del artículo 62 del Código Sustantivo del Trabajo, o te la imputaron sin diligencia de descargos, el despido es indemnizable. La indemnización depende del tipo de contrato y de tu salario: 30 días por el primer año en contratos a término indefinido con salario inferior a 10 SMLMV, y el tiempo faltante en los contratos a término fijo.",
-      "liquidacion-laboral":
+      liquidacion:
         "La liquidación reúne cesantías, intereses a las cesantías del 12% anual, prima de servicios, vacaciones compensadas y los salarios pendientes. El error más común es liquidar sobre el salario básico cuando debía incluirse el auxilio de transporte, las comisiones y las horas extras habituales, porque todo eso es salario para efectos prestacionales.",
       "acoso-laboral":
         "La Ley 1010 de 2006 define el acoso como una conducta persistente y demostrable dirigida a infundir miedo, desmotivar o inducir la renuncia. La ruta empieza por el comité de convivencia laboral de la empresa y puede terminar en el Ministerio del Trabajo o ante el juez laboral, con la renuncia motivada tratada como despido indirecto.",
@@ -29,6 +29,10 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
         "La jornada ordinaria se redujo por la Ley 2101 de 2021 y ese cambio movió el cálculo de los recargos. Las horas extras diurnas se pagan con recargo del 25%, las nocturnas con 75%, el recargo nocturno simple es del 35% y el trabajo en dominical o festivo se remunera con el 75% adicional más el descanso compensatorio cuando corresponde.",
       "estabilidad-laboral-reforzada":
         "Las trabajadoras en embarazo o lactancia, las personas con una afectación de salud que limita su desempeño, los aforados sindicales y quienes están cerca del requisito pensional no pueden ser desvinculados sin autorización previa del inspector del trabajo. El despido sin ese permiso es ineficaz y da lugar a reintegro con salarios dejados de percibir.",
+      reintegro:
+        "El reintegro procede cuando el despido fue ineficaz: trabajadora en embarazo o lactancia, persona con afectación de salud, aforado sindical o trabajador con estabilidad legal, despedido sin autorización del inspector del trabajo o sin levantamiento del fuero. El juez ordena volver al cargo con los salarios y aportes dejados de pagar.",
+      incapacidades:
+        "Los dos primeros días los paga el empleador, del tercero al 180 la EPS, del 181 al 540 el fondo de pensiones y después vuelve la EPS; si el origen es laboral paga la ARL al 100%. Ninguna entidad puede dejar al trabajador sin pago mientras discute con otra, y el despido durante la incapacidad requiere autorización previa.",
       "derecho-colectivo":
         "Cubre la constitución de sindicatos, el fuero de sus directivos, la negociación de la convención colectiva, el pliego de peticiones, el tribunal de arbitramento y la huelga. También el conflicto inverso: empresas que necesitan asesoría para negociar sin incurrir en prácticas que la ley califica como atentatorias del derecho de asociación.",
     },
@@ -91,8 +95,12 @@ export const CONTENIDO: Record<string, ContenidoPilar> = {
         "Es todo suceso repentino que ocurre por causa o con ocasión del trabajo y produce una lesión, una perturbación funcional o la muerte. Incluye lo que pasa cumpliendo órdenes del empleador fuera del lugar de trabajo y, en ciertas condiciones, el trayecto cuando el transporte lo suministra la empresa. La ARL cubre las prestaciones asistenciales y económicas sin periodo mínimo de cotización.",
       "enfermedad-laboral":
         "Se causa por la exposición a factores de riesgo inherentes a la actividad. El Decreto 1477 de 2014 fija la tabla de enfermedades laborales, pero una patología no listada también se puede reconocer si se demuestra la relación de causalidad con el trabajo. Los casos más frecuentes son los desórdenes musculoesqueléticos, la hipoacusia y los trastornos derivados de la carga mental.",
-      "calificacion-perdida-capacidad":
+      "perdida-de-capacidad-laboral":
         "El porcentaje de pérdida de capacidad laboral define casi todo lo demás: si hay indemnización, si hay pensión de invalidez y de cuánto. La primera calificación la hace la ARL o la EPS; si no estás de acuerdo, se puede controvertir ante la junta regional de calificación de invalidez y luego ante la junta nacional dentro de los plazos legales.",
+      "calificacion-de-origen":
+        "Determinar si el evento es de origen laboral o común decide quién paga y cuánto: la ARL cubre al 100% y sin copagos, la EPS al 66% con copagos. Califica en primera oportunidad la EPS, la ARL o el fondo; en desacuerdo decide la junta regional y luego la nacional.",
+      "junta-de-calificacion":
+        "Las juntas regionales y la Junta Nacional de Calificación de Invalidez son organismos privados con función pública que dictaminan origen, porcentaje de pérdida de capacidad y fecha de estructuración. Sus dictámenes se recurren en términos cortos y solo después queda la vía judicial.",
       "indemnizacion-arl":
         "Con una pérdida de capacidad entre el 5% y el 49,99% corresponde una indemnización única en dinero, proporcional al porcentaje y calculada sobre el ingreso base de liquidación. Desde el 50% se accede a pensión de invalidez de origen laboral, equivalente al 60% o al 75% del ingreso base según el grado.",
       "reintegro-y-reubicacion":
