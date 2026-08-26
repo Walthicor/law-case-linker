@@ -25,6 +25,7 @@ import { Route as PoliticaDeTratamientoDeDatosRouteImport } from './routes/polit
 import { Route as TerminosYCondicionesRouteImport } from './routes/terminos-y-condiciones'
 import { Route as UneteRouteImport } from './routes/unete'
 import { Route as AreasIndexRouteImport } from './routes/areas.index'
+import { Route as HerramientasIndexRouteImport } from './routes/herramientas.index'
 import { Route as AreasSiloIndexRouteImport } from './routes/areas.$silo.index'
 import { Route as AreasSiloSubareaRouteImport } from './routes/areas.$silo.$subarea'
 
@@ -109,6 +110,11 @@ const AreasIndexRoute = AreasIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AreasRoute,
 } as any)
+const HerramientasIndexRoute = HerramientasIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => HerramientasRoute,
+} as any)
 const AreasSiloIndexRoute = AreasSiloIndexRouteImport.update({
   id: '/$silo/',
   path: '/$silo/',
@@ -129,7 +135,7 @@ export interface FileRoutesByFullPath {
   '/contacto': typeof ContactoRoute
   '/gracias': typeof GraciasRoute
   '/guias': typeof GuiasRoute
-  '/herramientas': typeof HerramientasRoute
+  '/herramientas': typeof HerramientasRouteWithChildren
   '/iniciar-caso': typeof IniciarCasoRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
@@ -137,6 +143,7 @@ export interface FileRoutesByFullPath {
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
   '/areas/': typeof AreasIndexRoute
+  '/herramientas/': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
   '/areas/$silo/': typeof AreasSiloIndexRoute
 }
@@ -148,7 +155,6 @@ export interface FileRoutesByTo {
   '/contacto': typeof ContactoRoute
   '/gracias': typeof GraciasRoute
   '/guias': typeof GuiasRoute
-  '/herramientas': typeof HerramientasRoute
   '/iniciar-caso': typeof IniciarCasoRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
@@ -156,6 +162,7 @@ export interface FileRoutesByTo {
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
   '/areas': typeof AreasIndexRoute
+  '/herramientas': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
   '/areas/$silo': typeof AreasSiloIndexRoute
 }
@@ -169,7 +176,7 @@ export interface FileRoutesById {
   '/contacto': typeof ContactoRoute
   '/gracias': typeof GraciasRoute
   '/guias': typeof GuiasRoute
-  '/herramientas': typeof HerramientasRoute
+  '/herramientas': typeof HerramientasRouteWithChildren
   '/iniciar-caso': typeof IniciarCasoRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
@@ -177,6 +184,7 @@ export interface FileRoutesById {
   '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
   '/unete': typeof UneteRoute
   '/areas/': typeof AreasIndexRoute
+  '/herramientas/': typeof HerramientasIndexRoute
   '/areas/$silo/$subarea': typeof AreasSiloSubareaRoute
   '/areas/$silo/': typeof AreasSiloIndexRoute
 }
@@ -199,6 +207,7 @@ export interface FileRouteTypes {
     | '/terminos-y-condiciones'
     | '/unete'
     | '/areas/'
+    | '/herramientas/'
     | '/areas/$silo/$subarea'
     | '/areas/$silo/'
   fileRoutesByTo: FileRoutesByTo
@@ -210,7 +219,6 @@ export interface FileRouteTypes {
     | '/contacto'
     | '/gracias'
     | '/guias'
-    | '/herramientas'
     | '/iniciar-caso'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
@@ -218,6 +226,7 @@ export interface FileRouteTypes {
     | '/terminos-y-condiciones'
     | '/unete'
     | '/areas'
+    | '/herramientas'
     | '/areas/$silo/$subarea'
     | '/areas/$silo'
   id:
@@ -238,6 +247,7 @@ export interface FileRouteTypes {
     | '/terminos-y-condiciones'
     | '/unete'
     | '/areas/'
+    | '/herramientas/'
     | '/areas/$silo/$subarea'
     | '/areas/$silo/'
   fileRoutesById: FileRoutesById
@@ -251,7 +261,7 @@ export interface RootRouteChildren {
   ContactoRoute: typeof ContactoRoute
   GraciasRoute: typeof GraciasRoute
   GuiasRoute: typeof GuiasRoute
-  HerramientasRoute: typeof HerramientasRoute
+  HerramientasRoute: typeof HerramientasRouteWithChildren
   IniciarCasoRoute: typeof IniciarCasoRoute
   PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
   PoliticaDePrivacidadRoute: typeof PoliticaDePrivacidadRoute
@@ -374,6 +384,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasIndexRouteImport
       parentRoute: typeof AreasRoute
     }
+    '/herramientas/': {
+      id: '/herramientas/'
+      path: '/'
+      fullPath: '/herramientas/'
+      preLoaderRoute: typeof HerramientasIndexRouteImport
+      parentRoute: typeof HerramientasRoute
+    }
     '/areas/$silo/': {
       id: '/areas/$silo/'
       path: '/$silo'
@@ -405,6 +422,18 @@ const AreasRouteChildren: AreasRouteChildren = {
 
 const AreasRouteWithChildren = AreasRoute._addFileChildren(AreasRouteChildren)
 
+interface HerramientasRouteChildren {
+  HerramientasIndexRoute: typeof HerramientasIndexRoute
+}
+
+const HerramientasRouteChildren: HerramientasRouteChildren = {
+  HerramientasIndexRoute: HerramientasIndexRoute,
+}
+
+const HerramientasRouteWithChildren = HerramientasRoute._addFileChildren(
+  HerramientasRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AbogadosRoute: AbogadosRoute,
@@ -414,7 +443,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactoRoute: ContactoRoute,
   GraciasRoute: GraciasRoute,
   GuiasRoute: GuiasRoute,
-  HerramientasRoute: HerramientasRoute,
+  HerramientasRoute: HerramientasRouteWithChildren,
   IniciarCasoRoute: IniciarCasoRoute,
   PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
   PoliticaDePrivacidadRoute: PoliticaDePrivacidadRoute,
