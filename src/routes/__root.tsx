@@ -18,7 +18,11 @@ import { Footer } from "@/components/sitio/Footer";
 import { BarraCaptacion } from "@/components/sitio/BarraCaptacion";
 import { BotonSubir } from "@/components/sitio/BotonSubir";
 import { BannerCookies } from "@/components/sitio/BannerCookies";
+import { Analitica } from "@/components/sitio/Analitica";
 import { areaServedSchema } from "@/lib/cobertura";
+
+/** Verificación de Google Search Console por meta tag. */
+const VERIFICACION_GSC = (import.meta.env["VITE_GSC_VERIFICACION"] as string | undefined) ?? "";
 
 function NotFoundComponent() {
   return (
