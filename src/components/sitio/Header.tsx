@@ -42,6 +42,7 @@ export function Header() {
   const sobreHero = RUTAS_CON_HERO_OSCURO.includes(pathname) && !scrolled;
 
   return (
+    <>
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 h-18 transition-colors duration-[240ms]",
