@@ -160,10 +160,26 @@ export function Header() {
                 <li key={item.titulo} className="border-b border-linea">
                   <Link
                     to={item.to}
+                    onClick={() => setAbierto(false)}
                     className="block py-4 font-display text-xl font-semibold text-tinta"
                   >
                     {item.titulo}
                   </Link>
+                  {"dropdown" in item && item.dropdown && (
+                    <ul className="-mt-1 grid grid-cols-2 gap-x-4 gap-y-1 pb-4">
+                      {PILARES.map((p) => (
+                        <li key={p.titulo}>
+                          <Link
+                            to={p.slug}
+                            onClick={() => setAbierto(false)}
+                            className="block py-1.5 text-sm text-tinta-suave"
+                          >
+                            {p.titulo}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
               <li className="border-b border-linea">
