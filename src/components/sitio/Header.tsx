@@ -149,7 +149,7 @@ export function Header() {
           role="dialog"
           aria-modal="true"
           aria-label="Menú"
-          className="menu-movil fixed inset-0 z-50 flex flex-col bg-papel lg:hidden"
+          className="menu-movil fixed inset-0 z-[60] flex flex-col bg-papel lg:hidden"
         >
           <div className="contenedor flex h-18 items-center justify-between border-b border-linea">
             <Logo />
