@@ -9,7 +9,6 @@ type Conexion = { saveData?: boolean; effectiveType?: string };
 
 function puedeMontarVideo() {
   if (typeof window === "undefined") return false;
-  if (!window.matchMedia("(min-width:1024px)").matches) return false;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
   const conexion = (navigator as Navigator & { connection?: Conexion }).connection;
   if (conexion?.saveData === true) return false;
@@ -35,7 +34,9 @@ export function HeroVideo() {
       idle(() => {
         if (cancelado || !puedeMontarVideo()) return;
         setMontarVideo(true);
-        evento("video_hero_cargado", { dispositivo: "escritorio" });
+        evento("video_hero_cargado", {
+          dispositivo: window.matchMedia("(min-width:1024px)").matches ? "escritorio" : "movil",
+        });
       });
     };
 
