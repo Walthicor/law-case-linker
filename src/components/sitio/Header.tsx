@@ -28,8 +28,14 @@ export function Header() {
 
   useEffect(() => {
     document.body.style.overflow = abierto ? "hidden" : "";
+    if (!abierto) return () => undefined;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setAbierto(false);
+    };
+    window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
     };
   }, [abierto]);
 
