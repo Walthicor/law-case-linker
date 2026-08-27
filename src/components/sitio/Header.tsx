@@ -183,14 +183,21 @@ export function Header() {
                 </li>
               ))}
               <li className="border-b border-linea">
-                <Link to="/unete" className="block py-4 text-base font-medium text-tinta-suave">
+                <Link
+                  to="/unete"
+                  onClick={() => setAbierto(false)}
+                  className="block py-4 text-base font-medium text-tinta-suave"
+                >
                   Soy abogado
                 </Link>
               </li>
             </ul>
             <Link
               to="/iniciar-caso"
-              onClick={() => evento("cta_click", { ubicacion: "menu-movil" })}
+              onClick={() => {
+                setAbierto(false);
+                evento("cta_click", { ubicacion: "menu-movil" });
+              }}
               className="btn-primario btn-pulso mt-8 w-full"
             >
               <IconoFormulario />
