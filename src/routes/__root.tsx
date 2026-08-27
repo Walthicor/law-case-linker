@@ -203,7 +203,14 @@ function RootComponent() {
         Saltar al contenido
       </a>
       {!sinCromo && <Header />}
-      <main id="contenido" className={sinCromo ? "min-h-screen" : "min-h-screen pb-16 md:pb-0"}>
+      <main
+        id="contenido"
+        className={cn(
+          "min-h-screen",
+          !sinCromo && "pb-16 md:pb-0",
+          bajoHeader && "pt-18",
+        )}
+      >
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </main>
