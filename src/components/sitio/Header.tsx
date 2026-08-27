@@ -136,7 +136,13 @@ export function Header() {
       </div>
 
       {abierto && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-papel md:hidden">
+        <div
+          id="menu-movil"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menú"
+          className="menu-movil fixed inset-0 z-50 flex flex-col bg-papel lg:hidden"
+        >
           <div className="contenedor flex h-18 items-center justify-between border-b border-linea">
             <Logo />
             <button
