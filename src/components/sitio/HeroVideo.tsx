@@ -78,7 +78,7 @@ export function HeroVideo() {
           preload="metadata"
           poster={POSTER}
           src={esMovil ? videoTribunalMovil.url : videoTribunal.url}
-          className="absolute inset-0 h-full w-full object-cover object-[52%_38%] lg:object-center"
+          className="absolute inset-0 h-full w-full object-cover object-[55%_42%] lg:object-center"
         />
       )}
 
