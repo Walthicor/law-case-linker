@@ -193,6 +193,9 @@ function RootComponent() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   // El formulario de caso y la confirmación no tienen salidas: sin navegación, sin barra ni botones flotantes.
   const sinCromo = pathname === "/iniciar-caso" || pathname === "/gracias";
+  // El home tiene hero oscuro a sangre bajo el header transparente; el resto necesita
+  // dejar libre la altura del header fijo (h-18 = 4.5rem) para que no tape el contenido.
+  const bajoHeader = !sinCromo && pathname !== "/";
 
   return (
     <QueryClientProvider client={queryClient}>
