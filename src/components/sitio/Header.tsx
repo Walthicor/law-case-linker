@@ -124,8 +124,10 @@ export function Header() {
           type="button"
           onClick={() => setAbierto(true)}
           aria-label="Abrir menú"
+          aria-expanded={abierto}
+          aria-controls="menu-movil"
           className={cn(
-            "flex h-10 w-10 items-center justify-center rounded-[6px] border md:hidden",
+            "flex h-10 w-10 items-center justify-center rounded-[6px] border lg:hidden",
             sobreHero ? "border-papel/40 text-papel" : "border-linea text-tinta",
           )}
         >
