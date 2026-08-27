@@ -77,7 +77,7 @@ export function HeroVideo() {
           playsInline
           preload="metadata"
           poster={POSTER}
-          src={videoTribunal.url}
+          src={esMovil ? videoTribunalMovil.url : videoTribunal.url}
           className="absolute inset-0 h-full w-full object-cover object-[52%_38%] lg:object-center"
         />
       )}
