@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import videoTribunal from "@/assets/hero-tribunal.mp4.asset.json";
+import videoTribunalMovil from "@/assets/hero-movil.mp4.asset.json";
 import { evento } from "@/lib/analitica";
 
 const POSTER = "/hero-poster.jpg";
@@ -9,7 +10,6 @@ type Conexion = { saveData?: boolean; effectiveType?: string };
 
 function puedeMontarVideo() {
   if (typeof window === "undefined") return false;
-  if (!window.matchMedia("(min-width:1024px)").matches) return false;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
   const conexion = (navigator as Navigator & { connection?: Conexion }).connection;
   if (conexion?.saveData === true) return false;
@@ -24,6 +24,8 @@ function puedeMontarVideo() {
  */
 export function HeroVideo() {
   const [montarVideo, setMontarVideo] = useState(false);
+  const [esMovil, setEsMovil] = useState(false);
+
 
   useEffect(() => {
     let cancelado = false;
@@ -34,8 +36,10 @@ export function HeroVideo() {
           .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 400));
       idle(() => {
         if (cancelado || !puedeMontarVideo()) return;
+        const movil = !window.matchMedia("(min-width:1024px)").matches;
+        setEsMovil(movil);
         setMontarVideo(true);
-        evento("video_hero_cargado", { dispositivo: "escritorio" });
+        evento("video_hero_cargado", { dispositivo: movil ? "movil" : "escritorio" });
       });
     };
 
@@ -60,16 +64,22 @@ export function HeroVideo() {
     >
       {montarVideo && (
         <video
+          ref={(el) => {
+            if (!el) return;
+            el.muted = true;
+            const intentar = () => void el.play().catch(() => undefined);
+            intentar();
+            el.addEventListener("canplay", intentar, { once: true });
+          }}
           autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
           poster={POSTER}
-          className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src={videoTribunal.url} type="video/mp4" />
-        </video>
+          src={esMovil ? videoTribunalMovil.url : videoTribunal.url}
+          className="absolute inset-0 h-full w-full object-cover object-[52%_38%] lg:object-center"
+        />
       )}
 
     </div>
