@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import videoTribunal from "@/assets/hero-tribunal.mp4.asset.json";
+import videoTribunalMovil from "@/assets/hero-movil.mp4.asset.json";
 import { evento } from "@/lib/analitica";
 
 const POSTER = "/hero-poster.jpg";
