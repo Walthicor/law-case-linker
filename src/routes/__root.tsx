@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { cn } from "@/lib/utils";
 import { Header } from "@/components/sitio/Header";
 import { Footer } from "@/components/sitio/Footer";
 import { BarraCaptacion } from "@/components/sitio/BarraCaptacion";
