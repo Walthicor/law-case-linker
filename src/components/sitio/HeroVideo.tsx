@@ -61,16 +61,22 @@ export function HeroVideo() {
     >
       {montarVideo && (
         <video
+          ref={(el) => {
+            if (!el) return;
+            el.muted = true;
+            const intentar = () => void el.play().catch(() => undefined);
+            intentar();
+            el.addEventListener("canplay", intentar, { once: true });
+          }}
           autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
           poster={POSTER}
-          className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src={videoTribunal.url} type="video/mp4" />
-        </video>
+          src={videoTribunal.url}
+          className="absolute inset-0 h-full w-full object-cover object-[52%_38%] lg:object-center"
+        />
       )}
 
     </div>
