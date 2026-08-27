@@ -28,14 +28,21 @@ export function Header() {
 
   useEffect(() => {
     document.body.style.overflow = abierto ? "hidden" : "";
+    if (!abierto) return () => undefined;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setAbierto(false);
+    };
+    window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
     };
   }, [abierto]);
 
   const sobreHero = RUTAS_CON_HERO_OSCURO.includes(pathname) && !scrolled;
 
   return (
+    <>
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 h-18 transition-colors duration-[240ms]",
@@ -100,7 +107,7 @@ export function Header() {
           )}
         </nav>
 
-        <div className="hidden items-center gap-5 md:flex">
+        <div className="hidden items-center gap-5 lg:flex">
           <Link
             to="/unete"
             className={cn(
@@ -124,17 +131,26 @@ export function Header() {
           type="button"
           onClick={() => setAbierto(true)}
           aria-label="Abrir menú"
+          aria-expanded={abierto}
+          aria-controls="menu-movil"
           className={cn(
-            "flex h-10 w-10 items-center justify-center rounded-[6px] border md:hidden",
+            "flex h-10 w-10 items-center justify-center rounded-[6px] border lg:hidden",
             sobreHero ? "border-papel/40 text-papel" : "border-linea text-tinta",
           )}
         >
           <Menu className="h-5 w-5" aria-hidden="true" />
         </button>
       </div>
+    </header>
 
       {abierto && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-papel md:hidden">
+        <div
+          id="menu-movil"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menú"
+          className="menu-movil fixed inset-0 z-[60] flex flex-col bg-papel lg:hidden"
+        >
           <div className="contenedor flex h-18 items-center justify-between border-b border-linea">
             <Logo />
             <button
@@ -152,21 +168,44 @@ export function Header() {
                 <li key={item.titulo} className="border-b border-linea">
                   <Link
                     to={item.to}
+                    onClick={() => setAbierto(false)}
                     className="block py-4 font-display text-xl font-semibold text-tinta"
                   >
                     {item.titulo}
                   </Link>
+                  {"dropdown" in item && item.dropdown && (
+                    <ul className="-mt-1 grid grid-cols-2 gap-x-4 gap-y-1 pb-4">
+                      {PILARES.map((p) => (
+                        <li key={p.titulo}>
+                          <Link
+                            to={p.slug}
+                            onClick={() => setAbierto(false)}
+                            className="block py-1.5 text-sm text-tinta-suave"
+                          >
+                            {p.titulo}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
               <li className="border-b border-linea">
-                <Link to="/unete" className="block py-4 text-base font-medium text-tinta-suave">
+                <Link
+                  to="/unete"
+                  onClick={() => setAbierto(false)}
+                  className="block py-4 text-base font-medium text-tinta-suave"
+                >
                   Soy abogado
                 </Link>
               </li>
             </ul>
             <Link
               to="/iniciar-caso"
-              onClick={() => evento("cta_click", { ubicacion: "menu-movil" })}
+              onClick={() => {
+                setAbierto(false);
+                evento("cta_click", { ubicacion: "menu-movil" });
+              }}
               className="btn-primario btn-pulso mt-8 w-full"
             >
               <IconoFormulario />
@@ -175,6 +214,6 @@ export function Header() {
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 }

@@ -751,3 +751,25 @@
   outline: 2px solid var(--papel);
   outline-offset: -4px;
 }
+
+/* Menú móvil: entrada suave del panel completo. */
+@keyframes menu-movil-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-movil {
+  animation: menu-movil-entrada 200ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-movil {
+    animation: none;
+  }
+}
