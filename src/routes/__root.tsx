@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { cn } from "@/lib/utils";
 import { Header } from "@/components/sitio/Header";
 import { Footer } from "@/components/sitio/Footer";
 import { BarraCaptacion } from "@/components/sitio/BarraCaptacion";
@@ -193,6 +194,9 @@ function RootComponent() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   // El formulario de caso y la confirmación no tienen salidas: sin navegación, sin barra ni botones flotantes.
   const sinCromo = pathname === "/iniciar-caso" || pathname === "/gracias";
+  // El home tiene hero oscuro a sangre bajo el header transparente; el resto necesita
+  // dejar libre la altura del header fijo (h-18 = 4.5rem) para que no tape el contenido.
+  const bajoHeader = !sinCromo && pathname !== "/";
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -200,7 +204,14 @@ function RootComponent() {
         Saltar al contenido
       </a>
       {!sinCromo && <Header />}
-      <main id="contenido" className={sinCromo ? "min-h-screen" : "min-h-screen pb-16 md:pb-0"}>
+      <main
+        id="contenido"
+        className={cn(
+          "min-h-screen",
+          !sinCromo && "pb-16 md:pb-0",
+          bajoHeader && "pt-18",
+        )}
+      >
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </main>

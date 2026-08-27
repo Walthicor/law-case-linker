@@ -174,7 +174,7 @@ function Pagina() {
     <div className="bg-papel">
       {/* HERO — paleta invertida: esta es la otra puerta del sitio */}
       <section className="bg-tinta text-papel">
-        <div className="contenedor grid items-center gap-12 pb-20 pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-28 lg:pt-32">
+        <div className="contenedor grid items-center gap-12 pb-20 pt-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-28 lg:pt-14">
           <div>
             <div className="mb-6 text-papel/60">
               <Migas items={[{ titulo: "Inicio", to: "/" }, { titulo: "Únete" }]} />
