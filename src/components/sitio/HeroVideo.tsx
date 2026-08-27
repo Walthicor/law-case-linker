@@ -24,6 +24,8 @@ function puedeMontarVideo() {
  */
 export function HeroVideo() {
   const [montarVideo, setMontarVideo] = useState(false);
+  const [esMovil, setEsMovil] = useState(false);
+
 
   useEffect(() => {
     let cancelado = false;
