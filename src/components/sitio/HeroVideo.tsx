@@ -36,10 +36,10 @@ export function HeroVideo() {
           .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 400));
       idle(() => {
         if (cancelado || !puedeMontarVideo()) return;
+        const movil = !window.matchMedia("(min-width:1024px)").matches;
+        setEsMovil(movil);
         setMontarVideo(true);
-        evento("video_hero_cargado", {
-          dispositivo: window.matchMedia("(min-width:1024px)").matches ? "escritorio" : "movil",
-        });
+        evento("video_hero_cargado", { dispositivo: movil ? "movil" : "escritorio" });
       });
     };
 
