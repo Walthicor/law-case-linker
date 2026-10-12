@@ -4,15 +4,13 @@ import { puntuarCaso, type Caso } from "./caso";
 import type { Postulacion } from "./postulacion";
 import { radicadoPostulacion } from "./postulacion";
 import {
-  CORREO_INTERNO,
   asuntoInterno,
-  asuntoUsuario,
   correoDePostulacion,
   cuerpoInterno,
   cuerpoUsuario,
-  enviarCorreo,
   type Atribucion,
 } from "./correo.server";
+import { sendTemplateEmail } from "./email-templates/send-email";
 
 /** AJC-{año}-{5 dígitos}. Se genera en el servidor, nunca en el cliente. */
 export function generarRadicadoServidor(): string {
@@ -21,17 +19,23 @@ export function generarRadicadoServidor(): string {
   return `AJC-${anio}-${n}`;
 }
 
+async function avisoInterno(asunto: string, cuerpo: string, clave: string, replyTo?: string) {
+  await sendTemplateEmail("aviso-interno", "mardigitalcali@gmail.com", {
+    templateData: { asunto, cuerpo },
+    idempotencyKey: `aviso-interno-${clave}`,
+    ...(replyTo ? { replyTo } : {}),
+  });
+}
+
 export async function procesarCaso(caso: Caso, atribucion: Atribucion) {
   const radicado = generarRadicadoServidor();
-  // El puntaje del cliente no se acepta: se recalcula aquí.
   const { puntaje, tier } = puntuarCaso(caso);
   const recibido = new Date().toISOString();
   const marca = atribucion.autorizacion_timestamp || recibido;
 
-  await enviarCorreo({
-    to: CORREO_INTERNO,
-    subject: asuntoInterno(caso, tier, puntaje, radicado),
-    text: cuerpoInterno({
+  await avisoInterno(
+    asuntoInterno(caso, tier, puntaje, radicado),
+    cuerpoInterno({
       caso,
       radicado,
       puntaje,
@@ -39,15 +43,14 @@ export async function procesarCaso(caso: Caso, atribucion: Atribucion) {
       atribucion: { ...atribucion, autorizacion_timestamp: marca },
       recibido,
     }),
-  });
+    radicado,
+    caso.correo,
+  );
 
-  // El correo interno es el registro obligatorio; el de cortesía no debe
-  // tumbar el flujo si el proveedor lo rechaza.
   try {
-    await enviarCorreo({
-      to: caso.correo,
-      subject: asuntoUsuario(radicado),
-      text: cuerpoUsuario(caso, radicado),
+    await sendTemplateEmail("confirmacion-caso", caso.correo, {
+      templateData: { radicado, cuerpo: cuerpoUsuario(caso, radicado) },
+      idempotencyKey: `confirmacion-caso-${radicado}`,
     });
   } catch (error) {
     console.error("[correo] confirmación al usuario no enviada", error);
@@ -59,6 +62,27 @@ export async function procesarCaso(caso: Caso, atribucion: Atribucion) {
 export async function procesarPostulacion(p: Postulacion) {
   const radicado = radicadoPostulacion();
   const { subject, text } = correoDePostulacion(p, radicado);
-  await enviarCorreo({ to: CORREO_INTERNO, subject, text });
+  await avisoInterno(subject, text, radicado, p.correo);
   return { radicado };
+}
+
+export async function procesarContacto(m: {
+  nombre: string;
+  correo: string;
+  motivo: string;
+  mensaje: string;
+}) {
+  const id = `AJC-MSG-${Date.now()}`;
+  const cuerpo = [
+    `MENSAJE DE CONTACTO — ${id}`,
+    `Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}`,
+    "",
+    `Nombre:  ${m.nombre}`,
+    `Correo:  ${m.correo}`,
+    `Motivo:  ${m.motivo}`,
+    "",
+    m.mensaje.trim(),
+  ].join("\n");
+  await avisoInterno(`[CONTACTO] ${m.motivo} · ${m.nombre}`, cuerpo, id, m.correo);
+  return { ok: true };
 }

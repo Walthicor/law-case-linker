@@ -129,6 +129,8 @@ function Canal({
 
 function Formulario() {
   const [enviado, setEnviado] = useState(false);
+  const [enviando, setEnviando] = useState(false);
+  const [error, setError] = useState("");
 
   if (enviado) {
     return (
@@ -145,9 +147,26 @@ function Formulario() {
   return (
     <form
       className="space-y-5"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
-        setEnviado(true);
+        const f = new FormData(e.currentTarget);
+        setEnviando(true);
+        setError("");
+        try {
+          await enviarContacto({
+            data: {
+              nombre: String(f.get("nombre") ?? ""),
+              correo: String(f.get("correo") ?? ""),
+              motivo: String(f.get("motivo") ?? "general"),
+              mensaje: String(f.get("mensaje") ?? ""),
+            },
+          });
+          setEnviado(true);
+        } catch {
+          setError("No pudimos enviar tu mensaje. Intenta de nuevo o escríbenos por WhatsApp.");
+        } finally {
+          setEnviando(false);
+        }
       }}
     >
       <div className="grid gap-5 sm:grid-cols-2">
