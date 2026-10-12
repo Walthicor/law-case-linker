@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Clock, Mail, MessageCircle, Scale, Send } from "lucide-react";
 import { Migas } from "@/components/sitio/Migas";
 import { RESPONSABLE } from "@/lib/legal";
+import { enviarContacto } from "@/lib/envio.functions";
 
 const TITLE = "Contacto";
 const DESC =
@@ -217,9 +218,15 @@ function Formulario() {
         .
       </p>
 
-      <button type="submit" className="btn-primario">
+      {error && (
+        <p role="alert" className="text-[0.9rem] font-semibold text-destructive">
+          {error}
+        </p>
+      )}
+
+      <button type="submit" className="btn-primario" disabled={enviando}>
         <Send aria-hidden="true" strokeWidth={1.8} className="h-4 w-4" />
-        Enviar mensaje
+        {enviando ? "Enviando…" : "Enviar mensaje"}
       </button>
     </form>
   );
