@@ -1,53 +1,53 @@
-import imagen0 from "@/src/assets/imagenes-juridicas/derecho-laboral-600.webp.asset.json";
-import miniatura0 from "@/src/assets/imagenes-juridicas/derecho-laboral-300.webp.asset.json";
-import imagen1 from "@/src/assets/imagenes-juridicas/riesgos-laborales-600.webp.asset.json";
-import miniatura1 from "@/src/assets/imagenes-juridicas/riesgos-laborales-300.webp.asset.json";
-import imagen2 from "@/src/assets/imagenes-juridicas/derecho-familia-600.webp.asset.json";
-import miniatura2 from "@/src/assets/imagenes-juridicas/derecho-familia-300.webp.asset.json";
-import imagen3 from "@/src/assets/imagenes-juridicas/derecho-civil-600.webp.asset.json";
-import miniatura3 from "@/src/assets/imagenes-juridicas/derecho-civil-300.webp.asset.json";
-import imagen4 from "@/src/assets/imagenes-juridicas/derecho-administrativo-600.webp.asset.json";
-import miniatura4 from "@/src/assets/imagenes-juridicas/derecho-administrativo-300.webp.asset.json";
-import imagen5 from "@/src/assets/imagenes-juridicas/derecho-penal-600.webp.asset.json";
-import miniatura5 from "@/src/assets/imagenes-juridicas/derecho-penal-300.webp.asset.json";
-import imagen6 from "@/src/assets/imagenes-juridicas/derecho-comercial-600.webp.asset.json";
-import miniatura6 from "@/src/assets/imagenes-juridicas/derecho-comercial-300.webp.asset.json";
-import imagen7 from "@/src/assets/imagenes-juridicas/derecho-inmobiliario-600.webp.asset.json";
-import miniatura7 from "@/src/assets/imagenes-juridicas/derecho-inmobiliario-300.webp.asset.json";
-import imagen8 from "@/src/assets/imagenes-juridicas/pensiones-600.webp.asset.json";
-import miniatura8 from "@/src/assets/imagenes-juridicas/pensiones-300.webp.asset.json";
-import imagen9 from "@/src/assets/imagenes-juridicas/transito-accidentes-600.webp.asset.json";
-import miniatura9 from "@/src/assets/imagenes-juridicas/transito-accidentes-300.webp.asset.json";
-import imagen10 from "@/src/assets/imagenes-juridicas/insolvencia-600.webp.asset.json";
-import miniatura10 from "@/src/assets/imagenes-juridicas/insolvencia-300.webp.asset.json";
-import imagen11 from "@/src/assets/imagenes-juridicas/propiedad-intelectual-600.webp.asset.json";
-import miniatura11 from "@/src/assets/imagenes-juridicas/propiedad-intelectual-300.webp.asset.json";
-import imagen12 from "@/src/assets/imagenes-juridicas/derecho-migratorio-600.webp.asset.json";
-import miniatura12 from "@/src/assets/imagenes-juridicas/derecho-migratorio-300.webp.asset.json";
-import imagen13 from "@/src/assets/imagenes-juridicas/red-abogados-600.webp.asset.json";
-import miniatura13 from "@/src/assets/imagenes-juridicas/red-abogados-300.webp.asset.json";
-import imagen14 from "@/src/assets/imagenes-juridicas/calculadora-liquidacion-laboral-600.webp.asset.json";
-import miniatura14 from "@/src/assets/imagenes-juridicas/calculadora-liquidacion-laboral-300.webp.asset.json";
-import imagen15 from "@/src/assets/imagenes-juridicas/calculadora-cuota-alimentaria-600.webp.asset.json";
-import miniatura15 from "@/src/assets/imagenes-juridicas/calculadora-cuota-alimentaria-300.webp.asset.json";
-import imagen16 from "@/src/assets/imagenes-juridicas/derecho-de-peticion-600.webp.asset.json";
-import miniatura16 from "@/src/assets/imagenes-juridicas/derecho-de-peticion-300.webp.asset.json";
-import imagen17 from "@/src/assets/imagenes-juridicas/accion-de-tutela-600.webp.asset.json";
-import miniatura17 from "@/src/assets/imagenes-juridicas/accion-de-tutela-300.webp.asset.json";
-import imagen18 from "@/src/assets/imagenes-juridicas/contrato-de-arrendamiento-600.webp.asset.json";
-import miniatura18 from "@/src/assets/imagenes-juridicas/contrato-de-arrendamiento-300.webp.asset.json";
-import imagen19 from "@/src/assets/imagenes-juridicas/orientacion-juridica-600.webp.asset.json";
-import miniatura19 from "@/src/assets/imagenes-juridicas/orientacion-juridica-300.webp.asset.json";
-import imagen20 from "@/src/assets/imagenes-juridicas/cuentanos-tu-caso-600.webp.asset.json";
-import miniatura20 from "@/src/assets/imagenes-juridicas/cuentanos-tu-caso-300.webp.asset.json";
-import imagen21 from "@/src/assets/imagenes-juridicas/perfilamos-tu-caso-600.webp.asset.json";
-import miniatura21 from "@/src/assets/imagenes-juridicas/perfilamos-tu-caso-300.webp.asset.json";
-import imagen22 from "@/src/assets/imagenes-juridicas/asignamos-abogado-600.webp.asset.json";
-import miniatura22 from "@/src/assets/imagenes-juridicas/asignamos-abogado-300.webp.asset.json";
-import imagen23 from "@/src/assets/imagenes-juridicas/abogado-te-contacta-600.webp.asset.json";
-import miniatura23 from "@/src/assets/imagenes-juridicas/abogado-te-contacta-300.webp.asset.json";
-import imagen24 from "@/src/assets/imagenes-juridicas/verificacion-abogados-600.webp.asset.json";
-import miniatura24 from "@/src/assets/imagenes-juridicas/verificacion-abogados-300.webp.asset.json";
+import imagen0 from "@/assets/imagenes-juridicas/derecho-laboral-600.webp.asset.json";
+import miniatura0 from "@/assets/imagenes-juridicas/derecho-laboral-300.webp.asset.json";
+import imagen1 from "@/assets/imagenes-juridicas/riesgos-laborales-600.webp.asset.json";
+import miniatura1 from "@/assets/imagenes-juridicas/riesgos-laborales-300.webp.asset.json";
+import imagen2 from "@/assets/imagenes-juridicas/derecho-familia-600.webp.asset.json";
+import miniatura2 from "@/assets/imagenes-juridicas/derecho-familia-300.webp.asset.json";
+import imagen3 from "@/assets/imagenes-juridicas/derecho-civil-600.webp.asset.json";
+import miniatura3 from "@/assets/imagenes-juridicas/derecho-civil-300.webp.asset.json";
+import imagen4 from "@/assets/imagenes-juridicas/derecho-administrativo-600.webp.asset.json";
+import miniatura4 from "@/assets/imagenes-juridicas/derecho-administrativo-300.webp.asset.json";
+import imagen5 from "@/assets/imagenes-juridicas/derecho-penal-600.webp.asset.json";
+import miniatura5 from "@/assets/imagenes-juridicas/derecho-penal-300.webp.asset.json";
+import imagen6 from "@/assets/imagenes-juridicas/derecho-comercial-600.webp.asset.json";
+import miniatura6 from "@/assets/imagenes-juridicas/derecho-comercial-300.webp.asset.json";
+import imagen7 from "@/assets/imagenes-juridicas/derecho-inmobiliario-600.webp.asset.json";
+import miniatura7 from "@/assets/imagenes-juridicas/derecho-inmobiliario-300.webp.asset.json";
+import imagen8 from "@/assets/imagenes-juridicas/pensiones-600.webp.asset.json";
+import miniatura8 from "@/assets/imagenes-juridicas/pensiones-300.webp.asset.json";
+import imagen9 from "@/assets/imagenes-juridicas/transito-accidentes-600.webp.asset.json";
+import miniatura9 from "@/assets/imagenes-juridicas/transito-accidentes-300.webp.asset.json";
+import imagen10 from "@/assets/imagenes-juridicas/insolvencia-600.webp.asset.json";
+import miniatura10 from "@/assets/imagenes-juridicas/insolvencia-300.webp.asset.json";
+import imagen11 from "@/assets/imagenes-juridicas/propiedad-intelectual-600.webp.asset.json";
+import miniatura11 from "@/assets/imagenes-juridicas/propiedad-intelectual-300.webp.asset.json";
+import imagen12 from "@/assets/imagenes-juridicas/derecho-migratorio-600.webp.asset.json";
+import miniatura12 from "@/assets/imagenes-juridicas/derecho-migratorio-300.webp.asset.json";
+import imagen13 from "@/assets/imagenes-juridicas/red-abogados-600.webp.asset.json";
+import miniatura13 from "@/assets/imagenes-juridicas/red-abogados-300.webp.asset.json";
+import imagen14 from "@/assets/imagenes-juridicas/calculadora-liquidacion-laboral-600.webp.asset.json";
+import miniatura14 from "@/assets/imagenes-juridicas/calculadora-liquidacion-laboral-300.webp.asset.json";
+import imagen15 from "@/assets/imagenes-juridicas/calculadora-cuota-alimentaria-600.webp.asset.json";
+import miniatura15 from "@/assets/imagenes-juridicas/calculadora-cuota-alimentaria-300.webp.asset.json";
+import imagen16 from "@/assets/imagenes-juridicas/derecho-de-peticion-600.webp.asset.json";
+import miniatura16 from "@/assets/imagenes-juridicas/derecho-de-peticion-300.webp.asset.json";
+import imagen17 from "@/assets/imagenes-juridicas/accion-de-tutela-600.webp.asset.json";
+import miniatura17 from "@/assets/imagenes-juridicas/accion-de-tutela-300.webp.asset.json";
+import imagen18 from "@/assets/imagenes-juridicas/contrato-de-arrendamiento-600.webp.asset.json";
+import miniatura18 from "@/assets/imagenes-juridicas/contrato-de-arrendamiento-300.webp.asset.json";
+import imagen19 from "@/assets/imagenes-juridicas/orientacion-juridica-600.webp.asset.json";
+import miniatura19 from "@/assets/imagenes-juridicas/orientacion-juridica-300.webp.asset.json";
+import imagen20 from "@/assets/imagenes-juridicas/cuentanos-tu-caso-600.webp.asset.json";
+import miniatura20 from "@/assets/imagenes-juridicas/cuentanos-tu-caso-300.webp.asset.json";
+import imagen21 from "@/assets/imagenes-juridicas/perfilamos-tu-caso-600.webp.asset.json";
+import miniatura21 from "@/assets/imagenes-juridicas/perfilamos-tu-caso-300.webp.asset.json";
+import imagen22 from "@/assets/imagenes-juridicas/asignamos-abogado-600.webp.asset.json";
+import miniatura22 from "@/assets/imagenes-juridicas/asignamos-abogado-300.webp.asset.json";
+import imagen23 from "@/assets/imagenes-juridicas/abogado-te-contacta-600.webp.asset.json";
+import miniatura23 from "@/assets/imagenes-juridicas/abogado-te-contacta-300.webp.asset.json";
+import imagen24 from "@/assets/imagenes-juridicas/verificacion-abogados-600.webp.asset.json";
+import miniatura24 from "@/assets/imagenes-juridicas/verificacion-abogados-300.webp.asset.json";
 
 export const IMAGENES_JURIDICAS = {
   "derecho-laboral": { src: imagen0.url, small: miniatura0.url, alt: "Abogada revisando documentos laborales con un cliente" },
@@ -80,3 +80,11 @@ export const IMAGENES_JURIDICAS = {
 export type ImagenJuridicaClave = keyof typeof IMAGENES_JURIDICAS;
 
 export const IMAGENES_AREAS = ["derecho-laboral", "riesgos-laborales", "derecho-familia", "derecho-civil", "derecho-administrativo", "derecho-penal", "derecho-comercial", "derecho-inmobiliario", "pensiones", "transito-accidentes", "insolvencia", "propiedad-intelectual", "derecho-migratorio"] as const;
+
+export const IMAGENES_POR_SILO: Record<string, ImagenJuridicaClave> = {
+  laboral: "derecho-laboral", "riesgos-laborales": "riesgos-laborales", familia: "derecho-familia",
+  civil: "derecho-civil", administrativo: "derecho-administrativo", penal: "derecho-penal",
+  comercial: "derecho-comercial", inmobiliario: "derecho-inmobiliario", pensiones: "pensiones",
+  transito: "transito-accidentes", insolvencia: "insolvencia", "propiedad-intelectual": "propiedad-intelectual",
+  migratorio: "derecho-migratorio",
+};
