@@ -9,8 +9,8 @@ describe("Fotografías indicadas en el chat del 27 de agosto", () => {
   });
   test("inicio y Áreas comparten las mismas 13 fotografías", () => {
     expect(Object.values(IMAGENES_POR_SILO).sort()).toEqual([...IMAGENES_AREAS].sort());
-    expect(IMAGENES_POR_SILO.transito).toBe("transito-accidentes");
-    expect(IMAGENES_POR_SILO.penal).toBe("derecho-penal");
+    expect(IMAGENES_POR_SILO["transito"]).toBe("transito-accidentes");
+    expect(IMAGENES_POR_SILO["penal"]).toBe("derecho-penal");
   });
   test("se conservan los 25 originales únicos sin repetir la foto penal", () => {
     expect(Object.keys(IMAGENES_JURIDICAS)).toHaveLength(25);
