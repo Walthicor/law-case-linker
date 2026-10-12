@@ -22,7 +22,7 @@ const AvisoInterno = ({ asunto, cuerpo }: Props) => (
 
 export const template = {
   component: AvisoInterno,
-  subject: (d: Record<string, any>) => d.asunto || 'Nuevo formulario recibido',
+  subject: (d: Record<string, any>) => d['asunto'] || 'Nuevo formulario recibido',
   displayName: 'Aviso interno de formularios',
   to: 'mardigitalcali@gmail.com',
   previewData: { asunto: '[TIER A · 85] Laboral · Cali · AJC-2026-12345', cuerpo: 'CASO NUEVO…' },

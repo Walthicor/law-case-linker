@@ -23,7 +23,7 @@ const ConfirmacionCaso = ({ radicado, cuerpo }: Props) => (
 export const template = {
   component: ConfirmacionCaso,
   subject: (d: Record<string, any>) =>
-    d.radicado ? `Recibimos tu caso — ${d.radicado}` : 'Recibimos tu caso',
+    d['radicado'] ? `Recibimos tu caso — ${d['radicado']}` : 'Recibimos tu caso',
   displayName: 'Confirmación de caso al usuario',
   previewData: { radicado: 'AJC-2026-12345', cuerpo: 'Hola Ana,\n\nRecibimos tu caso.' },
 } satisfies TemplateEntry

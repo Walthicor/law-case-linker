@@ -158,7 +158,7 @@ function Formulario() {
             data: {
               nombre: String(f.get("nombre") ?? ""),
               correo: String(f.get("correo") ?? ""),
-              motivo: String(f.get("motivo") ?? "general"),
+              motivo: String(f.get("motivo") ?? "general") as "general",
               mensaje: String(f.get("mensaje") ?? ""),
             },
           });
