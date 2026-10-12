@@ -6,6 +6,8 @@ import type { LucideIcon } from "lucide-react";
 import { Migas } from "@/components/sitio/Migas";
 import { Revelar } from "@/components/sitio/Revelar";
 import { PILARES, tituloSeo } from "@/lib/pilares";
+import { ImagenJuridica } from "@/components/sitio/ImagenJuridica";
+import { IMAGENES_POR_SILO } from "@/lib/imagenes-juridicas";
 
 const TITULO = tituloSeo("Áreas de práctica");
 const DESC =
@@ -41,6 +43,7 @@ function Pagina() {
           {PILARES.map((p, i) => (
             <Revelar key={p.slug} retardo={(i % 3) * 60}>
               <article className="tarjeta h-full">
+                <ImagenJuridica imagen={IMAGENES_POR_SILO[p.slug] ?? "derecho-civil"} className="mb-5" />
                 <Icono nombre={p.icono} />
                 <h2 className="mt-4 text-[1.1rem] font-semibold leading-snug">
                   <Link

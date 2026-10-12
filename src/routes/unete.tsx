@@ -6,6 +6,7 @@ import { Acordeon, type ItemAcordeon } from "@/components/sitio/Acordeon";
 import { Migas } from "@/components/sitio/Migas";
 import { Revelar } from "@/components/sitio/Revelar";
 import { FormularioPostulacion } from "@/components/sitio/FormularioPostulacion";
+import { ImagenJuridica } from "@/components/sitio/ImagenJuridica";
 
 const TITULO = "Únete a la red de abogados | Asesorías Jurídicas";
 const DESC =
@@ -194,7 +195,10 @@ function Pagina() {
               </a>
             </div>
           </div>
-          <TarjetaCasoEjemplo />
+          <div>
+            <ImagenJuridica imagen="red-abogados" prioridad className="mb-6" sizes="(max-width: 1023px) 100vw, 50vw" />
+            <TarjetaCasoEjemplo />
+          </div>
         </div>
       </section>
 

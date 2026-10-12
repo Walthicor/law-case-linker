@@ -2,6 +2,10 @@ import { Link } from "@tanstack/react-router";
 import { Calculator, FileSignature, ShieldCheck, HeartHandshake, Home } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Revelar } from "@/components/sitio/Revelar";
+import { ImagenJuridica } from "@/components/sitio/ImagenJuridica";
+import type { ImagenJuridicaClave } from "@/lib/imagenes-juridicas";
+
+const FOTOS: ImagenJuridicaClave[] = ["calculadora-liquidacion-laboral", "derecho-de-peticion", "accion-de-tutela", "calculadora-cuota-alimentaria", "contrato-de-arrendamiento"];
 
 const HERRAMIENTAS: { titulo: string; texto: string; Icono: LucideIcon }[] = [
   {
@@ -54,6 +58,7 @@ export function Herramientas() {
                   borderColor: "rgba(251,250,247,.14)",
                 }}
               >
+                <ImagenJuridica imagen={FOTOS[i] ?? "derecho-de-peticion"} className="mb-5" />
                 <Icono aria-hidden="true" className="h-6 w-6 text-esmeralda-lum" strokeWidth={1.6} />
                 <span
                   className="mt-4 inline-flex w-fit rounded-[4px] px-2 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-esmeralda-lum"

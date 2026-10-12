@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { Revelar } from "@/components/sitio/Revelar";
+import { ImagenJuridica } from "@/components/sitio/ImagenJuridica";
 
 const BULLETS = [
   "Casos filtrados por área, ciudad y urgencia",
@@ -37,6 +38,7 @@ export function ParaAbogados() {
         </Revelar>
 
         <Revelar retardo={80}>
+          <ImagenJuridica imagen="red-abogados" className="mb-6" sizes="(max-width: 1023px) 100vw, 50vw" />
           <div className="rounded-[6px] border border-linea bg-papel p-6">
             <p className="mono-tag text-tinta-suave">AJC-2026-04871</p>
             <div className="mt-4 flex flex-wrap gap-2">

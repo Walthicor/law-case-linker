@@ -1,4 +1,5 @@
 import { Revelar } from "@/components/sitio/Revelar";
+import { Link } from "@tanstack/react-router";
 
 const PASOS = [
   {
@@ -56,12 +57,13 @@ export function ComoFunciona() {
                   aria-hidden="true"
                   className="absolute left-[19px] top-12 bottom-[-2.5rem] border-l border-dashed border-linea last:hidden lg:hidden"
                 />
-                <h3 className="relative mt-0 text-[1.05rem] font-semibold lg:-mt-6">{p.titulo}</h3>
+                <h3 className="relative mt-0 text-[1.05rem] font-semibold lg:mt-5">{p.titulo}</h3>
                 <p className="relative mt-2 text-[0.95rem] text-tinta-suave">{p.texto}</p>
               </Revelar>
             ))}
           </ol>
         </div>
+        <Link to="/iniciar-caso" className="btn-primario mt-10">Contar mi caso →</Link>
       </div>
     </section>
   );
