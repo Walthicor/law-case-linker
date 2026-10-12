@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Clock, Mail, MessageCircle, Scale, Send } from "lucide-react";
 import { Migas } from "@/components/sitio/Migas";
 import { RESPONSABLE } from "@/lib/legal";
+import { enviarContacto } from "@/lib/envio.functions";
 
 const TITLE = "Contacto";
 const DESC =
@@ -129,6 +130,8 @@ function Canal({
 
 function Formulario() {
   const [enviado, setEnviado] = useState(false);
+  const [enviando, setEnviando] = useState(false);
+  const [error, setError] = useState("");
 
   if (enviado) {
     return (
@@ -145,9 +148,26 @@ function Formulario() {
   return (
     <form
       className="space-y-5"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
-        setEnviado(true);
+        const f = new FormData(e.currentTarget);
+        setEnviando(true);
+        setError("");
+        try {
+          await enviarContacto({
+            data: {
+              nombre: String(f.get("nombre") ?? ""),
+              correo: String(f.get("correo") ?? ""),
+              motivo: String(f.get("motivo") ?? "general") as "general",
+              mensaje: String(f.get("mensaje") ?? ""),
+            },
+          });
+          setEnviado(true);
+        } catch {
+          setError("No pudimos enviar tu mensaje. Intenta de nuevo o escríbenos por WhatsApp.");
+        } finally {
+          setEnviando(false);
+        }
       }}
     >
       <div className="grid gap-5 sm:grid-cols-2">
@@ -198,9 +218,15 @@ function Formulario() {
         .
       </p>
 
-      <button type="submit" className="btn-primario">
+      {error && (
+        <p role="alert" className="text-[0.9rem] font-semibold text-destructive">
+          {error}
+        </p>
+      )}
+
+      <button type="submit" className="btn-primario" disabled={enviando}>
         <Send aria-hidden="true" strokeWidth={1.8} className="h-4 w-4" />
-        Enviar mensaje
+        {enviando ? "Enviando…" : "Enviar mensaje"}
       </button>
     </form>
   );

@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { procesarCaso, procesarPostulacion } from "./envio.server";
+import { procesarCaso, procesarContacto, procesarPostulacion } from "./envio.server";
 
 const esquemaCaso = z.object({
   caso: z.object({
@@ -52,3 +52,14 @@ export const enviarCaso = createServerFn({ method: "POST" })
 export const enviarPostulacion = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => esquemaPostulacion.parse(data))
   .handler(async ({ data }) => procesarPostulacion(data));
+
+const esquemaContacto = z.object({
+  nombre: z.string().trim().min(2).max(120),
+  correo: z.string().trim().email().max(160),
+  motivo: z.enum(["general", "abogados", "datos", "prensa", "otro"]),
+  mensaje: z.string().trim().min(5).max(3000),
+});
+
+export const enviarContacto = createServerFn({ method: "POST" })
+  .inputValidator((data: unknown) => esquemaContacto.parse(data))
+  .handler(async ({ data }) => procesarContacto(data));
