@@ -3,6 +3,8 @@ import * as Iconos from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Revelar } from "@/components/sitio/Revelar";
 import { AREAS } from "@/lib/areas";
+import { ImagenJuridica } from "@/components/sitio/ImagenJuridica";
+import { IMAGENES_AREAS } from "@/lib/imagenes-juridicas";
 
 function Icono({ nombre }: { nombre: string }) {
   const Comp = (Iconos as unknown as Record<string, LucideIcon>)[nombre] ?? Iconos.Scale;
@@ -24,6 +26,7 @@ export function AreasPractica() {
           {AREAS.map((area, i) => (
             <Revelar key={area.titulo} retardo={(i % 4) * 60} className="group">
               <article className="tarjeta h-full">
+                <ImagenJuridica imagen={IMAGENES_AREAS[i] ?? "derecho-civil"} className="mb-5" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw" />
                 <Icono nombre={area.icono} />
                 <h3 className="mt-4 text-[1.05rem] font-semibold leading-snug">
                   <Link to={area.to} className="hover:text-esmeralda">

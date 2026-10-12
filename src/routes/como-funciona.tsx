@@ -5,6 +5,10 @@ import { Check, ShieldCheck, X } from "lucide-react";
 import { Acordeon, type ItemAcordeon } from "@/components/sitio/Acordeon";
 import { Migas } from "@/components/sitio/Migas";
 import { Revelar } from "@/components/sitio/Revelar";
+import { ImagenJuridica } from "@/components/sitio/ImagenJuridica";
+import type { ImagenJuridicaClave } from "@/lib/imagenes-juridicas";
+
+const FOTOS_PASOS: ImagenJuridicaClave[] = ["cuentanos-tu-caso", "perfilamos-tu-caso", "asignamos-abogado", "abogado-te-contacta"];
 
 const TITLE = "Cómo funciona: de tu problema al abogado correcto";
 const DESC =
@@ -151,7 +155,8 @@ function Pagina() {
     <div className="contenedor py-14 md:py-20">
       <Migas items={[{ titulo: "Inicio", to: "/" }, { titulo: "Cómo funciona" }]} />
 
-      <header className="mt-8 max-w-[680px]">
+      <div className="mt-8 grid items-center gap-10 lg:grid-cols-2">
+      <header>
         <p className="eyebrow">El proceso completo</p>
         <h1 className="display-lg mt-3">Cómo funciona</h1>
         <p className="mt-5 text-[1.05rem] leading-relaxed text-tinta-suave">
@@ -167,6 +172,8 @@ function Pagina() {
           </Link>
         </div>
       </header>
+      <ImagenJuridica imagen="orientacion-juridica" prioridad sizes="(max-width: 1023px) 100vw, 50vw" />
+      </div>
 
       <section className="mt-18 border-t border-linea pt-12">
         <h2 className="display-md">Los cuatro pasos, en detalle</h2>
@@ -174,6 +181,7 @@ function Pagina() {
           {PASOS.map((p, i) => (
             <Revelar key={p.titulo} retardo={i * 60}>
               <article className="h-full rounded-[6px] border border-linea bg-papel-hueso p-6">
+                <ImagenJuridica imagen={FOTOS_PASOS[i] ?? "cuentanos-tu-caso"} className="mb-5" sizes="(max-width: 767px) 100vw, 50vw" />
                 <p className="font-mono text-[0.8rem] font-semibold tracking-[0.06em] text-esmeralda">
                   {String(i + 1).padStart(2, "0")}
                 </p>
@@ -234,6 +242,7 @@ function Pagina() {
           <ShieldCheck aria-hidden="true" strokeWidth={1.7} className="h-6 w-6 text-esmeralda" />
           <h2 className="display-md">Cómo verificamos a los abogados</h2>
         </div>
+        <ImagenJuridica imagen="verificacion-abogados" className="mt-8 max-w-[600px]" sizes="(max-width: 639px) 100vw, 600px" />
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {VERIFICACION.map((v) => (
             <div key={v.titulo} className="border-t border-esmeralda pt-4">

@@ -3,6 +3,8 @@ import { metaSeo } from "@/lib/seo";
 import { PAGINAS } from "@/lib/seo-inventario";
 import { ArrowRight, Calculator, FileText, HeartHandshake, Home, Scale } from "lucide-react";
 import { IconoFormulario } from "@/components/sitio/IconoFormulario";
+import { ImagenJuridica } from "@/components/sitio/ImagenJuridica";
+import type { ImagenJuridicaClave } from "@/lib/imagenes-juridicas";
 
 const TITLE = "Herramientas jurídicas gratuitas 2026 | Sin registro";
 const DESCRIPTION =
@@ -78,6 +80,7 @@ function Pagina() {
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {HERRAMIENTAS.map(({ to, tipo, Icono, titulo, descripcion, cta }) => (
             <Link key={to} to={to} className="tarjeta group flex h-full flex-col">
+              <ImagenJuridica imagen={to.split("/").at(-1) as ImagenJuridicaClave} className="mb-5" />
               <span className="flex h-11 w-11 items-center justify-center rounded-[6px] bg-esmeralda-claro text-esmeralda">
                 <Icono className="h-5 w-5" strokeWidth={1.7} aria-hidden="true" />
               </span>
@@ -98,7 +101,8 @@ function Pagina() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-[6px] border border-linea bg-papel-hueso px-6 py-8 sm:px-8">
+        <div className="mt-14 grid items-center gap-8 border-t border-linea py-10 lg:grid-cols-2">
+          <div>
           <h2 className="display-md">¿No encuentras lo que buscas?</h2>
           <p className="lectura mt-3 text-[0.98rem] leading-relaxed text-tinta-suave">
             Tenemos guías paso a paso sobre trámites, plazos y procesos. Y si tu caso ya necesita un
@@ -114,6 +118,8 @@ function Pagina() {
               Contar mi caso →
             </Link>
           </div>
+          </div>
+          <ImagenJuridica imagen="orientacion-juridica" sizes="(max-width: 1023px) 100vw, 50vw" />
         </div>
       </div>
     </div>
