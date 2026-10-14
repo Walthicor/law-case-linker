@@ -24,7 +24,9 @@ import { Analitica } from "@/components/sitio/Analitica";
 import { areaServedSchema } from "@/lib/cobertura";
 
 /** Verificación de Google Search Console por meta tag. */
-const VERIFICACION_GSC = (import.meta.env["VITE_GSC_VERIFICACION"] as string | undefined) ?? "";
+const VERIFICACION_GSC =
+  (import.meta.env["VITE_GSC_VERIFICACION"] as string | undefined) ||
+  "KBEVJB3-YzXP3_n--KfeU6Nx7B4tiiOrXExfC8JchhE";
 
 function NotFoundComponent() {
   return (
