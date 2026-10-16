@@ -1,3 +1,15 @@
+import seguridad0600 from "@/assets/imagenes-seguridad/consultoria-en-seguridad-sala-de-analisis-600.webp.asset.json";
+import seguridad01200 from "@/assets/imagenes-seguridad/consultoria-en-seguridad-sala-de-analisis-1200.webp.asset.json";
+import seguridad1600 from "@/assets/imagenes-seguridad/analisis-de-riesgos-de-seguridad-600.webp.asset.json";
+import seguridad11200 from "@/assets/imagenes-seguridad/analisis-de-riesgos-de-seguridad-1200.webp.asset.json";
+import seguridad2600 from "@/assets/imagenes-seguridad/estudio-de-seguridad-empresa-600.webp.asset.json";
+import seguridad21200 from "@/assets/imagenes-seguridad/estudio-de-seguridad-empresa-1200.webp.asset.json";
+import seguridad3600 from "@/assets/imagenes-seguridad/plan-integral-de-seguridad-piscc-600.webp.asset.json";
+import seguridad31200 from "@/assets/imagenes-seguridad/plan-integral-de-seguridad-piscc-1200.webp.asset.json";
+import seguridad4600 from "@/assets/imagenes-seguridad/investigacion-y-analisis-criminal-600.webp.asset.json";
+import seguridad41200 from "@/assets/imagenes-seguridad/investigacion-y-analisis-criminal-1200.webp.asset.json";
+import seguridad5600 from "@/assets/imagenes-seguridad/capacitacion-en-seguridad-600.webp.asset.json";
+import seguridad51200 from "@/assets/imagenes-seguridad/capacitacion-en-seguridad-1200.webp.asset.json";
 import imagen0 from "@/assets/imagenes-juridicas/derecho-laboral-600.webp.asset.json";
 import miniatura0 from "@/assets/imagenes-juridicas/derecho-laboral-300.webp.asset.json";
 import imagen1 from "@/assets/imagenes-juridicas/riesgos-laborales-600.webp.asset.json";
@@ -88,3 +100,16 @@ export const IMAGENES_POR_SILO: Record<string, ImagenJuridicaClave> = {
   transito: "transito-accidentes", insolvencia: "insolvencia", "propiedad-intelectual": "propiedad-intelectual",
   migratorio: "derecho-migratorio",
 };
+
+/** Fotografías editoriales ilustrativas; no identifican al equipo ni a clientes. */
+export const FOTOS_SEGURIDAD = {
+  "consultoria-en-seguridad-sala-de-analisis": { src: seguridad01200.url, small: seguridad0600.url, alt: "Analistas de espaldas frente a pantallas con un mapa de Colombia y gráficos de riesgos", titulo: "Sala de análisis de seguridad", width: 1200, height: 800 },
+  "analisis-de-riesgos-de-seguridad": { src: seguridad11200.url, small: seguridad1600.url, alt: "Persona revisando una matriz de riesgos y un mapa de Colombia en un portátil junto a documentos", titulo: "Análisis de riesgos de seguridad", width: 1200, height: 800 },
+  "estudio-de-seguridad-empresa": { src: seguridad21200.url, small: seguridad2600.url, alt: "Fachada de edificio empresarial con cámara de seguridad y acceso acristalado al atardecer", titulo: "Estudio de seguridad para empresas", width: 1200, height: 800 },
+  "plan-integral-de-seguridad-piscc": { src: seguridad31200.url, small: seguridad3600.url, alt: "Personas de espaldas revisando documentos y mapas en una mesa de trabajo", titulo: "Planeación de seguridad territorial y PISCC", width: 1200, height: 800 },
+  "investigacion-y-analisis-criminal": { src: seguridad41200.url, small: seguridad4600.url, alt: "Tablero de investigación con mapa, fotografías e hilos en una oficina", titulo: "Investigación y análisis criminal", width: 1200, height: 800 },
+  "capacitacion-en-seguridad": { src: seguridad51200.url, small: seguridad5600.url, alt: "Instructor y asistentes de espaldas en una capacitación frente a una pantalla", titulo: "Capacitación en seguridad", width: 1200, height: 800 },
+} as const;
+
+export const CATALOGO_IMAGENES = { ...IMAGENES_JURIDICAS, ...FOTOS_SEGURIDAD };
+export type CatalogoImagenClave = keyof typeof CATALOGO_IMAGENES;
