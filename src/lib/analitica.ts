@@ -78,6 +78,7 @@ export type NombreEvento =
   | "herramienta_usada"
   | "pdf_descargado"
   | "postulacion_abogado_enviada"
+  | "consultoria_seguridad_enviada"
   | "cta_click"
   | "video_hero_cargado";
 

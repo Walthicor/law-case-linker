@@ -16,6 +16,7 @@ const RECURSOS = [
   { titulo: "Guías legales", to: "/guias" },
   { titulo: "Cobertura", to: "/cobertura" },
   { titulo: "Cómo funciona", to: "/como-funciona" },
+  { titulo: "Consultoría en seguridad", to: "/consultoria-en-seguridad" },
 ] as const;
 
 const LEGAL = [

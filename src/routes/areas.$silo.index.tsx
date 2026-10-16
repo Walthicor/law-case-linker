@@ -357,6 +357,27 @@ function Pagina() {
         </div>
       </section>
 
+      {p.slug === "penal" || p.slug === "comercial" ? (
+        <section className="bg-papel pb-16">
+          <div className="contenedor">
+            <div className="rounded-[6px] border border-linea bg-papel-hueso p-6 md:flex md:items-center md:justify-between md:gap-8">
+              <div>
+                <h2 className="text-[1.05rem] font-semibold text-tinta">
+                  ¿Su empresa o entidad necesita prevenir riesgos de seguridad?
+                </h2>
+                <p className="mt-1 max-w-[60ch] text-[0.95rem] leading-relaxed text-tinta-suave">
+                  Análisis de riesgos, estudios de seguridad y planes PISCC con abogados penalistas
+                  e investigadores judiciales.
+                </p>
+              </div>
+              <Link to="/consultoria-en-seguridad" className="btn-secundario mt-5 shrink-0 md:mt-0">
+                Consultoría en seguridad
+              </Link>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {/* CTA FINAL */}
       <section className="bg-esmeralda-claro py-16">
         <div className="contenedor text-center">

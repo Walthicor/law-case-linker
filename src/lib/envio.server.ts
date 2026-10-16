@@ -86,3 +86,71 @@ export async function procesarContacto(m: {
   await avisoInterno(`[CONTACTO] ${m.motivo} · ${m.nombre}`, cuerpo, id, m.correo);
   return { ok: true };
 }
+
+/** Solicitudes de la página /consultoria-en-seguridad. Llegan a la bandeja interna. */
+export async function procesarConsultoria(s: {
+  nombre: string;
+  organizacion: string;
+  cargo: string;
+  tipo: string;
+  servicio: string;
+  ubicacion: string;
+  correo: string;
+  whatsapp: string;
+  mensaje: string;
+  autorizaDatos: boolean;
+  utm_source: string;
+  utm_medium: string;
+  utm_campaign: string;
+  gclid: string;
+  pagina_origen: string;
+  referrer: string;
+}) {
+  const anio = new Date().getFullYear();
+  const radicado = `AJC-SEG-${anio}-${Math.floor(10000 + Math.random() * 90000)}`;
+  const fecha = new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" });
+  const fila = (e: string, v: string) => `${e.padEnd(18)}${v || "—"}`;
+  const solo = s.whatsapp.replace(/\D/g, "");
+  const wa = solo ? `https://wa.me/${solo.length === 10 ? `57${solo}` : solo}` : "—";
+
+  const cuerpo = [
+    `SOLICITUD DE CONSULTORÍA EN SEGURIDAD — ${radicado}`,
+    `Recibida: ${fecha}`,
+    "",
+    "─── SOLICITANTE ─────────────────────",
+    fila("Nombre", s.nombre),
+    fila("Organización", s.organizacion),
+    fila("Cargo", s.cargo),
+    fila("Tipo de cliente", s.tipo),
+    fila("Ubicación", s.ubicacion),
+    fila("Correo", s.correo),
+    fila("WhatsApp", s.whatsapp),
+    `${" ".repeat(18)}→ ${wa}`,
+    "",
+    "─── NECESIDAD ───────────────────────",
+    fila("Servicio", s.servicio),
+    "",
+    s.mensaje.trim(),
+    "",
+    "─── ORIGEN ──────────────────────────",
+    fila("Página", s.pagina_origen),
+    fila(
+      "Campaña",
+      `${s.utm_source || "directo"} / ${s.utm_medium || "—"} / ${s.utm_campaign || "—"}`,
+    ),
+    fila("Referente", s.referrer),
+    fila("gclid", s.gclid),
+    "",
+    fila("Autoriza datos", `${s.autorizaDatos ? "SÍ" : "NO"} · ${fecha}`),
+    "Registro de la autorización de tratamiento de datos (Ley 1581 de 2012).",
+  ].join("\n");
+
+  const quien = s.organizacion ? `${s.organizacion} · ${s.nombre}` : s.nombre;
+  await avisoInterno(
+    `[SEGURIDAD] ${s.servicio} · ${quien} · ${s.ubicacion}`,
+    cuerpo,
+    radicado,
+    s.correo,
+  );
+  return { radicado };
+}

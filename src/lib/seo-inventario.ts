@@ -130,6 +130,16 @@ export const PAGINAS = {
     lastmod: ULTIMA_REVISION,
     schema: true,
   },
+  consultoriaSeguridad: {
+    titulo: "Consultoría en seguridad para empresas y entidades",
+    descripcion:
+      "Análisis de riesgos, estudios de seguridad y planes PISCC con expertos en seguridad. Cobertura nacional.",
+    ruta: "/consultoria-en-seguridad",
+    grupo: "paginas",
+    prioridad: 0.8,
+    lastmod: "2026-10-16",
+    schema: true,
+  },
   contacto: {
     titulo: tituloSeo("Contacto"),
     descripcion:

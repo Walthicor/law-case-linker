@@ -1,6 +1,11 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { procesarCaso, procesarContacto, procesarPostulacion } from "./envio.server";
+import {
+  procesarCaso,
+  procesarConsultoria,
+  procesarContacto,
+  procesarPostulacion,
+} from "./envio.server";
 
 const esquemaCaso = z.object({
   caso: z.object({
@@ -63,3 +68,28 @@ const esquemaContacto = z.object({
 export const enviarContacto = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => esquemaContacto.parse(data))
   .handler(async ({ data }) => procesarContacto(data));
+
+const esquemaConsultoria = z.object({
+  nombre: z.string().trim().min(3).max(120),
+  organizacion: z.string().trim().max(160).default(""),
+  cargo: z.string().trim().max(120).default(""),
+  tipo: z.string().trim().min(1).max(80),
+  servicio: z.string().trim().min(1).max(120),
+  ubicacion: z.string().trim().min(2).max(120),
+  correo: z.string().trim().email().max(160),
+  whatsapp: z.string().trim().min(7).max(30),
+  mensaje: z.string().trim().min(10).max(4000),
+  autorizaDatos: z.literal(true),
+  utm_source: z.string().max(200).default(""),
+  utm_medium: z.string().max(200).default(""),
+  utm_campaign: z.string().max(200).default(""),
+  gclid: z.string().max(200).default(""),
+  pagina_origen: z.string().max(500).default(""),
+  referrer: z.string().max(500).default(""),
+});
+
+export type SolicitudConsultoria = z.infer<typeof esquemaConsultoria>;
+
+export const enviarConsultoria = createServerFn({ method: "POST" })
+  .inputValidator((data: unknown) => esquemaConsultoria.parse(data))
+  .handler(async ({ data }) => procesarConsultoria(data));

@@ -14,6 +14,7 @@ import { Route as AbogadosRouteImport } from './routes/abogados'
 import { Route as AreasRouteImport } from './routes/areas'
 import { Route as CoberturaRouteImport } from './routes/cobertura'
 import { Route as ComoFuncionaRouteImport } from './routes/como-funciona'
+import { Route as ConsultoriaEnSeguridadRouteImport } from './routes/consultoria-en-seguridad'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as GraciasRouteImport } from './routes/gracias'
 import { Route as GuiasRouteImport } from './routes/guias'
@@ -69,6 +70,11 @@ const CoberturaRoute = CoberturaRouteImport.update({
 const ComoFuncionaRoute = ComoFuncionaRouteImport.update({
   id: '/como-funciona',
   path: '/como-funciona',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsultoriaEnSeguridadRoute = ConsultoriaEnSeguridadRouteImport.update({
+  id: '/consultoria-en-seguridad',
+  path: '/consultoria-en-seguridad',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactoRoute = ContactoRouteImport.update({
@@ -241,6 +247,7 @@ export interface FileRoutesByFullPath {
   '/areas': typeof AreasRouteWithChildren
   '/cobertura': typeof CoberturaRoute
   '/como-funciona': typeof ComoFuncionaRoute
+  '/consultoria-en-seguridad': typeof ConsultoriaEnSeguridadRoute
   '/contacto': typeof ContactoRoute
   '/gracias': typeof GraciasRoute
   '/guias': typeof GuiasRouteWithChildren
@@ -277,6 +284,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cobertura': typeof CoberturaRoute
   '/como-funciona': typeof ComoFuncionaRoute
+  '/consultoria-en-seguridad': typeof ConsultoriaEnSeguridadRoute
   '/contacto': typeof ContactoRoute
   '/gracias': typeof GraciasRoute
   '/iniciar-caso': typeof IniciarCasoRoute
@@ -314,6 +322,7 @@ export interface FileRoutesById {
   '/areas': typeof AreasRouteWithChildren
   '/cobertura': typeof CoberturaRoute
   '/como-funciona': typeof ComoFuncionaRoute
+  '/consultoria-en-seguridad': typeof ConsultoriaEnSeguridadRoute
   '/contacto': typeof ContactoRoute
   '/gracias': typeof GraciasRoute
   '/guias': typeof GuiasRouteWithChildren
@@ -354,6 +363,7 @@ export interface FileRouteTypes {
     | '/areas'
     | '/cobertura'
     | '/como-funciona'
+    | '/consultoria-en-seguridad'
     | '/contacto'
     | '/gracias'
     | '/guias'
@@ -390,6 +400,7 @@ export interface FileRouteTypes {
     | '/'
     | '/cobertura'
     | '/como-funciona'
+    | '/consultoria-en-seguridad'
     | '/contacto'
     | '/gracias'
     | '/iniciar-caso'
@@ -426,6 +437,7 @@ export interface FileRouteTypes {
     | '/areas'
     | '/cobertura'
     | '/como-funciona'
+    | '/consultoria-en-seguridad'
     | '/contacto'
     | '/gracias'
     | '/guias'
@@ -465,6 +477,7 @@ export interface RootRouteChildren {
   AreasRoute: typeof AreasRouteWithChildren
   CoberturaRoute: typeof CoberturaRoute
   ComoFuncionaRoute: typeof ComoFuncionaRoute
+  ConsultoriaEnSeguridadRoute: typeof ConsultoriaEnSeguridadRoute
   ContactoRoute: typeof ContactoRoute
   GraciasRoute: typeof GraciasRoute
   GuiasRoute: typeof GuiasRouteWithChildren
@@ -520,6 +533,13 @@ declare module '@tanstack/react-router' {
       path: '/como-funciona'
       fullPath: '/como-funciona'
       preLoaderRoute: typeof ComoFuncionaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consultoria-en-seguridad': {
+      id: '/consultoria-en-seguridad'
+      path: '/consultoria-en-seguridad'
+      fullPath: '/consultoria-en-seguridad'
+      preLoaderRoute: typeof ConsultoriaEnSeguridadRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contacto': {
@@ -813,6 +833,7 @@ const rootRouteChildren: RootRouteChildren = {
   AreasRoute: AreasRouteWithChildren,
   CoberturaRoute: CoberturaRoute,
   ComoFuncionaRoute: ComoFuncionaRoute,
+  ConsultoriaEnSeguridadRoute: ConsultoriaEnSeguridadRoute,
   ContactoRoute: ContactoRoute,
   GraciasRoute: GraciasRoute,
   GuiasRoute: GuiasRouteWithChildren,
