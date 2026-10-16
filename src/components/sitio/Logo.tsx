@@ -10,7 +10,7 @@ export function Logo({ claro = false }: { claro?: boolean }) {
         alt="Asesorías Jurídicas Colombia"
         width={230}
         height={35}
-        className="h-auto w-[180px] md:w-[230px]"
+        className="h-auto w-[180px] md:w-[230px] lg:w-[190px] xl:w-[230px]"
       />
     </Link>
   );

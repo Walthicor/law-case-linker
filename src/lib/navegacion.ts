@@ -23,6 +23,7 @@ export const MENU = [
   { titulo: "Guías", to: "/guias" },
   { titulo: "Abogados", to: "/abogados" },
   { titulo: "Cómo funciona", to: "/como-funciona" },
+  { titulo: "Consultoría en seguridad", corto: "Seguridad", to: "/consultoria-en-seguridad" },
 ] as const;
 
 export const WHATSAPP_URL = "https://wa.me/573000000000";

@@ -43,105 +43,122 @@ export function Header() {
 
   return (
     <>
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 h-18 transition-colors duration-[240ms]",
-        sobreHero
-          ? "border-b border-transparent bg-transparent"
-          : "border-b border-linea bg-papel/90 backdrop-blur-md",
-      )}
-    >
-      <div className="contenedor flex h-18 items-center justify-between gap-6">
-        <Logo claro={sobreHero} />
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 h-18 transition-colors duration-[240ms]",
+          sobreHero
+            ? "border-b border-transparent bg-transparent"
+            : "border-b border-linea bg-papel/90 backdrop-blur-md",
+        )}
+      >
+        <div className="contenedor flex h-18 items-center justify-between gap-4 xl:gap-6">
+          <Logo claro={sobreHero} />
 
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Navegación principal">
-          {MENU.map((item) =>
-            "dropdown" in item && item.dropdown ? (
-              <div
-                key={item.titulo}
-                className="relative"
-                onMouseEnter={() => setAreasAbierto(true)}
-                onMouseLeave={() => setAreasAbierto(false)}
-              >
+          <nav
+            className="hidden items-center gap-4 lg:flex xl:gap-6"
+            aria-label="Navegación principal"
+          >
+            {MENU.map((item) =>
+              "dropdown" in item && item.dropdown ? (
+                <div
+                  key={item.titulo}
+                  className="relative"
+                  onMouseEnter={() => setAreasAbierto(true)}
+                  onMouseLeave={() => setAreasAbierto(false)}
+                >
+                  <Link
+                    to={item.to}
+                    className={cn(
+                      "flex items-center gap-1 py-2 text-sm font-medium transition-colors",
+                      sobreHero
+                        ? "text-papel/90 hover:text-papel"
+                        : "text-tinta hover:text-esmeralda",
+                    )}
+                    aria-expanded={areasAbierto}
+                  >
+                    {item.titulo}
+                    <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                  {areasAbierto && (
+                    <div className="absolute left-1/2 top-full w-[520px] -translate-x-1/2 pt-2">
+                      <ul className="grid grid-cols-2 gap-x-6 gap-y-1 rounded-[6px] border border-linea bg-papel p-4">
+                        {PILARES.map((p) => (
+                          <li key={p.titulo}>
+                            <Link
+                              to={p.slug}
+                              className="block rounded-[6px] px-2 py-1.5 text-sm text-tinta transition-colors hover:bg-esmeralda-claro hover:text-esmeralda"
+                            >
+                              {p.titulo}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              ) : (
                 <Link
+                  key={item.titulo}
                   to={item.to}
                   className={cn(
-                    "flex items-center gap-1 py-2 text-sm font-medium transition-colors",
-                    sobreHero ? "text-papel/90 hover:text-papel" : "text-tinta hover:text-esmeralda",
+                    "whitespace-nowrap py-2 text-sm font-medium transition-colors",
+                    sobreHero
+                      ? "text-papel/90 hover:text-papel"
+                      : "text-tinta hover:text-esmeralda",
                   )}
-                  aria-expanded={areasAbierto}
+                  activeProps={{ className: "font-semibold" }}
+                  title={"corto" in item ? item.titulo : undefined}
                 >
-                  {item.titulo}
-                  <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                  {"corto" in item ? (
+                    <>
+                      <span className="xl:hidden">{item.corto}</span>
+                      <span className="hidden xl:inline">{item.titulo}</span>
+                    </>
+                  ) : (
+                    item.titulo
+                  )}
                 </Link>
-                {areasAbierto && (
-                  <div className="absolute left-1/2 top-full w-[520px] -translate-x-1/2 pt-2">
-                    <ul className="grid grid-cols-2 gap-x-6 gap-y-1 rounded-[6px] border border-linea bg-papel p-4">
-                      {PILARES.map((p) => (
-                        <li key={p.titulo}>
-                          <Link
-                            to={p.slug}
-                            className="block rounded-[6px] px-2 py-1.5 text-sm text-tinta transition-colors hover:bg-esmeralda-claro hover:text-esmeralda"
-                          >
-                            {p.titulo}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <Link
-                key={item.titulo}
-                to={item.to}
-                className={cn(
-                  "py-2 text-sm font-medium transition-colors",
-                  sobreHero ? "text-papel/90 hover:text-papel" : "text-tinta hover:text-esmeralda",
-                )}
-                activeProps={{ className: "font-semibold" }}
-              >
-                {item.titulo}
-              </Link>
-            ),
-          )}
-        </nav>
+              ),
+            )}
+          </nav>
 
-        <div className="hidden items-center gap-5 lg:flex">
-          <Link
-            to="/unete"
+          <div className="hidden items-center gap-4 lg:flex xl:gap-5">
+            <Link
+              to="/unete"
+              className={cn(
+                "whitespace-nowrap text-sm font-medium transition-colors",
+                sobreHero
+                  ? "text-papel/80 hover:text-papel"
+                  : "text-tinta-suave hover:text-esmeralda",
+              )}
+            >
+              Soy abogado
+            </Link>
+            <Link
+              to="/iniciar-caso"
+              onClick={() => evento("cta_click", { ubicacion: "header" })}
+              className="btn-primario btn-pulso whitespace-nowrap text-sm"
+            >
+              <IconoFormulario />
+              Contar mi caso
+            </Link>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setAbierto(true)}
+            aria-label="Abrir menú"
+            aria-expanded={abierto}
+            aria-controls="menu-movil"
             className={cn(
-              "text-sm font-medium transition-colors",
-              sobreHero ? "text-papel/80 hover:text-papel" : "text-tinta-suave hover:text-esmeralda",
+              "flex h-10 w-10 items-center justify-center rounded-[6px] border lg:hidden",
+              sobreHero ? "border-papel/40 text-papel" : "border-linea text-tinta",
             )}
           >
-            Soy abogado
-          </Link>
-          <Link
-            to="/iniciar-caso"
-            onClick={() => evento("cta_click", { ubicacion: "header" })}
-            className="btn-primario btn-pulso text-sm"
-          >
-            <IconoFormulario />
-            Contar mi caso
-          </Link>
+            <Menu className="h-5 w-5" aria-hidden="true" />
+          </button>
         </div>
-
-        <button
-          type="button"
-          onClick={() => setAbierto(true)}
-          aria-label="Abrir menú"
-          aria-expanded={abierto}
-          aria-controls="menu-movil"
-          className={cn(
-            "flex h-10 w-10 items-center justify-center rounded-[6px] border lg:hidden",
-            sobreHero ? "border-papel/40 text-papel" : "border-linea text-tinta",
-          )}
-        >
-          <Menu className="h-5 w-5" aria-hidden="true" />
-        </button>
-      </div>
-    </header>
+      </header>
 
       {abierto && (
         <div

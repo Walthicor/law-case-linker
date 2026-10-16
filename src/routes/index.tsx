@@ -13,6 +13,7 @@ import { Cobertura } from "@/components/sitio/home/Cobertura";
 import { Herramientas } from "@/components/sitio/home/Herramientas";
 import { ComoVerificamos } from "@/components/sitio/home/ComoVerificamos";
 import { ParaAbogados } from "@/components/sitio/home/ParaAbogados";
+import { ConsultoriaSeguridad } from "@/components/sitio/home/ConsultoriaSeguridad";
 
 const TITULO = "Cuéntanos qué te pasó. Nosotros encontramos el abogado.";
 const DESC =
@@ -122,6 +123,7 @@ function Index() {
     <Cobertura />
     <Herramientas />
     <ComoVerificamos />
+    <ConsultoriaSeguridad />
     <ParaAbogados />
     </>
   );
