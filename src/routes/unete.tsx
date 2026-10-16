@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { metaSeo } from "@/lib/seo";
 import { PAGINAS } from "@/lib/seo-inventario";
 import { BadgeCheck, ClipboardList, Globe, Check, Unlock } from "lucide-react";
@@ -287,13 +287,6 @@ function Pagina() {
                 solo lo que permite el artículo 31 de la Ley 1123 de 2007.
               </p>
             </div>
-            <p className="mt-6 text-[0.875rem] text-tinta-suave">
-              ¿Quieres ver el resultado antes de postularte?{" "}
-              <Link to="/abogados" className="font-semibold text-esmeralda underline underline-offset-4">
-                Mira las fichas de la red
-              </Link>
-              .
-            </p>
           </Revelar>
           <Revelar retardo={80}>
             <FormularioPostulacion />

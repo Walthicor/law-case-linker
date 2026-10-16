@@ -110,7 +110,7 @@ const FAQS: ItemAcordeon[] = [
   {
     pregunta: "¿Puedo elegir al abogado?",
     respuesta:
-      "Puedes revisar el directorio de abogados verificados y mencionar en el formulario a quién prefieres. La asignación final depende de la disponibilidad y de la competencia procesal en el circuito de tu caso.",
+      "Puedes indicar en el formulario si prefieres un perfil en particular (ciudad, experiencia, tipo de proceso). La asignación final depende de la disponibilidad y de la competencia procesal en el circuito de tu caso.",
   },
   {
     pregunta: "¿Qué tan confidencial es la información que envío?",
@@ -167,8 +167,8 @@ function Pagina() {
           <Link to="/iniciar-caso" className="btn-primario btn-pulso">
             Contar mi caso
           </Link>
-          <Link to="/abogados" className="btn-secundario">
-            Ver abogados verificados
+          <Link to="/unete" className="btn-secundario">
+            Soy abogado
           </Link>
         </div>
       </header>

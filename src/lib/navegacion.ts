@@ -21,7 +21,6 @@ export const MENU = [
   { titulo: "Áreas", to: "/areas", dropdown: true },
   { titulo: "Herramientas", to: "/herramientas" },
   { titulo: "Guías", to: "/guias" },
-  { titulo: "Abogados", to: "/abogados" },
   { titulo: "Cómo funciona", to: "/como-funciona" },
   { titulo: "Consultoría en seguridad", corto: "Seguridad", to: "/consultoria-en-seguridad" },
 ] as const;

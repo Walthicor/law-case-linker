@@ -77,116 +77,41 @@ export type ContenidoGuia = {
 };
 
 /**
- * Revisores por silo.
- * // VERIFICAR CON ABOGADO — reemplazar por el revisor real y su tarjeta
- * profesional antes de publicar. Sin este dato la guía no se publica.
+ * Autoría de las guías: equipo editorial. Cuando un abogado real revise una
+ * guía, se reemplaza por su nombre y tarjeta profesional (campo `tarjeta`).
  */
-export const REVISORES: Record<string, Revisor> = {
-  laboral: {
-    nombre: "Camila Restrepo Aguirre",
-    tarjeta: "T.P. 214.876 C.S.J.",
-    area: "Derecho laboral y seguridad social",
-    ciudad: "Medellín",
-    perfil: "/abogados/camila-restrepo-aguirre",
-    iniciales: "CR",
-  },
-  "riesgos-laborales": {
-    nombre: "Andrés Felipe Cortés",
-    tarjeta: "T.P. 198.334 C.S.J.",
-    area: "Riesgos laborales y ARL",
-    ciudad: "Bogotá",
-    perfil: "/abogados/andres-felipe-cortes",
-    iniciales: "AC",
-  },
-  familia: {
-    nombre: "Diana Marcela Ospina",
-    tarjeta: "T.P. 176.902 C.S.J.",
-    area: "Derecho de familia",
-    ciudad: "Bogotá",
-    perfil: "/abogados/diana-marcela-ospina",
-    iniciales: "DO",
-  },
-  civil: {
-    nombre: "Julián Esteban Mora",
-    tarjeta: "T.P. 231.115 C.S.J.",
-    area: "Derecho civil y contratos",
-    ciudad: "Cali",
-    perfil: "/abogados/julian-esteban-mora",
-    iniciales: "JM",
-  },
-  administrativo: {
-    nombre: "Laura Catalina Bermúdez",
-    tarjeta: "T.P. 189.447 C.S.J.",
-    area: "Derecho administrativo",
-    ciudad: "Bogotá",
-    perfil: "/abogados/laura-catalina-bermudez",
-    iniciales: "LB",
-  },
-  penal: {
-    nombre: "Ricardo León Vásquez",
-    tarjeta: "T.P. 165.720 C.S.J.",
-    area: "Derecho penal",
-    ciudad: "Barranquilla",
-    perfil: "/abogados/ricardo-leon-vasquez",
-    iniciales: "RV",
-  },
-  pensiones: {
-    nombre: "Marta Lucía Guerrero",
-    tarjeta: "T.P. 152.089 C.S.J.",
-    area: "Pensiones y seguridad social",
-    ciudad: "Bogotá",
-    perfil: "/abogados/marta-lucia-guerrero",
-    iniciales: "MG",
-  },
-  comercial: {
-    nombre: "Santiago Peláez Duque",
-    tarjeta: "T.P. 220.641 C.S.J.",
-    area: "Derecho comercial y societario",
-    ciudad: "Medellín",
-    perfil: "/abogados/santiago-pelaez-duque",
-    iniciales: "SP",
-  },
-  inmobiliario: {
-    nombre: "Paula Andrea Rincón",
-    tarjeta: "T.P. 207.318 C.S.J.",
-    area: "Inmobiliario y arrendamientos",
-    ciudad: "Bucaramanga",
-    perfil: "/abogados/paula-andrea-rincon",
-    iniciales: "PR",
-  },
-  transito: {
-    nombre: "Óscar Iván Beltrán",
-    tarjeta: "T.P. 193.502 C.S.J.",
-    area: "Tránsito y responsabilidad civil",
-    ciudad: "Cali",
-    perfil: "/abogados/oscar-ivan-beltran",
-    iniciales: "OB",
-  },
-  insolvencia: {
-    nombre: "Natalia Gómez Arroyave",
-    tarjeta: "T.P. 236.780 C.S.J.",
-    area: "Insolvencia de persona natural",
-    ciudad: "Medellín",
-    perfil: "/abogados/natalia-gomez-arroyave",
-    iniciales: "NG",
-  },
-  migratorio: {
-    nombre: "Felipe Ramírez Cano",
-    tarjeta: "T.P. 244.019 C.S.J.",
-    area: "Derecho migratorio",
-    ciudad: "Bogotá",
-    perfil: "/abogados/felipe-ramirez-cano",
-    iniciales: "FR",
-  },
-  "propiedad-intelectual": {
-    nombre: "Valentina Cárdenas Ruiz",
-    tarjeta: "T.P. 228.553 C.S.J.",
-    area: "Propiedad intelectual",
-    ciudad: "Bogotá",
-    perfil: "/abogados/valentina-cardenas-ruiz",
-    iniciales: "VC",
-  },
+export function revisorEditorial(area: string): Revisor {
+  return {
+    nombre: "Equipo editorial de Asesorías Jurídicas Colombia",
+    tarjeta: "",
+    area,
+    ciudad: "Colombia",
+    perfil: "/como-funciona",
+    iniciales: "AJ",
+  };
+}
+
+const AREAS_REVISION: Record<string, string> = {
+  laboral: "Derecho laboral y seguridad social",
+  "riesgos-laborales": "Riesgos laborales y ARL",
+  familia: "Derecho de familia",
+  penal: "Derecho penal",
+  pensiones: "Pensiones y seguridad social",
+  salud: "Salud y EPS",
+  civil: "Derecho civil y contratos",
+  inmobiliario: "Inmobiliario y arrendamientos",
+  comercial: "Derecho comercial",
+  consumidor: "Protección al consumidor",
+  insolvencia: "Insolvencia y deudas",
+  administrativo: "Derecho administrativo",
+  transito: "Tránsito y accidentes",
+  "propiedad-intelectual": "Propiedad intelectual",
+  migratorio: "Derecho migratorio",
 };
+
+export const REVISORES: Record<string, Revisor> = Object.fromEntries(
+  Object.entries(AREAS_REVISION).map(([silo, area]) => [silo, revisorEditorial(area)]),
+);
 
 /** Herramienta real publicada por silo. Si el silo no tiene, no se enlaza nada. */
 export const HERRAMIENTA_POR_SILO: Record<

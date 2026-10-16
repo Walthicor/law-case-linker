@@ -8,18 +8,11 @@
  * REGLA DE ENLAZADO: cada guía solo enlaza dentro de SU silo.
  */
 
-import type { ContenidoGuia, Revisor } from "./guias";
+import { revisorEditorial, type ContenidoGuia, type Revisor } from "./guias";
+import { GUIAS_ALTO_VOLUMEN } from "./guias-contenido-2";
 
-// VERIFICAR CON ABOGADO — reemplazar por el revisor real antes de indexar.
-function revisorPendiente(area: string, ciudad: string): Revisor {
-  return {
-    nombre: "{NOMBRE DEL ABOGADO}",
-    tarjeta: "T.P. {T.P.}",
-    area,
-    ciudad,
-    perfil: "/abogados",
-    iniciales: "AJ",
-  };
+function revisorPendiente(area: string, _ciudad: string): Revisor {
+  return revisorEditorial(area);
 }
 
 /* ------------------------------------------------------------------ */
@@ -760,4 +753,5 @@ export const GUIAS_PUBLICADAS: ContenidoGuia[] = [
   derechoDePeticion,
   calcularLiquidacion,
   redactarTutelaSalud,
+  ...GUIAS_ALTO_VOLUMEN,
 ];

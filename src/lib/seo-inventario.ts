@@ -80,15 +80,18 @@ export const PAGINAS = {
     schema: true,
   },
   abogados: {
-    titulo: "Abogados verificados con tarjeta profesional vigente",
+    titulo: "Red de abogados en Colombia | Asesorías Jurídicas",
     descripcion:
-      "Directorio de abogados con tarjeta confirmada ante el Consejo Superior de la Judicatura.",
+      "Así conformamos la red: cada abogado se verifica con su tarjeta profesional antes de recibir casos.",
     ruta: "/abogados",
     imagen: OG.abogados,
     grupo: "paginas",
-    prioridad: 0.7,
-    lastmod: ULTIMA_REVISION,
+    prioridad: 0.5,
+    lastmod: "2026-10-16",
     schema: true,
+    // Sin fichas publicadas todavía: no se indexa hasta tener abogados reales.
+    robots: NOINDEX,
+    fueraDelSitemap: true,
   },
   cobertura: {
     titulo: "Cobertura: abogados en 19 ciudades de Colombia",

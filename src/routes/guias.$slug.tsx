@@ -60,14 +60,18 @@ function jsonLd(g: GuiaResuelta, ruta: string) {
         name: "Asesorías Jurídicas Colombia",
         url: `${BASE}/`,
       },
-      reviewedBy: {
-        "@type": "Person",
-        name: g.revisor.nombre,
-        jobTitle: "Abogado",
-        identifier: g.revisor.tarjeta,
-        knowsAbout: g.revisor.area,
-        url: BASE + g.revisor.perfil,
-      },
+      ...(g.revisor.tarjeta
+        ? {
+            reviewedBy: {
+              "@type": "Person",
+              name: g.revisor.nombre,
+              jobTitle: "Abogado",
+              identifier: g.revisor.tarjeta,
+              knowsAbout: g.revisor.area,
+              url: BASE + g.revisor.perfil,
+            },
+          }
+        : {}),
       speakable: {
         "@type": "SpeakableSpecification",
         cssSelector: ["h1", "#resumen-destacado"],
@@ -137,7 +141,9 @@ function Pagina() {
               <span>{g.minutos} min de lectura</span>
               <span aria-hidden="true">·</span>
               <span>
-                Revisado por {g.revisor.nombre}, {g.revisor.tarjeta}
+                {g.revisor.tarjeta
+                  ? `Revisado por ${g.revisor.nombre}, ${g.revisor.tarjeta}`
+                  : `Por el ${g.revisor.nombre.charAt(0).toLowerCase()}${g.revisor.nombre.slice(1)}`}
               </span>
             </p>
 
@@ -248,10 +254,7 @@ function Pagina() {
             </div>
 
             {g.herramienta ? (
-              <Link
-                to={g.herramienta.to}
-                className="tarjeta group mt-5 block"
-              >
+              <Link to={g.herramienta.to} className="tarjeta group mt-5 block">
                 <span className="flex h-9 w-9 items-center justify-center rounded-[6px] bg-esmeralda-claro text-esmeralda">
                   <Wrench className="h-4 w-4" strokeWidth={1.7} aria-hidden="true" />
                 </span>
@@ -283,9 +286,17 @@ function Pagina() {
               {g.revisor.iniciales}
             </span>
             <div>
-              <p className="eyebrow">Revisado por</p>
+              <p className="eyebrow">{g.revisor.tarjeta ? "Revisado por" : "Elaborado por"}</p>
               <p className="mt-2 text-[1.05rem] font-semibold">{g.revisor.nombre}</p>
-              <p className="mt-1 font-mono text-[0.82rem] text-tinta-suave">{g.revisor.tarjeta}</p>
+              {g.revisor.tarjeta ? (
+                <p className="mt-1 font-mono text-[0.82rem] text-tinta-suave">
+                  {g.revisor.tarjeta}
+                </p>
+              ) : (
+                <p className="mt-1 text-[0.85rem] text-tinta-suave">
+                  Contenido informativo. No reemplaza la asesoría de un abogado sobre tu caso.
+                </p>
+              )}
               <p className="mt-2 text-[0.92rem] text-tinta-suave">
                 {g.revisor.area} · {g.revisor.ciudad}
               </p>
@@ -293,7 +304,7 @@ function Pagina() {
                 to={g.revisor.perfil}
                 className="mt-3 inline-flex items-center gap-2 text-[0.9rem] text-esmeralda underline decoration-esmeralda/30 underline-offset-4"
               >
-                Ver perfil del revisor
+                {g.revisor.tarjeta ? "Ver perfil del revisor" : "Cómo trabajamos"}
                 <ArrowRight aria-hidden="true" strokeWidth={1.7} className="h-4 w-4" />
               </Link>
             </div>
