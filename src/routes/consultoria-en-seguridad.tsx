@@ -203,7 +203,7 @@ const FAQS: ItemAcordeon[] = [
 
 export const Route = createFileRoute("/consultoria-en-seguridad")({
   head: () => ({
-    ...metaSeo(SEO),
+    ...metaSeo({ ...SEO, imagen: absoluta(urlFoto("consultoria-en-seguridad-sala-de-analisis", 1200)) }),
     scripts: [
       {
         type: "application/ld+json",

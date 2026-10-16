@@ -9,3 +9,4 @@
 
 # Imágenes de seguridad
 - [x] Generar 6 fotografías editoriales en public/imagenes/seguridad/ (16 oct 2026).
+- [x] Corregir entrega de las seis fotos de seguridad y comprobar carga en computador y celular.
