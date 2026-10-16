@@ -35,9 +35,9 @@ const NOINDEX = "noindex, follow";
 
 export const PAGINAS = {
   home: {
-    titulo: "Cuéntanos qué te pasó. Encontramos tu abogado ideal",
+    titulo: "Abogados en Colombia: encuentra tu abogado sin costo",
     descripcion:
-      "Leemos tu caso y te conectamos con un abogado con tarjeta verificada en tu ciudad. Sin costo para ti.",
+      "Cuéntanos tu caso y te conectamos con un abogado verificado en tu ciudad. Laboral, familia, penal y más.",
     ruta: "/",
     tipo: "website",
     imagen: OG.social,
@@ -131,9 +131,9 @@ export const PAGINAS = {
     schema: true,
   },
   consultoriaSeguridad: {
-    titulo: "Consultoría en seguridad para empresas y entidades",
+    titulo: "Consultoría en seguridad: estudios de seguridad y PISCC",
     descripcion:
-      "Análisis de riesgos, estudios de seguridad y planes PISCC con expertos en seguridad. Cobertura nacional.",
+      "Estudios de seguridad, análisis de riesgos y Plan Integral de Seguridad (PISCC) para empresas y alcaldías.",
     ruta: "/consultoria-en-seguridad",
     imagen: "/imagenes/seguridad/og-consultoria-en-seguridad.jpg",
     grupo: "paginas",
@@ -211,31 +211,31 @@ export const PAGINAS = {
 
 export const HERRAMIENTAS_SEO = {
   liquidacion: {
-    titulo: "Calculadora de liquidación laboral 2026 | Gratis",
+    titulo: "Liquidación laboral 2026: calcula tu liquidación gratis",
     descripcion:
       "Calcula cesantías, intereses, prima, vacaciones e indemnización según el Código del Trabajo.",
     ruta: "/herramientas/calculadora-liquidacion-laboral",
   },
   alimentos: {
-    titulo: "Calculadora de cuota alimentaria 2026 | Gratis",
+    titulo: "Cuota alimentaria 2026: calcula cuánto es | Gratis",
     descripcion:
       "Estima la cuota de alimentos según ingresos, número de hijos y gastos acreditados. Sin registro.",
     ruta: "/herramientas/calculadora-cuota-alimentaria",
   },
   peticion: {
-    titulo: "Generador de derecho de petición 2026 | Gratis",
+    titulo: "Derecho de petición: formato y modelo gratis 2026",
     descripcion:
       "Redacta tu derecho de petición con la estructura de la Ley 1755 de 2015 y descárgalo en PDF.",
     ruta: "/herramientas/derecho-de-peticion",
   },
   tutela: {
-    titulo: "Generador de acción de tutela 2026 | Gratis",
+    titulo: "Acción de tutela: formato y modelo gratis 2026",
     descripcion:
       "Arma tu escrito de tutela con los requisitos del Decreto 2591 de 1991 y descárgalo en PDF.",
     ruta: "/herramientas/accion-de-tutela",
   },
   arrendamiento: {
-    titulo: "Contrato de arrendamiento 2026 | Gratis",
+    titulo: "Contrato de arrendamiento 2026: formato gratis en PDF",
     descripcion:
       "Genera tu contrato de arrendamiento de vivienda urbana según la Ley 820 de 2003 en PDF.",
     ruta: "/herramientas/contrato-de-arrendamiento",
@@ -249,11 +249,80 @@ export function seoHerramienta(clave: keyof typeof HERRAMIENTAS_SEO): SeoPagina 
 
 /* ── Constructores para rutas dinámicas ───────────────────────────── */
 
+/**
+ * Palabra clave principal de cada área, elegida con el Planificador de palabras
+ * clave de Google Ads (Colombia, oct 2026). Volumen mensual entre paréntesis.
+ */
+const SEO_PILARES: Record<string, { titulo: string; descripcion: string }> = {
+  laboral: {
+    titulo: "Abogado laboral en Colombia: consulta tu caso", // abogado laboral (1K–10K)
+    descripcion: "Abogado laboral para despidos, liquidación, acoso laboral e indemnizaciones. Cuéntanos tu caso.",
+  },
+  "riesgos-laborales": {
+    titulo: "Abogado de accidente laboral y ARL en Colombia", // accidente laboral (1K–10K)
+    descripcion: "Accidente de trabajo, dictamen de la ARL o culpa patronal: te conectamos con un abogado especialista.",
+  },
+  familia: {
+    titulo: "Abogado de familia en Colombia: divorcio y alimentos", // abogado de familia (1K–10K)
+    descripcion: "Divorcio, cuota alimentaria, custodia y sucesiones. Te conectamos con un abogado de familia verificado.",
+  },
+  penal: {
+    titulo: "Abogado penalista en Colombia: defensa y denuncias", // abogado penalista (1K–10K)
+    descripcion: "Denuncias, citaciones de la Fiscalía y defensa penal. Te conectamos con un abogado penalista verificado.",
+  },
+  pensiones: {
+    titulo: "Abogado de pensiones en Colombia | Colpensiones", // abogado de pensiones (100–1K)
+    descripcion: "Pensión negada, historia laboral o traslado de régimen: te conectamos con un abogado de pensiones.",
+  },
+  salud: {
+    titulo: "Abogado de salud y tutela contra la EPS en Colombia",
+    descripcion: "Cirugías, medicamentos o incapacidades negadas por la EPS: te conectamos con un abogado de salud.",
+  },
+  civil: {
+    titulo: "Abogado civil en Colombia: contratos y cobro de deudas", // abogado civil (100–1K)
+    descripcion: "Incumplimiento de contratos, cobro de deudas y procesos ejecutivos. Te conectamos con un abogado civil.",
+  },
+  inmobiliario: {
+    titulo: "Abogado inmobiliario en Colombia: arriendos y compra", // abogado inmobiliario (100–1K)
+    descripcion: "Arrendamientos, restitución de inmueble y compraventa de vivienda. Te conectamos con un abogado.",
+  },
+  comercial: {
+    titulo: "Abogado comercial y empresarial en Colombia", // abogado comercial (100–1K)
+    descripcion: "Constitución de SAS, contratos comerciales y conflictos entre socios. Te conectamos con un abogado.",
+  },
+  consumidor: {
+    titulo: "Abogado del consumidor: demanda ante la SIC", // demanda sic (1K–10K)
+    descripcion: "Garantías, cláusulas abusivas y publicidad engañosa: cómo demandar ante la SIC con un abogado.",
+  },
+  insolvencia: {
+    titulo: "Insolvencia de persona natural: abogado en Colombia", // insolvencia persona natural (100–1K)
+    descripcion: "Deudas impagables, embargos y reportes en Datacrédito. Te conectamos con un abogado de insolvencia.",
+  },
+  administrativo: {
+    titulo: "Abogado administrativo en Colombia | Demandas al Estado", // abogado administrativo (100–1K)
+    descripcion: "Actos administrativos, reparación directa y derechos de petición. Te conectamos con un abogado.",
+  },
+  transito: {
+    titulo: "Abogado de tránsito en Colombia: choques y comparendos", // abogado de transito (100–1K)
+    descripcion: "Accidentes de tránsito, SOAT y comparendos. Te conectamos con un abogado de tránsito verificado.",
+  },
+  "propiedad-intelectual": {
+    titulo: "Registro de marca en Colombia: abogado de marcas", // registro de marca (1K–10K)
+    descripcion: "Registra tu marca ante la SIC o defiéndela si la copian. Te conectamos con un abogado de marcas.",
+  },
+  migratorio: {
+    titulo: "Abogado migratorio en Colombia: visas y nacionalidad", // abogado migratorio (100–1K)
+    descripcion: "Visas, cédula de extranjería y nacionalidad colombiana. Te conectamos con un abogado migratorio.",
+  },
+};
+
 export function seoPilar(p: { slug: string; area: string }): SeoPagina {
+  const propio = SEO_PILARES[p.slug];
   return {
-    titulo: tituloSeo(`Abogados ${p.area} en Colombia`),
+    titulo: propio ? recortar(propio.titulo, 60) : tituloSeo(`Abogados ${p.area} en Colombia`),
     descripcion: recortar(
-      `¿Buscas abogado ${p.area} en Colombia? Cuéntanos tu caso y te conectamos con un especialista.`,
+      propio?.descripcion ??
+        `¿Buscas abogado ${p.area} en Colombia? Cuéntanos tu caso y te conectamos con un especialista.`,
       120,
     ),
     ruta: `/areas/${p.slug}`,
@@ -364,6 +433,8 @@ export function inventarioSeo(): EntradaSeo[] {
       prioridad: 0.7,
       lastmod: (contenido?.actualizada ?? ULTIMA_REVISION).slice(0, 10),
       schema: true,
+      // Guía aún en borrador: no se indexa hasta tener contenido propio.
+      ...(contenido ? {} : { robots: NOINDEX, fueraDelSitemap: true }),
     });
   }
 

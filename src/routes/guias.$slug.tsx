@@ -25,7 +25,11 @@ export const Route = createFileRoute("/guias/$slug")({
     const url = `/guias/${params.slug}`;
     return {
       // Canonical autorreferencial, sin fecha en la URL.
-      ...metaSeo(seoGuia({ title: g.title, description: g.description, slug: params.slug })),
+      ...metaSeo({
+        ...seoGuia({ title: g.title, description: g.description, slug: params.slug }),
+        // Guía en borrador: visible para el usuario, fuera del índice de Google.
+        ...(g.borrador ? { robots: "noindex, follow" } : {}),
+      }),
       scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd(g, url)) }],
     };
   },

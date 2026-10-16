@@ -49,7 +49,7 @@ function Index() {
         <div>
 
           <p className="eyebrow text-esmeralda-lum">
-            Plataforma de conexión jurídica · Colombia
+            Abogados en Colombia · Plataforma de conexión jurídica
           </p>
           <h1 className="display-xl mt-5 text-papel">
             Cuéntanos qué te pasó.
