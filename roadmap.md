@@ -8,4 +8,4 @@
 - [ ] Desarrollar compra de sentencias y compra de factoring: bloqueado por condiciones y contenido no incluidos.
 
 # Imágenes de seguridad
-- [ ] Generar 6 fotografías editoriales en public/imagenes/seguridad/ (en curso, 16 oct 2026).
+- [x] Generar 6 fotografías editoriales en public/imagenes/seguridad/ (16 oct 2026).
