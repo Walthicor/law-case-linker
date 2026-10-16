@@ -135,6 +135,7 @@ export const PAGINAS = {
     descripcion:
       "Análisis de riesgos, estudios de seguridad y planes PISCC con expertos en seguridad. Cobertura nacional.",
     ruta: "/consultoria-en-seguridad",
+    imagen: "/imagenes/seguridad/og-consultoria-en-seguridad.jpg",
     grupo: "paginas",
     prioridad: 0.8,
     lastmod: "2026-10-16",

@@ -29,6 +29,70 @@ import { evento } from "@/lib/analitica";
 
 const SEO = PAGINAS.consultoriaSeguridad;
 
+/* ── Fotografías (WebP 1200 y 600 px, menos de 70 KB cada una) ───── */
+
+const RUTA_FOTOS = "/imagenes/seguridad";
+
+const FOTOS = {
+  "consultoria-en-seguridad-sala-de-analisis": {
+    alt: "Analistas de consultoría en seguridad frente a pantallas con un mapa de riesgos de Colombia",
+    titulo: "Sala de análisis de consultoría en seguridad",
+  },
+  "analisis-de-riesgos-de-seguridad": {
+    alt: "Analista revisando una matriz de análisis de riesgos de seguridad y un mapa de zonas en un portátil",
+    titulo: "Análisis de riesgos de seguridad",
+  },
+  "estudio-de-seguridad-empresa": {
+    alt: "Cámara de seguridad y control de acceso en la entrada de un edificio empresarial",
+    titulo: "Estudio de seguridad para empresas",
+  },
+  "plan-integral-de-seguridad-piscc": {
+    alt: "Funcionarios de una alcaldía y un oficial de policía revisando el Plan Integral de Seguridad y Convivencia Ciudadana (PISCC)",
+    titulo: "Formulación del PISCC con la alcaldía",
+  },
+  "investigacion-y-analisis-criminal": {
+    alt: "Tablero de investigación y análisis criminal con mapa, fotografías y notas conectadas",
+    titulo: "Investigación y análisis criminal",
+  },
+  "capacitacion-en-seguridad": {
+    alt: "Capacitación en seguridad para directivos en un auditorio con presentación en pantalla",
+    titulo: "Capacitación en seguridad para directivos",
+  },
+} as const;
+
+type ClaveFoto = keyof typeof FOTOS;
+
+const urlFoto = (clave: ClaveFoto, ancho: 600 | 1200) => `${RUTA_FOTOS}/${clave}-${ancho}.webp`;
+
+function Foto({
+  clave,
+  prioridad = false,
+  sizes = "(max-width: 1023px) 100vw, 50vw",
+  className = "",
+}: {
+  clave: ClaveFoto;
+  prioridad?: boolean;
+  sizes?: string;
+  className?: string;
+}) {
+  const f = FOTOS[clave];
+  return (
+    <img
+      src={urlFoto(clave, 1200)}
+      srcSet={`${urlFoto(clave, 600)} 600w, ${urlFoto(clave, 1200)} 1200w`}
+      sizes={sizes}
+      alt={f.alt}
+      title={f.titulo}
+      width={1200}
+      height={800}
+      loading={prioridad ? "eager" : "lazy"}
+      decoding="async"
+      fetchPriority={prioridad ? "high" : "auto"}
+      className={`aspect-[3/2] w-full rounded-[6px] object-cover ${className}`}
+    />
+  );
+}
+
 /* ── Contenido ────────────────────────────────────────────────────── */
 
 const CLIENTES = [
@@ -71,7 +135,11 @@ const SERVICIOS = [
     titulo: "Estudios de seguridad para empresas",
     detalle:
       "Evaluamos instalaciones, procesos y personal para cerrar las brechas que facilitan el hurto, el fraude o la extorsión.",
-    puntos: ["Seguridad de instalaciones", "Protocolos y planes de contingencia", "Seguridad de la información"],
+    puntos: [
+      "Seguridad de instalaciones",
+      "Protocolos y planes de contingencia",
+      "Seguridad de la información",
+    ],
   },
   {
     Icono: Landmark,
@@ -85,7 +153,11 @@ const SERVICIOS = [
     titulo: "Investigación y análisis criminal",
     detalle:
       "Estudiamos fenómenos criminales con trabajo de campo y análisis de información para entregar productos concretos y verificables.",
-    puntos: ["Crimen organizado y multicrimen", "Narcotráfico y economías ilícitas", "Homicidios y desplazamiento"],
+    puntos: [
+      "Crimen organizado y multicrimen",
+      "Narcotráfico y economías ilícitas",
+      "Homicidios y desplazamiento",
+    ],
   },
   {
     Icono: ShieldAlert,
@@ -138,11 +210,13 @@ const EQUIPO = [
 const PASOS = [
   {
     titulo: "Nos cuenta la necesidad",
-    detalle: "Llena el formulario o escríbanos. La información se trata con reserva desde el primer contacto.",
+    detalle:
+      "Llena el formulario o escríbanos. La información se trata con reserva desde el primer contacto.",
   },
   {
     titulo: "Diagnóstico inicial",
-    detalle: "Un especialista revisa el caso, define el alcance y propone una reunión, presencial o virtual.",
+    detalle:
+      "Un especialista revisa el caso, define el alcance y propone una reunión, presencial o virtual.",
   },
   {
     titulo: "Propuesta a la medida",
@@ -150,7 +224,8 @@ const PASOS = [
   },
   {
     titulo: "Ejecución y seguimiento",
-    detalle: "Trabajo de análisis y de campo, entrega de productos concretos y acompañamiento en su implementación.",
+    detalle:
+      "Trabajo de análisis y de campo, entrega de productos concretos y acompañamiento en su implementación.",
   },
 ] as const;
 
@@ -203,6 +278,16 @@ export const Route = createFileRoute("/consultoria-en-seguridad")({
             serviceType: "Consultoría en seguridad y análisis de riesgos",
             description: SEO.descripcion,
             url: absoluta(SEO.ruta),
+            image: (Object.keys(FOTOS) as ClaveFoto[]).map((c) => ({
+              "@type": "ImageObject",
+              contentUrl: absoluta(urlFoto(c, 1200)),
+              thumbnailUrl: absoluta(urlFoto(c, 600)),
+              name: FOTOS[c].titulo,
+              description: FOTOS[c].alt,
+              width: 1200,
+              height: 800,
+              encodingFormat: "image/webp",
+            })),
             areaServed: { "@type": "Country", name: "Colombia" },
             audience: {
               "@type": "Audience",
@@ -256,7 +341,9 @@ function Pagina() {
       <section className="bg-tinta text-papel">
         <div className="contenedor py-14 md:py-20">
           <div className="[&_a]:text-papel/80 [&_li]:text-papel/60 [&_span]:text-papel/80">
-            <Migas items={[{ titulo: "Inicio", to: "/" }, { titulo: "Consultoría en seguridad" }]} />
+            <Migas
+              items={[{ titulo: "Inicio", to: "/" }, { titulo: "Consultoría en seguridad" }]}
+            />
           </div>
           <div className="mt-8 grid items-center gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
             <header>
@@ -282,21 +369,31 @@ function Pagina() {
               </div>
             </header>
 
-            <ul className="grid gap-3 sm:grid-cols-2">
-              {[
-                { Icono: Radar, t: "Análisis de riesgos", d: "Amenazas y vulnerabilidades priorizadas" },
-                { Icono: Landmark, t: "Planes PISCC", d: "Para alcaldías y gobernaciones" },
-                { Icono: FileSearch, t: "Investigación criminal", d: "Análisis y trabajo de campo" },
-                { Icono: MapPinned, t: "Cobertura nacional", d: "Todo el territorio colombiano" },
-              ].map(({ Icono, t, d }) => (
-                <li key={t} className="rounded-[6px] border border-papel/15 bg-papel/5 p-5">
-                  <Icono aria-hidden="true" strokeWidth={1.6} className="h-6 w-6 text-papel" />
-                  <p className="mt-3 text-[0.98rem] font-semibold text-papel">{t}</p>
-                  <p className="mt-1 text-[0.86rem] leading-relaxed text-papel/70">{d}</p>
-                </li>
-              ))}
-            </ul>
+            <Foto
+              clave="consultoria-en-seguridad-sala-de-analisis"
+              prioridad
+              sizes="(max-width: 1023px) 100vw, 45vw"
+              className="border border-papel/15"
+            />
           </div>
+          <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                Icono: Radar,
+                t: "Análisis de riesgos",
+                d: "Amenazas y vulnerabilidades priorizadas",
+              },
+              { Icono: Landmark, t: "Planes PISCC", d: "Para alcaldías y gobernaciones" },
+              { Icono: FileSearch, t: "Investigación criminal", d: "Análisis y trabajo de campo" },
+              { Icono: MapPinned, t: "Cobertura nacional", d: "Todo el territorio colombiano" },
+            ].map(({ Icono, t, d }) => (
+              <li key={t} className="rounded-[6px] border border-papel/15 bg-papel/5 p-5">
+                <Icono aria-hidden="true" strokeWidth={1.6} className="h-6 w-6 text-papel" />
+                <p className="mt-3 text-[0.98rem] font-semibold text-papel">{t}</p>
+                <p className="mt-1 text-[0.86rem] leading-relaxed text-papel/70">{d}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -316,13 +413,18 @@ function Pagina() {
               jurídico y formación, hechos por personas que conocen el fenómeno criminal desde la
               investigación judicial, la fuerza pública y el trabajo en las regiones.
             </p>
+            <Foto clave="analisis-de-riesgos-de-seguridad" className="mt-8" />
           </div>
           <div className="rounded-[6px] border border-linea bg-papel-hueso p-6">
             <h3 className="text-[1rem] font-semibold">Para quién trabajamos</h3>
             <ul className="mt-5 space-y-5">
               {CLIENTES.map(({ Icono, titulo, detalle }) => (
                 <li key={titulo} className="flex gap-4">
-                  <Icono aria-hidden="true" strokeWidth={1.7} className="mt-0.5 h-5 w-5 shrink-0 text-esmeralda" />
+                  <Icono
+                    aria-hidden="true"
+                    strokeWidth={1.7}
+                    className="mt-0.5 h-5 w-5 shrink-0 text-esmeralda"
+                  />
                   <div>
                     <p className="text-[0.97rem] font-semibold">{titulo}</p>
                     <p className="mt-1 text-[0.9rem] leading-relaxed text-tinta-suave">{detalle}</p>
@@ -335,10 +437,17 @@ function Pagina() {
 
         {/* SERVICIOS */}
         <section id="servicios" className="mt-18 scroll-mt-24 border-t border-linea pt-12">
-          <h2 className="display-md">Servicios de consultoría en seguridad</h2>
-          <p className="lectura mt-4 text-tinta-suave">
-            Cada servicio se puede contratar por separado o como parte de un plan integral.
-          </p>
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+            <div>
+              <h2 className="display-md">Servicios de consultoría en seguridad</h2>
+              <p className="lectura mt-4 text-tinta-suave">
+                Cada servicio se puede contratar por separado o como parte de un plan integral:
+                desde el estudio de seguridad de una sede empresarial hasta la estrategia de
+                seguridad de un departamento.
+              </p>
+            </div>
+            <Foto clave="estudio-de-seguridad-empresa" />
+          </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {SERVICIOS.map(({ Icono, titulo, detalle, puntos }, i) => (
               <Revelar key={titulo} retardo={(i % 3) * 60}>
@@ -349,7 +458,11 @@ function Pagina() {
                   <ul className="mt-4 space-y-2 border-t border-linea pt-4">
                     {puntos.map((p) => (
                       <li key={p} className="flex gap-2 text-[0.88rem] text-tinta-suave">
-                        <Check aria-hidden="true" strokeWidth={2} className="mt-0.5 h-4 w-4 shrink-0 text-esmeralda" />
+                        <Check
+                          aria-hidden="true"
+                          strokeWidth={2}
+                          className="mt-0.5 h-4 w-4 shrink-0 text-esmeralda"
+                        />
                         <span>{p}</span>
                       </li>
                     ))}
@@ -369,31 +482,44 @@ function Pagina() {
                 Plan Integral de Seguridad y Convivencia Ciudadana (PISCC)
               </h2>
               <p className="lectura mt-5 text-tinta-suave">
-                El PISCC es la hoja de ruta de seguridad de cada municipio y departamento durante
-                el periodo de gobierno: define problemas priorizados, programas, metas,
-                responsables e inversiones, y se ejecuta en buena parte con recursos del fondo
-                territorial de seguridad (FONSET).
+                El PISCC es la hoja de ruta de seguridad de cada municipio y departamento durante el
+                periodo de gobierno: define problemas priorizados, programas, metas, responsables e
+                inversiones, y se ejecuta en buena parte con recursos del fondo territorial de
+                seguridad (FONSET).
               </p>
               <p className="lectura mt-4 text-tinta-suave">
-                Un plan bien hecho parte de un diagnóstico real del territorio, no de una
-                plantilla. Por eso combinamos análisis de cifras, trabajo de campo y mesas con las
-                autoridades y la comunidad.
+                Un plan bien hecho parte de un diagnóstico real del territorio, no de una plantilla.
+                Por eso combinamos análisis de cifras, trabajo de campo y mesas con las autoridades
+                y la comunidad.
               </p>
             </div>
-            <ul className="space-y-3 self-center">
-              {[
-                "Diagnóstico de seguridad y convivencia del territorio",
-                "Priorización de delitos y comportamientos contrarios a la convivencia",
-                "Programas, proyectos, metas e indicadores",
-                "Articulación con Policía, Fuerzas Militares y Fiscalía",
-                "Plan de inversión y seguimiento",
-              ].map((t) => (
-                <li key={t} className="flex gap-3 rounded-[6px] bg-papel p-4 text-[0.93rem] leading-relaxed">
-                  <Check aria-hidden="true" strokeWidth={2} className="mt-0.5 h-4 w-4 shrink-0 text-esmeralda" />
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="space-y-4 self-center">
+              <Foto
+                clave="plan-integral-de-seguridad-piscc"
+                sizes="(max-width: 1023px) 100vw, 40vw"
+              />
+              <ul className="space-y-3">
+                {[
+                  "Diagnóstico de seguridad y convivencia del territorio",
+                  "Priorización de delitos y comportamientos contrarios a la convivencia",
+                  "Programas, proyectos, metas e indicadores",
+                  "Articulación con Policía, Fuerzas Militares y Fiscalía",
+                  "Plan de inversión y seguimiento",
+                ].map((t) => (
+                  <li
+                    key={t}
+                    className="flex gap-3 rounded-[6px] bg-papel p-4 text-[0.93rem] leading-relaxed"
+                  >
+                    <Check
+                      aria-hidden="true"
+                      strokeWidth={2}
+                      className="mt-0.5 h-4 w-4 shrink-0 text-esmeralda"
+                    />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -403,36 +529,56 @@ function Pagina() {
             <ShieldCheck aria-hidden="true" strokeWidth={1.7} className="h-6 w-6 text-esmeralda" />
             <h2 className="display-md">Un equipo que conoce el fenómeno criminal desde adentro</h2>
           </div>
-          <p className="lectura mt-4 text-tinta-suave">
-            Los servicios los presta un equipo interdisciplinario con experiencia directa en
-            investigación, justicia y seguridad pública:
-          </p>
-          <ul className="mt-8 grid gap-4 md:grid-cols-2">
-            {EQUIPO.map((t) => (
-              <li key={t} className="flex gap-3 border-t border-esmeralda pt-4 text-[0.95rem] leading-relaxed text-tinta-suave">
-                <Check aria-hidden="true" strokeWidth={2} className="mt-1 h-4 w-4 shrink-0 text-esmeralda" />
-                <span>{t}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-6 grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-14">
+            <Foto clave="investigacion-y-analisis-criminal" />
+            <div>
+              <p className="lectura text-tinta-suave">
+                Los servicios los presta un equipo interdisciplinario con experiencia directa en
+                investigación, justicia y seguridad pública:
+              </p>
+              <ul className="mt-6 grid gap-4">
+                {EQUIPO.map((t) => (
+                  <li
+                    key={t}
+                    className="flex gap-3 border-t border-esmeralda pt-4 text-[0.95rem] leading-relaxed text-tinta-suave"
+                  >
+                    <Check
+                      aria-hidden="true"
+                      strokeWidth={2}
+                      className="mt-1 h-4 w-4 shrink-0 text-esmeralda"
+                    />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             <div className="flex gap-4 rounded-[6px] border border-linea bg-papel-hueso p-6">
-              <Globe2 aria-hidden="true" strokeWidth={1.7} className="mt-0.5 h-6 w-6 shrink-0 text-esmeralda" />
+              <Globe2
+                aria-hidden="true"
+                strokeWidth={1.7}
+                className="mt-0.5 h-6 w-6 shrink-0 text-esmeralda"
+              />
               <div>
                 <h3 className="text-[1rem] font-semibold">Alcance nacional e internacional</h3>
                 <p className="mt-2 text-[0.92rem] leading-relaxed text-tinta-suave">
-                  Trabajo en todo el territorio colombiano y red de apoyo en Estados Unidos,
-                  México, Brasil, Perú, Panamá, Costa Rica, Ecuador, España e Italia.
+                  Trabajo en todo el territorio colombiano y red de apoyo en Estados Unidos, México,
+                  Brasil, Perú, Panamá, Costa Rica, Ecuador, España e Italia.
                 </p>
               </div>
             </div>
             <div className="flex gap-4 rounded-[6px] border border-linea bg-papel-hueso p-6">
-              <Lock aria-hidden="true" strokeWidth={1.7} className="mt-0.5 h-6 w-6 shrink-0 text-esmeralda" />
+              <Lock
+                aria-hidden="true"
+                strokeWidth={1.7}
+                className="mt-0.5 h-6 w-6 shrink-0 text-esmeralda"
+              />
               <div>
                 <h3 className="text-[1rem] font-semibold">Reserva total</h3>
                 <p className="mt-2 text-[0.92rem] leading-relaxed text-tinta-suave">
-                  La información del cliente solo la conoce el equipo asignado. Firmamos acuerdo
-                  de confidencialidad cuando el caso lo requiere.
+                  La información del cliente solo la conoce el equipo asignado. Firmamos acuerdo de
+                  confidencialidad cuando el caso lo requiere.
                 </p>
               </div>
             </div>
@@ -441,7 +587,16 @@ function Pagina() {
 
         {/* PROCESO */}
         <section className="mt-18 border-t border-linea pt-12">
-          <h2 className="display-md">Cómo trabajamos</h2>
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+            <div>
+              <h2 className="display-md">Cómo trabajamos</h2>
+              <p className="lectura mt-4 text-tinta-suave">
+                Del primer contacto a la entrega de resultados, con capacitación a los equipos que
+                van a aplicar la estrategia.
+              </p>
+            </div>
+            <Foto clave="capacitacion-en-seguridad" />
+          </div>
           <ol className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {PASOS.map((p, i) => (
               <li key={p.titulo}>
@@ -477,7 +632,11 @@ function Pagina() {
             </p>
             <p className="mt-6 text-[0.88rem] leading-relaxed text-tinta-suave">
               ¿Tiene un problema penal personal, como una denuncia o un proceso en curso?{" "}
-              <Link to="/areas/$silo" params={{ silo: "penal" }} className="font-semibold text-esmeralda underline">
+              <Link
+                to="/areas/$silo"
+                params={{ silo: "penal" }}
+                className="font-semibold text-esmeralda underline"
+              >
                 Vea derecho penal
               </Link>{" "}
               y lo conectamos con un abogado.
@@ -559,7 +718,14 @@ function Formulario() {
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <Campo id="seg-nombre" etiqueta="Nombre completo">
-          <input id="seg-nombre" name="nombre" required minLength={3} className="campo" autoComplete="name" />
+          <input
+            id="seg-nombre"
+            name="nombre"
+            required
+            minLength={3}
+            className="campo"
+            autoComplete="name"
+          />
         </Campo>
         <Campo id="seg-tipo" etiqueta="Tipo de cliente">
           <select id="seg-tipo" name="tipo" required className="campo" defaultValue="">
@@ -572,7 +738,12 @@ function Formulario() {
           </select>
         </Campo>
         <Campo id="seg-organizacion" etiqueta="Empresa o entidad (opcional)">
-          <input id="seg-organizacion" name="organizacion" className="campo" autoComplete="organization" />
+          <input
+            id="seg-organizacion"
+            name="organizacion"
+            className="campo"
+            autoComplete="organization"
+          />
         </Campo>
         <Campo id="seg-cargo" etiqueta="Cargo (opcional)">
           <input id="seg-cargo" name="cargo" className="campo" autoComplete="organization-title" />
@@ -600,7 +771,14 @@ function Formulario() {
           />
         </Campo>
         <Campo id="seg-correo" etiqueta="Correo electrónico">
-          <input id="seg-correo" name="correo" type="email" required className="campo" autoComplete="email" />
+          <input
+            id="seg-correo"
+            name="correo"
+            type="email"
+            required
+            className="campo"
+            autoComplete="email"
+          />
         </Campo>
         <Campo id="seg-whatsapp" etiqueta="Celular o WhatsApp">
           <input
@@ -629,10 +807,18 @@ function Formulario() {
       </Campo>
 
       <label className="flex gap-3 text-[0.85rem] leading-relaxed text-tinta-suave">
-        <input type="checkbox" name="autoriza" required className="mt-1 h-4 w-4 shrink-0 accent-esmeralda" />
+        <input
+          type="checkbox"
+          name="autoriza"
+          required
+          className="mt-1 h-4 w-4 shrink-0 accent-esmeralda"
+        />
         <span>
           Autorizo el tratamiento de mis datos para responder esta solicitud, conforme a la{" "}
-          <Link to="/politica-de-tratamiento-de-datos" className="font-semibold text-esmeralda underline">
+          <Link
+            to="/politica-de-tratamiento-de-datos"
+            className="font-semibold text-esmeralda underline"
+          >
             política de tratamiento de datos
           </Link>
           .
@@ -653,7 +839,15 @@ function Formulario() {
   );
 }
 
-function Campo({ id, etiqueta, children }: { id: string; etiqueta: string; children: React.ReactNode }) {
+function Campo({
+  id,
+  etiqueta,
+  children,
+}: {
+  id: string;
+  etiqueta: string;
+  children: React.ReactNode;
+}) {
   return (
     <div>
       <label htmlFor={id} className="mb-2 block text-[0.85rem] font-semibold text-tinta">
